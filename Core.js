@@ -86,37 +86,37 @@ const {
 //
         if(time2 < "23:59:00"){
 
-        var nowtime = 'Good night 🌌'
+        var nowtime = 'Good Night 🌌'
 
 }
 
         if(time2 < "19:00:00"){
 
-        var nowtime = 'Good afternoon 🌆'
+        var nowtime = 'Good Afternoon 🌆'
 
 }
 
         if(time2 < "18:00:00"){
 
-        var nowtime = 'Good afternoon 🌇'
+        var nowtime = 'Good Afternoon 🌇'
 
 }
 
         if(time2 < "15:00:00"){
 
-        var nowtime = 'Good afternoon 🏞'
+        var nowtime = 'Good Afternoon 🏞'
 
 }
 
         if(time2 < "11:00:00"){
 
-        var nowtime = 'Good morning 🌅'
+        var nowtime = 'Good Morning 🌅'
 
 }
 
         if(time2 < "05:00:00"){
 
-        var nowtime = 'Good night 🏙'
+        var nowtime = 'Good Night 🏙'
 
 }
 
@@ -306,9 +306,7 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
         }
 
 
-    /* const replay = (teks) => {
-      A17.sendMessage(m.chat, { text: teks }, { quoted: m }); 
-    }; */
+    
     const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
     const senderNumber = sender.split('@')[0]
 
@@ -344,14 +342,6 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
 
 
 
-//
-//   if (global.autoReadGc) {
-//   if (m.isGroup) { 
-//       A17.sendReadReceipt(m.chat, m.sender, [m.key.id]);
-//   }
-// }
-
-
     if (global.autoReadAll) {
       if (m.chat) {
         A17.sendReadReceipt(m.chat, m.sender, [m.key.id]);
@@ -379,14 +369,7 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
 
     
     //Dm and Groups Autoreply/Bot chat
-/*
-if (!isCmd && !m.isGroup){
-    const botreply = await axios.get(`http://api.brainshop.ai/get?bid=166512&key=5nz1Ha6nS9Zx1MfT&uid=[uid]&msg=[msg]=[${budy}]`)
-    txt = `${botreply.data.cnt}`
-    m.reply(txt)
-    }    
-    
- */
+
 
 
 
@@ -397,42 +380,6 @@ if (!isCmd && !m.isGroup){
         A17.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
         }
     }
-
-
-
-    //
-    // const hariRaya = new Date("6 1, 2022 00:00:00");
-    // const sekarang = new Date().getTime();
-    // const Selisih = hariRaya - sekarang;
-    // const jhari = Math.floor(Selisih / (1000 * 60 * 60 * 24));
-    // const jjam = Math.floor(
-    //   (Selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    // );
-    // const mmmenit = Math.floor((Selisih % (1000 * 60 * 60)) / (1000 * 60));
-    // const ddetik = Math.floor((Selisih % (1000 * 60)) / 1000);
-    // const ultah = `${jhari}Day ${jjam}Hour ${mmmenit}Minute ${ddetik}Second`;
-
-    // async function hitungmundur(bulan, tanggal) {
-    //   let from = new Date(`${bulan} ${tanggal}, 2022 00:00:00`).getTime();
-    //   let now = Date.now();
-    //   let distance = from - now;
-    //   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    //   let hours = Math.floor(
-    //     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    //   );
-    //   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    //   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    //   return (
-    //     days +
-    //     "Day " +
-    //     hours +
-    //     "Hour " +
-    //     minutes +
-    //     "Minute " +
-    //     seconds +
-    //     "Second"
-    //   );
-    // }
 
 
 
@@ -468,112 +415,6 @@ updateStatus();
 
             
 
-  //----------------------------------------------------------------------------------------------------------------//
-
-
-
-    //
-    // if (AntiLinkAll)
-    //   var rondonxk = '[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9()@:%_+.~#?&/=]'
-    //   if (budy.includes("https://")) {
-    //     if (!isBotAdmins) return
-    //     bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nLink sent by Admin so no action will be taken!`
-    //     if (isAdmins) return reply(bvl)
-    //     if (m.key.fromMe) return reply(bvl)
-    //     if (isCreator) return reply(bvl)
-    //     kice = m.sender
-    //     await A17.sendMessage(
-    //       from,
-    //       {
-    //         delete: {
-    //           remoteJid: from,
-    //           fromMe: false,
-    //           id: m.id,
-    //           participant: m.sender,
-    //         },
-    //       },
-    //       {
-    //         quoted: m,
-    //       }
-    //     );
-    //   //  await A17.groupParticipantsUpdate(m.chat, [kice], 'remove')
-    //     A17.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected !*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group !*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m })
-    //   } else {
-    //   }
-
-    // if (budy.includes("http://")) {
-    //     if (!isBotAdmins) return
-    //     bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nLink sent by Admin so no action will be taken!`
-    //     if (isAdmins) return reply(bvl)
-    //     if (m.key.fromMe) return reply(bvl)
-    //     if (isCreator) return reply(bvl)
-    //     kice = m.sender
-    //     await A17.sendMessage(
-    //       from,
-    //       {
-    //         delete: {
-    //           remoteJid: from,
-    //           fromMe: false,
-    //           id: m.id,
-    //           participant: m.sender,
-    //         },
-    //       },
-    //       {
-    //         quoted: m,
-    //       }
-    //     );
-    //   //  await A17.groupParticipantsUpdate(m.chat, [kice], 'remove')
-    //     A17.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected !*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group !*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m })
-    //   } else {
-    //   }
-
-
-//     const menulist = `
-//     Konichiwa ${pushname} dear 👋. I am ${global.BotName}, a bot developed by: Kai to take your WhatsApp usage into next level.
-        
-//        「 System Info 」
-    
-//     Speed : ${latensie.toFixed(4)} miliseconds
-//     Up Time : ${runtime(process.uptime())}
-//     Bot Name : ${global.BotName}
-//     Owner Name : ${global.OwnerName}
-//     𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
-//     𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-    
-    
-//        「 User Info 」
-    
-//     User Level: ${levelMenu}
-//     User XP : ${xpMenu} \ ${reqXp}
-//     User Role : ${role}
-    
-    
-//        「 User Bank 」
-    
-//     User Balance : ${uangku}
-//    //Iron : ${getBesi(m.sender)}
-//     Gold : ${getEmas(m.sender)}
-//     Emarald : ${getEmerald(m.sender)}
-//     Potion : ${getPotion(m.sender)}
-    
-    
-//     Type *-menu* or press any button below to start using *${global.BotName}*
-    
-//     ©️ *${global.BotName}* All Rights Reserved by: *Kai*
-//     `
-//         const qtod = m.quoted? "true":"false"
-        
-        
-
-// function pickRandom(list) {
-// return list[Math.floor(list.length * Math.random())]
-// }
-
-
-
-
-
-  /* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ tictactoe ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 
@@ -637,13 +478,6 @@ Typed *surrender* to surrender and admited defeat`
   delete this.game[room.id]
   }
   }
-
-
-
-
-
-
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓ [ Specific reply By #FantoX001 ] ▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 	
@@ -736,16 +570,11 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
     
     let { data } = await axios.get('https://api.github.com/repos/Kai0071/A17');
     teks = `*A17 Script*\n\n*Total Stars*: ${data.stargazers_count}⭐\n*Total Forks*: ${data.forks_count} forks\n*GitHub*: https://github.com/Kai0071/A17\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
-  /*  let buttons = [
-    {buttonId: `${prefix}owner`, buttonText: {displayText: '🍁 DEVELOPER 🍁'}, type: 1}
-    ] */
+  
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
-   /* footer: `${BotName}`,
-    buttons: buttons,
-    headerType: 4, */
     contextInfo:{externalAdReply:{
     title:"Powered by Kai",
     body: " ", 
@@ -1221,9 +1050,6 @@ const cara = 'cara'
 
 		
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ GAMBLE ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-		
-
 
 //
 case'gamble':  case 'lottery': {
@@ -1274,75 +1100,6 @@ break;
 
 
 	//-----------------Slot----------------------
-/*
-case'slot': case 'spin': {
-       if (isBan) return replay(mess.banned);
-       if (isBanChat) return replay(mess.bangc)
-       if (!m.isGroup) return replay(mess.grouponly)
-       var today = new Date();
-   if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){
-       if (text == 'help') return replay(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 💎100 in your wallet\n\n*3:* If you don't have money in wallet then withdraw from your bank\n\n*4:* If you don't have money in your bank too then use economy features to gain money`)
-       if (text == 'money') return replay(`*1:* Small Win --> +💎20\n\n*2:* Small Lose --> -💎20\n\n*3:* Big Win --> +💎100\n\n*4:* Big Lose --> -💎50\n\n*5:* 🎉 JackPot --> +💎1000`)
-       const fruit1= ["🥥", "🍎", "🍇"]
-       const fruit2 = ["🍎", "🍇", "🥥"]  
-       const fruit3 = ["🍇", "🥥", "🍎"]         
-       const fruit4 = ["🍇", "🍎", "🥥"]
-       const lose = ['*You suck at playing this game*\n\n_--> 🍍-🥥-🍎_', '*Totally out of line*\n\n_--> 🥥-🍎-🍍_', '*Are you a newbie?*\n\n_--> 🍎-🍍-🥥_']
-       const smallLose = ['*You cannot harvest coconut 🥥 in a pineapple 🍍 farm*\n\n_--> 🍍>🥥<🍍_', '*Apples and Coconut are not best Combo*\n\n_--> 🍎>🥥<🍎_', '*Coconuts and Apple are not great deal*\n\n_--> 🥥>🍎<🥥_']
-       const won = ['*You harvested a basket of*\n\n_--> 🍎+🍎+🍎_', '*Impressive, You must be a specialist in plucking coconuts*\n\n_--> 🥥+🥥+🥥_', '*Amazing, you are going to be making pineapple juice for the family*\n\n_--> 🍍+🍍+🍍_']             
-       const near = ['*Wow, you were so close to winning pineapples*\n\n_--> 🍎-🍍+🍍_', '*Hmmm, you were so close to winning Apples*\n\n_--> 🍎+🍎-🍍_']          
-       const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 💎1000*']
-       const user = m.sender
-       const cara = "cara"
-       const k = 100
-       const balance1  = await eco.balance(user, cara)
-       
-       if (k > balance1.wallet) return replay(`You are going to be spinning on your wallet, you need at least 💎100`);
-       const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
-       const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
-       const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
-       const f4 = fruit4[Math.floor(Math.random() * fruit4.length)];
-       const mess1 = lose[Math.floor(Math.random() * lose.length)];
-       const mess2 = won[Math.floor(Math.random() * won.length)];
-       const mess3 = near[Math.floor(Math.random() * near.length)];
-       const mess4 = jack[Math.floor(Math.random() * jack.length)];
-       const mess5 = smallLose[Math.floor(Math.random() * smallLose.length)];
-       
-       if ((f1 !== f2) && f2 !== f3){
-          const deduct1 = await eco.deduct(user, cara, 50);
-                 replay(`${mess1}\n\n*Big Lose -->* _💎50_`)
-       }
-       else if ((f1 == f2) && f2 == f3){
-          const give1 = await eco.give(user, cara, 100); 
-                replay(`${mess2}\n*_Big Win -->* _💎100_`)
-       }
-       else if ((f1 == f2) && f2 !== f3){
-          const give2 = await eco.give(user, cara, 20);
-                replay(`${mess3}\n*Small Win -->* _💎20_`)
-       }
-       else if ((f1 !== f2) && f1 == f3){
-          const deduct2 = await eco.deduct(user, cara, 20);
-                replay(`${mess5}\n\n*Small Lose -->* _💎20_`)
-       }
-       else if ((f1 !== f2) && f2 == f3){
-          const give4 = eco.give(user, cara, 20); 
-                replay(`${mess3}\n\n*Small Win -->* _💎20_`)
-       }
-       else if (((f1 == f2) && f2 == f3) && f3 == f4){
-          const give5 = eco.give(user, cara, 1000);
-               replay(`${mess4}\n\n_🎊 JackPot --> _💎1000_`)
-       }
-       else { 
-               replay(`Do you understand what you are doing?`)
-       }
-    }
-    else{
-           replay(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`)
-    }
-}
-break;
-*/	
-
 
 case'slot': case 'spin': {
   if (isBan) return replay(mess.banned);
@@ -1415,37 +1172,6 @@ break;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
-
-// case 'banchat': case 'bangroup':{
-//   if (isBan) return reply(mess.banned)	 			
-//   if (!isCreator) return replay(mess.botowner)
-//   if (args[0] === "on") {
-//   if (isBanChat) return replay('This Group is Already Banned from using me!')
-//   banchat.push(from)
-//   replay('This Group has been banned from using me!')
-//   var groupe = await A17.groupMetadata(from)
-//   var members = groupe['participants']
-//   var mems = []
-//   members.map(async adm => {
-//   mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-//   })
-//   A17.sendMessage(from, {text: `\`\`\`「 Notice 」\`\`\`\n\nThis group is banned from using bot. So, here nobody can use me anymore!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-//   } else if (args[0] === "off") {
-//   if (!isBanChat) return replay('This Group is Already Banned from using me!')
-//   let off = banchat.indexOf(from)
-//   banchat.splice(off, 1)
-//   replay('This Group has been *unbanned* from using me!')
-//   } else {
-//     let buttonsntnsfw = [
-//     { buttonId: `${prefix}bangroup on`, buttonText: { displayText: 'Ban' }, type: 1 },
-//     { buttonId: `${prefix}bangroup off`, buttonText: { displayText: 'Unban' }, type: 1 }
-//     ]
-//     await A17.sendButtonText(m.chat, buttonsntnsfw, `Please choose any Button below.\n\n *On / Off*`, `${global.BotName }`, m)
-//     }
-//     }
-//     break;
-
 
     case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
@@ -1493,113 +1219,6 @@ case 'limituser': case 'userlimit': case 'limit':
                          A17.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
           });
           break;
-          
-          
-          // case 'wallpaper': case 'animewallpaper': case 'animewall': {
-          // if (isBan) return reply(mess.banned)	 			
-          // if (isBanChat) return reply(mess.bangc)
-          // if (!args.join(" ")) return reply("Please enter a term to search!")
-          // const { AnimeWallpaper } =require("anime-wallpaper")
-          // const wall = new AnimeWallpaper();
-          // const pages = [1,2,3,4];
-          // const random=pages[Math.floor(Math.random() * pages.length)]
-          //         const wallpaper = await wall .getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-          //         const i = Math.floor(Math.random() * wallpaper.length);
-              
-          // let buttons = [
-          //             {buttonId: `${prefix}wallpaper ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-          //         ]
-          //         let buttonMessage = {
-          //             image: {url:wallpaper[i].image},
-          //             caption: `*Search term:* ${q}`,
-          //             footer: `${BotName}`,
-          //             buttons: buttons,
-          //             headerType: 4
-          //         }
-          //         A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-          //     }
-          //     break;
-
-          
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }});
-
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpaper = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-//   const i = Math.floor(Math.random() * wallpaper.length);
-  
-//   let message = {
-//     image: { url: wallpaper[i].image },
-//     caption: `*Search term:* ${q}`,
-//     footer: `${BotName}`,
-//     headerType: 4
-//   };
-  
-//   A17.sendMessage(m.chat, message, { quoted: m });
-// }
-// break;
-
-
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpapers = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-  
-//   for (let i = 0; i < wallpapers.length; i++) {
-//     let message = {
-//       image: { url: wallpapers[i].image },
-//       caption: `*Search term:* ${q}`,
-//       footer: `${BotName}`,
-//       headerType: 4
-//     };
-//     A17.sendMessage(m.chat, message, { quoted: m });
-//   }
-// }
-// break;
-
-
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   reply(mess.waiting)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }});
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpapers = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-  
-//   for (let i = 0; i < wallpapers.length; i++) {
-//     let message = {
-//       image: { url: wallpapers[i].image },
-//       footer: `${BotName}`,
-//       headerType: 4
-//     };
-//     A17.sendMessage(m.chat, message, { quoted: m });
-//   }
-// }
-// break;
 
 
 case 'wallpaper':
@@ -1668,15 +1287,9 @@ break;
               let { quotesAnime } = require('./lib/scraper')
                   let anu = await quotesAnime()
                   hasil = anu[Math.floor(Math.random() * anu.length)]
-             /*     let buttons = [
-                      {buttonId: `${prefix}quotesanime`, buttonText: {displayText: '>>'}, type: 1}
-                  ]  */
                   let buttonMessage = {
                       text: `_${hasil.quotes}_\n\nBy '${hasil.karakter}', ${hasil.anime}\n\n- ${hasil.up_at}`,
-                 /*     footer: 'A17',
-                      buttons: buttons,
-                      headerType: 2  */
-                  }
+                               }
                   A17.sendMessage(m.chat, buttonMessage, { quoted: m })
               }
               break;
@@ -1751,27 +1364,12 @@ break;
           from, 
           {
           text: "Group Settings",
-          /* footer: BotName,
-          title: "Set your group settings here...",
-          buttonText: "Click Button", 
-          sections */
           }, { quoted : m }
           )  
           }
           break;   
           
           
-          /*
-          case 'animesearchxxx': case 'anime':{
-              await fetchJson(`https://api.jikan.moe/v4/anime/${q}`)
-              .then((res) => {
-              let txt = `   _Anime Search Engine_ \n\n*Title:* *${res.data.title}*\n*English:* *${res.data.title_english}*\n*Japanese:* *${res.data.title_japanese}*\n*Anime Type:* *${res.data.type}*\n*Adaptation:* *${res.data.source}*\n*Total Episode:* *${res.data.episodes}*\n*Status:* *${res.data.status}*\n*Ongoing:* *${res.data.airing ? 'Yes' : 'No'}*\n*Aired:* *${res.data.aired.string}*\n*Duration:* *${res.data.duration}*\n*Rating:* *${res.data.rating}*\n*Score:* *${res.data.score}*\n*Rank:* *${res.data.rank}*\n*Main Producer:* *${res.data.producers.name}*\n*Studio:* *${res.data.studios[0].name}* `
-              A17.sendMessage(from, { image : { url : res.data.images.jpg.image_url}, caption : txt}, {quoted :m }) 
-              })
-              }
-              break;
-          */              
-
                           
 case 'emojimix': {
   if (isBan) return reply(mess.banned)	 			
@@ -2099,18 +1697,6 @@ var kairesult = pickRandom(nsfwdata)
 A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
-
-// case 'orgy':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/orgy.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
  
 
 case 'orgy':
@@ -2153,19 +1739,6 @@ case 'orgy':
   break;
 
 
-// case 'panties':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/panties.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
-
-
 case 'panties':
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
@@ -2204,19 +1777,6 @@ case 'panties':
     A17.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
   }
   break;
-
-
-// case 'pussy':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
 
 
 case 'pussy':
@@ -2318,17 +1878,6 @@ await A17.sendMessage(from, {text:"reply -s to this image to make sticker"}, {qu
 break;
 
 
-/*
-case 'delete': case 'del': {
- if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!m.quoted) return
-let { chat, fromMe, id, isBaileys } = m.quoted
-if (!isBaileys) return replay('How can i delete messages of other person? Baka!')
-A17.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-}
-break;
-*/
 
 
 case 'deleteall': case 'delall': case 'delete': case 'del': {
@@ -2381,17 +1930,6 @@ case 'ghstalk': case 'githubstalk': case'github': {
   👉 Following : ${gitdata.following}` }, { quoted: m } )
   }
   break;
-
-//
-//🚩 Id : ${gitdata.id}
-//✅ Type : ${gitdata.type}
-//🛡 Admin : ${gitdata.admin}
-//❇ Nodeid : ${gitdata.nodeId}
-// 📰 Blog : ${gitdata.blog}
-//  🔗 Url Profile : ${gitdata.profile_pic}
-// 🔗 Url Github : ${gitdata.url}
-// 🔄 Updated At : ${gitdata.updated_at}
-// 🧩 Created At : ${gitdata.ceated_at}
 
 
 case 'listpc': {
@@ -2547,7 +2085,6 @@ break;
 ////////////////////////////////////////////////////////////////////////////
 
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Antilink ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 //
@@ -2815,39 +2352,6 @@ await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below\
 break;
 
 
-// case 'antilinkall': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(mess.grouponly)
-// if (!isBotAdmins) return replay(mess.botadmin)
-// if (!isAdmins && !isCreator) return replay(mess.useradmin)
-// if (args[0] === "on") {
-// if (AntiLinkTwitter) return replay('Already activated')
-// ntilinkall.push(from)
-// replay('Enabled all antilink !')
-// var groupe = await A17.groupMetadata(from)
-// var members = groupe['participants']
-// var mems = []
-// members.map(async adm => {
-// mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-// })
-// A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-// } else if (args[0] === "off") {
-// if (!AntiLinkAll) return replay('Already deactivated')
-// let off = ntilinkall.indexOf(from)
-// ntilinkall.splice(off, 1)
-// replay('Disabled all antilink !')
-// } else {
-// let buttonsntilink = [
-// { buttonId: `${prefix}antilinkall on`, buttonText: { displayText: 'On' }, type: 1 },
-// { buttonId: `${prefix}antilinkall off`, buttonText: { displayText: 'Off' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
-// }
-// }
-// break;
-
-
 case 'antilinkall': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
@@ -2918,41 +2422,6 @@ break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-// case 'nsfw': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(mess.grouponly)
-// if (!isBotAdmins) return replay(mess.botadmin)
-// if (!isAdmins && !isCreator) return replay(mess.useradmin)
-// A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-// if (args[0] === "on") {
-// if (AntiNsfw) return replay('Already activated')
-// ntnsfw.push(from)
-// replay('Enabled NSFW Commands!')
-// var groupe = await A17.groupMetadata(from)
-// var members = groupe['participants']
-// var mems = []
-// members.map(async adm => {
-// mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-// })
-// A17.sendMessage(from, {text: `\`\`\`「 Notice 」\`\`\`\n\nNSFW(not safe for work) feature has been enabled in this group, which means anyone here can accesss Adult commands!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-// } else if (args[0] === "off") {
-// if (!AntiNsfw) return replay('Already deactivated')
-// let off = ntnsfw.indexOf(from)
-// ntnsfw.splice(off, 1)
-// replay('Disabled NSFW Commands!')
-// } else {
-// let buttonsntnsfw = [
-// { buttonId: `${prefix}nsfw on`, buttonText: { displayText: 'On' }, type: 1 },
-// { buttonId: `${prefix}nsfw off`, buttonText: { displayText: 'Off' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
-// }
-// }
-// break;
-
-
 case 'nsfw': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
@@ -3018,30 +2487,6 @@ replay("Error")
 }
 break;
 
-
-// case 'happymod': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-// if (!args.join(" ")) return replay(`Example : ${prefix + command} Kinemaster`)
-//modapk.happymod(args.join(" ")).then(async(res) => {
-// teks = '```「 HappyMod Search Engine 」```'
-// for (let i of res) {
-// teks += `\n\n${i.name}\n`
-// teks += `${i.link}`
-// }
-
-// let buttonMessage = {
-// image: {url:res[0].icon},
-// jpegThumbnail: Thumb,
-// caption: teks,
-// footer: `${global.BotName}`,
-// headerType: 4
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// })
-// }
-// break;
 
 
 case 'happymod': case 'modapk':{
@@ -3223,26 +2668,6 @@ A17.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
 break;
 
 
-/*
-case 'purge':{
-  if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!m.isGroup) return replay(mess.grouponly)
-if (!isBotAdmins) return replay(mess.botadmin)
-if (!isAdmins && !isCreator) return replay(mess.useradmin)
-
-  const delay = time => new Promise(res=>setTimeout(res,time));
-
-  let users = (await A17.fetchGroupMetadataFromWA(m.chat)).participants.map(u => u.jid)
-  for (let user of users){
-
-      await A17.groupParticipantsUpdate(m.chat, [user], 'remove')
-      await delay(3000)
-  }
-}
-break;
-
-*/
 
 case 'purge':{mess
 if (isBan) return reply(mess.banned)	 			
@@ -3504,19 +2929,6 @@ replay("Error")
 break;
 
 
-// case 'leavegc': case 'leavegroup': case 'bye': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//       reply(mess.waiting)
-//                   if (!isCreator) return replay(`${mess.botowner}`)
-//                   A17.sendMessage(from, { react: { text: "☯️" , key: m.key }})
-//                   await A17.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-//               }
-//               break;
-
-
-
 
              ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3737,24 +3149,6 @@ await fs.unlinkSync(media)
 break;
 
 
-// case 'tourl': case 'makeurl':{
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
-
-// // let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader');
-// let media = await A17.downloadAndSaveMediaMessage(quoted)
-// if (/image/.test(mime)) {
-// let anu = await TelegraPh(media)
-// reply(util.format(anu))
-// } else if (!/image/.test(mime)) {
-// let anu = await UploadFileUgu(media)
-// reply(util.format(anu))
-// }
-// await fs.unlinkSync(media)
-// }
-// break;
-
 
 case "tourl": case 'tolink':
    if (isBan) return reply(mess.banned);
@@ -3806,23 +3200,8 @@ let { GraphOrg } = require("./lib/uploader");
 
 
 //
-/*
-// text editor
-candy  christmas  3dchristmas  sparklechristmas
- deepsea  scifi  rainbow  waterpipe  spooky 
- pencil  circuit  discovery  metalic  fiction  demon 
- transformer  berry  thunder  magma  3dstone 
- neonlight  glitch  harrypotter  brokenglass  papercut 
- watercolor  multicolor  neondevil  underwater  graffitibike
- snow  cloud  honey  ice  fruitjuice  biscuit  wood 
- chocolate  strawberry  matrix  blood  dropwater  toxic 
- lava  rock  bloodglas  hallowen  darkgold  joker  wicker
- firework  skeleton  blackpink  sand  glue  1917  leaves
-
-*/
 
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Text Effects ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 
@@ -3945,59 +3324,6 @@ replay(`Input : ${Detek}\nTranslation Results : ${Infoo}`)
 break;
 
 
-// case 'gimage': case 'gig': case 'googleimage':{
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
-
-// if (!args[0]) return reply("Enter a search term to get Google Image!")
-// let gis = require('g-i-s')
-// gis(args.join(" "), async (error, result) => {
-// n = result
-// images = n[Math.floor(Math.random() * n.length)].url
-// let buttons = [
-// {buttonId: `${prefix}gimage ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-// ]
-// let buttonMessage = {
-// image: { url: images },
-// caption: `「 _Google Image Search_ 」
-
-// _Search Term_ : ${text}
-// _Media Url_ : ${images}`,
-// footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4,
-
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// })
-// }
-// break;
-
-
-
-// case 'gimage':
-// case 'gig':
-// case 'googleimage': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "⌛", key: m.key } });
-
-//   if (!args[0]) return reply("Enter a search term to get Google Image!");
-//   let gis = require('g-i-s');
-//   gis(args.join(" "), async (error, result) => {
-//     n = result;
-//     images = n[Math.floor(Math.random() * n.length)].url;
-//     let buttonMessage = {
-//       image: { url: images },
-//       caption: `「 _Google Image Search_ 」\n\n_Search Term_ : ${text}\n_Media Url_ : ${images}`,
-//       footer: `${global.BotName}`,
-//       headerType: 4,
-//     };
-//     A17.sendMessage(m.chat, buttonMessage, { quoted: m });
-//   });
-// }
-// break;
 case 'gimage':
 case 'gig':
 case 'googleimage': {
@@ -4029,49 +3355,6 @@ case 'googleimage': {
   });
 }
 break;
-
-
-
-
-
-
-
-// case "gig":
-//   case "gimage":
-//   case "googleimage":
-//   case "image":
-//     if (!text) {
-//       A17.sendMessage(from, { react: { text: "⌛", key: m.key } });
-//       return m.reply(`Please provide an image Search Term !\n\nExample: *${prefix}image cheems*`);
-//     }
-    
-//     gis(text, async (error, result) => {
-//       n = result;
-//       let images = n[Math.floor(Math.random() * n.length)].url;
-//       let resText = `\n_🎀 Image Search Term:_ *${text}*\n\n_🧩 Powered by_ *${botName}*\n`;
-//       /*
-//       let buttons = [
-//         {
-//             buttonId: `${prefix}gimage ${text}`,
-//             buttonText: { displayText: ">>" },
-//             type: 1,
-//         },
-//       ];
-//       */
-//       await A17.sendMessage(
-//         m.from,
-//         {
-//           image: { url: images },
-//           caption: resText,
-//           //footer: `*${botName}*`,
-//           //buttons: buttons,
-//           //headerType: 4,
-//         },
-//         { quoted: m }
-//       );
-//     });
-//     break;
-
 
 
 //---------------------------------------- NASA  -----------------------------------------//
@@ -4192,29 +3475,6 @@ A17.sendMessage(from, {text : `Case : ${kasus}\n\nDead : ${kematian}\n\nHealed :
 break;
 
 
-// const { getBuffer } = require("./lib/myfunc");
-
-// case 'ss':
-//   async (A17, m, { pushName, prefix, args, text }) => {
-//     if (!args[0]) return m.reply(`Please provide me a link to lookup!`);
-
-//     let lookupURL;
-//     if (!args[0].includes("http")) {
-//       lookupURL = `https://${args[0]}`;
-//     } else {
-//       lookupURL = args[0];
-//     }
-
-//     try {
-//       const resImage = await getBuffer(`https://api.popcat.xyz/screenshot?url=${lookupURL}`);
-//       await A17.sendMessage(m.from, { image: resImage, caption: `_Here's how this URL looks like:_\n${args[0]}\n` }, { quoted: m });
-//     } catch (error) {
-//       m.reply(`An error occurred while processing your request!\n\nPlease recheck your link and try again!`);
-//     }
-//   };
-//   break;
-
-
 
             ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4255,47 +3515,6 @@ case 'igdl':
   }
 }
 break;
-
-
-// ///
-// case 'igdl': case 'instagramreels': case 'igreels': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
-// if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
-// try {
-// hx.igdl(args[0]).then(async(resed) => {
-// ini_anu = []
-// anu_list = []
-// textbv = `「 _Instagram Downloader_ 」\n\nUsername : ${resed.user.username ? resed.user.name : "undefined"}\nFollowers : ${resed.user.followers}`
-// urut = 1
-// for (let i = 0; i < resed.medias.length; i++) {
-// ini_anu.push({
-// "type": resed.medias[i].fileType,
-// "url": resed.medias[i].url
-// })
-// }
-// ilod = 1
-// for (let i of ini_anu) {
-// anu_list.push({buttonId: `${prefix}ig ${i.type} ${i.url}`, buttonText: {displayText: `Media ${ilod++}`}, type: 1})
-// }
-// textbv += `\n\n_Select the media below to download_`
-// let buttons = anu_list
-// let buttonMessage = {
-// image:BotLogo,
-// jpegThumbnail:Thumb,
-// caption: textbv,
-// footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4
-// }
-// A17.sendMessage(from, buttonMessage, {quoted:m})
-// })
-// } catch (err) {
-// reply("An Error Occured!")
-// }
-// }
-// break;
 
 
 case 'ig': {
@@ -4624,67 +3843,6 @@ case 'yts': case 'ytsearch': {
  break; 
 
  
-/*
-		
-case 'music': case 'p': case 'play': case 'song': case 'ytplay': {
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- A17.sendMessage(from, { react: { text: "🍁" , key: m.key }}) 
- const YT=require('./lib/ytdlcore')
- const { isUrl, fetchBuffer } = require('./lib/Function')
-
- if(!text) return A17.sendMessage(from,{text:"Pls enter song name to play!"},{quoted:m})
- let yts = require("@adiwajshing/keyed-db2")
- let search = await yts(text)
- let anu = search.videos[0]
- let buttons = [
- {buttonId: `${prefix}ytad ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1},
- {buttonId: `${prefix}ytvd ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-
- ]
- let buttonMessage = {
- image: { url: anu.thumbnail },
- caption: `「  A17 Youtube Player 2.0  」
-
-✨ *Title :* ${anu.title}
-
-⏳ *Duration :* ${anu.timestamp}
-
-📈 *Viewers :* ${anu.views}
-
-📍 *Uploaded :* ${anu.ago}
-
-🎐 *Channel :* ${anu.author.name}
-
-🔗 *Url :* ${anu.url}`,
-	 
- footer: `${global.BotName}`,
- buttons: buttons,
- headerType: 4,
-
- }
- A17.sendMessage(m.chat, buttonMessage, { quoted: m })
- }
- break;
-
-*/ 
-
-
-/// Normal
-// case 'play': case 'song': case 'music': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   A17.sendMessage(from, { react: { text: "🍁" , key: m.key }}) 
-//   const YT=require('./lib/ytdl-core')
-//   let yts = require("youtube-yts")
-//   let search = await yts(text)
-//   let anu = search.videos[0]
-//   const ytmp3play = await YT.mp3(anu.url)
-  
-// await A17.sendMessage(from, {audio: fs.readFileSync(ytmp3play.path),fileName: anu.title + '.mp3',mimetype: 'audio/mpeg',}, {quoted:m})
-// }
-// break;
-
 
 case 'play':
 case 'song':
@@ -4753,42 +3911,6 @@ A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", cap
 break;
 
 
-/*
-case 'ytmp3': case 'ytmusic':  case 'ytmp4': case 'ytvideo': case 'ytdl':{
-  if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!args[0]) return reply(mess.nolink)
-
-const YT=require('./lib/ytdlcore')
-if(!text) return A17.sendMessage(from,{text:"Please provide a valid youtube link!"},{quoted:m})
-let yts = require("@adiwajshing/keyed-db2")
-let search = await yts(text)
-let anu = search.videos[0]
-let buttons = [
-{buttonId: `${prefix}ytad2 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1},
-{buttonId: `${prefix}ytvd2 ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-
-]
-let buttonMessage = {
-image: { url: anu.thumbnail },
-caption: `「  A17 Youtube Downloader 2.0  」
-
-✨ *Title :* ${anu.title}
-
-⏳ *Duration :* ${anu.timestamp}
-👀 *Viewers :* ${anu.views}
-📍 *Uploaded :* ${anu.ago}
-🎐 *Channel :* ${anu.author.name}
-🔗 *Url :* ${anu.url}`,
-footer: `${global.BotName}`,
-buttons: buttons,
-headerType: 4,
-
-}
-A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
-break; 
-*/
 
 
 case 'ytmp3': {
@@ -4842,21 +3964,6 @@ break;
 
 
 
-///
-// case 'couplepp': case 'cpp': case 'ppcouple': {
-// if (isBan) return reply(mess.banned)
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🙀" , key: m.key }});
-
-//        reply(mess.waiting)
-//        let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
-//        let random = anu[Math.floor(Math.random() * anu.length)]
-//        A17.sendMessage(m.chat, { image: { url: random.male }, caption: `For him...` }, { quoted: m })
-//        A17.sendMessage(m.chat, { image: { url: random.female }, caption: `For her...` }, { quoted: m })
-//    }
-// break;
-
-
 case 'couplepp':
 case 'cpp':
 case 'ppcouple': {
@@ -4887,63 +3994,14 @@ case 'coffee': case 'kopi': {
 if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-     /*     let buttons = [
-                  {buttonId: `${prefix}coffee`, buttonText: {displayText: '>>'}, type: 1}
-              ]  */
+     
               let buttonMessage = {
                   image: { url: 'https://coffee.alexflipnote.dev/random' },
                   caption: `Here is your Coffee...`,
-               /*   footer: `${BotName}`,
-                  buttons: buttons,
-                  headerType: 4  */
-              }
+                             }
               A17.sendMessage(m.chat, buttonMessage, { quoted: m })
           }
           break;
-
-
-//old code of A17 button 
-
-// case 'pinterest': case 'pin': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!args.join(" ")) return reply("Pls providea search term!")
-// try {
-// hx.pinterest(args.join(" ")).then(async(res) => {
-// imgnyee = res[Math.floor(Math.random() * res.length)]
-// /* let buttons = [
-// {buttonId: `${prefix}pinterest ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-// ] */
-// let buttonMessage = {
-// image: { url: imgnyee },
-// caption:  `Title : ` + args.join(" ") + `\nMedia Url : `+imgnyee,
-// /* footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4, */
-
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// }).catch(_ => _)
-// } catch {
-// reply("Error")
-// }
-// }
-// break;
-
-
-
-////// Hehe ////// 
-
-// case 'pinterest': case'pin' : {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!args.join(" ")) return reply(`${pushname} Pls provide a search term!`)
-// let { pinterest } = require('./lib/scraper')
-// anutrest = await pinterest(text)
-// result = anutrest[Math.floor(Math.random() * anutrest.length)]
-// A17.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
-// }
-// break;
 
 
 //
@@ -4972,32 +4030,6 @@ case 'pin': {
 }
 break;
 
-
-// case 'pinterest':
-// case 'pin': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "🐦", key: m.key } });
-
-//   if (!args.join(" ")) return reply(`${pushname} Please provide a search term!`);
-//   reply(mess.waiting);
-//   let { pinterest } = require('./lib/scraper');
-//   let anutrest = await pinterest(text);
-//   let results = [];
-
-//   // Get multiple random images (let's say 5 images)
-//   const numImages = 5;
-//   for (let i = 0; i < numImages && i < anutrest.length; i++) {
-//     results.push(anutrest[Math.floor(Math.random() * anutrest.length)]);
-//   }
-
-//   // Send each image with a common caption
-//   const commonCaption = 'Check out this image from Pinterest By A17';
-//   for (let i = 0; i < results.length; i++) {
-//     A17.sendMessage(m.chat, { image: { url: results[i] }, caption: commonCaption }, { quoted: m });
-//   }
-// }
-// break;
 
 
 
@@ -5078,45 +4110,6 @@ break;
           ///////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-// case 'couple': case 'ship': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(`${mess.grouponly}`)
-// A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
-
-// let member = participants.map(u => u.id)
-// let orang = member[Math.floor(Math.random() * member.length)]
-// let jodoh = member[Math.floor(Math.random() * member.length)]
-// let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-// Ohh i see 👀💖...`
-// let menst = [orang, jodoh]
-// let buttons = [
-// { buttonId: '❤️', buttonText: { displayText: 'Congratulations ❤️' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttons, jawab, A17.user.name, m, {mentions: menst})
-// }
-// break;
-
-
-// case 'soulmate': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(`${mess.grouponly}`)
-// A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
-// let member = participants.map(u => u.id)
-// let me = m.sender
-// let jodoh = member[Math.floor(Math.random() * member.length)]
-// let jawab = `👫 Soulmates
-// @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
-// let ments = [me, jodoh]
-// let buttons = [
-// { buttonId: '❤️', buttonText: { displayText: 'Be my Soulmate ❤️' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttons, jawab, A17.user.name, m, {mentions: ments})
-// }
-// break;
 
 
 case 'soulmate':  {
@@ -5390,11 +4383,6 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 
 
 
-
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ NSFW ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-
-
-
 case 'nsfwA17':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
@@ -5422,186 +4410,15 @@ A17.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0]
 break;
 
 
-// case 'masturbation': case 'jahy': case 'hentai': case 'glasses': case 'gangbang': case 'foot': 
-// case 'femdom': case 'cum': case 'ero': case 'cuckold': case 'blowjob': case 'bdsm': 
-// case 'ahegao': case 'ass': case 'orgy': case 'panties': case 'pussy': case 'thighs': case 'yuri': case 'tentacles':
-// // if (isBan) return reply(mess.banned)	 			
-// // if (isBanChat) return reply(mess.bangc)
-// // if (!m.isGroup) return replay(mess.grouponly)
-// // if (!AntiNsfw) return reply(mess.nonsfw)
-// // try{
-// // reply(mess.waiting)
-
-
-
-// // buffer = `https://fantox-apis.vercel.app/${command}`
-// // A17.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
-
-
-// // // NoHorny = await fetchJson(`https://fantox-apis.vercel.app/${command}`)
-// // // YesHorny = await getBuffer(NoHorny.result)
-// // // A17.sendMessage(from, {image:YesHorny},{quoted:m})
-// // // } catch (e) {error("Error")}	
-// // break;
-
-// case 'spank':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
-// let spbuff = await getBuffer(spankd.data.url)
-// let spgif = await GIFBufferToVideoBuffer(spbuff)   
-//       await A17.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m }).catch(err => {
-//                   return reply('Error!')
-//                                   })
-// break;
-
-
-// case 'blowjobgif': case 'bj' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
-// let bjf = await getBuffer(bjd.data.url)
-// let bjif = await GIFBufferToVideoBuffer(bjf)   
-//       await A17.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
-//                   return reply('error..')
-//                                   })
-// break;
-
-
-// case 'hentaivid': case 'hentaivideo': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// anu = await hentai()
-// result912 = anu[Math.floor(Math.random(), anu.length)]
-// A17.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
-// }
-// break;
-
-
-// case 'trap' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
-// /* let trapbot = [
-//   {buttonId: `${prefix}trap`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button2Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Here it is...`,
-// /* buttons: trapbot,
-// headerType: 1 */
-// }     
-//           await A17.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'hentai-neko' :
-// case 'hneko' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-//   waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-// /* let hnekobot = [
-//   {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button3Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Nyaah...`,
-// /* buttons: hnekobot,
-// headerType: 1 */
-// }      
-//           await A17.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'hentai-waifu' :
-// case 'hwaifu' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-//   waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
-// /* let nwaifubot = [
-//   {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button4Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Here it is...`,
-// /* buttons: nwaifubot,
-// headerType: 1 */
-// }      
-//           await A17.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'gasm':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)						
-// waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-//                      /*    var wbuttsss = [
-//       {buttonId: `${prefix}gasm`, buttonText: {displayText: `>>`}, type: 1},
-//       ] */
-//     let buttonsssMessages = {
-//      image: {url:waifudd.data.url},
-//      caption:  `Here it is...`,
-//    /* footer: `${global.BotName}`,
-//     buttons: wbuttsss,
-//     headerType: 4 */
-//     }     
-//           await A17.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;  
-
-
-
-// /* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Anime Mode ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-
-
-          ///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-//
 case 'smug2':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
 reply(mess.waiting)						
 waifudd = await axios.get(`https://nekos.life/api/v2/img/smug`)
-                  /*       var wbuttsss = [
-      {buttonId: `${prefix}smug2`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+                  
     let button1ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Here it is...`,
-  /*  footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
     }     
           await A17.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
@@ -5618,15 +4435,11 @@ case 'foxgirl':
 reply(mess.waiting)							
 waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
 
-           /* var wbuttsss = [
-      {buttonId: `${prefix}foxgirl`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+           
     let button12ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Awoooo...`,
-    /* footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
+    
     }     
           await A17.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
@@ -5640,14 +4453,10 @@ case 'animenom' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)
   waifudd = await axios.get(`https://waifu.pics/api/sfw/nom`)
-/*  let xxhnekobot = [
-  {buttonId: `${prefix}animenom`, buttonText: {displayText: `>>`}, type: 1},
-  ]  */
 let xx1button3Messages = {
  image: {url:waifudd.data.url},
  caption:  `Here it is...`,
-/*  buttons: xxhnekobot,
-headerType: 1 */
+
 }      
           await A17.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
                   return('Error!')
@@ -5661,15 +4470,10 @@ case 'waifu3':
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)						
 waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
-                 /*        var wbuttsss = [
-      {buttonId: `${prefix}waifu3`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+                 
     let button112ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Here it is...`,
- /*   footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
     }     
           await A17.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
@@ -5684,16 +4488,11 @@ case 'crossplay': case 'crosplay': case 'cosplay':
   if (!m.isGroup) return replay(mess.grouponly)
   A17.sendMessage(from, { react: { text: "✨" , key: m.key }})  
 
-           /*   const buttons = [
-      {buttonId: '-crossplay', buttonText: {displayText: '>>'}, type: 1},
-          ]     */     
+                
 
       const cosplybutton = {
       image: {url: 'https://fantox-cosplay-api.onrender.com/'},
       caption: "Guess who am i...",
-     /* footer: `${global.BotName}`,
-      buttons: buttons,
-      headerType: 4 */
       }
                 
       await A17.sendMessage(m.chat,cosplybutton, { quoted:m }).catch(err => {
@@ -5994,43 +4793,16 @@ console.log(musers)
 break;
 
 
-/*
-
-case 'cry': case 'kill': case 'hug': case 'pat': case 'lick': case 'kiss': case 'bite': case 'yeet':
-case 'bully': case 'bonk': case 'wink': case 'poke': case 'nom': case 'slap': case 'smile':
-case 'wave': case 'blush': case 'smug': case 'glomp': case 'happy': case 'dance':
-case 'cringe': case 'cuddle': case 'highfive': case 'handhold': case 'kick':
-
-  if (isBan) return reply(mess.banned)	 			
-  if (isBanChat) return reply(mess.bangc)
-  if (!m.isGroup) return replay(mess.grouponly)						
-resggh = await axios.get(`https://nekos.life/api/v2/img/${command}`)         
-let resffj = await getBuffer(resggh.data.url)
-let resmain = await GIFBufferToVideoBuffer(resffj)   
-    await A17.sendMessage(m.chat,{video: resmain, gifPlayback:true},{ quoted:m }).catch(err => {
-                return reply('error..')
-                                })
-break;
-
-*/
-
-
 case 'megumin':
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)							
 ud = await axios.get('https://waifu.pics/api/sfw/megumin')
-/*var wbutsss = [
-  {buttonId: `${prefix}megumin`, buttonText: {displayText: `>>`}, type: 1},
-       ] */
     let buttonzMessage = {
     image: {url:ud.data.url},
      caption:  `Here it is...`,
- /*   footer: `${global.BotName}`,
-        buttons: wbutsss,
-   headerType: 4 */
-                    }
+                     }
 await A17.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
    return('Error!')
   })               
@@ -6045,15 +4817,9 @@ case 'awoo':
 
   reply(mess.waiting)						
 waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
-/* var wbuttsss = [
-  {buttonId: `${prefix}awoo`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
 let button1Messages = {
  image: {url:waifudd.data.url},
  caption:  `Here it is...`,
-/*  footer: `${global.BotName}`,
-buttons: wbuttsss,
-headerType: 2 */
 
 }       
           await A17.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
@@ -6091,53 +4857,6 @@ var walb = [
               })          
 break;
 
-
-// case 'anime':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//     if(!q) return reply(`Please proide a search term!\n\n*Example:* ${prefix}anime naruto`)
-// reply(mess.waiting)							
-// const { Anime } =require("@shineiichijo/marika")
-//   const client = new Anime();
-//    let anime = await client.searchAnime(q)
-//   let result = anime.data[0];
-//   console.log(result)
-//  let details = `*Title:* ${result.title}\n`;
-//   details += `*Format:* ${result.type}\n`;
-//   details += `*Status:* ${result.status.toUpperCase().replace(/\_/g, " ")}\n`;
-//   details += `*Total episodes:* ${result.episodes}\n`;
-//   details += `*Duration:* ${result.duration}\n`;
-//   details += `*Genres:*\n`;
-//   for (let i = 0; i < result.genres.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t${result.genres[i].name}\n`;
-//   }
-//   details += `*Based on:* ${result.source.toUpperCase()}\n`;
-//   details += `*Studios:*\n`;
-//   for (let i = 0; i < result.studios.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t${result.studios[i].name}\n`;
-//   }
-//   details += `*Producers:*\n`;
-//   for (let i = 0; i < result.producers.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t\t\t${result.producers[i].name}\n`;
-//   }
-//   details += `*Premiered on:* ${result.aired.from}\n`;
-//   details += `*Ended on:* ${result.aired.to}\n`;
-//   details += `*Popularity:* ${result.popularity}\n`;
-//   details += `*Favorites:* ${result.favorites}\n`;
-//   details += `*Rating:* ${result.rating}\n`;
-//   details += `*Rank:* ${result.rank}\n\n`;
-//   if (result.trailer.url !== null)
-//     details += `*Trailer:* ${result.trailer.url}\n\n`;
-//   details += `*URL:* ${result.url}\n\n`;
-//   if (result.background !== null)
-//     details += `*Background:* ${result.background}\n\n`;
-//   details += `*Description:* ${result.synopsis.replace(
-//     /\[Written by MAL Rewrite]/g,
-//     ""
-//   )}`
-// A17.sendMessage(m.chat,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m})   
-// break;
 
 
 //
@@ -6216,14 +4935,9 @@ case 'waifu' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/waifu')
-/*var wbuttsssr = [
-  {buttonId: `${prefix}waifu`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let button4Messagess = {
       image: {url:waifuddd.data.url},
       caption: 'More than one waifu will definitely ruin your Laifu!',
-      /*buttons: wbuttsssr,
-      headerType: 4 */
        }     
                                 
   await A17.sendMessage(m.chat, button4Messagess, { quoted:m }).catch(err => {
@@ -6238,14 +4952,9 @@ case 'neko' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/neko')
-/*var wbuttsssr = [
-  {buttonId: `${prefix}neko`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let buttonMessagessf = {
       image: {url:waifuddd.data.url},
       caption: 'Nyaa...',
-  /*    buttons: wbuttsssr,
-      headerType: 2  */
        }     
                                 
   await A17.sendMessage(m.chat, buttonMessagessf, { quoted:m }).catch(err => {
@@ -6260,14 +4969,10 @@ case 'loli' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/shinobu')
-/* var wbuttsssr = [
-  {buttonId: `${prefix}loli`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let buttonMessagessfgr = {
       image: {url:waifuddd.data.url},
       caption: 'Dont be a lolicon !',
-    /*  buttons: wbuttsssr,
-      headerType: 2 */
+    
        }     
                                 
   await A17.sendMessage(m.chat, buttonMessagessfgr, { quoted:m }).catch(err => {
@@ -6335,19 +5040,7 @@ break;
    break;
 
      
-      // case 'remove': {
-
-      //   if (!m.isGroup) return replay(mess.grouponly)
-      //   if (!isBotAdmins) return replay(mess.botadmin)
-      //   if (!isAdmins && !isCreator) return replay(mess.useradmin)
-      //   let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-      //   await A17.groupParticipantsUpdate(m.chat, [users], 'remove')
-      // }
-      //   break;
-
-
-
-
+  
       ///////////////////////////////////////////////////
 
 
@@ -6391,7 +5084,7 @@ break;
     A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
     const helpmenu = `Hemlo *${pushname}* Dear...!! ${nowtime} ,
     
-Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that is possible on WhatsApp based on WhatsApp Multi Device(MD) Support.
+Hello, *I am DDev BOT* A WhatsApp bot Created By DARK DEVIL To Do Everything That Is Possible On WhatsApp Based On WhatsApp Multi Device(MD) Support.
   
 
     ⌯    *Time* : ${kaitime}
@@ -6402,7 +5095,6 @@ Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that 
 
 
     ⌯    *Bot usr name :* ${pushname} 
-    ⌯    *My prefix is :*  ${prefix}
     ⌯    *Owner name :* ${global.OwnerName} 
     ⌯    *Bot runtime :* ${runtime(process.uptime())} 
     ⌯    *Platform :* Linux
@@ -6689,7 +5381,7 @@ Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that 
     ⌯       all NSFW commands.
     ⌯    
     ⌯    『  *${global.BotName}*  』
-    ⌯       Developed By: *Kai*
+    ⌯       Developed By: *DARK DEVIL
     ⌯    
     ⌯    🍁 To use any of these
     ⌯       commands type.
@@ -6737,15 +5429,11 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   
   reply(`Running repl....Please wait until repl.it responds...`)						
   var replqr =  await getBuffer(`https://a17-qr-scanner.broken0007.repl.co/`)
-                     /*        var qrbutton = [
-          {buttonId: `${prefix}qr`, buttonText: {displayText: `Tap to Re-run Repl`}, type: 1}
-          ] */
+                     
         let bmffg = {
          image: replqr,
          caption:  `Scan the qr within 10-15 seconds...`,
-    /*    footer: `${global.BotName}`,
-        buttons: qrbutton,
-        headerType: 4 */
+    
         }     
               await A17.sendMessage(m.chat, bmffg,{ quoted:m }).catch(err => {
                       return('Error!')
@@ -6766,42 +5454,6 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
 
         break;
 
-
-        // case 'weather':{
-        //   if (!text) return reply('Give me Location...')
-        //               let wdata = await axios.get(
-        //                   `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
-        //               );
-        //               let textw = ""
-        //               textw += `*🗺️Weather of  ${text}*\n\n`
-        //               textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
-        //               textw += `*Description:-* ${wdata.data.weather[0].description}\n`
-        //               textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
-        //               textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
-        //               textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
-        //               textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
-        //               textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
-        //               textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
-        //               textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
-        //               textw += `*Country:-* ${wdata.data.sys.country}\n`
-          
-        //             A17.sendMessage(
-        //                   m.chat, {
-        //                       text: textw,
-        //                   }, {
-        //                       quoted: m,
-        //                   }
-        //              )
-        //              }
-        //              break;
-
-
-
-// //  "parse-ms": "^1.1.0",
-
-
-
-      ///////////////////////////////////////////////////
       ///funmenu
 
       case 'stupidcheck': case 'uncleancheck':
