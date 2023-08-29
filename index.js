@@ -1,6 +1,6 @@
 require("./config.js");
 const {
-  default: DDev-BOTConnect,
+  default: A17Connect,
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
@@ -45,10 +45,10 @@ const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
 
-async function startDDev-BOT() {
+async function startA17() {
   console.log(
     color(
-      figlet.textSync("DDev-BOT Bot MD", {
+      figlet.textSync("A17 Bot MD", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
@@ -59,20 +59,20 @@ async function startDDev-BOT() {
       "green"
     )
   );
-  console.log(color('\nHello, I Am DARK DEVIL, The Main Developer Of This Bot.\n\nThanks For Using DDev-BOT Bot.', 'aqua'))
-  console.log(color('\nYou Can Follow Me On GitHub', 'aqua'))
+  console.log(color('\nHello, I am Kai, the main Developer of this bot.\n\nThanks for using: A17 Bot.', 'aqua'))
+  console.log(color('\nYou can follow me on GitHub: Kai0071', 'aqua'))
 
-  const { state, saveCreds } = await useMultiFileAuthState("./DDev-BOT");
-  const DDev-BOT = DDev-BOTConnect({
+  const { state, saveCreds } = await useMultiFileAuthState("./A17-SESSION");
+  const A17 = A17Connect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["DDev-BOT Bot", "Safari", "3.O"],
+    browser: ["A17 Bot", "Safari", "3.O"],
     auth: state,
   });
 
-  store.bind(DDev-BOT.ev);
+  store.bind(A17.ev);
 
-  DDev-BOT.ev.on("messages.upsert", async (chatUpdate) => {
+  A17.ev.on("messages.upsert", async (chatUpdate) => {
     try {
       mek = chatUpdate.messages[0];
       if (!mek.message) return;
@@ -81,44 +81,62 @@ async function startDDev-BOT() {
           ? mek.message.ephemeralMessage.message
           : mek.message;
       if (mek.key && mek.key.remoteJid === "status@broadcast") return;
-      if (!DDev-BOT.public && !mek.key.fromMe && chatUpdate.type === "notify")
+      if (!A17.public && !mek.key.fromMe && chatUpdate.type === "notify")
         return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
-      m = smsg(DDev-BOT, mek, store);
-      require("./Core")(DDev-BOT, m, chatUpdate, store);
+      m = smsg(A17, mek, store);
+      require("./Core")(A17, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
   });
 
 
+  /* 
+ A17.ev.on('groups.update', async pea => {
+     
+        try {     
+        ppgc = await A17.profilePictureUrl(pea[0].id, 'image')
+        } catch {
+        ppgc = 'https://wallpapercave.com/wp/wp10524580.jpg'
+        }
+        let wm_fatih = { url : ppgc }
+        if (pea[0].announce == true) {
+        A17.send5ButImg(pea[0].id, `Grop has been *Closed!* Only *Admins* can send Messages!`, `${BotName}`, wm_fatih, [])
+        } else if(pea[0].announce == false) {
+        A17.send5ButImg(pea[0].id, `Grop has been *Opened!* Now *Everyone* can send Messages!`, `${BotName}`, wm_fatih, [])
+        } else {
+        A17.send5ButImg(pea[0].id, `Group Subject has been updated to *${pea[0].subject}*`, `${BotName}`, wm_fatih, [])
+      }
+     })
+ */
 
-     DDev-BOT.ev.on('groups.update', async pea => {
+     A17.ev.on('groups.update', async pea => {
       //console.log(pea)
       // Get Profile Picture Group
       try {
-        ppgc = await DDev-BOT.profilePictureUrl(pea[0].id, 'image')
+        ppgc = await A17.profilePictureUrl(pea[0].id, 'image')
       } catch {
         ppgc = 'https://images2.alphacoders.com/882/882819.jpg'
       }
       let wm_fatih = { url: ppgc }
       if (pea[0].announce == true) {
-        //DDev-BOT.send5ButImg(pea[0].id, `Grop has been *Closed!* Only *Admins* can send Messages!`, `DDev-BOT Bot`, wm_fatih, [])
+        //A17.send5ButImg(pea[0].id, `Grop has been *Closed!* Only *Admins* can send Messages!`, `A17 Bot`, wm_fatih, [])
   
-        DDev-BOT.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Closed!* Only *Admins* can send Messages!' })
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Closed!* Only *Admins* can send Messages!' })
       } else if (pea[0].announce == false) {
-        // DDev-BOT.send5ButImg(pea[0].id, `Grop has been *Opened!* Now *Everyone* can send Messages!`, `DDev-BOT Bot`, wm_fatih, [])
-        DDev-BOT.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Opened!* Now *Everyone* can send Messages!' })
+        // A17.send5ButImg(pea[0].id, `Grop has been *Opened!* Now *Everyone* can send Messages!`, `A17 Bot`, wm_fatih, [])
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Opened!* Now *Everyone* can send Messages!' })
       } else if (pea[0].restrict == true) {
-        //DDev-BOT.send5ButImg(pea[0].id, `Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !`, `DDev-BOT Bot`, wm_fatih, [])
-        DDev-BOT.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !' })
+        //A17.send5ButImg(pea[0].id, `Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !`, `A17 Bot`, wm_fatih, [])
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !' })
       } else if (pea[0].restrict == false) {
-        //DDev-BOT.send5ButImg(pea[0].id, `Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !`, `DDev-BOT Bot`, wm_fatih, [])
-        DDev-BOT.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !' })
+        //A17.send5ButImg(pea[0].id, `Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !`, `A17 Bot`, wm_fatih, [])
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !' })
       } else {
-        //DDev-BOT.send5ButImg(pea[0].id, `Group Subject has been uhanged To:\n\n*${pea[0].subject}*`, `DDev-BOT Bot`, wm_fatih, [])
-        DDev-BOTtextddfq = `Group Subject has been updated To:\n\n*${pea[0].subject}*`
-        DDev-BOT.sendMessage(pea[0].id, { image: wm_fatih, caption: DDev-BOTtextddfq })
+        //A17.send5ButImg(pea[0].id, `Group Subject has been uhanged To:\n\n*${pea[0].subject}*`, `A17 Bot`, wm_fatih, [])
+        A17textddfq = `Group Subject has been updated To:\n\n*${pea[0].subject}*`
+        A17.sendMessage(pea[0].id, { image: wm_fatih, caption: A17textddfq })
       }
     })
   
@@ -130,8 +148,80 @@ async function startDDev-BOT() {
   
 
     //Group event on off
+    
+  /* 
+  
+    A17.ev.on('group-participants.update', async (anu) => {
+      console.log(anu)
+  
+      try {
+        let metadata = await A17.groupMetadata(anu.id)
+        let participants = anu.participants
+        for (let num of participants) {
+  
+          try {
+            ppuser = await A17.profilePictureUrl(num, 'image')
+          } catch {
+            ppuser = 'https://images6.alphacoders.com/690/690121.jpg'
+          }
+  
+          try {
+            ppgroup = await A17.profilePictureUrl(anu.id, 'image')
+          } catch {
+            ppgroup = 'https://telegra.ph/file/4cc2712eee93c105f6739.jpg'
+          }
+  
+          let targetname = await A17.getName(num)
+          grpmembernum = metadata.participants.length
+  
+  
+          if (anu.action == 'add') {
+            let WAuserName = num
+            A17text = `
+  Hello @${WAuserName.split("@")[0]},
+  
+  I am *A17 Bot*, Welcome to ${metadata.subject}.
+  
+  *Group Description:*
+  ${metadata.desc}
+  `
+  
+            let buttonMessage = {
+              image: await getBuffer(ppgroup),
+              mentions: [num],
+              caption: A17text,
+              footer: `${global.BotName}`,
+              headerType: 4,
+            }
+            A17.sendMessage(anu.id, buttonMessage)
+          } else if (anu.action == 'remove') {
+            let WAuserName = num
+            A17text = `
+  Okay Bye 👋, @${WAuserName.split("@")[0]},
+  
+  I hope you will come back soon, but You will be missed!
+  `
+  
+            let buttonMessage = {
+              image: await getBuffer(ppuser),
+              mentions: [num],
+              caption: A17text,
+              footer: `${global.BotName}`,
+              headerType: 4,
+  
+            }
+            A17.sendMessage(anu.id, buttonMessage)
+          }
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    });
+  
+*/
 
-  DDev-BOT.decodeJid = (jid) => {
+
+  A17.decodeJid = (jid) => {
     if (!jid) return jid;
     if (/:\d+@/gi.test(jid)) {
       let decode = jidDecode(jid) || {};
@@ -142,22 +232,22 @@ async function startDDev-BOT() {
     } else return jid;
   };
 
-  DDev-BOT.ev.on("contacts.update", (update) => {
+  A17.ev.on("contacts.update", (update) => {
     for (let contact of update) {
-      let id = DDev-BOT.decodeJid(contact.id);
+      let id = A17.decodeJid(contact.id);
       if (store && store.contacts)
         store.contacts[id] = { id, name: contact.notify };
     }
   });
 
-  DDev-BOT.getName = (jid, withoutContact = false) => {
-    id = DDev-BOT.decodeJid(jid);
-    withoutContact = DDev-BOT.withoutContact || withoutContact;
+  A17.getName = (jid, withoutContact = false) => {
+    id = A17.decodeJid(jid);
+    withoutContact = A17.withoutContact || withoutContact;
     let v;
     if (id.endsWith("@g.us"))
       return new Promise(async (resolve) => {
         v = store.contacts[id] || {};
-        if (!(v.name || v.subject)) v = DDev-BOT.groupMetadata(id) || {};
+        if (!(v.name || v.subject)) v = A17.groupMetadata(id) || {};
         resolve(
           v.name ||
             v.subject ||
@@ -173,8 +263,8 @@ async function startDDev-BOT() {
               id,
               name: "WhatsApp",
             }
-          : id === DDev-BOT.decodeJid(DDev-BOT.user.id)
-          ? DDev-BOT.user
+          : id === A17.decodeJid(A17.user.id)
+          ? A17.user
           : store.contacts[id] || {};
     return (
       (withoutContact ? "" : v.name) ||
@@ -186,12 +276,12 @@ async function startDDev-BOT() {
     );
   };
 
-  DDev-BOT.sendContact = async (jid, kon, quoted = "", opts = {}) => {
+  A17.sendContact = async (jid, kon, quoted = "", opts = {}) => {
     let list = [];
     for (let i of kon) {
       list.push({
-        displayName: await DDev-BOT.getName(i + "@s.whatsapp.net"),
-        vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await DDev-BOT.getName(
+        displayName: await A17.getName(i + "@s.whatsapp.net"),
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await A17.getName(
           i + "@s.whatsapp.net"
         )}\nFN:${
           global.OwnerName
@@ -204,7 +294,7 @@ async function startDDev-BOT() {
         };;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
       });
     }
-    DDev-BOT.sendMessage(
+    A17.sendMessage(
       jid,
       {
         contacts: { displayName: `${list.length} Contact`, contacts: list },
@@ -214,8 +304,8 @@ async function startDDev-BOT() {
     );
   };
 
-  DDev-BOT.setStatus = (status) => {
-    DDev-BOT.query({
+  A17.setStatus = (status) => {
+    A17.query({
       tag: "iq",
       attrs: {
         to: "@s.whatsapp.net",
@@ -233,11 +323,11 @@ async function startDDev-BOT() {
     return status;
   };
 
-  DDev-BOT.public = true;
+  A17.public = true;
 
-  DDev-BOT.serializeM = (m) => smsg(DDev-BOT, m, store);
+  A17.serializeM = (m) => smsg(A17, m, store);
 
-  DDev-BOT.ev.on("connection.update", async (update) => {
+  A17.ev.on("connection.update", async (update) => {
     const { connection, lastDisconnect } = update;
     if (connection === "close") {
       let reason = lastDisconnect.error
@@ -248,10 +338,10 @@ async function startDDev-BOT() {
         process.exit();
       } else if (reason === DisconnectReason.connectionClosed) {
         console.log("Connection closed, reconnecting....");
-        startDDev-BOT();
+        startA17();
       } else if (reason === DisconnectReason.connectionLost) {
         console.log("Connection Lost from Server, reconnecting...");
-        startDDev-BOT();
+        startA17();
       } else if (reason === DisconnectReason.connectionReplaced) {
         console.log(
           "Connection Replaced, Another New Session Opened, Please Close Current Session First"
@@ -262,10 +352,10 @@ async function startDDev-BOT() {
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
-        startDDev-BOT();
+        startA17();
       } else if (reason === DisconnectReason.timedOut) {
         console.log("Connection TimedOut, Reconnecting...");
-        startDDev-BOT();
+        startA17();
       } else {
         console.log(`Unknown DisconnectReason: ${reason}|${connection}`);
       }
@@ -273,9 +363,19 @@ async function startDDev-BOT() {
     //console.log('Connected...', update)
   });
 
-  DDev-BOT.ev.on("creds.update", saveCreds);
+  A17.ev.on("creds.update", saveCreds);
 
-  DDev-BOT.send5ButImg = async (
+  /** Send Button 5 Images
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} footer
+   * @param {*} image
+   * @param [*] button
+   * @param {*} options
+   * @returns
+   */
+  A17.send5ButImg = async (
     jid,
     text = "",
     footer = "",
@@ -286,7 +386,7 @@ async function startDDev-BOT() {
   ) => {
     let message = await prepareWAMessageMedia(
       { image: img, jpegThumbnail: thumb },
-      { upload: DDev-BOT.waUploadToServer }
+      { upload: A17.waUploadToServer }
     );
     var template = generateWAMessageFromContent(
       m.chat,
@@ -302,11 +402,19 @@ async function startDDev-BOT() {
       }),
       options
     );
-    DDev-BOT.relayMessage(jid, template.message, { messageId: template.key.id });
+    A17.relayMessage(jid, template.message, { messageId: template.key.id });
   };
 
-  
-  DDev-BOT.sendButtonText = (
+  /**
+   *
+   * @param {*} jid
+   * @param {*} buttons
+   * @param {*} caption
+   * @param {*} footer
+   * @param {*} quoted
+   * @param {*} options
+   */
+  A17.sendButtonText = (
     jid,
     buttons = [],
     text,
@@ -321,14 +429,30 @@ async function startDDev-BOT() {
       headerType: 2,
       ...options,
     };
-    DDev-BOT.sendMessage(jid, buttonMessage, { quoted, ...options });
+    A17.sendMessage(jid, buttonMessage, { quoted, ...options });
   };
 
-    DDev-BOT.sendText = (jid, text, quoted = "", options) =>
-    DDev-BOT.sendMessage(jid, { text: text, ...options }, { quoted });
+  /**
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendText = (jid, text, quoted = "", options) =>
+    A17.sendMessage(jid, { text: text, ...options }, { quoted });
 
-  
-  DDev-BOT.sendImage = async (jid, path, caption = "", quoted = "", options) => {
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} caption
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendImage = async (jid, path, caption = "", quoted = "", options) => {
     let buffer = Buffer.isBuffer(path)
       ? path
       : /^data:.*?\/.*?;base64,/i.test(path)
@@ -338,15 +462,23 @@ async function startDDev-BOT() {
       : fs.existsSync(path)
       ? fs.readFileSync(path)
       : Buffer.alloc(0);
-    return await DDev-BOT.sendMessage(
+    return await A17.sendMessage(
       jid,
       { image: buffer, caption: caption, ...options },
       { quoted }
     );
   };
 
-  
-  DDev-BOT.sendVideo = async (
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} caption
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendVideo = async (
     jid,
     path,
     caption = "",
@@ -363,15 +495,23 @@ async function startDDev-BOT() {
       : fs.existsSync(path)
       ? fs.readFileSync(path)
       : Buffer.alloc(0);
-    return await DDev-BOT.sendMessage(
+    return await A17.sendMessage(
       jid,
       { video: buffer, caption: caption, gifPlayback: gif, ...options },
       { quoted }
     );
   };
 
-  
-  DDev-BOT.sendAudio = async (jid, path, quoted = "", ptt = false, options) => {
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} mime
+   * @param {*} options
+   * @returns
+   */
+  A17.sendAudio = async (jid, path, quoted = "", ptt = false, options) => {
     let buffer = Buffer.isBuffer(path)
       ? path
       : /^data:.*?\/.*?;base64,/i.test(path)
@@ -381,16 +521,23 @@ async function startDDev-BOT() {
       : fs.existsSync(path)
       ? fs.readFileSync(path)
       : Buffer.alloc(0);
-    return await DDev-BOT.sendMessage(
+    return await A17.sendMessage(
       jid,
       { audio: buffer, ptt: ptt, ...options },
       { quoted }
     );
   };
 
-  
-  DDev-BOT.sendTextWithMentions = async (jid, text, quoted, options = {}) =>
-    DDev-BOT.sendMessage(
+  /**
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendTextWithMentions = async (jid, text, quoted, options = {}) =>
+    A17.sendMessage(
       jid,
       {
         text: text,
@@ -404,8 +551,15 @@ async function startDDev-BOT() {
       { quoted }
     );
 
-  
-  DDev-BOT.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
     let buff = Buffer.isBuffer(path)
       ? path
       : /^data:.*?\/.*?;base64,/i.test(path)
@@ -422,7 +576,7 @@ async function startDDev-BOT() {
       buffer = await imageToWebp(buff);
     }
 
-    await DDev-BOT.sendMessage(
+    await A17.sendMessage(
       jid,
       { sticker: { url: buffer }, ...options },
       { quoted }
@@ -430,8 +584,15 @@ async function startDDev-BOT() {
     return buffer;
   };
 
-  
-  DDev-BOT.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
     let buff = Buffer.isBuffer(path)
       ? path
       : /^data:.*?\/.*?;base64,/i.test(path)
@@ -448,14 +609,14 @@ async function startDDev-BOT() {
       buffer = await videoToWebp(buff);
     }
 
-    await DDev-BOT.sendMessage(
+    await A17.sendMessage(
       jid,
       { sticker: { url: buffer }, ...options },
       { quoted }
     );
     return buffer;
   };
-  DDev-BOT.sendMedia = async (
+  A17.sendMedia = async (
     jid,
     path,
     fileName = "",
@@ -463,7 +624,7 @@ async function startDDev-BOT() {
     quoted = "",
     options = {}
   ) => {
-    let types = await DDev-BOT.getFile(path, true);
+    let types = await A17.getFile(path, true);
     let { mime, ext, res, data, filename } = types;
     if ((res && res.status !== 200) || file.length <= 65536) {
       try {
@@ -491,15 +652,21 @@ async function startDDev-BOT() {
     else if (/video/.test(mime)) type = "video";
     else if (/audio/.test(mime)) type = "audio";
     else type = "document";
-    await DDev-BOT.sendMessage(
+    await A17.sendMessage(
       jid,
       { [type]: { url: pathFile }, caption, mimetype, fileName, ...options },
       { quoted, ...options }
     );
     return fs.promises.unlink(pathFile);
   };
-  
-  DDev-BOT.downloadAndSaveMediaMessage = async (
+  /**
+   *
+   * @param {*} message
+   * @param {*} filename
+   * @param {*} attachExtension
+   * @returns
+   */
+  A17.downloadAndSaveMediaMessage = async (
     message,
     filename,
     attachExtension = true
@@ -521,7 +688,7 @@ async function startDDev-BOT() {
     return trueFileName;
   };
 
-  DDev-BOT.downloadMediaMessage = async (message) => {
+  A17.downloadMediaMessage = async (message) => {
     let mime = (message.msg || message).mimetype || "";
     let messageType = message.mtype
       ? message.mtype.replace(/Message/gi, "")
@@ -535,8 +702,15 @@ async function startDDev-BOT() {
     return buffer;
   };
 
-  
-  DDev-BOT.copyNForward = async (
+  /**
+   *
+   * @param {*} jid
+   * @param {*} message
+   * @param {*} forceForward
+   * @param {*} options
+   * @returns
+   */
+  A17.copyNForward = async (
     jid,
     message,
     forceForward = false,
@@ -587,13 +761,13 @@ async function startDDev-BOT() {
           }
         : {}
     );
-    await DDev-BOT.relayMessage(jid, waMessage.message, {
+    await A17.relayMessage(jid, waMessage.message, {
       messageId: waMessage.key.id,
     });
     return waMessage;
   };
 
-  DDev-BOT.sendListMsg = (
+  A17.sendListMsg = (
     jid,
     text = "",
     footer = "",
@@ -610,14 +784,14 @@ async function startDDev-BOT() {
       buttonText: butText,
       sections,
     };
-    DDev-BOT.sendMessage(jid, listMes, { quoted: quoted });
+    A17.sendMessage(jid, listMes, { quoted: quoted });
   };
 
-  DDev-BOT.cMod = (
+  A17.cMod = (
     jid,
     copy,
     text = "",
-    sender = DDev-BOT.user.id,
+    sender = A17.user.id,
     options = {}
   ) => {
     //let copy = message.toJSON()
@@ -647,13 +821,17 @@ async function startDDev-BOT() {
     else if (copy.key.remoteJid.includes("@broadcast"))
       sender = sender || copy.key.remoteJid;
     copy.key.remoteJid = jid;
-    copy.key.fromMe = sender === DDev-BOT.user.id;
+    copy.key.fromMe = sender === A17.user.id;
 
     return proto.WebMessageInfo.fromObject(copy);
   };
 
-  
-  DDev-BOT.getFile = async (PATH, save) => {
+  /**
+   *
+   * @param {*} path
+   * @returns
+   */
+  A17.getFile = async (PATH, save) => {
     let res;
     let data = Buffer.isBuffer(PATH)
       ? PATH
@@ -685,7 +863,7 @@ async function startDDev-BOT() {
     };
   };
 
-  DDev-BOT.send5ButGif = async (
+  A17.send5ButGif = async (
     jid,
     text = "",
     footer = "",
@@ -695,7 +873,7 @@ async function startDDev-BOT() {
   ) => {
     let message = await prepareWAMessageMedia(
       { video: gif, gifPlayback: true },
-      { upload: DDev-BOT.waUploadToServer }
+      { upload: A17.waUploadToServer }
     );
     var template = generateWAMessageFromContent(
       jid,
@@ -711,10 +889,10 @@ async function startDDev-BOT() {
       }),
       options
     );
-    DDev-BOT.relayMessage(jid, template.message, { messageId: template.key.id });
+    A17.relayMessage(jid, template.message, { messageId: template.key.id });
   };
 
-  DDev-BOT.send5ButVid = async (
+  A17.send5ButVid = async (
     jid,
     text = "",
     footer = "",
@@ -724,7 +902,7 @@ async function startDDev-BOT() {
   ) => {
     let message = await prepareWAMessageMedia(
       { video: vid },
-      { upload: DDev-BOT.waUploadToServer }
+      { upload: A17.waUploadToServer }
     );
     var template = generateWAMessageFromContent(
       jid,
@@ -740,21 +918,21 @@ async function startDDev-BOT() {
       }),
       options
     );
-    DDev-BOT.relayMessage(jid, template.message, { messageId: template.key.id });
+    A17.relayMessage(jid, template.message, { messageId: template.key.id });
   };
   //send5butmsg
-  DDev-BOT.send5ButMsg = (jid, text = "", footer = "", but = []) => {
+  A17.send5ButMsg = (jid, text = "", footer = "", but = []) => {
     let templateButtons = but;
     var templateMessage = {
       text: text,
       footer: footer,
       templateButtons: templateButtons,
     };
-    DDev-BOT.sendMessage(jid, templateMessage);
+    A17.sendMessage(jid, templateMessage);
   };
 
-  DDev-BOT.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
-    let types = await DDev-BOT.getFile(PATH, true);
+  A17.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
+    let types = await A17.getFile(PATH, true);
     let { filename, size, ext, mime, data } = types;
     let type = "",
       mimetype = mime,
@@ -775,23 +953,23 @@ async function startDDev-BOT() {
     else if (/video/.test(mime)) type = "video";
     else if (/audio/.test(mime)) type = "audio";
     else type = "document";
-    await DDev-BOT.sendMessage(
+    await A17.sendMessage(
       jid,
       { [type]: { url: pathFile }, mimetype, fileName, ...options },
       { quoted, ...options }
     );
     return fs.promises.unlink(pathFile);
   };
-  DDev-BOT.parseMention = async (text) => {
+  A17.parseMention = async (text) => {
     return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(
       (v) => v[1] + "@s.whatsapp.net"
     );
   };
 
-  return DDev-BOT;
+  return A17;
 }
 
-startDDev-BOT();
+startA17();
 
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
