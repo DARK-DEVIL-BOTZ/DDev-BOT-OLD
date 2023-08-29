@@ -86,37 +86,37 @@ const {
 //
         if(time2 < "23:59:00"){
 
-        var nowtime = 'Good night 🌌'
+        var nowtime = 'Good Night 🌌'
 
 }
 
         if(time2 < "19:00:00"){
 
-        var nowtime = 'Good afternoon 🌆'
+        var nowtime = 'Good Afternoon 🌆'
 
 }
 
         if(time2 < "18:00:00"){
 
-        var nowtime = 'Good afternoon 🌇'
+        var nowtime = 'Good Afternoon 🌇'
 
 }
 
         if(time2 < "15:00:00"){
 
-        var nowtime = 'Good afternoon 🏞'
+        var nowtime = 'Good Afternoon 🏞'
 
 }
 
         if(time2 < "11:00:00"){
 
-        var nowtime = 'Good morning 🌅'
+        var nowtime = 'Good Morning 🌅'
 
 }
 
         if(time2 < "05:00:00"){
 
-        var nowtime = 'Good night 🏙'
+        var nowtime = 'Good Night 🏙'
 
 }
 
@@ -242,7 +242,7 @@ var yye = tgel.getYear();
 
 
 //
-module.exports = A17 = async (A17, m, chatUpdate, store) => {
+module.exports = DDev-BOT = async (DDev-BOT, m, chatUpdate, store) => {
   try {
     var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
     var budy = (typeof m.text == 'string' ? m.text : '')
@@ -252,7 +252,7 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const command = isCmd ? body.slice(1).trim().split(' ')[0].toLowerCase() : ''
     const args = body.trim().split(/ +/).slice(1)
     const pushname = m.pushName || "No Name"
-    const botNumber = await A17.decodeJid(A17.user.id)
+    const botNumber = await DDev-BOT.decodeJid(DDev-BOT.user.id)
     const isCreator = [botNumber, ...global.Owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
     const itsMe = m.sender == botNumber ? true : false
     const text = args.join(" ")
@@ -261,7 +261,7 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const mime = (quoted.msg || quoted).mimetype || ''
     const isMedia = /image|video|sticker|audio/.test(mime)
     const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
-    const groupMetadata = m.isGroup ? await A17.groupMetadata(m.chat).catch(e => { }) : ''
+    const groupMetadata = m.isGroup ? await DDev-BOT.groupMetadata(m.chat).catch(e => { }) : ''
     const groupName = m.isGroup ? groupMetadata.subject : ''
     const participants = m.isGroup ? await groupMetadata.participants : ''
     const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -295,20 +295,18 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
 
 
     autoreadsw = true;
-    _sewa.expiredCheck(A17, sewa);
+    _sewa.expiredCheck(DDev-BOT, sewa);
 
     const reply = (teks) => {
-            A17.sendMessage(m.chat, { text: teks},{ quoted: m})
+            DDev-BOT.sendMessage(m.chat, { text: teks},{ quoted: m})
         }
         
         const replay = (teks) => {
-            A17.sendMessage(m.chat, { text: teks}, { quoted: m})
+            DDev-BOT.sendMessage(m.chat, { text: teks}, { quoted: m})
         }
 
 
-    /* const replay = (teks) => {
-      A17.sendMessage(m.chat, { text: teks }, { quoted: m }); 
-    }; */
+    
     const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
     const senderNumber = sender.split('@')[0]
 
@@ -337,56 +335,41 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
 
     if (global.autoreadpmngc) {
       if (command) {
-        await A17.sendPresenceUpdate("composing", m.chat);
-        A17.sendReadReceipt(from, m.sender, [m.key.id]);
+        await DDev-BOT.sendPresenceUpdate("composing", m.chat);
+        DDev-BOT.sendReadReceipt(from, m.sender, [m.key.id]);
       }
     }
 
 
 
-//
-//   if (global.autoReadGc) {
-//   if (m.isGroup) { 
-//       A17.sendReadReceipt(m.chat, m.sender, [m.key.id]);
-//   }
-// }
-
-
     if (global.autoReadAll) {
       if (m.chat) {
-        A17.sendReadReceipt(m.chat, m.sender, [m.key.id]);
+        DDev-BOT.sendReadReceipt(m.chat, m.sender, [m.key.id]);
       }
     }
 
     if (global.autoRecord) {
       if (m.chat) {
-        A17.sendPresenceUpdate("recording", m.chat);
+        DDev-BOT.sendPresenceUpdate("recording", m.chat);
       }
     }
 
     if (global.autoTyping) {
       if (m.chat) {
-        A17.sendPresenceUpdate("composing", m.chat);
+        DDev-BOT.sendPresenceUpdate("composing", m.chat);
       }
     }
 
     if (global.available) {
       if (m.chat) {
-        A17.sendPresenceUpdate("available", m.chat);
+        DDev-BOT.sendPresenceUpdate("available", m.chat);
       }
     }
 
 
     
     //Dm and Groups Autoreply/Bot chat
-/*
-if (!isCmd && !m.isGroup){
-    const botreply = await axios.get(`http://api.brainshop.ai/get?bid=166512&key=5nz1Ha6nS9Zx1MfT&uid=[uid]&msg=[msg]=[${budy}]`)
-    txt = `${botreply.data.cnt}`
-    m.reply(txt)
-    }    
-    
- */
+
 
 
 
@@ -394,45 +377,9 @@ if (!isCmd && !m.isGroup){
     for (let anju of kaiaudio){
       if (budy === anju){
         result = fs.readFileSync(`./Assets/audio/${anju}.mp3`)
-        A17.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+        DDev-BOT.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
         }
     }
-
-
-
-    //
-    // const hariRaya = new Date("6 1, 2022 00:00:00");
-    // const sekarang = new Date().getTime();
-    // const Selisih = hariRaya - sekarang;
-    // const jhari = Math.floor(Selisih / (1000 * 60 * 60 * 24));
-    // const jjam = Math.floor(
-    //   (Selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    // );
-    // const mmmenit = Math.floor((Selisih % (1000 * 60 * 60)) / (1000 * 60));
-    // const ddetik = Math.floor((Selisih % (1000 * 60)) / 1000);
-    // const ultah = `${jhari}Day ${jjam}Hour ${mmmenit}Minute ${ddetik}Second`;
-
-    // async function hitungmundur(bulan, tanggal) {
-    //   let from = new Date(`${bulan} ${tanggal}, 2022 00:00:00`).getTime();
-    //   let now = Date.now();
-    //   let distance = from - now;
-    //   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    //   let hours = Math.floor(
-    //     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    //   );
-    //   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    //   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    //   return (
-    //     days +
-    //     "Day " +
-    //     hours +
-    //     "Hour " +
-    //     minutes +
-    //     "Minute " +
-    //     seconds +
-    //     "Second"
-    //   );
-    // }
 
 
 
@@ -450,13 +397,9 @@ function updateStatus() {
   const uptimeInSeconds = Math.floor(process.uptime());
   const uptimeFormatted = formatTime(uptimeInSeconds);
 
-  // const status = `
-  // ㅤㅤ〄ㅤㅤ〘 A17 Personal Edition 〙ㅤㅤ〄ㅤㅤㅤㅤ
-  // ㅤㅤㅤ〘ㅤ Auto Uptime: ${uptimeFormatted}ㅤ〙`;
+function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20DDev-BOT\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20A17\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
-
-  A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
+  DDev-BOT.setStatus(status); // Set the status using DDev-BOT.setStatus or your equivalent method
 
   // Update the status randomly within 5 minutes (300000 milliseconds)
   const randomTime = Math.floor(Math.random() * 300000) + 1000; // don't edit.
@@ -468,112 +411,6 @@ updateStatus();
 
             
 
-  //----------------------------------------------------------------------------------------------------------------//
-
-
-
-    //
-    // if (AntiLinkAll)
-    //   var rondonxk = '[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9()@:%_+.~#?&/=]'
-    //   if (budy.includes("https://")) {
-    //     if (!isBotAdmins) return
-    //     bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nLink sent by Admin so no action will be taken!`
-    //     if (isAdmins) return reply(bvl)
-    //     if (m.key.fromMe) return reply(bvl)
-    //     if (isCreator) return reply(bvl)
-    //     kice = m.sender
-    //     await A17.sendMessage(
-    //       from,
-    //       {
-    //         delete: {
-    //           remoteJid: from,
-    //           fromMe: false,
-    //           id: m.id,
-    //           participant: m.sender,
-    //         },
-    //       },
-    //       {
-    //         quoted: m,
-    //       }
-    //     );
-    //   //  await A17.groupParticipantsUpdate(m.chat, [kice], 'remove')
-    //     A17.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected !*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group !*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m })
-    //   } else {
-    //   }
-
-    // if (budy.includes("http://")) {
-    //     if (!isBotAdmins) return
-    //     bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nLink sent by Admin so no action will be taken!`
-    //     if (isAdmins) return reply(bvl)
-    //     if (m.key.fromMe) return reply(bvl)
-    //     if (isCreator) return reply(bvl)
-    //     kice = m.sender
-    //     await A17.sendMessage(
-    //       from,
-    //       {
-    //         delete: {
-    //           remoteJid: from,
-    //           fromMe: false,
-    //           id: m.id,
-    //           participant: m.sender,
-    //         },
-    //       },
-    //       {
-    //         quoted: m,
-    //       }
-    //     );
-    //   //  await A17.groupParticipantsUpdate(m.chat, [kice], 'remove')
-    //     A17.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected !*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group !*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m })
-    //   } else {
-    //   }
-
-
-//     const menulist = `
-//     Konichiwa ${pushname} dear 👋. I am ${global.BotName}, a bot developed by: Kai to take your WhatsApp usage into next level.
-        
-//        「 System Info 」
-    
-//     Speed : ${latensie.toFixed(4)} miliseconds
-//     Up Time : ${runtime(process.uptime())}
-//     Bot Name : ${global.BotName}
-//     Owner Name : ${global.OwnerName}
-//     𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
-//     𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-    
-    
-//        「 User Info 」
-    
-//     User Level: ${levelMenu}
-//     User XP : ${xpMenu} \ ${reqXp}
-//     User Role : ${role}
-    
-    
-//        「 User Bank 」
-    
-//     User Balance : ${uangku}
-//    //Iron : ${getBesi(m.sender)}
-//     Gold : ${getEmas(m.sender)}
-//     Emarald : ${getEmerald(m.sender)}
-//     Potion : ${getPotion(m.sender)}
-    
-    
-//     Type *-menu* or press any button below to start using *${global.BotName}*
-    
-//     ©️ *${global.BotName}* All Rights Reserved by: *Kai*
-//     `
-//         const qtod = m.quoted? "true":"false"
-        
-        
-
-// function pickRandom(list) {
-// return list[Math.floor(list.length * Math.random())]
-// }
-
-
-
-
-
-  /* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ tictactoe ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 
@@ -631,19 +468,12 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 Typed *surrender* to surrender and admited defeat`
   if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
   room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-  if (room.x !== room.o) await A17.sendText(room.x, str, m, { mentions: parseMention(str) } )
-  await A17.sendText(room.o, str, m, { mentions: parseMention(str) } )
+  if (room.x !== room.o) await DDev-BOT.sendText(room.x, str, m, { mentions: parseMention(str) } )
+  await DDev-BOT.sendText(room.o, str, m, { mentions: parseMention(str) } )
   if (isTie || isWin) {
   delete this.game[room.id]
   }
   }
-
-
-
-
-
-
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓ [ Specific reply By #FantoX001 ] ▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 	
@@ -680,7 +510,7 @@ if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smal
 }
 
 
-if (smallinput=='a17') {
+if (smallinput=='DDev-BOT') {
     reply ('Yes I am Alive 🫂')
 }
 
@@ -732,33 +562,28 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
       case 'sc': case 'script': case 'sourcecode': {
         if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
-    A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
+    DDev-BOT.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
     let { data } = await axios.get('https://api.github.com/repos/Kai0071/A17');
-    teks = `*A17 Script*\n\n*Total Stars*: ${data.stargazers_count}⭐\n*Total Forks*: ${data.forks_count} forks\n*GitHub*: https://github.com/Kai0071/A17\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
-  /*  let buttons = [
-    {buttonId: `${prefix}owner`, buttonText: {displayText: '🍁 DEVELOPER 🍁'}, type: 1}
-    ] */
+    teks = `*DDev-BOT Script*\n\n*Total Stars*: ${data.stargazers_count}⭐\n*Total Forks*: ${data.forks_count} forks\n*GitHub*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
+  
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
-   /* footer: `${BotName}`,
-    buttons: buttons,
-    headerType: 4, */
     contextInfo:{externalAdReply:{
-    title:"Powered by Kai",
+    title:"Powered by DARK DEVIL",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
     //mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
     //sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
-    mediaUrl: 'github.com/Kai0071/A17',
-    sourceUrl: "github.com/Kai0071/A17"
+    mediaUrl: 'github.com/DARK-DEVIL-BOTZ/DDev-BOT',
+    sourceUrl: "github.com/DARK-DEVIL-BOTZ/DDev-BOT"
     }}
 
     }
-    A17.sendMessage(m.chat, buttonMessage, { quoted: m })
+    DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m })
     }
     break;
 
@@ -767,7 +592,7 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
       if (isBan) return reply(mess.banned); 			
       if (isBanChat) return reply(mess.bangc);
 
-      A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
+      DDev-BOT.sendMessage(from, { react: { text: "💫" , key: m.key }})
     reply(`⚙ *My developer's group:* ⚙ http://gg.gg/12ewfs`)
     }
     break;
@@ -777,8 +602,8 @@ case 'repo': case 'botrepo': {
   if (isBan) return reply(mess.banned); 			
   if (isBanChat) return reply(mess.bangc);
   
-  A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ My Source Code is </> - https://github.com/Kai0071/A17`)
+  DDev-BOT.sendMessage(from, { react: { text: "💫" , key: m.key }})
+    reply(`⚙ My Source Code is </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
     }
     break;
 
@@ -787,8 +612,8 @@ case 'repo': case 'botrepo': {
       if (isBan) return reply(mess.banned); 			
       if (isBanChat) return reply(mess.bangc);
       
-      A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-      A17.sendContact(m.chat, global.Owner, m)
+      DDev-BOT.sendMessage(from, { react: { text: "💫" , key: m.key }})
+      DDev-BOT.sendContact(m.chat, global.Owner, m)
     }
       break;
 
@@ -798,13 +623,13 @@ case 'repo': case 'botrepo': {
         if (!isCreator) return reply(mess.owner)
         if (isBanChat) return reply(mess.bangc)
         if (!isCreator) return reply(mess.owner)
-        A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+        DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
               if (!quoted) return `*Send/Reply Image With Caption* ${prefix + command}`
               if (!/image/.test(mime)) return `*Send/Reply Image With Caption* ${prefix + command}`
               if (/webp/.test(mime)) return `*Send/Reply Image With Caption* ${prefix + command}`
-              let media = await A17.downloadAndSaveMediaMessage(quoted)
-              await A17.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+              let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
+              await DDev-BOT.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
               m.reply(mess.jobdone)
               }
               break;
@@ -812,12 +637,12 @@ case 'repo': case 'botrepo': {
 
       //
       case 'restart':
-        await A17.sendMessage(from, { react: { text: "⚙", key: m.key } });
+        await DDev-BOT.sendMessage(from, { react: { text: "⚙", key: m.key } });
       if (!isCreator) return replay(mess.botowner)
     
-      await A17.sendMessage(from, { text: mess.waiting });
-      await A17.sendMessage(from, { react: { text: "✅", key: m.key } });
-     await A17.sendMessage(from, { text: 'Restarting Success!' });
+      await DDev-BOT.sendMessage(from, { text: mess.waiting });
+      await DDev-BOT.sendMessage(from, { react: { text: "✅", key: m.key } });
+     await DDev-BOT.sendMessage(from, { text: 'Restarting Success!' });
      
      // Delay the shutdown by 5 seconds using sleep function
       //await sleep(5000);
@@ -825,8 +650,8 @@ case 'repo': case 'botrepo': {
       // Use PM2 to restart the script
       pm2.restart('index', (err) => {
         if (err) {
-          A17.sendMessage(from, { react: { text: "❌", key: m.key } });
-          A17.sendMessage(from, { text: 'Restarting Failed!'});
+          DDev-BOT.sendMessage(from, { react: { text: "❌", key: m.key } });
+          DDev-BOT.sendMessage(from, { text: 'Restarting Failed!'});
         } else {
           return;
         }
@@ -839,7 +664,7 @@ case 'repo': case 'botrepo': {
         if (!isCreator) return reply(mess.owner)
         if (isBanChat) return reply(mess.bangc)
         if (!isCreator) return reply(mess.owner)
-        await A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
+        await DDev-BOT.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
         reply(`Okey bye time to sleep!`)
         await sleep(5000)
@@ -851,11 +676,11 @@ case 'repo': case 'botrepo': {
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
         if (!isCreator) return reply(mess.owner)
-        A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+        DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
         
-        A17.public = true
+        DDev-BOT.public = true
         reply('I am now Publicly accessable!')
-        A17.setStatus(`Mode : Public`)
+        DDev-BOT.setStatus(`Mode : Public`)
         }
         break;
         
@@ -865,10 +690,10 @@ case 'repo': case 'botrepo': {
         if (isBanChat) return reply(mess.bangc)
         if (!isCreator) return reply(mess.botowner)
         
-        A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-        A17.public = false
+        DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+        DDev-BOT.public = false
         reply('Only Owner can use me now!')
-        A17.setStatus(`Mode : Self`)
+        DDev-BOT.setStatus(`Mode : Self`)
         }
         break;
 
@@ -906,7 +731,7 @@ case 'repo': case 'botrepo': {
         oldd = performance.now()
         respon = `
 Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-» A17's Server Info 
+» DDev-BOT's Server Info 
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
@@ -924,7 +749,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
       if (isBan) return reply(mess.banned)	 			
       if (isBanChat) return reply(mess.bangc)
       if (!isCreator) return replay(mess.botowner)
-      A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+      DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
       if (!args[0]) return replay(`Select add or del (add to ban, del to unban), For Example: Reply *${prefix}ban add* to the user you want to ban.`)
       if (args[1]) {
       orgnye = args[1] + "@s.whatsapp.net"
@@ -959,7 +784,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
     case 'ttc': case 'ttt': case 'tictactoe': {
       if (isBan) return reply(mess.ban)	 			
   if (isBanChat) return reply(mess.banChat)
-  A17.sendMessage(from, { react: { text: "🎮" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🎮" , key: m.key }})
 
       let TicTacToe = require("./lib/tictactoe")
       this.game = this.game ? this.game : {}
@@ -991,8 +816,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
   ${arr.slice(6).join('')}
   Waiting @${room.game.currentTurn.split('@')[0]}
   Type *surrender* to surrender and admit defeat...`
-      if (room.x !== room.o) await A17.sendText(room.x, str, m, { mentions: parseMention(str) } )
-      await   A17.sendText(room.o, str, m, { mentions: parseMention(str) } )
+      if (room.x !== room.o) await DDev-BOT.sendText(room.x, str, m, { mentions: parseMention(str) } )
+      await   DDev-BOT.sendText(room.o, str, m, { mentions: parseMention(str) } )
       } else {
       room = {
       id: 'tictactoe-' + (+new Date),
@@ -1018,8 +843,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
         if (text.length > 300) return reply(`Are you trying to send virus!`)
         const txtmsg = `*📮 Report Message*\n\n*Sender ➛* wa.me/${m.sender.split("@")[0]}\n\n*Group Name ➛* ${groupName}\n\n*Message ➛*  ${text}`
       for (let mod of global.Owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != '6297175943@s.whatsapp.net'))
-      await A17.sendMessage(`${mod}`, {text: `${txtmsg}`},  { quoted: m })
-      await A17.sendMessage(`120363026915700516@g.us`, {text: `${txtmsg}`, mentions: groupAdmins}, { quoted: m })
+      await DDev-BOT.sendMessage(`${mod}`, {text: `${txtmsg}`},  { quoted: m })
+      await DDev-BOT.sendMessage(`120363026915700516@g.us`, {text: `${txtmsg}`, mentions: groupAdmins}, { quoted: m })
         replay(`*✅ Your Report has been submitted Successfully to Support group & Owner*\n\n*You will get response shortly ♥️*`); 
      }
      break;
@@ -1030,7 +855,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
       if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
             if (isBan) return reply(mess.banned)	 			
             if (isBanChat) return reply(mess.bangc)
-          A17.sendMessage(from, { react: { text: "💰" , key: m.key }})  
+          DDev-BOT.sendMessage(from, { react: { text: "💰" , key: m.key }})  
             let user = m.sender
       const cara = "cara"
       const daily  = await eco.daily(user, cara, 999); //give 999 for daily, can be changed
@@ -1046,7 +871,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
       if (isBan) return reply(mess.banned)	 			
 
       if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "💳" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "💳" , key: m.key }})
 
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 
@@ -1067,7 +892,7 @@ case'bank':  case 'levee': {
 	if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)	
-A17.sendMessage(from, { react: { text: "💳" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "💳" , key: m.key }})
 		
     const user = m.sender
     const cara = "cara"
@@ -1078,7 +903,7 @@ break;
 		
 		
 		case'capacity':  case 'bankupgrade': {
-			A17.sendMessage(from, { react: { text: "💲" , key: m.key }})
+			DDev-BOT.sendMessage(from, { react: { text: "💲" , key: m.key }})
 		
 	//if (!isCreator) return replay(mess.botowner)
 	if (!text) return replay(`💴 Bank-capacity 💳\n\n1 | 1000 sp = 💎100\n\n2 | 10000 sp = 💎1000\n\n3 | 100000 sp = 💎10000\n\nExample- ${prefix}capacity 1 OR ${prefix}bankupgrade 1000`)	
@@ -1114,7 +939,7 @@ break;
           
 	case'deposit':  case 'pay-in': {
     if (isBan) return reply(mess.banned)
-A17.sendMessage(from, { react: { text: "📥" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "📥" , key: m.key }})
 
     if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 if (!text) return replay("Provide the amount you want to deposit!");
@@ -1131,7 +956,7 @@ const cara = 'cara'
       case'withdraw':  case 'withdrawal': {
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-    A17.sendMessage(from, { react: { text: "💸" , key: m.key }})
+    DDev-BOT.sendMessage(from, { react: { text: "💸" , key: m.key }})
         
         if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
           const user = m.sender
@@ -1148,7 +973,7 @@ const cara = 'cara'
 
   
   case'rob':  case 'attack': {
-		A17.sendMessage(from, { react: { text: "🔪" , key: m.key }})
+		DDev-BOT.sendMessage(from, { react: { text: "🔪" , key: m.key }})
 	if (!text) return replay(`Use ${prefix}rob @user`)
 	const target =
 			             m.quoted && m.mentionedJid.length === 0
@@ -1179,7 +1004,7 @@ const cara = 'cara'
                 case'transfer':  case 'give': {
                   if (isBan) return reply(mess.banned)	 			
                   if (isBanChat) return reply(mess.bangc) 
-            A17.sendMessage(from, { react: { text: "🗿" , key: m.key }})
+            DDev-BOT.sendMessage(from, { react: { text: "🗿" , key: m.key }})
             let value = text.trim().split(" ");
             if (value[0] === "") return replay(`Use ${prefix}transfer 100 @user`);
             const target =
@@ -1221,15 +1046,9 @@ const cara = 'cara'
 
 		
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ GAMBLE ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-		
-
 
 //
 case'gamble':  case 'lottery': {
-  //var response = await A17.groupInviteCode(from)
-  //var link1 = `https://chat.whatsapp.com/${response}`
-  //var link2 = `https://chat.whatsapp.com/BXQaaeg7utI29OI4RbhdIhl`
   var texts = text.trim().split(" ");
   var opp = texts[1];// your value
   var value = texts[0].toLowerCase();
@@ -1274,75 +1093,6 @@ break;
 
 
 	//-----------------Slot----------------------
-/*
-case'slot': case 'spin': {
-       if (isBan) return replay(mess.banned);
-       if (isBanChat) return replay(mess.bangc)
-       if (!m.isGroup) return replay(mess.grouponly)
-       var today = new Date();
-   if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){
-       if (text == 'help') return replay(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 💎100 in your wallet\n\n*3:* If you don't have money in wallet then withdraw from your bank\n\n*4:* If you don't have money in your bank too then use economy features to gain money`)
-       if (text == 'money') return replay(`*1:* Small Win --> +💎20\n\n*2:* Small Lose --> -💎20\n\n*3:* Big Win --> +💎100\n\n*4:* Big Lose --> -💎50\n\n*5:* 🎉 JackPot --> +💎1000`)
-       const fruit1= ["🥥", "🍎", "🍇"]
-       const fruit2 = ["🍎", "🍇", "🥥"]  
-       const fruit3 = ["🍇", "🥥", "🍎"]         
-       const fruit4 = ["🍇", "🍎", "🥥"]
-       const lose = ['*You suck at playing this game*\n\n_--> 🍍-🥥-🍎_', '*Totally out of line*\n\n_--> 🥥-🍎-🍍_', '*Are you a newbie?*\n\n_--> 🍎-🍍-🥥_']
-       const smallLose = ['*You cannot harvest coconut 🥥 in a pineapple 🍍 farm*\n\n_--> 🍍>🥥<🍍_', '*Apples and Coconut are not best Combo*\n\n_--> 🍎>🥥<🍎_', '*Coconuts and Apple are not great deal*\n\n_--> 🥥>🍎<🥥_']
-       const won = ['*You harvested a basket of*\n\n_--> 🍎+🍎+🍎_', '*Impressive, You must be a specialist in plucking coconuts*\n\n_--> 🥥+🥥+🥥_', '*Amazing, you are going to be making pineapple juice for the family*\n\n_--> 🍍+🍍+🍍_']             
-       const near = ['*Wow, you were so close to winning pineapples*\n\n_--> 🍎-🍍+🍍_', '*Hmmm, you were so close to winning Apples*\n\n_--> 🍎+🍎-🍍_']          
-       const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 💎1000*']
-       const user = m.sender
-       const cara = "cara"
-       const k = 100
-       const balance1  = await eco.balance(user, cara)
-       
-       if (k > balance1.wallet) return replay(`You are going to be spinning on your wallet, you need at least 💎100`);
-       const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
-       const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
-       const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
-       const f4 = fruit4[Math.floor(Math.random() * fruit4.length)];
-       const mess1 = lose[Math.floor(Math.random() * lose.length)];
-       const mess2 = won[Math.floor(Math.random() * won.length)];
-       const mess3 = near[Math.floor(Math.random() * near.length)];
-       const mess4 = jack[Math.floor(Math.random() * jack.length)];
-       const mess5 = smallLose[Math.floor(Math.random() * smallLose.length)];
-       
-       if ((f1 !== f2) && f2 !== f3){
-          const deduct1 = await eco.deduct(user, cara, 50);
-                 replay(`${mess1}\n\n*Big Lose -->* _💎50_`)
-       }
-       else if ((f1 == f2) && f2 == f3){
-          const give1 = await eco.give(user, cara, 100); 
-                replay(`${mess2}\n*_Big Win -->* _💎100_`)
-       }
-       else if ((f1 == f2) && f2 !== f3){
-          const give2 = await eco.give(user, cara, 20);
-                replay(`${mess3}\n*Small Win -->* _💎20_`)
-       }
-       else if ((f1 !== f2) && f1 == f3){
-          const deduct2 = await eco.deduct(user, cara, 20);
-                replay(`${mess5}\n\n*Small Lose -->* _💎20_`)
-       }
-       else if ((f1 !== f2) && f2 == f3){
-          const give4 = eco.give(user, cara, 20); 
-                replay(`${mess3}\n\n*Small Win -->* _💎20_`)
-       }
-       else if (((f1 == f2) && f2 == f3) && f3 == f4){
-          const give5 = eco.give(user, cara, 1000);
-               replay(`${mess4}\n\n_🎊 JackPot --> _💎1000_`)
-       }
-       else { 
-               replay(`Do you understand what you are doing?`)
-       }
-    }
-    else{
-           replay(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`)
-    }
-}
-break;
-*/	
-
 
 case'slot': case 'spin': {
   if (isBan) return replay(mess.banned);
@@ -1415,43 +1165,12 @@ break;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
-
-// case 'banchat': case 'bangroup':{
-//   if (isBan) return reply(mess.banned)	 			
-//   if (!isCreator) return replay(mess.botowner)
-//   if (args[0] === "on") {
-//   if (isBanChat) return replay('This Group is Already Banned from using me!')
-//   banchat.push(from)
-//   replay('This Group has been banned from using me!')
-//   var groupe = await A17.groupMetadata(from)
-//   var members = groupe['participants']
-//   var mems = []
-//   members.map(async adm => {
-//   mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-//   })
-//   A17.sendMessage(from, {text: `\`\`\`「 Notice 」\`\`\`\n\nThis group is banned from using bot. So, here nobody can use me anymore!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-//   } else if (args[0] === "off") {
-//   if (!isBanChat) return replay('This Group is Already Banned from using me!')
-//   let off = banchat.indexOf(from)
-//   banchat.splice(off, 1)
-//   replay('This Group has been *unbanned* from using me!')
-//   } else {
-//     let buttonsntnsfw = [
-//     { buttonId: `${prefix}bangroup on`, buttonText: { displayText: 'Ban' }, type: 1 },
-//     { buttonId: `${prefix}bangroup off`, buttonText: { displayText: 'Unban' }, type: 1 }
-//     ]
-//     await A17.sendButtonText(m.chat, buttonsntnsfw, `Please choose any Button below.\n\n *On / Off*`, `${global.BotName }`, m)
-//     }
-//     }
-//     break;
-
 
     case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
-    A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
+    DDev-BOT.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
         reply(` *━━〈 ⚠️ NSFW Menu ⚠️  〉━━*\n\n gifs, hentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
     break;
@@ -1460,7 +1179,7 @@ break;
 case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-        A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
+        DDev-BOT.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
             reply(` *━━〈  ⚡ Reactions ⚡  〉━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break;
@@ -1490,116 +1209,9 @@ case 'limituser': case 'userlimit': case 'limit':
                     for (let i of data) {
                           krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
                           }
-                         A17.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
+                         DDev-BOT.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
           });
           break;
-          
-          
-          // case 'wallpaper': case 'animewallpaper': case 'animewall': {
-          // if (isBan) return reply(mess.banned)	 			
-          // if (isBanChat) return reply(mess.bangc)
-          // if (!args.join(" ")) return reply("Please enter a term to search!")
-          // const { AnimeWallpaper } =require("anime-wallpaper")
-          // const wall = new AnimeWallpaper();
-          // const pages = [1,2,3,4];
-          // const random=pages[Math.floor(Math.random() * pages.length)]
-          //         const wallpaper = await wall .getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-          //         const i = Math.floor(Math.random() * wallpaper.length);
-              
-          // let buttons = [
-          //             {buttonId: `${prefix}wallpaper ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-          //         ]
-          //         let buttonMessage = {
-          //             image: {url:wallpaper[i].image},
-          //             caption: `*Search term:* ${q}`,
-          //             footer: `${BotName}`,
-          //             buttons: buttons,
-          //             headerType: 4
-          //         }
-          //         A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-          //     }
-          //     break;
-
-          
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }});
-
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpaper = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-//   const i = Math.floor(Math.random() * wallpaper.length);
-  
-//   let message = {
-//     image: { url: wallpaper[i].image },
-//     caption: `*Search term:* ${q}`,
-//     footer: `${BotName}`,
-//     headerType: 4
-//   };
-  
-//   A17.sendMessage(m.chat, message, { quoted: m });
-// }
-// break;
-
-
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpapers = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-  
-//   for (let i = 0; i < wallpapers.length; i++) {
-//     let message = {
-//       image: { url: wallpapers[i].image },
-//       caption: `*Search term:* ${q}`,
-//       footer: `${BotName}`,
-//       headerType: 4
-//     };
-//     A17.sendMessage(m.chat, message, { quoted: m });
-//   }
-// }
-// break;
-
-
-// case 'wallpaper':
-// case 'animewallpaper':
-// case 'animewall': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   reply(mess.waiting)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }});
-//   if (!args.join(" ")) return reply("Please enter a term to search!");
-  
-//   const { AnimeWallpaper } = require("anime-wallpaper");
-//   const wall = new AnimeWallpaper();
-//   const pages = [1, 2, 3, 4];
-//   const random = pages[Math.floor(Math.random() * pages.length)];
-//   const wallpapers = await wall.getAnimeWall4({ title: q, type: "sfw", page: pages }).catch(() => null);
-  
-//   for (let i = 0; i < wallpapers.length; i++) {
-//     let message = {
-//       image: { url: wallpapers[i].image },
-//       footer: `${BotName}`,
-//       headerType: 4
-//     };
-//     A17.sendMessage(m.chat, message, { quoted: m });
-//   }
-// }
-// break;
 
 
 case 'wallpaper':
@@ -1608,7 +1220,7 @@ case 'animewall': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
   reply(mess.waiting);
-  A17.sendMessage(from, { react: { text: "🥵", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🥵", key: m.key } });
   if (!args.join(" ")) return reply("Please enter a term to search!");
   
   const { AnimeWallpaper } = require("anime-wallpaper");
@@ -1627,7 +1239,7 @@ case 'animewall': {
       footer: `${BotName}`,
       headerType: 4
     };
-    A17.sendMessage(m.chat, message, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, message, { quoted: m });
   }
 }
 break;
@@ -1650,7 +1262,7 @@ break;
                       buttons: buttons,
                       headerType: 4
                   }
-                  A17.sendMessage(m.chat, buttonMessage, { quoted: m })
+                  DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m })
               }
               break;
           
@@ -1660,7 +1272,7 @@ break;
           if (isBanChat) return reply(mess.bangc)
                      let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
                      reply(mess.waiting)
-                    A17.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
+                    DDev-BOT.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
                     break;
           
           
@@ -1668,16 +1280,10 @@ break;
               let { quotesAnime } = require('./lib/scraper')
                   let anu = await quotesAnime()
                   hasil = anu[Math.floor(Math.random() * anu.length)]
-             /*     let buttons = [
-                      {buttonId: `${prefix}quotesanime`, buttonText: {displayText: '>>'}, type: 1}
-                  ]  */
                   let buttonMessage = {
                       text: `_${hasil.quotes}_\n\nBy '${hasil.karakter}', ${hasil.anime}\n\n- ${hasil.up_at}`,
-                 /*     footer: 'A17',
-                      buttons: buttons,
-                      headerType: 2  */
-                  }
-                  A17.sendMessage(m.chat, buttonMessage, { quoted: m })
+                               }
+                  DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m })
               }
               break;
           
@@ -1702,7 +1308,7 @@ break;
                }
                sections.push(list)   
                }
-            const sendm =  A17.sendMessage(
+            const sendm =  DDev-BOT.sendMessage(
                 from, 
                 {
                  text: "Anime Search",
@@ -1721,7 +1327,7 @@ break;
               case 'groupsetting':{
                   if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
-          A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+          DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
           
                       let sections = []
                       let com = [`group open`,`leveling on`,`antilinkgc on`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`]
@@ -1747,42 +1353,27 @@ break;
                      }
                           sections.push(yy)
                       }
-                      const sendm =  A17.sendMessage(
+                      const sendm =  DDev-BOT.sendMessage(
           from, 
           {
           text: "Group Settings",
-          /* footer: BotName,
-          title: "Set your group settings here...",
-          buttonText: "Click Button", 
-          sections */
           }, { quoted : m }
           )  
           }
           break;   
           
           
-          /*
-          case 'animesearchxxx': case 'anime':{
-              await fetchJson(`https://api.jikan.moe/v4/anime/${q}`)
-              .then((res) => {
-              let txt = `   _Anime Search Engine_ \n\n*Title:* *${res.data.title}*\n*English:* *${res.data.title_english}*\n*Japanese:* *${res.data.title_japanese}*\n*Anime Type:* *${res.data.type}*\n*Adaptation:* *${res.data.source}*\n*Total Episode:* *${res.data.episodes}*\n*Status:* *${res.data.status}*\n*Ongoing:* *${res.data.airing ? 'Yes' : 'No'}*\n*Aired:* *${res.data.aired.string}*\n*Duration:* *${res.data.duration}*\n*Rating:* *${res.data.rating}*\n*Score:* *${res.data.score}*\n*Rank:* *${res.data.rank}*\n*Main Producer:* *${res.data.producers.name}*\n*Studio:* *${res.data.studios[0].name}* `
-              A17.sendMessage(from, { image : { url : res.data.images.jpg.image_url}, caption : txt}, {quoted :m }) 
-              })
-              }
-              break;
-          */              
-
                           
 case 'emojimix': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 if (!q) reply(`*Example :* ${prefix + command} 😊+🌹`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 for (let res of kuntuh.results) {
-let encmedia = await A17.sendImageAsSticker(from, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+let encmedia = await DDev-BOT.sendImageAsSticker(from, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 await fs.unlinkSync(encmedia)
 }
 }
@@ -1800,11 +1391,11 @@ case 'ahegao':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/agegao.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1813,11 +1404,11 @@ case 'ass':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ass.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1826,11 +1417,11 @@ case 'bdsm':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/bdsm.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1839,11 +1430,11 @@ case 'blowjob':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/blowjob.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1852,11 +1443,11 @@ case 'cuckold':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cuckold.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1865,11 +1456,11 @@ case 'cum':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cum.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1878,11 +1469,11 @@ case 'eba':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/eba.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1891,11 +1482,11 @@ case 'ero':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ero.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1904,11 +1495,11 @@ case 'femdom':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/femdom.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1917,11 +1508,11 @@ case 'foot':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/foot.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1930,11 +1521,11 @@ case 'gangbang':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gangbang.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -1950,7 +1541,7 @@ case 'gifs':
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
   reply(mess.waiting)
-  A17.sendMessage(from, { react: { text: "👀" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "👀" , key: m.key }})
 
   var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gifs.json'))
   const rand = nsfwdata[Math.floor(Math.random() * nsfwdata.length)]
@@ -1959,7 +1550,7 @@ case 'gifs':
     
    var fetchedgif = await GIFBufferToVideoBuffer(response)
    
-    await A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true },{quoted:m}).catch(err => {
+    await DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true },{quoted:m}).catch(err => {
   console.log(err);
        })
 
@@ -1974,11 +1565,11 @@ case 'hentaivid': case 'hentaivideo': {
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
 reply(mess.waiting)
-A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 anu = await hentai()
 result912 = anu[Math.floor(Math.random(), anu.length)]
-A17.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
 }
 break;
 
@@ -1988,11 +1579,11 @@ case 'glasses':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/glasses.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2001,11 +1592,11 @@ case 'hentai':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/hentai.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2014,11 +1605,11 @@ case 'jahy':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2027,11 +1618,11 @@ case 'mangansfw':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/manga.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2040,11 +1631,11 @@ case 'masturbation':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/masturbation.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2053,11 +1644,11 @@ case 'milf':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/milf.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2066,11 +1657,11 @@ case 'neko':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2079,11 +1670,11 @@ case 'neko2':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko2.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2092,25 +1683,13 @@ case 'nsfwloli':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/nsfwloli.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
-
-// case 'orgy':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/orgy.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
  
 
 case 'orgy':
@@ -2120,7 +1699,7 @@ case 'orgy':
   if (!AntiNsfw) return reply(mess.nonsfw);
 
   // React to the command message with a specific emoji
-  A17.sendMessage(from, { react: { text: "🥵", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🥵", key: m.key } });
 
   var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/orgy.json'));
   var numberOfPictures = 3; // Change this value if you want to send a different number of pictures
@@ -2148,22 +1727,9 @@ case 'orgy':
 
   // Send the selected pictures one by one
   for (let picture of selectedPictures) {
-    A17.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
   }
   break;
-
-
-// case 'panties':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/panties.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
 
 
 case 'panties':
@@ -2173,7 +1739,7 @@ case 'panties':
   if (!AntiNsfw) return reply(mess.nonsfw);
 
   // React to the command message with a specific emoji
-  A17.sendMessage(from, { react: { text: "🥵", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🥵", key: m.key } });
 
   var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/panties.json'));
   var numberOfPictures = 3; // Change this value if you want to send a different number of pictures
@@ -2201,22 +1767,9 @@ case 'panties':
 
   // Send the selected pictures one by one
   for (let picture of selectedPictures) {
-    A17.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
   }
   break;
-
-
-// case 'pussy':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-//   A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
-
-// var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'))
-// var kairesult = pickRandom(nsfwdata)
-// A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
-// break;
 
 
 case 'pussy':
@@ -2226,7 +1779,7 @@ case 'pussy':
   if (!AntiNsfw) return reply(mess.nonsfw);
 
   // React to the command message with a specific emoji
-  A17.sendMessage(from, { react: { text: "🥵", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🥵", key: m.key } });
 
   var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'));
 
@@ -2251,7 +1804,7 @@ case 'pussy':
 
   // Send the selected pictures one by one
   for (let url of selectedPictures) {
-    A17.sendMessage(m.chat, { caption: mess.success, image: { url: url } }, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: url } }, { quoted: m });
   }
   break;
 
@@ -2261,11 +1814,11 @@ case 'tentacles':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/tentacles.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2274,11 +1827,11 @@ case 'thighs':
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
   if (!AntiNsfw) return reply(mess.nonsfw)
-  A17.sendMessage(from, { react: { text: "🥵" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🥵" , key: m.key }})
 
 var nsfwdata = JSON.parse(fs.readFileSync('./HostMedia/nsfw/thighs.json'))
 var kairesult = pickRandom(nsfwdata)
-A17.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { caption: mess.success, image: { url: kairesult.url } }, { quoted: m })
 break;
 
 
@@ -2295,7 +1848,7 @@ if (m.sender !='916297175943@s.whatsapp.net') {return;}
 if (isBanChat) return reply(mess.bangc)
 if (m.isGroup) reply(mess.privateonly)
 if (!isCreator) return reply(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 const getCase = (cases) => {
 return "case"+`'${cases}'`+fs.readFileSync("Core.js").toString().split('case \''+cases+'\'')[1].split("break;")[0]+"break;"
@@ -2307,28 +1860,17 @@ break;
 case 'emoji': {
  if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 if (!args.join(" ")) return reply('Where is the emoji?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await A17.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Here it is...`}, {quoted:m})
-await A17.sendMessage(from, {text:"reply -s to this image to make sticker"}, {quoted:mese})
+let mese = await DDev-BOT.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Here it is...`}, {quoted:m})
+await DDev-BOT.sendMessage(from, {text:"reply -s to this image to make sticker"}, {quoted:mese})
 })
 }
 break;
 
 
-/*
-case 'delete': case 'del': {
- if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!m.quoted) return
-let { chat, fromMe, id, isBaileys } = m.quoted
-if (!isBaileys) return replay('How can i delete messages of other person? Baka!')
-A17.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-}
-break;
-*/
 
 
 case 'deleteall': case 'delall': case 'delete': case 'del': {
@@ -2336,9 +1878,9 @@ case 'deleteall': case 'delall': case 'delete': case 'del': {
 if (isBanChat) return reply(mess.bangc)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!m.quoted) return reply('Please mention a message baka!')
+if (!m.quoted) return reply('Please mention a message!')
 let { chat, fromMe, id} = m.quoted
 
 const key = {
@@ -2348,7 +1890,7 @@ const key = {
  participant: m.quoted.sender
 }
 
-await A17.sendMessage(m.chat, { delete: key })
+await DDev-BOT.sendMessage(m.chat, { delete: key })
 }
 break;
 
@@ -2360,12 +1902,12 @@ break;
 
 
 case 'ghstalk': case 'githubstalk': case'github': {
-  A17.sendMessage(from, { react: { text: "🔍" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🔍" , key: m.key }})
 
-  if (!q) return replay(`Give me a user name like *${prefix}github Kai0071*`)
+  if (!q) return replay(`Give me a user name like *${prefix}github DARK-DEVIL-BOTZ*`)
 
   gitdata = await githubstalk.githubstalk(`${q}`)
-  A17.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
+  DDev-BOT.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
   `*ㅤㅤㅤ|ㅤㅤㅤGithub Info ㅤㅤㅤ|\*
 
   🚩 Id : ${gitdata.id}
@@ -2382,29 +1924,18 @@ case 'ghstalk': case 'githubstalk': case'github': {
   }
   break;
 
-//
-//🚩 Id : ${gitdata.id}
-//✅ Type : ${gitdata.type}
-//🛡 Admin : ${gitdata.admin}
-//❇ Nodeid : ${gitdata.nodeId}
-// 📰 Blog : ${gitdata.blog}
-//  🔗 Url Profile : ${gitdata.profile_pic}
-// 🔗 Url Github : ${gitdata.url}
-// 🔄 Updated At : ${gitdata.updated_at}
-// 🧩 Created At : ${gitdata.ceated_at}
-
 
 case 'listpc': {
  if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = ` 「  A17's pm user list  」\n\nTotal ${anu.length} users are using A17 in personal chat.`
+let teks = ` 「  DDev-BOT's pm user list  」\n\nTotal ${anu.length} users are using DDev-BOT in personal chat.`
 for (let i of anu) {
 teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
-A17.sendTextWithMentions(m.chat, teks, m)
+DDev-BOT.sendTextWithMentions(m.chat, teks, m)
 }
 break;
 
@@ -2412,12 +1943,12 @@ break;
 case 'listgc': {
  if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = ` 「  A17's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
+let teks = ` 「  DDev-BOT's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
 for (let i of anu) {
-let metadata = await A17.groupMetadata(i)
+let metadata = await DDev-BOT.groupMetadata(i)
 if (metadata.owner === "undefined") {
 loldd = false
 } else {
@@ -2425,13 +1956,13 @@ loldd = metadata.owner
 }
 teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
 }
-A17.sendTextWithMentions(m.chat, teks, m)
+DDev-BOT.sendTextWithMentions(m.chat, teks, m)
 }
 break;
                         
 
 case 'speedtest': case 'speedcheck': {
-  A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   
    m.reply(`Plz Wait ${pushname} Testing Speed... ⚙️`)
    let cp = require('child_process')
@@ -2461,13 +1992,13 @@ case 'status': case 'post': {
   if (messageType === 'imageMessage') {
       const media = await downloadMediaMessage(m,'media',{ },{ logger,reuploadRequest: sock.updateMediaMessage})
       await writeFile('./image.jpeg', media)
-      await A17.sendMessage(botNumber, 'status@broadcast',  { url: './image.jpeg', media}).catch((err) => fs.unlinkSync(media))
+      await DDev-BOT.sendMessage(botNumber, 'status@broadcast',  { url: './image.jpeg', media}).catch((err) => fs.unlinkSync(media))
      replay(`*✨ ${pushname}...!! Posted On My Status ✨*`);
   }
   else if (messageType === 'videoMessage') {
       const media = await downloadMediaMessage(m,'media',{ },{ logger,reuploadRequest: sock.updateMediaMessage})
       await writeFile('./video.mp4', media)
-      await A17.sendMessage(botNumber, 'status@broadcast',  { url: 'video.mp4', media}).catch((err) => fs.unlinkSync(media))
+      await DDev-BOT.sendMessage(botNumber, 'status@broadcast',  { url: 'video.mp4', media}).catch((err) => fs.unlinkSync(media))
 replay(`*✨ ${pushname}...!! Posted On My Status ✨*`);
   }
   else {
@@ -2487,7 +2018,7 @@ break;
 case 'afk': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let user = global.db.users[m.sender]
 user.afkTime = + new Date
@@ -2547,7 +2078,6 @@ break;
 ////////////////////////////////////////////////////////////////////////////
 
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Antilink ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 //
@@ -2561,13 +2091,13 @@ if (args[0] === "on") {
 if (AntiLink) return replay('Already activated')
 ntilink.push(from)
 replay('Activated _Antilink_ in this group.')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return replay('Already deactivated!')
 let off = ntilink.indexOf(from)
@@ -2578,7 +2108,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinkgc on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinkgc off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2594,13 +2124,13 @@ if (args[0] === "on") {
 if (AntiLinkYoutubeVid) return replay('Already activated')
 ntilinkytvid.push(from)
 replay('Activated youtube video antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeVid) return replay('Already deactivated')
 let off = ntilinkytvid.indexOf(from)
@@ -2611,7 +2141,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinkyoutubevideo on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinkyoutubevideo off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2627,13 +2157,13 @@ if (args[0] === "on") {
 if (AntiLinkYoutubeChannel) return replay('Already activated')
 ntilinkytch.push(from)
 replay('Activated youtube channel antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeChannel) return replay('Already deactivated')
 let off = ntilinkytch.indexOf(from)
@@ -2644,7 +2174,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinkyoutubech on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinkyoutubech off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2660,13 +2190,13 @@ if (args[0] === "on") {
 if (AntiLinkInstagram) return replay('Already activated')
 ntilinkig.push(from)
 replay('Activated instagram antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkInstagram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2677,7 +2207,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinkinstagram on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinkinstagram off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2693,13 +2223,13 @@ if (args[0] === "on") {
 if (AntiLinkFacebook) return replay('Already activated')
 ntilinkfb.push(from)
 replay('Activated facebook antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkFacebook) return replay('Already deactivated')
 let off = ntilinkfb.indexOf(from)
@@ -2710,7 +2240,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinkfacebook on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinkfacebook off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
 }
 }
 break;
@@ -2726,13 +2256,13 @@ if (args[0] === "on") {
 if (AntiLinkTelegram) return replay('Already activated')
 ntilinktg.push(from)
 replay('Activated telegram antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTelegram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2743,7 +2273,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinktelegram on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinktelegram off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below On / Off `, `${global.BotName}`, m)
 }
 }
 break;
@@ -2759,13 +2289,13 @@ if (args[0] === "on") {
 if (AntiLinkTiktok) return replay('Already activated')
 ntilinktt.push(from)
 replay('Activated tiktok antilink !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTiktok) return replay('Already deactivated')
 let off = ntilinktt.indexOf(from)
@@ -2776,7 +2306,7 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinktiktok on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinktiktok off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2792,13 +2322,13 @@ if (args[0] === "on") {
 if (AntiLinkTwitter) return replay('Already activated')
 ntilinktwt.push(from)
 replay('Activated twitter antilink in this group !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTwitter) return replay('Already deactivated')
 let off = ntilinktwt.indexOf(from)
@@ -2809,43 +2339,10 @@ let buttonsntilink = [
 { buttonId: `${prefix}antilinktwt on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antilinktwt off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
 }
 }
 break;
-
-
-// case 'antilinkall': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(mess.grouponly)
-// if (!isBotAdmins) return replay(mess.botadmin)
-// if (!isAdmins && !isCreator) return replay(mess.useradmin)
-// if (args[0] === "on") {
-// if (AntiLinkTwitter) return replay('Already activated')
-// ntilinkall.push(from)
-// replay('Enabled all antilink !')
-// var groupe = await A17.groupMetadata(from)
-// var members = groupe['participants']
-// var mems = []
-// members.map(async adm => {
-// mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-// })
-// A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-// } else if (args[0] === "off") {
-// if (!AntiLinkAll) return replay('Already deactivated')
-// let off = ntilinkall.indexOf(from)
-// ntilinkall.splice(off, 1)
-// replay('Disabled all antilink !')
-// } else {
-// let buttonsntilink = [
-// { buttonId: `${prefix}antilinkall on`, buttonText: { displayText: 'On' }, type: 1 },
-// { buttonId: `${prefix}antilinkall off`, buttonText: { displayText: 'Off' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
-// }
-// }
-// break;
 
 
 case 'antilinkall': {
@@ -2854,20 +2351,20 @@ case 'antilinkall': {
   if (!m.isGroup) return replay(mess.grouponly);
   if (!isBotAdmins) return replay(mess.botadmin);
   if (!isAdmins && !isCreator) return replay(mess.useradmin);
-  A17.sendMessage(from, { react: { text: "🫡" , key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }});
 
   if (args[0] === "on") {
   
     if (AntiLinkAll) return replay('Already activated');
     ntilinkall.push(from);
     replay('Enabled all antilink!');
-    var groupe = await A17.groupMetadata(from);
+    var groupe = await DDev-BOT.groupMetadata(from);
     var members = groupe['participants'];
     var mems = [];
     members.map(async adm => {
       mems.push(adm.id.replace('c.us', 's.whatsapp.net'));
     });
-    A17.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m });
+    DDev-BOT.sendMessage(from, { text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid: mems } }, { quoted: m });
   } else if (args[0] === "off") {
     if (!AntiLinkAll) return replay('Already deactivated');
     let off = ntilinkall.indexOf(from);
@@ -2890,13 +2387,13 @@ if (args[0] === "on") {
 if (antiWame) return replay('Already activated')
 ntwame.push(from)
 replay('Activated antiwame !')
-var groupe = await A17.groupMetadata(from)
+var groupe = await DDev-BOT.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-A17.sendMessage(from, {text: `\`\`\`*「  Warning  」*\`\`\`\n\nAntilink is enabled!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+DDev-BOT.sendMessage(from, {text: `\`\`\`*「  Warning  」*\`\`\`\n\nAntilink is enabled!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiWame) return replay('Already deactivated')
 let off = nttoxic.indexOf(from)
@@ -2907,7 +2404,7 @@ let buttonsntwame = [
 { buttonId: `${prefix}antiwame on`, buttonText: { displayText: 'On' }, type: 1 },
 { buttonId: `${prefix}antiwame off`, buttonText: { displayText: 'Off' }, type: 1 }
 ]
-await A17.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
+await DDev-BOT.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
 }
 }
 break;
@@ -2918,48 +2415,13 @@ break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-// case 'nsfw': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(mess.grouponly)
-// if (!isBotAdmins) return replay(mess.botadmin)
-// if (!isAdmins && !isCreator) return replay(mess.useradmin)
-// A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-// if (args[0] === "on") {
-// if (AntiNsfw) return replay('Already activated')
-// ntnsfw.push(from)
-// replay('Enabled NSFW Commands!')
-// var groupe = await A17.groupMetadata(from)
-// var members = groupe['participants']
-// var mems = []
-// members.map(async adm => {
-// mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-// })
-// A17.sendMessage(from, {text: `\`\`\`「 Notice 」\`\`\`\n\nNSFW(not safe for work) feature has been enabled in this group, which means anyone here can accesss Adult commands!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-// } else if (args[0] === "off") {
-// if (!AntiNsfw) return replay('Already deactivated')
-// let off = ntnsfw.indexOf(from)
-// ntnsfw.splice(off, 1)
-// replay('Disabled NSFW Commands!')
-// } else {
-// let buttonsntnsfw = [
-// { buttonId: `${prefix}nsfw on`, buttonText: { displayText: 'On' }, type: 1 },
-// { buttonId: `${prefix}nsfw off`, buttonText: { displayText: 'Off' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.BotName}`, m)
-// }
-// }
-// break;
-
-
 case 'nsfw': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
   if (!m.isGroup) return replay(mess.grouponly);
   if (!isBotAdmins) return replay(mess.botadmin);
   if (!isAdmins && !isCreator) return replay(mess.useradmin);
-  A17.sendMessage(from, { react: { text: "🫡" , key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }});
 
   if (args[0] === "on") {
     if (AntiNsfw) return replay('Already activated');
@@ -2981,12 +2443,12 @@ case 'listonline': case 'listaktif': case 'here':{
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
 let online = [...Object.keys(store.presences[id]), botNumber]
 let liston = 1
-A17.sendText(m.chat, '  「 *Online Members* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+DDev-BOT.sendText(m.chat, '  「 *Online Members* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break;
 
@@ -2994,7 +2456,7 @@ case 'ban': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 if (!args[0]) return replay(`Select add or del (add to ban, del to unban), For Example: Reply *${prefix}ban add* to the user you want to ban.`)
 if (args[1]) {
@@ -3019,35 +2481,11 @@ replay("Error")
 break;
 
 
-// case 'happymod': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-// if (!args.join(" ")) return replay(`Example : ${prefix + command} Kinemaster`)
-//modapk.happymod(args.join(" ")).then(async(res) => {
-// teks = '```「 HappyMod Search Engine 」```'
-// for (let i of res) {
-// teks += `\n\n${i.name}\n`
-// teks += `${i.link}`
-// }
-
-// let buttonMessage = {
-// image: {url:res[0].icon},
-// jpegThumbnail: Thumb,
-// caption: teks,
-// footer: `${global.BotName}`,
-// headerType: 4
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// })
-// }
-// break;
-
 
 case 'happymod': case 'modapk':{
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🔍" , key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🔍" , key: m.key }});
   
   if (!args.join(" ")) return reply(`Example: ${prefix + command} Kinemaster`);
   
@@ -3068,7 +2506,7 @@ case 'happymod': case 'modapk':{
       };
     }
   
-    A17.sendMessage(from, messageToSend, { quoted: m });
+    DDev-BOT.sendMessage(from, messageToSend, { quoted: m });
   });
 }
 break;
@@ -3086,21 +2524,21 @@ break;
 case 'banchat': case 'bangroup': case 'banmode': {
   if (isBan) return reply(mess.banned);	 			
   if (!isCreator) return reply(mess.botowner);
-  A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
   if (args[0] === "on") {
     if (isBanChat) return reply('This Group is Already Banned from using me!');
     banchat.push(from);
     reply('This Group has been banned from using me!');
 
-    var groupe = await A17.groupMetadata(from);
+    var groupe = await DDev-BOT.groupMetadata(from);
     var members = groupe['participants'];
     var mems = [];
     members.map(async adm => {
       mems.push(adm.id.replace('c.us', 's.whatsapp.net'));
     });
 
-    A17.sendMessage(from, { text: `\`\`\`「 Notice 」\`\`\`\n\nThis group is banned from using the bot. So, here nobody can use me anymore!`, contextInfo: { mentionedJid: mems } }, { quoted: m });
+    DDev-BOT.sendMessage(from, { text: `\`\`\`「 Notice 」\`\`\`\n\nThis group is banned from using the bot. So, here nobody can use me anymore!`, contextInfo: { mentionedJid: mems } }, { quoted: m });
   } else if (args[0] === "off") {
     if (!isBanChat) return reply('This Group is Already Banned from using me!');
     let off = banchat.indexOf(from);
@@ -3119,9 +2557,9 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!text) return replay('Pls enter -setname <New Group Name>  to change this Group Name')
-await A17.groupUpdateSubject(m.chat, text).then((res) => replay(mess.jobdone)).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupUpdateSubject(m.chat, text).then((res) => replay(mess.jobdone)).catch((err) => replay(jsonformat(err)))
 }
 break;
 
@@ -3130,9 +2568,9 @@ case 'block': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return reply(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await A17.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await DDev-BOT.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break;
 
@@ -3141,9 +2579,9 @@ case 'unblock': {
       if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return reply(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await A17.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await DDev-BOT.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
 break;
 
@@ -3154,9 +2592,9 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!text) return replay('Pls enter -setname <New Group Description>  to change this Group Description.')
-await A17.groupUpdateDescription(m.chat, text).then((res) => replay(mess.jobdone)).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupUpdateDescription(m.chat, text).then((res) => replay(mess.jobdone)).catch((err) => replay(jsonformat(err)))
 }
 break;
 
@@ -3167,12 +2605,12 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command} to change the Profile Pic of this group.`)
 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command} to change the Profile Pic of this group.`)
-let media = await A17.downloadAndSaveMediaMessage(quoted)
-await A17.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
+await DDev-BOT.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
 replay(mess.jobdone)
 }
 break;
@@ -3183,14 +2621,14 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isAdmins && !isCreator) return replay(mess.useradmin) 
-A17.sendMessage(from, { react: { text: "😳" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "😳" , key: m.key }})
 let teks = `「 Attention 」
 
 *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
 for (let mem of participants) {
 teks += `» @${mem.id.split('@')[0]}\n`
 }
-A17.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break;
 
@@ -3200,8 +2638,8 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "✨" , key: m.key }})
-A17.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }})
+DDev-BOT.sendMessage(m.chat, { text : args.join(" ") ? args.join(" ") : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break;
 
@@ -3210,7 +2648,7 @@ case'tagadmins': case 'admins': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly) 
-A17.sendMessage(from, { react: { text: "🗿" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🗿" , key: m.key }})
 if (!text) return replay(`*Please quote or write a meaningful message to tag admins to*`)
 let teks = `*「 Tag Admins 」*
 
@@ -3218,31 +2656,11 @@ let teks = `*「 Tag Admins 」*
 for (let mem of groupAdmins) {
 teks += `🍁 @${mem.split('@')[0]}\n`
 }
-A17.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
+DDev-BOT.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
 }
 break;
 
 
-/*
-case 'purge':{
-  if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!m.isGroup) return replay(mess.grouponly)
-if (!isBotAdmins) return replay(mess.botadmin)
-if (!isAdmins && !isCreator) return replay(mess.useradmin)
-
-  const delay = time => new Promise(res=>setTimeout(res,time));
-
-  let users = (await A17.fetchGroupMetadataFromWA(m.chat)).participants.map(u => u.jid)
-  for (let user of users){
-
-      await A17.groupParticipantsUpdate(m.chat, [user], 'remove')
-      await delay(3000)
-  }
-}
-break;
-
-*/
 
 case 'purge':{mess
 if (isBan) return reply(mess.banned)	 			
@@ -3253,7 +2671,7 @@ if (!isAdmins && !isCreator) return replay(mess.useradmin)
 const delay = time => new Promise(res=>setTimeout(res,time));
 let mentioned = participants.map(v => v.jid)
 for (let member of mentioned) {     
-A17.groupParticipantsUpdate(m.chat, [member], 'remove')
+DDev-BOT.groupParticipantsUpdate(m.chat, [member], 'remove')
 }
 }
 
@@ -3262,7 +2680,7 @@ break;
 
 case 'nowa': case 'find': case 'stalk': case 'stalknumber':{
   if (isBan) return reply(mess.banned)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   if (!args[0]) return reply(`Use command like: ${prefix}stalk <number>xxx`)
   var inputnumber = args[0]
   if (!inputnumber.includes('x')) return reply('You didnot added x')
@@ -3301,11 +2719,11 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   } else if (random_length == 4) {
   rndm = `${status1}${status2}${status3}${dom4}`
   }
-  var anu = await A17.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
+  var anu = await DDev-BOT.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
   var anuu = anu.length !== 0 ? anu : false
   try {
   try {
-  var anu1 = await A17.fetchStatus(anu[0].jid)
+  var anu1 = await DDev-BOT.fetchStatus(anu[0].jid)
   } catch {
   var anu1 = '401'
   }
@@ -3328,9 +2746,9 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
-A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
-let response = await A17.groupInviteCode(m.chat)
-A17.sendMessage(m.chat, {text:`*Group Name:* *${groupMetadata.subject}* \n\n*Group Link :* \nhttps://chat.whatsapp.com/${response}l`, "contextInfo": {
+DDev-BOT.sendMessage(from, { react: { text: "🪄" , key: m.key }})
+let response = await DDev-BOT.groupInviteCode(m.chat)
+DDev-BOT.sendMessage(m.chat, {text:`*Group Name:* *${groupMetadata.subject}* \n\n*Group Link :* \nhttps://chat.whatsapp.com/${response}l`, "contextInfo": {
 mimetype: "image/jpeg",
 text: `${global.OwnerName}`,
 "forwardingScore": 1000000000,
@@ -3361,8 +2779,8 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
-A17.groupRevokeInvite(m.chat)
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.groupRevokeInvite(m.chat)
 }
 break;
 
@@ -3373,11 +2791,11 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (args[0] === 'close'){
-await A17.groupSettingUpdate(m.chat, 'announcement').then((res) => replay(`Group has been closed!`)).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupSettingUpdate(m.chat, 'announcement').then((res) => replay(`Group has been closed!`)).catch((err) => replay(jsonformat(err)))
 } else if (args[0] === 'open'){
-await A17.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replay(`Group has been opened!`)).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replay(`Group has been opened!`)).catch((err) => replay(jsonformat(err)))
 } else {
 
 let buttonMessage = {
@@ -3387,7 +2805,7 @@ caption: `*「 ${global.BotName} 」*\n\n_Group Setting Changer tool_:\n\nIf you
 footer: `${BotName}`,
 headerType: 4
 }
-A17.sendMessage(m.chat, buttonMessage, { quoted: m })
+DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break;
@@ -3399,9 +2817,9 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await A17.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
 }
 break;
 
@@ -3412,9 +2830,9 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await A17.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
+await DDev-BOT.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => replay(jsonformat(res))).catch((err) => replay(jsonformat(err)))
 }
 break;
 
@@ -3423,12 +2841,12 @@ case 'add':{
   if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isCreator) return replay(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 if (users.length == 0) return replay(`Please write the number of the person you want to add to thhis group`)
-await A17.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`User Added Successfully!`)).catch((err) => replay(`Cannot add that user to this group!`))
+await DDev-BOT.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => replay(`User Added Successfully!`)).catch((err) => replay(`Cannot add that user to this group!`))
 }
 break;
 
@@ -3439,14 +2857,14 @@ case 'invite': {
   if (!m.isGroup) return replay(mess.grouponly)
   if (!isBotAdmins) return replay(mess.botadmin)
   if (!isAdmins && !isCreator) return replay(mess.useradmin)
-  A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   
 if (!text) return reply (`Enter the number you want to invite to the group...\n\nExample :\n*${prefix + command}* 916297175943`)
 if (text.includes('+')) return reply(`Enter the number together without *+*`)
 if (isNaN(text)) return reply(`Enter only the numbers plus your country code without spaces`)
 let group = m.chat
-let link = 'https://chat.whatsapp.com/' + await A17.groupInviteCode(group)
-      await A17.sendMessage(text+'@s.whatsapp.net', {text: ` *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
+let link = 'https://chat.whatsapp.com/' + await DDev-BOT.groupInviteCode(group)
+      await DDev-BOT.sendMessage(text+'@s.whatsapp.net', {text: ` *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
         reply(` An invite link is sent to the user`) 
 }
   break;
@@ -3458,9 +2876,9 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 if (!isBotAdmins) return replay(mess.botadmin)
 if (!isAdmins && !isCreator) return replay(mess.useradmin)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await A17.groupParticipantsUpdate(m.chat, [users], 'remove')
+await DDev-BOT.groupParticipantsUpdate(m.chat, [users], 'remove')
 }
 break;
 
@@ -3470,16 +2888,16 @@ case 'join': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!isCreator) return replay(mess.botowner)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!args[0]) return replay(`Where's the link?`)
 vdd = args[0]
 let vcc = vdd.split("https://chat.whatsapp.com/")[1]
 if (!vcc) return replay("Link invalid!")
 if (isCreator) {
-await A17.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
+await DDev-BOT.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
 replay("Succes!")
 } else {
-A17.query({
+DDev-BOT.query({
 tag: "iq",
 attrs: {
 type: "get",
@@ -3493,7 +2911,7 @@ if (sizny < 20) {
 teks = `Sorry, munimun 20 members are required in a group to add bot!`
 sendOrder(m.chat, teks, "667140254502463", fs.readFileSync('./Assets/pic7.jpg'), `${global.packname}`, `${global.BotName}`, "916297175943@s.whatsapp.net", "AR6NCY8euY5cbS8Ybg5Ca55R8HFSuLO3qZqrIYCT7hQp0g==", "99999999999999999999")
 } else if (sizny > 20) {
-await A17.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
+await DDev-BOT.groupAcceptInvite(vcc).then(async(res) => replay(jsonformat(res))).catch(_ => _)
 replay("Joined !")
 } else {
 replay("Error")
@@ -3502,19 +2920,6 @@ replay("Error")
 }
 }
 break;
-
-
-// case 'leavegc': case 'leavegroup': case 'bye': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//       reply(mess.waiting)
-//                   if (!isCreator) return replay(`${mess.botowner}`)
-//                   A17.sendMessage(from, { react: { text: "☯️" , key: m.key }})
-//                   await A17.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-//               }
-//               break;
-
 
 
 
@@ -3531,7 +2936,7 @@ case 'ringtone': {
       let { ringtone } = require('./lib/scraper')
   let anu = await ringtone(text)
   let result = anu[Math.floor(Math.random() * anu.length)]
-  A17.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+  DDev-BOT.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
     }
     break;
 
@@ -3540,14 +2945,14 @@ case 'ringtone': {
       if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
-    media = await A17.downloadAndSaveMediaMessage(quoted, "volume")
+    media = await DDev-BOT.downloadAndSaveMediaMessage(quoted, "volume")
     if (isQuotedAudio) {
     rname = getRandom('.mp3')
     exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
     fs.unlinkSync(media)
     if (err) return reply('Error!')
     jadie = fs.readFileSync(rname)
-    A17.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+    DDev-BOT.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
     fs.unlinkSync(rname)
     })
     } else if (isQuotedVideo) {
@@ -3556,7 +2961,7 @@ case 'ringtone': {
     fs.unlinkSync(media)
     if (err) return reply('Error!')
     jadie = fs.readFileSync(rname)
-    A17.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+    DDev-BOT.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
     fs.unlinkSync(rname)
     })
     } else {
@@ -3571,14 +2976,14 @@ case 'tempo': {
   if (isBanChat) return reply(mess.bangc)
   if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
   var req = args.join(' ')
-  media = await A17.downloadAndSaveMediaMessage(quoted, "tempo")
+  media = await DDev-BOT.downloadAndSaveMediaMessage(quoted, "tempo")
   if (isQuotedAudio) {
   ran = getRandom('.mp3')
   exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, stderr, stdout) => {
   fs.unlinkSync(media)
   if (err) return reply('Error!')
   hah = fs.readFileSync(ran)
-  A17.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
+  DDev-BOT.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
   fs.unlinkSync(ran)
   })
   } else if (isQuotedVideo) {
@@ -3587,7 +2992,7 @@ case 'tempo': {
   fs.unlinkSync(media)
   if (err) return reply('Error!')
   hah = fs.readFileSync(ran)
-  A17.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
+  DDev-BOT.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
   fs.unlinkSync(ran)
   })
   } else {
@@ -3598,7 +3003,7 @@ case 'tempo': {
 
 
   case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
-    A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+    DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
       try {
       let set
@@ -3616,13 +3021,13 @@ case 'tempo': {
       if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
       if (/audio/.test(mime)) {
       reply(mess.waiting)
-      let media = await A17.downloadAndSaveMediaMessage(quoted)
+      let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
       let ran = getRandom('.mp3')
       exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
       fs.unlinkSync(media)
       if (err) return reply(err)
       let buff = fs.readFileSync(ran)
-      A17.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+      DDev-BOT.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
       fs.unlinkSync(ran)
       })
       } else reply(`Pls mention any audio you want to modify _${prefix + command}_`)
@@ -3656,17 +3061,17 @@ break;
 case 'toimage': case 'makeimg': case 'toimg': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🪄" , key: m.key }})
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.waiting)
-let media = await A17.downloadAndSaveMediaMessage(quoted)
+let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
 let ran = await getRandom('.png')
 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-A17.sendMessage(m.chat, { image: buffer }, { quoted: m})
+DDev-BOT.sendMessage(m.chat, { image: buffer }, { quoted: m})
 fs.unlinkSync(ran)
 })
 }
@@ -3676,14 +3081,14 @@ break;
 case 'tomp4': case 'makemp4': case 'makevideo': case 'tovideo': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc) 
-A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🪄" , key: m.key }})
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.waiting)
 let { webp2mp4File } = require('./lib/uploader')
-let media = await A17.downloadAndSaveMediaMessage(quoted)
+let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await A17.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Here it is...' } }, { quoted: m })
+await DDev-BOT.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Here it is...' } }, { quoted: m })
 await fs.unlinkSync(media)
 }
 break;
@@ -3692,7 +3097,7 @@ break;
 case 'toaud': case 'makeaudio': case 'toaudio': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
@@ -3700,7 +3105,7 @@ reply(mess.waiting)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-A17.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+DDev-BOT.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
 break;
 
@@ -3708,7 +3113,7 @@ break;
 case 'tomp3': case 'makemp3': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -3716,7 +3121,7 @@ reply(mess.waiting)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-A17.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${global.BotName} (${m.id}).mp3`}, { quoted : m })
+DDev-BOT.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${global.BotName} (${m.id}).mp3`}, { quoted : m })
 }
 break;
 
@@ -3724,36 +3129,18 @@ break;
 case 'togif': case 'makegif': case 'getgif':{
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
 let { webp2mp4File } = require('./lib/uploader')
-let media = await A17.downloadAndSaveMediaMessage(quoted)
+let media = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await A17.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
+await DDev-BOT.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
 await fs.unlinkSync(media)
 }
 break;
 
-
-// case 'tourl': case 'makeurl':{
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
-
-// // let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader');
-// let media = await A17.downloadAndSaveMediaMessage(quoted)
-// if (/image/.test(mime)) {
-// let anu = await TelegraPh(media)
-// reply(util.format(anu))
-// } else if (!/image/.test(mime)) {
-// let anu = await UploadFileUgu(media)
-// reply(util.format(anu))
-// }
-// await fs.unlinkSync(media)
-// }
-// break;
 
 
 case "tourl": case 'tolink':
@@ -3763,12 +3150,12 @@ case "tourl": case 'tolink':
 let { GraphOrg } = require("./lib/uploader");
   if (!m.quoted) {
    //
-   A17.sendMessage(from, { react: { text: "❔" , key: m.key }})
+   DDev-BOT.sendMessage(from, { react: { text: "❔" , key: m.key }})
     return m.reply(
       `With caption not working, first send an *Image* / *Video* to generate a link! then tag with *${prefix}tourl*`
     );
   }
-  let media5 = await A17.downloadAndSaveMediaMessage(quoted);
+  let media5 = await DDev-BOT.downloadAndSaveMediaMessage(quoted);
   if (/image/.test(mime)) {
    //
     let anu = await GraphOrg(media5);
@@ -3781,7 +3168,7 @@ let { GraphOrg } = require("./lib/uploader");
     } catch (e) {
      //
       await fs.unlinkSync(media5);
-      return A17.sendMessage(
+      return DDev-BOT.sendMessage(
         m.from,
         {
           text: `*Your video size is too big!*\n\n*Max video size:* 5MB`,
@@ -3806,23 +3193,8 @@ let { GraphOrg } = require("./lib/uploader");
 
 
 //
-/*
-// text editor
-candy  christmas  3dchristmas  sparklechristmas
- deepsea  scifi  rainbow  waterpipe  spooky 
- pencil  circuit  discovery  metalic  fiction  demon 
- transformer  berry  thunder  magma  3dstone 
- neonlight  glitch  harrypotter  brokenglass  papercut 
- watercolor  multicolor  neondevil  underwater  graffitibike
- snow  cloud  honey  ice  fruitjuice  biscuit  wood 
- chocolate  strawberry  matrix  blood  dropwater  toxic 
- lava  rock  bloodglas  hallowen  darkgold  joker  wicker
- firework  skeleton  blackpink  sand  glue  1917  leaves
-
-*/
 
 
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Text Effects ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
 
 
 
@@ -3840,7 +3212,7 @@ case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': ca
 if (!q) return reply(`Example : ${prefix + command} ${global.OwnerName}`)
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🪄" , key: m.key }}) 
+DDev-BOT.sendMessage(from, { react: { text: "🪄" , key: m.key }}) 
 reply(mess.waiting)	
 
        let link
@@ -3902,7 +3274,7 @@ reply(mess.waiting)
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
        let anu = await maker.textpro(link, q)
-          A17.sendMessage(m.chat, { image: { url: anu }, caption: `Made by A17 Bot By Kai...  🪄` }, { quoted: m })
+          DDev-BOT.sendMessage(m.chat, { image: { url: anu }, caption: `Made by DDev-BOT Bot By Kai...  🪄` }, { quoted: m })
        }
 
 break;
@@ -3911,7 +3283,7 @@ break;
 case 'pornhub': case 'phub' :{
 if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🪄" , key: m.key }})
 if(!q) return reply(`Example: ${prefix + command} Oh|No`)
 reply(mess.waiting)	
 
@@ -3921,7 +3293,7 @@ var logo4 = inilogo4.split('|')[0]
 var logo9 = inilogo9.split('|')[1]
 let anu = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-A17.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+DDev-BOT.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break;
 
@@ -3934,7 +3306,7 @@ break;
 
 case 'translate': case 'ts': case 'trans': {
 if (isBan) return reply(mess.banned)
-A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 if (!args.join(" ")) return replay("Pls enter any text to translate")
 tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
@@ -3945,65 +3317,12 @@ replay(`Input : ${Detek}\nTranslation Results : ${Infoo}`)
 break;
 
 
-// case 'gimage': case 'gig': case 'googleimage':{
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
-
-// if (!args[0]) return reply("Enter a search term to get Google Image!")
-// let gis = require('g-i-s')
-// gis(args.join(" "), async (error, result) => {
-// n = result
-// images = n[Math.floor(Math.random() * n.length)].url
-// let buttons = [
-// {buttonId: `${prefix}gimage ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-// ]
-// let buttonMessage = {
-// image: { url: images },
-// caption: `「 _Google Image Search_ 」
-
-// _Search Term_ : ${text}
-// _Media Url_ : ${images}`,
-// footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4,
-
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// })
-// }
-// break;
-
-
-
-// case 'gimage':
-// case 'gig':
-// case 'googleimage': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "⌛", key: m.key } });
-
-//   if (!args[0]) return reply("Enter a search term to get Google Image!");
-//   let gis = require('g-i-s');
-//   gis(args.join(" "), async (error, result) => {
-//     n = result;
-//     images = n[Math.floor(Math.random() * n.length)].url;
-//     let buttonMessage = {
-//       image: { url: images },
-//       caption: `「 _Google Image Search_ 」\n\n_Search Term_ : ${text}\n_Media Url_ : ${images}`,
-//       footer: `${global.BotName}`,
-//       headerType: 4,
-//     };
-//     A17.sendMessage(m.chat, buttonMessage, { quoted: m });
-//   });
-// }
-// break;
 case 'gimage':
 case 'gig':
 case 'googleimage': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "⌛", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "⌛", key: m.key } });
 
   if (!args[0]) return reply("Enter a search term to get Google Image!");
   let gis = require('g-i-s');
@@ -4025,53 +3344,10 @@ case 'googleimage': {
       footer: `${global.BotName}`,
       headerType: 4,
     };
-    A17.sendMessage(m.chat, buttonMessage, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m });
   });
 }
 break;
-
-
-
-
-
-
-
-// case "gig":
-//   case "gimage":
-//   case "googleimage":
-//   case "image":
-//     if (!text) {
-//       A17.sendMessage(from, { react: { text: "⌛", key: m.key } });
-//       return m.reply(`Please provide an image Search Term !\n\nExample: *${prefix}image cheems*`);
-//     }
-    
-//     gis(text, async (error, result) => {
-//       n = result;
-//       let images = n[Math.floor(Math.random() * n.length)].url;
-//       let resText = `\n_🎀 Image Search Term:_ *${text}*\n\n_🧩 Powered by_ *${botName}*\n`;
-//       /*
-//       let buttons = [
-//         {
-//             buttonId: `${prefix}gimage ${text}`,
-//             buttonText: { displayText: ">>" },
-//             type: 1,
-//         },
-//       ];
-//       */
-//       await A17.sendMessage(
-//         m.from,
-//         {
-//           image: { url: images },
-//           caption: resText,
-//           //footer: `*${botName}*`,
-//           //buttons: buttons,
-//           //headerType: 4,
-//         },
-//         { quoted: m }
-//       );
-//     });
-//     break;
-
 
 
 //---------------------------------------- NASA  -----------------------------------------//
@@ -4080,9 +3356,9 @@ case 'apod': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
   
-  //A17.sendMessage(from, { react: { text: "🌌", key: m.key }});
+  //DDev-BOT.sendMessage(from, { react: { text: "🌌", key: m.key }});
   const randomEmoji = spaceemojis[Math.floor(Math.random() * spaceemojis.length)]; // Select a random emoji
-  A17.sendMessage(from, { react: { text: randomEmoji, key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: randomEmoji, key: m.key }});
 
   const apiKey = 'ugce43VIO63s8gQhcQ7Ts2DHQo1Srcchdh9mgI2S'; // Replace with your actual NASA API key // You can use it.
   const moment = require('moment'); // Import moment library here
@@ -4097,7 +3373,7 @@ case 'apod': {
     const data = await response.json();
 
     if (data.url) {
-      A17.sendMessage(from, {
+      DDev-BOT.sendMessage(from, {
         image: { url: data.url },
         caption: `*Astronomy Picture of the Day:*\n\n${data.title}\n${data.explanation}`,
       });
@@ -4118,7 +3394,7 @@ break;
 case 'google': case 'search': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "✨" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }})
 
 if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} anything...`)
 let google = require('google-it')
@@ -4138,7 +3414,7 @@ break;
 case "tts":  case "texttospeech":  case "say": case "speak":{
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
   if (!args[0]) return reply("Please give me a text so that i can speak it!")
     
@@ -4149,7 +3425,7 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
       : m.text;
     const SpeakEngine = require("google-tts-api"); 
     const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, {lang: "en", slow: false, host: "https://translate.google.com",});
-    A17.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `A17SpeechEngine.mp3`,},{quoted: m,});
+    DDev-BOT.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `DDev-BOTSpeechEngine.mp3`,},{quoted: m,});
   }
   break;
 
@@ -4157,26 +3433,26 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
 case 'wiki':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 if (args.length < 1) return reply('What Are You Looking For?? ')
 const res2 = await wikiSearch(q).catch(e => {
 return reply('Error Result Not Found!') 
 }) 
 const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
-A17.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
+DDev-BOT.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break;
 
 case 'earthquake':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 const tres = await Gempa()
 var { Waktu, Lintang, Bujur, Magnitude, Kedalaman, Wilayah, Map } = tres.result
 console.log(Map)
 const captt = `Time : ${Waktu}\nLatitude : ${Lintang}\nLongitude : ${Bujur}\nRegion : ${Wilayah}`
-A17.sendMessage(from, { image : { url : Map }, caption : captt})
+DDev-BOT.sendMessage(from, { image : { url : Map }, caption : captt})
 break;
 
 
@@ -4184,35 +3460,12 @@ case 'covidinfo':
 case 'covid':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 const c = await covid()
 var { kasus, kematian, sembuh } = c[0]
-A17.sendMessage(from, {text : `Case : ${kasus}\n\nDead : ${kematian}\n\nHealed : ${sembuh}`}, m)
+DDev-BOT.sendMessage(from, {text : `Case : ${kasus}\n\nDead : ${kematian}\n\nHealed : ${sembuh}`}, m)
 break;
-
-
-// const { getBuffer } = require("./lib/myfunc");
-
-// case 'ss':
-//   async (A17, m, { pushName, prefix, args, text }) => {
-//     if (!args[0]) return m.reply(`Please provide me a link to lookup!`);
-
-//     let lookupURL;
-//     if (!args[0].includes("http")) {
-//       lookupURL = `https://${args[0]}`;
-//     } else {
-//       lookupURL = args[0];
-//     }
-
-//     try {
-//       const resImage = await getBuffer(`https://api.popcat.xyz/screenshot?url=${lookupURL}`);
-//       await A17.sendMessage(m.from, { image: resImage, caption: `_Here's how this URL looks like:_\n${args[0]}\n` }, { quoted: m });
-//     } catch (error) {
-//       m.reply(`An error occurred while processing your request!\n\nPlease recheck your link and try again!`);
-//     }
-//   };
-//   break;
 
 
 
@@ -4236,7 +3489,7 @@ case 'igdl':
   }
 
   // Send a reaction emoji
-  A17.sendMessage(from, { react: { text: "🪄", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🪄", key: m.key } });
 
   // Check if a link is provided
   if (!text) {
@@ -4248,7 +3501,7 @@ case 'igdl':
     let instadownload = await instadl(text);
 
     // Send the downloaded video as a reply to the command
-    await A17.sendMessage(m.chat, { video: { url: instadownload.url[0].url }, caption: mess.jobdone }, { quoted: m });
+    await DDev-BOT.sendMessage(m.chat, { video: { url: instadownload.url[0].url }, caption: mess.jobdone }, { quoted: m });
   } catch (error) {
     console.error('Error while processing Instagram video:', error);
     return reply('An error occurred while processing the Instagram video.');
@@ -4257,54 +3510,13 @@ case 'igdl':
 break;
 
 
-// ///
-// case 'igdl': case 'instagramreels': case 'igreels': {
-// if (isBan) return reply(mess.banned)	 			
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🪄" , key: m.key }})
-// if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
-// try {
-// hx.igdl(args[0]).then(async(resed) => {
-// ini_anu = []
-// anu_list = []
-// textbv = `「 _Instagram Downloader_ 」\n\nUsername : ${resed.user.username ? resed.user.name : "undefined"}\nFollowers : ${resed.user.followers}`
-// urut = 1
-// for (let i = 0; i < resed.medias.length; i++) {
-// ini_anu.push({
-// "type": resed.medias[i].fileType,
-// "url": resed.medias[i].url
-// })
-// }
-// ilod = 1
-// for (let i of ini_anu) {
-// anu_list.push({buttonId: `${prefix}ig ${i.type} ${i.url}`, buttonText: {displayText: `Media ${ilod++}`}, type: 1})
-// }
-// textbv += `\n\n_Select the media below to download_`
-// let buttons = anu_list
-// let buttonMessage = {
-// image:BotLogo,
-// jpegThumbnail:Thumb,
-// caption: textbv,
-// footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4
-// }
-// A17.sendMessage(from, buttonMessage, {quoted:m})
-// })
-// } catch (err) {
-// reply("An Error Occured!")
-// }
-// }
-// break;
-
-
 case 'ig': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (args[0] === "mp4") {
-A17.sendMessage(from, {video:{url:args[1]}, caption:'Here it is...', mimetype:'video/mp4'}, {quoted:m})
+DDev-BOT.sendMessage(from, {video:{url:args[1]}, caption:'Here it is...', mimetype:'video/mp4'}, {quoted:m})
 } else if (args[0] === "jpg") {
-A17.sendMessage(from, {image:{url:args[1]}, caption:'Here it is...'}, {quoted:m})
+DDev-BOT.sendMessage(from, {image:{url:args[1]}, caption:'Here it is...'}, {quoted:m})
 } else {
 reply("Error! ")
 }
@@ -4317,7 +3529,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Pls provide link!`)
 try {
-A17.sendMessage(from, {video:{url:args[0]}, caption:"Succes!", contextInfo:{externalAdReply:{
+DDev-BOT.sendMessage(from, {video:{url:args[0]}, caption:"Succes!", contextInfo:{externalAdReply:{
 title:`${global.BotName}`,
 body:`${global.OwnerName}`,
 thumbnail: BotLogo,
@@ -4337,7 +3549,7 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Please provide link!`)
 try {
-A17.sendMessage(from, {image:{url:args[0]}, caption:"Success!"}, {quoted:m})
+DDev-BOT.sendMessage(from, {image:{url:args[0]}, caption:"Success!"}, {quoted:m})
 } catch {
 reply("Link error")
 }
@@ -4353,7 +3565,7 @@ if (isBanChat) return reply(mess.bangc)
            if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply('*Invalid link!*')
            instagramdlv3(`${text}`).then(async (data) => {            
            var buf = await getBuffer(data[0].thumbnail)        
-           A17.sendMessage(m.chat, { video: { url: data[0].url }, jpegThumbnail:buf, caption: `${BotName}`}, { quoted: m })
+           DDev-BOT.sendMessage(m.chat, { video: { url: data[0].url }, jpegThumbnail:buf, caption: `${BotName}`}, { quoted: m })
            }).catch((err) => {
                reply(mess.error)
            })
@@ -4377,9 +3589,9 @@ if (isBanChat) return reply(mess.bangc)
               txt += `*URL :* ${data.url}\n\n`
               txt += `*${BotName}*`
           buf = await getBuffer(data.thumbnail)    
-          A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
+          DDev-BOT.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
           for (let i of data.medias) {
-          A17.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${text}*`}, { quoted: m })
+          DDev-BOT.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${text}*`}, { quoted: m })
           }
           }).catch((err) => {
               reply(mess.error)
@@ -4394,7 +3606,7 @@ if (isBanChat) return reply(mess.bangc)
        if (!text) return reply(`Please provide link!`)
           if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(`*Invalid link!*`)
           xfarrapi.Twitter(`${text}`).then(async (data) => {
-          A17.sendMessage(m.chat, { audio: { url: data.medias[1].url }, mimetype: 'audio/mp4'}, { quoted: m })
+          DDev-BOT.sendMessage(m.chat, { audio: { url: data.medias[1].url }, mimetype: 'audio/mp4'}, { quoted: m })
           }).catch((err) => {
               reply(mess.reply)
           })
@@ -4426,7 +3638,7 @@ buttons: buttons,
 headerType: 4,
 
 }
-A17.sendMessage(from, buttonMessage, {quoted:m})
+DDev-BOT.sendMessage(from, buttonMessage, {quoted:m})
 } catch {
 reply("Link Error!")
 }
@@ -4448,7 +3660,7 @@ buttons: buttons,
 headerType: 4,
 
 }
-A17.sendMessage(from, buttonMessage, {quoted:m})
+DDev-BOT.sendMessage(from, buttonMessage, {quoted:m})
 }
 break;
 
@@ -4467,9 +3679,9 @@ if (isBanChat) return reply(mess.bangc)
                txt += `*Description:* ${data.description}\n`
                txt += `*URL :* ${text}\n\n`
            buf = await getBuffer(data.thumbnail)    
-           A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+           DDev-BOT.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
            for (let i of data.result) {     
-           A17.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*Quality :* ${i.quality}`}, { quoted: m })
+           DDev-BOT.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*Quality :* ${i.quality}`}, { quoted: m })
            }          
            }).catch((err) => {
                reply(mess.error)
@@ -4485,7 +3697,7 @@ if (isBanChat) return reply(mess.bangc)
             if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`Invalid link!`)
 let noh = require('@bochilteam/scraper')                
 noh.savefrom(`${text}`).then(async (anu) => {  
-A17.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' }, { quoted: m })      
+DDev-BOT.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' }, { quoted: m })      
           }).catch((err) => {
               reply(mess.error)
           })
@@ -4515,7 +3727,7 @@ buttons: buttons,
 headerType: 4,
 
 }
-A17.sendMessage(from, buttonMessage, {quoted:m})
+DDev-BOT.sendMessage(from, buttonMessage, {quoted:m})
 } catch {
 reply("Link invalid!")
 }
@@ -4537,7 +3749,7 @@ buttons: buttons,
 headerType: 4,
 
 }
-A17.sendMessage(from, buttonMessage, {quoted:m})
+DDev-BOT.sendMessage(from, buttonMessage, {quoted:m})
 }
 break;
 
@@ -4549,25 +3761,25 @@ if (isBanChat) return reply(mess.bangc)
 if (!q) return reply('Please provide the link !')
 reply(mess.wait)
 if (!q.includes('tiktok')) return reply(`Invalid tiktok link!`)
-const musim_rambutan = await A17Tiktok(`${q}`).catch(e => {
+const musim_rambutan = await DDev-BOTTiktok(`${q}`).catch(e => {
 reply(mess.error) 
 } )
 console.log(musim_rambutan)
-const A17tiktokop = musim_rambutan.result.watermark
+const DDev-BOTtiktokop = musim_rambutan.result.watermark
 texttk = `_Please choose the button below_`
 let buttons = [
 {buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: 'Watermark Free'}, type: 1},
 {buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: 'Audio '}, type: 1}
 ]
 let buttonMessage = {
-video: {url:A17tiktokop},
+video: {url:DDev-BOTtiktokop},
 caption: texttk,
 footer: `${BotName}`,
 buttons: buttons,
 headerType: 4,
 
 }
-A17.sendMessage(from, buttonMessage, {quoted:m})
+DDev-BOT.sendMessage(from, buttonMessage, {quoted:m})
 }
 break;
 
@@ -4578,12 +3790,12 @@ if (isBanChat) return reply(mess.bangc)
 if (!q) return reply('Please provide the link !')
 reply(mess.wait)
 if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
-const musim_rambutan = await A17Tiktok(`${q}`).catch(e => {
+const musim_rambutan = await DDev-BOTTiktok(`${q}`).catch(e => {
 reply(mess.error) 
 } )
 console.log(musim_rambutan)
-const A17tiktoknowm = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "Here it is..." }, { quoted: m })
+const DDev-BOTtiktoknowm = musim_rambutan.result.nowatermark
+DDev-BOT.sendMessage(from, { video: { url: DDev-BOTtiktoknowm }, caption: "Here it is..." }, { quoted: m })
 }
 break;
 
@@ -4595,12 +3807,12 @@ if (isBan) return reply(mess.banned)
 if (isBanChat) return reply(mess.bangc)
 if (!q) return reply('Where is the audio?')
 if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
-const musim_rambutan = await A17Tiktok(`${q}`).catch(e => {
+const musim_rambutan = await DDev-BOTTiktok(`${q}`).catch(e => {
 reply(mess.error) 
 } )
 console.log(musim_rambutan)
-const A17tiktokaudio = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { audio: { url: A17tiktokaudio }, mimetype: 'audio/mp4' }, { quoted: m })
+const DDev-BOTtiktokaudio = musim_rambutan.result.nowatermark
+DDev-BOT.sendMessage(from, { audio: { url: DDev-BOTtiktokaudio }, mimetype: 'audio/mp4' }, { quoted: m })
 }
 break;
 
@@ -4609,7 +3821,7 @@ break;
 case 'yts': case 'ytsearch': {
     if (isBan) return reply(mess.banned)	 			
  if (isBanChat) return reply(mess.bangc)
- A17.sendMessage(from, { react: { text: "📍" , key: m.key }}) 
+ DDev-BOT.sendMessage(from, { react: { text: "📍" , key: m.key }}) 
 
  if (!args.join(" ")) return replay(`Example : -yts Heat waves`)
  let yts = require("youtube-yts")
@@ -4619,79 +3831,18 @@ case 'yts': case 'ytsearch': {
  for (let i of search.all) {
  teks += `Result No : ${no++}\n\nTitle : ${i.title}\n\nViews : ${i.views}\n\nDuration : ${i.timestamp}\n\nUploaded : ${i.ago}\n\nAuthor : ${i.author.name}\n\nUrl : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
  }
- A17.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+ DDev-BOT.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
  }
  break; 
 
  
-/*
-		
-case 'music': case 'p': case 'play': case 'song': case 'ytplay': {
-    if (isBan) return reply(mess.banned)	 			
- if (isBanChat) return reply(mess.bangc)
- A17.sendMessage(from, { react: { text: "🍁" , key: m.key }}) 
- const YT=require('./lib/ytdlcore')
- const { isUrl, fetchBuffer } = require('./lib/Function')
-
- if(!text) return A17.sendMessage(from,{text:"Pls enter song name to play!"},{quoted:m})
- let yts = require("@adiwajshing/keyed-db2")
- let search = await yts(text)
- let anu = search.videos[0]
- let buttons = [
- {buttonId: `${prefix}ytad ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1},
- {buttonId: `${prefix}ytvd ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-
- ]
- let buttonMessage = {
- image: { url: anu.thumbnail },
- caption: `「  A17 Youtube Player 2.0  」
-
-✨ *Title :* ${anu.title}
-
-⏳ *Duration :* ${anu.timestamp}
-
-📈 *Viewers :* ${anu.views}
-
-📍 *Uploaded :* ${anu.ago}
-
-🎐 *Channel :* ${anu.author.name}
-
-🔗 *Url :* ${anu.url}`,
-	 
- footer: `${global.BotName}`,
- buttons: buttons,
- headerType: 4,
-
- }
- A17.sendMessage(m.chat, buttonMessage, { quoted: m })
- }
- break;
-
-*/ 
-
-
-/// Normal
-// case 'play': case 'song': case 'music': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   A17.sendMessage(from, { react: { text: "🍁" , key: m.key }}) 
-//   const YT=require('./lib/ytdl-core')
-//   let yts = require("youtube-yts")
-//   let search = await yts(text)
-//   let anu = search.videos[0]
-//   const ytmp3play = await YT.mp3(anu.url)
-  
-// await A17.sendMessage(from, {audio: fs.readFileSync(ytmp3play.path),fileName: anu.title + '.mp3',mimetype: 'audio/mpeg',}, {quoted:m})
-// }
-// break;
-
 
 case 'play':
 case 'song':
 case 'music': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🍁", key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🔍", key: m.key }});
 
   const YT = require('./lib/ytdl-core');
   const yts = require('youtube-yts');
@@ -4704,19 +3855,19 @@ case 'music': {
   // Fetch the thumbnail URL from the 'anu' object
   let thumbnailUrl = anu.thumbnail;
 
-  await A17.sendMessage(
+  await DDev-BOT.sendMessage(
     from,
     {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n*Downloading:* *${anu.title}*
+      caption: `\n*𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
   ⏳ *Duration :* ${anu.timestamp}
 
   📈 *Viewers :* ${anu.views}
 
-  🎐 *Channel :* ${anu.author.name}
+  📸 *Channel :* ${anu.author.name}
 
-  🏮 *Video Uploaded:* ${anu.ago}
+  📤 *Video Uploaded:* ${anu.ago}
 
   🔗 *Url :* ${anu.url}\n`,
 
@@ -4725,7 +3876,7 @@ case 'music': {
   );
 
   // Send the audio file with the proper 'type' property set to 'audio'
-  await A17.sendMessage(from, { 
+  await DDev-BOT.sendMessage(from, { 
     audio: fs.readFileSync(ytmp3play.path),
     filename: anu.title + '.mp3',
     mimetype: 'audio/mpeg',
@@ -4741,65 +3892,29 @@ break;
  case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍃" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🔎" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   let yts = require("youtube-yts")
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+' By *A17 MD*',}, {quoted:m})
+DDev-BOT.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+' By *DDev-BOT MD*',}, {quoted:m})
 }
 
 break;
 
 
-/*
-case 'ytmp3': case 'ytmusic':  case 'ytmp4': case 'ytvideo': case 'ytdl':{
-  if (isBan) return reply(mess.banned)	 			
-if (isBanChat) return reply(mess.bangc)
-if (!args[0]) return reply(mess.nolink)
-
-const YT=require('./lib/ytdlcore')
-if(!text) return A17.sendMessage(from,{text:"Please provide a valid youtube link!"},{quoted:m})
-let yts = require("@adiwajshing/keyed-db2")
-let search = await yts(text)
-let anu = search.videos[0]
-let buttons = [
-{buttonId: `${prefix}ytad2 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1},
-{buttonId: `${prefix}ytvd2 ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-
-]
-let buttonMessage = {
-image: { url: anu.thumbnail },
-caption: `「  A17 Youtube Downloader 2.0  」
-
-✨ *Title :* ${anu.title}
-
-⏳ *Duration :* ${anu.timestamp}
-👀 *Viewers :* ${anu.views}
-📍 *Uploaded :* ${anu.ago}
-🎐 *Channel :* ${anu.author.name}
-🔗 *Url :* ${anu.url}`,
-footer: `${global.BotName}`,
-buttons: buttons,
-headerType: 4,
-
-}
-A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
-break; 
-*/
 
 
 case 'ytmp3': {
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
   const YT=require('./lib/ytdl-core')
   const ytmp3play2 = await YT.mp3(text)
   
-await A17.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'A17_YTmp3_Downloader.mp3',mimetype: 'audio/mpeg',}, {quoted:m})
+await DDev-BOT.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'DDev-BOT_YTmp3_Downloader.mp3',mimetype: 'audio/mpeg',}, {quoted:m})
 }
 break;
 
@@ -4807,10 +3922,10 @@ break;
 case 'ytvd2': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🍁" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *A17 MD*',}, {quoted:m})
+DDev-BOT.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *DDev-BOT MD*',}, {quoted:m})
 }
 break;
 
@@ -4819,7 +3934,7 @@ case 'lyrics': {
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🍁" , key: m.key }})
 if (!text) return reply(`Comand usage: ${prefix}lyrics Thunder`)
 reply(mess.waiting)	
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
@@ -4842,28 +3957,13 @@ break;
 
 
 
-///
-// case 'couplepp': case 'cpp': case 'ppcouple': {
-// if (isBan) return reply(mess.banned)
-// if (isBanChat) return reply(mess.bangc)
-// A17.sendMessage(from, { react: { text: "🙀" , key: m.key }});
-
-//        reply(mess.waiting)
-//        let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
-//        let random = anu[Math.floor(Math.random() * anu.length)]
-//        A17.sendMessage(m.chat, { image: { url: random.male }, caption: `For him...` }, { quoted: m })
-//        A17.sendMessage(m.chat, { image: { url: random.female }, caption: `For her...` }, { quoted: m })
-//    }
-// break;
-
-
 case 'couplepp':
 case 'cpp':
 case 'ppcouple': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
   
-  A17.sendMessage(from, { react: { text: "🙀", key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🙀", key: m.key }});
   reply(mess.waiting);
 
   let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json');
@@ -4872,10 +3972,10 @@ case 'ppcouple': {
     let random = anu[Math.floor(Math.random() * anu.length)];
 
     // Sending the male picture
-    await A17.sendMessage(m.chat, { image: { url: random.male }, caption: `For him...` }, { quoted: m });
+    await DDev-BOT.sendMessage(m.chat, { image: { url: random.male }, caption: `For him...` }, { quoted: m });
 
     // Sending the female picture
-    await A17.sendMessage(m.chat, { image: { url: random.female }, caption: `For her...` }, { quoted: m });
+    await DDev-BOT.sendMessage(m.chat, { image: { url: random.female }, caption: `For her...` }, { quoted: m });
   }
 }
 break;
@@ -4885,65 +3985,16 @@ break;
 case 'coffee': case 'kopi': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-     /*     let buttons = [
-                  {buttonId: `${prefix}coffee`, buttonText: {displayText: '>>'}, type: 1}
-              ]  */
+     
               let buttonMessage = {
                   image: { url: 'https://coffee.alexflipnote.dev/random' },
                   caption: `Here is your Coffee...`,
-               /*   footer: `${BotName}`,
-                  buttons: buttons,
-                  headerType: 4  */
-              }
-              A17.sendMessage(m.chat, buttonMessage, { quoted: m })
+                             }
+              DDev-BOT.sendMessage(m.chat, buttonMessage, { quoted: m })
           }
           break;
-
-
-//old code of A17 button 
-
-// case 'pinterest': case 'pin': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!args.join(" ")) return reply("Pls providea search term!")
-// try {
-// hx.pinterest(args.join(" ")).then(async(res) => {
-// imgnyee = res[Math.floor(Math.random() * res.length)]
-// /* let buttons = [
-// {buttonId: `${prefix}pinterest ${args.join(" ")}`, buttonText: {displayText: '>>'}, type: 1}
-// ] */
-// let buttonMessage = {
-// image: { url: imgnyee },
-// caption:  `Title : ` + args.join(" ") + `\nMedia Url : `+imgnyee,
-// /* footer: `${global.BotName}`,
-// buttons: buttons,
-// headerType: 4, */
-
-// }
-// A17.sendMessage(m.chat, buttonMessage, { quoted: m })
-// }).catch(_ => _)
-// } catch {
-// reply("Error")
-// }
-// }
-// break;
-
-
-
-////// Hehe ////// 
-
-// case 'pinterest': case'pin' : {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!args.join(" ")) return reply(`${pushname} Pls provide a search term!`)
-// let { pinterest } = require('./lib/scraper')
-// anutrest = await pinterest(text)
-// result = anutrest[Math.floor(Math.random() * anutrest.length)]
-// A17.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
-// }
-// break;
 
 
 //
@@ -4951,7 +4002,7 @@ case 'pinterest':
 case 'pin': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🐦" , key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🐦" , key: m.key }});
 
   if (!args.join(" ")) return reply(`${pushname} Please provide a search term!`);
  reply(mess.waiting)
@@ -4967,37 +4018,11 @@ case 'pin': {
 
   // Send each image without any caption
   for (let i = 0; i < results.length; i++) {
-    A17.sendMessage(m.chat, { image: { url: results[i] } }, { quoted: m });
+    DDev-BOT.sendMessage(m.chat, { image: { url: results[i] } }, { quoted: m });
   }
 }
 break;
 
-
-// case 'pinterest':
-// case 'pin': {
-//   if (isBan) return reply(mess.banned);
-//   if (isBanChat) return reply(mess.bangc);
-//   A17.sendMessage(from, { react: { text: "🐦", key: m.key } });
-
-//   if (!args.join(" ")) return reply(`${pushname} Please provide a search term!`);
-//   reply(mess.waiting);
-//   let { pinterest } = require('./lib/scraper');
-//   let anutrest = await pinterest(text);
-//   let results = [];
-
-//   // Get multiple random images (let's say 5 images)
-//   const numImages = 5;
-//   for (let i = 0; i < numImages && i < anutrest.length; i++) {
-//     results.push(anutrest[Math.floor(Math.random() * anutrest.length)]);
-//   }
-
-//   // Send each image with a common caption
-//   const commonCaption = 'Check out this image from Pinterest By A17';
-//   for (let i = 0; i < results.length; i++) {
-//     A17.sendMessage(m.chat, { image: { url: results[i] }, caption: commonCaption }, { quoted: m });
-//   }
-// }
-// break;
 
 
 
@@ -5010,23 +4035,23 @@ break;
 case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take A17|By: Kai`)
+if (!args.join(" ")) return reply(`Like use -take DDev-BOT|By: Kai`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
 if (m.quoted.isAnimated === true) {
-A17.downloadAndSaveMediaMessage(quoted, "gifee")
-A17.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+DDev-BOT.downloadAndSaveMediaMessage(quoted, "gifee")
+DDev-BOT.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await A17.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await DDev-BOT.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds is allowed!')
 let media = await quoted.download()
-let encmedia = await A17.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await DDev-BOT.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 seconds is allowed!`)
@@ -5038,17 +4063,17 @@ break;
 case 'smeme': case 'stickermeme': case 'stickmeme': {
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 let { TelegraPh } = require('./lib/uploader')
 if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 reply(mess.wait)
-mee = await A17.downloadAndSaveMediaMessage(quoted)
+mee = await DDev-BOT.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await A17.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await DDev-BOT.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(memek)
 }
 break;
@@ -5057,15 +4082,15 @@ break;
 case 'sgif': case 'sticker': case 's': {
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await A17.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await DDev-BOT.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
 let media = await quoted.download()
-let encmedia = await A17.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await DDev-BOT.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
@@ -5080,58 +4105,19 @@ break;
 
 
 
-// case 'couple': case 'ship': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(`${mess.grouponly}`)
-// A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
-
-// let member = participants.map(u => u.id)
-// let orang = member[Math.floor(Math.random() * member.length)]
-// let jodoh = member[Math.floor(Math.random() * member.length)]
-// let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-// Ohh i see 👀💖...`
-// let menst = [orang, jodoh]
-// let buttons = [
-// { buttonId: '❤️', buttonText: { displayText: 'Congratulations ❤️' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttons, jawab, A17.user.name, m, {mentions: menst})
-// }
-// break;
-
-
-// case 'soulmate': {
-//   if (isBan) return reply(mess.banned)
-//   if (isBanChat) return reply(mess.bangc)
-// if (!m.isGroup) return replay(`${mess.grouponly}`)
-// A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
-// let member = participants.map(u => u.id)
-// let me = m.sender
-// let jodoh = member[Math.floor(Math.random() * member.length)]
-// let jawab = `👫 Soulmates
-// @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
-// let ments = [me, jodoh]
-// let buttons = [
-// { buttonId: '❤️', buttonText: { displayText: 'Be my Soulmate ❤️' }, type: 1 }
-// ]
-// await A17.sendButtonText(m.chat, buttons, jawab, A17.user.name, m, {mentions: ments})
-// }
-// break;
-
-
 case 'soulmate':  {
 
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
   if (!m.isGroup) return reply(`${mess.grouponly}`);
-  A17.sendMessage(from, { react: { text: "🌝", key: m.key } });
+  DDev-BOT.sendMessage(from, { react: { text: "🌝", key: m.key } });
 
   let member = participants.map(u => u.id);
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
   let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
-  A17.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
+  DDev-BOT.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
 
@@ -5139,23 +4125,23 @@ break;
 case 'handsomecheck':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "😺" , key: m.key }})
       if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
         const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const teng = gan[Math.floor(Math.random() * gan.length)]
-A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+DDev-BOT.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
         break;
 
 
 case 'beautifulcheck':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "😺" , key: m.key }})
   
       if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
         const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const tik = can[Math.floor(Math.random() * can.length)]
-A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+DDev-BOT.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
         break;
 
 
@@ -5171,24 +4157,24 @@ case 'greatcheck':
                     case 'uglycheck':
                       if (isBan) return reply(mess.banned)
                       if (isBanChat) return reply(mess.bangc)
-  A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
+  DDev-BOT.sendMessage(from, { react: { text: "😺" , key: m.key }})
   
       if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
         const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+DDev-BOT.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
         break;
 
 
 case 'charactercheck':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🤧" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🤧" , key: m.key }})
 
         if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
-        const A17tttt =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
-        const taky = A17tttt[Math.floor(Math.random() * A17tttt.length)]
-        A17.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+        const DDev-BOTtttt =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+        const taky = DDev-BOTtttt[Math.floor(Math.random() * DDev-BOTtttt.length)]
+        DDev-BOT.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
            break;
                  
 
@@ -5196,7 +4182,7 @@ A17.sendMessage(from, { react: { text: "🤧" , key: m.key }})
 case 'dare':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 
                  const dare =[
        "eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
@@ -5281,16 +4267,16 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
         "put your father name on status for 5hrs",
         "send abusive words in any grup, excepting this grup, and send screenshot proof here"
    ]
-                 const A17dareww = dare[Math.floor(Math.random() * dare.length)]
+                 const DDev-BOTdareww = dare[Math.floor(Math.random() * dare.length)]
                  buffer = await getBuffer(`https://images4.alphacoders.com/101/1016619.jpg`)
-                 A17.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n'+ A17dareww }, {quoted:m})
+                 DDev-BOT.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n'+ DDev-BOTdareww }, {quoted:m})
                  break;
                      
 
 case 'truth':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🌝" , key: m.key }})
   
                          const truth =[
                "Have you ever liked anyone? How long?",
@@ -5383,24 +4369,19 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
                "Whats the strangest dream you have ever had",
                "do you play pubg, if you then send ur id number"
            ]
-                         const A17truthww = truth[Math.floor(Math.random() * truth.length)]
+                         const DDev-BOTtruthww = truth[Math.floor(Math.random() * truth.length)]
                          buffer = await getBuffer(`https://images2.alphacoders.com/650/650812.jpg`)
-                         A17.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n'+ A17truthww }, {quoted:m})
+                         DDev-BOT.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n'+ DDev-BOTtruthww }, {quoted:m})
                          break;
 
 
 
-
-/* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ NSFW ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-
-
-
-case 'nsfwA17':
+case 'nsfwDDev-BOT':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
 reply(mess.wait)
 nye = `http://api.lolhuman.xyz/api/gimage?apikey=${lolkey}&query=${command}`
-A17.sendMessage(from, {image:{url:nye}, caption:"Master..."}, {quoted:m})
+DDev-BOT.sendMessage(from, {image:{url:nye}, caption:"Master..."}, {quoted:m})
 break;
 
 case 'mediafire': case 'mediafiredl': {
@@ -5417,193 +4398,22 @@ const result4 = `「  *Mediafire Downloader*  」
 *Mime* : ${baby1[0].mime}
 *Link* : ${baby1[0].link}`
 reply(`${result4}`)
-A17.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+DDev-BOT.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
 break;
 
 
-// case 'masturbation': case 'jahy': case 'hentai': case 'glasses': case 'gangbang': case 'foot': 
-// case 'femdom': case 'cum': case 'ero': case 'cuckold': case 'blowjob': case 'bdsm': 
-// case 'ahegao': case 'ass': case 'orgy': case 'panties': case 'pussy': case 'thighs': case 'yuri': case 'tentacles':
-// // if (isBan) return reply(mess.banned)	 			
-// // if (isBanChat) return reply(mess.bangc)
-// // if (!m.isGroup) return replay(mess.grouponly)
-// // if (!AntiNsfw) return reply(mess.nonsfw)
-// // try{
-// // reply(mess.waiting)
-
-
-
-// // buffer = `https://fantox-apis.vercel.app/${command}`
-// // A17.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
-
-
-// // // NoHorny = await fetchJson(`https://fantox-apis.vercel.app/${command}`)
-// // // YesHorny = await getBuffer(NoHorny.result)
-// // // A17.sendMessage(from, {image:YesHorny},{quoted:m})
-// // // } catch (e) {error("Error")}	
-// // break;
-
-// case 'spank':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
-// let spbuff = await getBuffer(spankd.data.url)
-// let spgif = await GIFBufferToVideoBuffer(spbuff)   
-//       await A17.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m }).catch(err => {
-//                   return reply('Error!')
-//                                   })
-// break;
-
-
-// case 'blowjobgif': case 'bj' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
-// let bjf = await getBuffer(bjd.data.url)
-// let bjif = await GIFBufferToVideoBuffer(bjf)   
-//       await A17.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
-//                   return reply('error..')
-//                                   })
-// break;
-
-
-// case 'hentaivid': case 'hentaivideo': {
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// anu = await hentai()
-// result912 = anu[Math.floor(Math.random(), anu.length)]
-// A17.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `Title : ${result912.title}\nCategory : ${result912.category}\n$Mimetype : ${result912.type}\nViews : ${result912.views_count}\nShares : ${result912.share_count}\nSource : ${result912.link}\nMedia Url : ${result912.video_1}` }, { quoted: m })
-// }
-// break;
-
-
-// case 'trap' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-// waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
-// /* let trapbot = [
-//   {buttonId: `${prefix}trap`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button2Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Here it is...`,
-// /* buttons: trapbot,
-// headerType: 1 */
-// }     
-//           await A17.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'hentai-neko' :
-// case 'hneko' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-//   waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-// /* let hnekobot = [
-//   {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button3Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Nyaah...`,
-// /* buttons: hnekobot,
-// headerType: 1 */
-// }      
-//           await A17.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'hentai-waifu' :
-// case 'hwaifu' :
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)
-//   waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
-// /* let nwaifubot = [
-//   {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
-//   ] */
-// let button4Messages = {
-//  image: {url:waifudd.data.url},
-//  caption:  `Here it is...`,
-// /* buttons: nwaifubot,
-// headerType: 1 */
-// }      
-//           await A17.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;
-
-
-// case 'gasm':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//   if (!AntiNsfw) return reply(mess.nonsfw)
-// reply(mess.waiting)						
-// waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-//                      /*    var wbuttsss = [
-//       {buttonId: `${prefix}gasm`, buttonText: {displayText: `>>`}, type: 1},
-//       ] */
-//     let buttonsssMessages = {
-//      image: {url:waifudd.data.url},
-//      caption:  `Here it is...`,
-//    /* footer: `${global.BotName}`,
-//     buttons: wbuttsss,
-//     headerType: 4 */
-//     }     
-//           await A17.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
-//                   return('Error!')
-//               })
-// break;  
-
-
-
-// /* ████ ✪ ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ [ Anime Mode ] ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███ ✪ ███ */
-
-
-          ///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-//
 case 'smug2':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
 reply(mess.waiting)						
 waifudd = await axios.get(`https://nekos.life/api/v2/img/smug`)
-                  /*       var wbuttsss = [
-      {buttonId: `${prefix}smug2`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+                  
     let button1ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Here it is...`,
-  /*  footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
     }     
-          await A17.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
               })
 break;
@@ -5613,22 +4423,18 @@ case 'foxgirl':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-  A17.sendMessage(from, { react: { text: "✨" , key: m.key }})     
+  DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }})     
 
 reply(mess.waiting)							
 waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
 
-           /* var wbuttsss = [
-      {buttonId: `${prefix}foxgirl`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+           
     let button12ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Awoooo...`,
-    /* footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
+    
     }     
-          await A17.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
               })
 break;   
@@ -5640,16 +4446,12 @@ case 'animenom' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)
   waifudd = await axios.get(`https://waifu.pics/api/sfw/nom`)
-/*  let xxhnekobot = [
-  {buttonId: `${prefix}animenom`, buttonText: {displayText: `>>`}, type: 1},
-  ]  */
 let xx1button3Messages = {
  image: {url:waifudd.data.url},
  caption:  `Here it is...`,
-/*  buttons: xxhnekobot,
-headerType: 1 */
+
 }      
-          await A17.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
                   return('Error!')
               })
 break;
@@ -5661,17 +4463,12 @@ case 'waifu3':
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)						
 waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
-                 /*        var wbuttsss = [
-      {buttonId: `${prefix}waifu3`, buttonText: {displayText: `>>`}, type: 1},
-      ] */
+                 
     let button112ssMessages = {
      image: {url:waifudd.data.url},
      caption:  `Here it is...`,
- /*   footer: `${global.BotName}`,
-    buttons: wbuttsss,
-    headerType: 4 */
     }     
-          await A17.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
               })
 break;
@@ -5682,21 +4479,16 @@ case 'crossplay': case 'crosplay': case 'cosplay':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-  A17.sendMessage(from, { react: { text: "✨" , key: m.key }})  
+  DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }})  
 
-           /*   const buttons = [
-      {buttonId: '-crossplay', buttonText: {displayText: '>>'}, type: 1},
-          ]     */     
+                
 
       const cosplybutton = {
       image: {url: 'https://fantox-cosplay-api.onrender.com/'},
       caption: "Guess who am i...",
-     /* footer: `${global.BotName}`,
-      buttons: buttons,
-      headerType: 4 */
       }
                 
-      await A17.sendMessage(m.chat,cosplybutton, { quoted:m }).catch(err => {
+      await DDev-BOT.sendMessage(m.chat,cosplybutton, { quoted:m }).catch(err => {
           return('Error!')
       })  
 
@@ -5720,7 +4512,7 @@ reply(mess.waiting)
     buttons: wbutsss,
     headerType: 4
     }
-          await A17.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
                   return('Error!')
               })               
               break;
@@ -5744,7 +4536,7 @@ waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
     buttons: wbuttsss,
     headerType: 4
     }     
-          await A17.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
               })
 break;
@@ -5762,7 +4554,7 @@ case 'cry':  case 'handhold':{
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "❤" , key: m.key }})
 
 var pat = await fetchJson(`https://api.waifu.pics/sfw/${command}`)
 try {
@@ -5789,7 +4581,7 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
@@ -5827,7 +4619,7 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
@@ -5865,7 +4657,7 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
@@ -5903,7 +4695,7 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
@@ -5945,7 +4737,7 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
@@ -5986,33 +4778,12 @@ console.log(musers)
       const response = await axios.get(pat.url,  { responseType: 'arraybuffer' })
       const buffer = Buffer.from(response.data, "utf-8")
   var fetchedgif = await GIFBufferToVideoBuffer(buffer)
-  A17.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
+  DDev-BOT.sendMessage(m.chat,{video: fetchedgif, gifPlayback:true,mentions:ment,caption:musers},{quoted:m})
   } catch (error) {
       console.log(error);
   }
 }
 break;
-
-
-/*
-
-case 'cry': case 'kill': case 'hug': case 'pat': case 'lick': case 'kiss': case 'bite': case 'yeet':
-case 'bully': case 'bonk': case 'wink': case 'poke': case 'nom': case 'slap': case 'smile':
-case 'wave': case 'blush': case 'smug': case 'glomp': case 'happy': case 'dance':
-case 'cringe': case 'cuddle': case 'highfive': case 'handhold': case 'kick':
-
-  if (isBan) return reply(mess.banned)	 			
-  if (isBanChat) return reply(mess.bangc)
-  if (!m.isGroup) return replay(mess.grouponly)						
-resggh = await axios.get(`https://nekos.life/api/v2/img/${command}`)         
-let resffj = await getBuffer(resggh.data.url)
-let resmain = await GIFBufferToVideoBuffer(resffj)   
-    await A17.sendMessage(m.chat,{video: resmain, gifPlayback:true},{ quoted:m }).catch(err => {
-                return reply('error..')
-                                })
-break;
-
-*/
 
 
 case 'megumin':
@@ -6021,17 +4792,11 @@ if (isBanChat) return reply(mess.bangc)
 if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)							
 ud = await axios.get('https://waifu.pics/api/sfw/megumin')
-/*var wbutsss = [
-  {buttonId: `${prefix}megumin`, buttonText: {displayText: `>>`}, type: 1},
-       ] */
     let buttonzMessage = {
     image: {url:ud.data.url},
      caption:  `Here it is...`,
- /*   footer: `${global.BotName}`,
-        buttons: wbutsss,
-   headerType: 4 */
-                    }
-await A17.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
+                     }
+await DDev-BOT.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
    return('Error!')
   })               
 break;     
@@ -6041,22 +4806,16 @@ case 'awoo':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-  A17.sendMessage(from, { react: { text: "✨" , key: m.key }}) 
+  DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }}) 
 
   reply(mess.waiting)						
 waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
-/* var wbuttsss = [
-  {buttonId: `${prefix}awoo`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
 let button1Messages = {
  image: {url:waifudd.data.url},
  caption:  `Here it is...`,
-/*  footer: `${global.BotName}`,
-buttons: wbuttsss,
-headerType: 2 */
 
 }       
-          await A17.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
                   return('Error!')
               })
 break;
@@ -6086,58 +4845,11 @@ var walb = [
     buttons: walb,
     headerType: 4
     }     
-          await A17.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
+          await DDev-BOT.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
                   return('Error!')
               })          
 break;
 
-
-// case 'anime':
-//   if (isBan) return reply(mess.banned)	 			
-//   if (isBanChat) return reply(mess.bangc)
-//   if (!m.isGroup) return replay(mess.grouponly)
-//     if(!q) return reply(`Please proide a search term!\n\n*Example:* ${prefix}anime naruto`)
-// reply(mess.waiting)							
-// const { Anime } =require("@shineiichijo/marika")
-//   const client = new Anime();
-//    let anime = await client.searchAnime(q)
-//   let result = anime.data[0];
-//   console.log(result)
-//  let details = `*Title:* ${result.title}\n`;
-//   details += `*Format:* ${result.type}\n`;
-//   details += `*Status:* ${result.status.toUpperCase().replace(/\_/g, " ")}\n`;
-//   details += `*Total episodes:* ${result.episodes}\n`;
-//   details += `*Duration:* ${result.duration}\n`;
-//   details += `*Genres:*\n`;
-//   for (let i = 0; i < result.genres.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t${result.genres[i].name}\n`;
-//   }
-//   details += `*Based on:* ${result.source.toUpperCase()}\n`;
-//   details += `*Studios:*\n`;
-//   for (let i = 0; i < result.studios.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t${result.studios[i].name}\n`;
-//   }
-//   details += `*Producers:*\n`;
-//   for (let i = 0; i < result.producers.length; i++) {
-//     details += `\t\t\t\t\t\t\t\t\t\t${result.producers[i].name}\n`;
-//   }
-//   details += `*Premiered on:* ${result.aired.from}\n`;
-//   details += `*Ended on:* ${result.aired.to}\n`;
-//   details += `*Popularity:* ${result.popularity}\n`;
-//   details += `*Favorites:* ${result.favorites}\n`;
-//   details += `*Rating:* ${result.rating}\n`;
-//   details += `*Rank:* ${result.rank}\n\n`;
-//   if (result.trailer.url !== null)
-//     details += `*Trailer:* ${result.trailer.url}\n\n`;
-//   details += `*URL:* ${result.url}\n\n`;
-//   if (result.background !== null)
-//     details += `*Background:* ${result.background}\n\n`;
-//   details += `*Description:* ${result.synopsis.replace(
-//     /\[Written by MAL Rewrite]/g,
-//     ""
-//   )}`
-// A17.sendMessage(m.chat,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m})   
-// break;
 
 
 //
@@ -6145,7 +4857,7 @@ case 'anime': {
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-  A17.sendMessage(from, { react: { text: "🍁" , key: m.key }});
+  DDev-BOT.sendMessage(from, { react: { text: "🍁" , key: m.key }});
   if(!text) return reply(`Please proide a search term!\n\n*Example:* ${prefix}anime naruto`)
 
   const malScraper = require('mal-scraper')
@@ -6167,7 +4879,7 @@ case 'anime': {
   ♦️ *Trailer: ${anime.trailer}*
   🌐 *URL: ${anime.url}*
   ❄ *Description:* ${anime.synopsis}*`
-                  await A17.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
+                  await DDev-BOT.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
                   }
                   break;
 
@@ -6176,7 +4888,7 @@ case 'manga':
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly) 
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   
 reply(mess.waiting)							
 const { Manga } =require("@shineiichijo/marika")
@@ -6206,7 +4918,7 @@ let srh = await manga.searchManga(q)
     /\[Written by MAL Rewrite]/g,
     ""
   )}`;
-A17.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
+DDev-BOT.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
 break;
 
 
@@ -6216,17 +4928,12 @@ case 'waifu' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/waifu')
-/*var wbuttsssr = [
-  {buttonId: `${prefix}waifu`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let button4Messagess = {
       image: {url:waifuddd.data.url},
       caption: 'More than one waifu will definitely ruin your Laifu!',
-      /*buttons: wbuttsssr,
-      headerType: 4 */
        }     
                                 
-  await A17.sendMessage(m.chat, button4Messagess, { quoted:m }).catch(err => {
+  await DDev-BOT.sendMessage(m.chat, button4Messagess, { quoted:m }).catch(err => {
       return('error..')
       })
 break;
@@ -6238,17 +4945,12 @@ case 'neko' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/neko')
-/*var wbuttsssr = [
-  {buttonId: `${prefix}neko`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let buttonMessagessf = {
       image: {url:waifuddd.data.url},
       caption: 'Nyaa...',
-  /*    buttons: wbuttsssr,
-      headerType: 2  */
        }     
                                 
-  await A17.sendMessage(m.chat, buttonMessagessf, { quoted:m }).catch(err => {
+  await DDev-BOT.sendMessage(m.chat, buttonMessagessf, { quoted:m }).catch(err => {
       return('error..')
       })
 break;
@@ -6260,17 +4962,13 @@ case 'loli' :
   if (!m.isGroup) return replay(mess.grouponly)
 reply(mess.waiting)	
   waifuddd = await axios.get('https://waifu.pics/api/sfw/shinobu')
-/* var wbuttsssr = [
-  {buttonId: `${prefix}loli`, buttonText: {displayText: `>>`}, type: 1},
-  ] */
       let buttonMessagessfgr = {
       image: {url:waifuddd.data.url},
       caption: 'Dont be a lolicon !',
-    /*  buttons: wbuttsssr,
-      headerType: 2 */
+    
        }     
                                 
-  await A17.sendMessage(m.chat, buttonMessagessfgr, { quoted:m }).catch(err => {
+  await DDev-BOT.sendMessage(m.chat, buttonMessagessfgr, { quoted:m }).catch(err => {
       return('error..')
       })
 break;
@@ -6295,7 +4993,7 @@ case "darkjoke":
   if (!m.isGroup) return replay(mess.grouponly)
 var res = await Darkjokes()
 teks = "\nDarkjokes"
-A17.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+DDev-BOT.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break;
 
 
@@ -6315,13 +5013,13 @@ break;
  if (AntiLinkAll) return replay('Already activated')
  ntilinkall.push(from)
  replay('Enabled all antilink !')
- var groupe = await A17.groupMetadata(from)
+ var groupe = await DDev-BOT.groupMetadata(from)
  var members = groupe['participants']
  var mems = []
  members.map(async adm => {
  mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
  })
- A17.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ DDev-BOT.sendMessage(from, {text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
  } else if (args[0] === "off") {
  if (!AntiLinkAll) return replay('Already deactivated')
  let off = ntilinkall.indexOf(from)
@@ -6329,25 +5027,13 @@ break;
  replay('Disabled all antilink !')
  } else {
    let textmsg = 'Type ' + `${prefix}${command}` + ' on to turn on antilink feature or Type ' + `${prefix + command}` + ' off to turn off antilink feature'
-   await A17.sendMessage(m.chat, { text: `${textmsg}`}, `${global.BotName}`, m)
+   await DDev-BOT.sendMessage(m.chat, { text: `${textmsg}`}, `${global.BotName}`, m)
    }
    }
    break;
 
      
-      // case 'remove': {
-
-      //   if (!m.isGroup) return replay(mess.grouponly)
-      //   if (!isBotAdmins) return replay(mess.botadmin)
-      //   if (!isAdmins && !isCreator) return replay(mess.useradmin)
-      //   let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-      //   await A17.groupParticipantsUpdate(m.chat, [users], 'remove')
-      // }
-      //   break;
-
-
-
-
+  
       ///////////////////////////////////////////////////
 
 
@@ -6372,7 +5058,7 @@ break;
     }
     }]
     let txt = `「 *${global.OwnerName}'s Broadcast* 」\n\n${text}`
-    A17.send5ButImg(yoi, txt, `${global.BotName}`, BotLogo, btn, Thumb)
+    DDev-BOT.send5ButImg(yoi, txt, `${global.BotName}`, BotLogo, btn, Thumb)
     }
     replay('Broadcast Sent !')
     }
@@ -6388,330 +5074,296 @@ break;
     case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-    A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
-    const helpmenu = `Hemlo *${pushname}* Dear...!! ${nowtime} ,
+    DDev-BOT.sendMessage(from, { react: { text: "✌️" , key: m.key }})      
+    const helpmenu = `😇𝘏𝘌𝘓𝘓𝘖 *${pushname}* ${nowtime} ,
+
+    👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
     
-Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that is possible on WhatsApp based on WhatsApp Multi Device(MD) Support.
-  
+   ╔════ 🏜️ 𝚃𝙾𝙳𝙰𝚈 🏖 ️════════════➤
+   ║
+   ║  📅*𝙳𝙰𝚃𝙴* : ${kaidate}
+   ║  ⏳*𝚃𝙸𝙼𝙴* : ${kaitime}
+   ║ 
+   ╟━━━━ 🤖 𝙱𝙾𝚃 𝙸𝙽𝙵𝙾 🤖 ━━━━━━━━━━➤
+   ║
+   ║  🤖*𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* ${pushname} 
+   ║  👨‍💼*𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* ${global.OwnerName} 
+   ║  ⏳*𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
+   ║  🖥️*𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
+   ╚══════════════════════════➤
 
-    ⌯    *Time* : ${kaitime}
-    ⌯    *Date* : ${kaidate}
-
-
-    〢━━━ 〄 Bot Info 〄 ━━━〢
-
-
-    ⌯    *Bot usr name :* ${pushname} 
-    ⌯    *My prefix is :*  ${prefix}
-    ⌯    *Owner name :* ${global.OwnerName} 
-    ⌯    *Bot runtime :* ${runtime(process.uptime())} 
-    ⌯    *Platform :* Linux
-
-
-    〢━━━ 〄 Core 〄 ━━━〢
-
-
-    ⌯     ${prefix}repo
-    ⌯     ${prefix}script
-    ⌯     ${prefix}speak
-    ⌯     ${prefix}support
-    ⌯     ${prefix}stalk
-    ⌯     ${prefix}A17
-    ⌯     ${prefix}delete
-  
-
-    〢━━━ ⌬ Owner Only ⌬ ━━━〢
-
-
-    ⌯     ${prefix}join
-    ⌯     ${prefix}self
-    ⌯     ${prefix}public
-    ⌯     ${prefix}restart
-    ⌯     ${prefix}sleep
-    ⌯     ${prefix}setbotpp
-    ⌯     ${prefix}post
-    ⌯     ${prefix}listonline
-    ⌯     ${prefix}listgc
-    ⌯     ${prefix}listpc
-    ⌯     ${prefix}getcase
-    ⌯     ${prefix}bangroup
-    ⌯     ${prefix}broadcast
-    ⌯     ${prefix}bye
-    ⌯     ${prefix}block
-    ⌯     ${prefix}unblock
-    ⌯     ${prefix}ban add
-    ⌯     ${prefix}ban del
-
-   
-    〢━━━ ❅ Group Moderation ❅ ━━━〢
-
-
-    ⌯     ${prefix}add
-    ⌯     ${prefix}invite
-    ⌯     ${prefix}remove
-    ⌯     ${prefix}promote
-    ⌯     ${prefix}demote
-    ⌯     ${prefix}grouplink
-    ⌯     ${prefix}groupsetting
-    ⌯     ${prefix}setname
-    ⌯     ${prefix}setgcpp
-    ⌯     ${prefix}setdesc
-    ⌯     ${prefix}revoke
-    ⌯     ${prefix}tagall
-    ⌯     ${prefix}hidetag
-    ⌯     ${prefix}nsfw
-    ⌯     ${prefix}nsnfwmenu
-  
-
-    〢━━━❗ *Anti Link ❗* ━━━〢
-
-    
-    ⌯     ${prefix}antilinkgc
-    ⌯     ${prefix}antilinktt
-    ⌯     ${prefix}antilinkytch
-    ⌯     ${prefix}antilinkytch
-    ⌯     ${prefix}antilinkig
-    ⌯     ${prefix}antilinkfb
-    ⌯     ${prefix}antilinktwit
-    ⌯     ${prefix}antiwame
-    ⌯     ${prefix}antilinkall
-    
-
-    〢━━━ 🔍 *Search* 🔎 ━━━〢
-    
-   
-    ⌯     ${prefix}play
-    ⌯     ${prefix}song
-    ⌯     ${prefix}video
-    ⌯     ${prefix}ytmp3
-    ⌯     ${prefix}ytmp4 
-    ⌯     ${prefix}yts
-    ⌯     ${prefix}lyrics
-    ⌯     ${prefix}movie
-    ⌯     ${prefix}google
-    ⌯     ${prefix}gimage
-    ⌯     ${prefix}pinterest
-    ⌯     ${prefix}wallpaper
-    ⌯     ${prefix}image
-    ⌯     ${prefix}searchgc
-    ⌯     ${prefix}wikimedia
- 
-  
-    〢━━━ 📈 *Economy* 📈 ━━━〢
-  
-
-    ⌯     ${prefix}daily 
-    ⌯     ${prefix}wallet
-    ⌯     ${prefix}bank
-    ⌯     ${prefix}bankupgrade
-    ⌯     ${prefix}deposit
-    ⌯     ${prefix}withdraw 
-    ⌯     ${prefix}rob / attack
-    ⌯     ${prefix}transfer / give
-    ⌯     ${prefix}wealth / ritual
-  
-
-    〢━━━ 🎮 *Games* 🎮 ━━━〢
-
-
-    ⌯     ${prefix}ttt / tictactoe
-    ⌯     ${prefix}truth
-    ⌯     ${prefix}dare
-    ⌯     ${prefix}spin / slot
-    ⌯     ${prefix}gamble / lottery
-   
-
-    〢━━━ 🛠️ *Convert* 🛠️ ━━━〢
-   
-
-    ⌯     ${prefix}sticker
-    ⌯     ${prefix}toimg
-    ⌯     ${prefix}tovideo
-    ⌯     ${prefix}togif
-    ⌯     ${prefix}tourl
-    ⌯     ${prefix}tomp3
-    ⌯     ${prefix}toaudio
-    ⌯     ${prefix}steal
-    ⌯     ${prefix}stickermeme
-    ⌯     ${prefix}emojimix
-
-
-    〢━━━ ◈ Sound Edit ◈ ━━━〢
-
-
-    ⌯     ${prefix}ringtone
-    ⌯     ${prefix}bass
-    ⌯     ${prefix}tempo
-    ⌯     ${prefix}blown
-    ⌯     ${prefix}robot
-    ⌯     ${prefix}slow
-    ⌯     ${prefix}squirrel
-    ⌯     ${prefix}deep
-    ⌯     ${prefix}earrape
-    ⌯     ${prefix}fast
-    ⌯     ${prefix}fat
-    ⌯     ${prefix}nightcore
-    ⌯     ${prefix}reverse
- 
-
-    〢━━━ 📍 *Reactions* 📍 ━━━〢
-   
-
-    ⌯     ${prefix}cuddle
-    ⌯     ${prefix}hug
-    ⌯     ${prefix}kiss
-    ⌯     ${prefix}bonk
-    ⌯     ${prefix}cry
-    ⌯     ${prefix}bully
-    ⌯     ${prefix}slap
-    ⌯     ${prefix}kill
-    ⌯     ${prefix}happy
-    ⌯     ${prefix}lick
-    ⌯     ${prefix}pat
-    ⌯     ${prefix}smug
-    ⌯     ${prefix}nom
-    ⌯     ${prefix}glomp
-    ⌯     ${prefix}bite
-    ⌯     ${prefix}yeet
-    ⌯     ${prefix}blush
-    ⌯     ${prefix}smile
-    ⌯     ${prefix}wave
-    ⌯     ${prefix}highfive
-    ⌯     ${prefix}handhold
-    ⌯     ${prefix}poke
-    ⌯     ${prefix}wink
-    ⌯     ${prefix}dance
-    ⌯     ${prefix}cringe
-
-
-    〢━━━ 🌌 *Downloader* 🌌 ━━━〢
-   
-  
-    ⌯     ${prefix}ytvideo
-    ⌯     ${prefix}mediafire
-    ⌯     ${prefix}instagram
-    ⌯     ${prefix}igtv
-    ⌯     ${prefix}facebook
-    ⌯     ${prefix}fbmp3
-    ⌯     ${prefix}twitter
-    ⌯     ${prefix}twittermp3
-    ⌯     ${prefix}tiktok
-    ⌯     ${prefix}tiktokaudio
-    ⌯     ${prefix}happymod
-    ⌯     ${prefix}tiktoknowm
-  
-   
-    〢━━━ 🎐 *Fun* 🎐 ━━━〢
-    
-
-    ⌯     ${prefix}reaction
-    ⌯     ${prefix}cutecheck
-    ⌯     ${prefix}couple
-    ⌯     ${prefix}soulmate
-    ⌯     ${prefix}handsomecheck
-    ⌯     ${prefix}beautifulcheck
-    ⌯     ${prefix}awesomecheck
-    ⌯     ${prefix}greatcheck
-    ⌯     ${prefix}gaycheck
-    ⌯     ${prefix}uglycheck
-    ⌯     ${prefix}charactercheck
-    ⌯     ${prefix}lesbiancheck
-    ⌯     ${prefix}hornychec
-    ⌯     ${prefix}prettycheck
-    ⌯     ${prefix}lovelycheck
-
-
-    〢━━━ 🈴 *Weeb* 🈴 ━━━〢
-  
-    
-    ⌯     ${prefix}anime
-    ⌯     ${prefix}animestory
-    ⌯     ${prefix}awoo
-    ⌯     ${prefix}manga
-    ⌯     ${prefix}animewall
-    ⌯     ${prefix}animewallpaper2
-    ⌯     ${prefix}crosplay
-    ⌯     ${prefix}animenom
-    ⌯     ${prefix}feed
-    ⌯     ${prefix}foxgirl
-    ⌯     ${prefix}waifu
-    ⌯     ${prefix}waifu2
-    ⌯     ${prefix}waifu3
-    ⌯     ${prefix}loli
-    ⌯     ${prefix}coffee
-    ⌯     ${prefix}tickle
-    ⌯     ${prefix}meow
-    ⌯     ${prefix}neko
-    ⌯     ${prefix}neko2
-    ⌯     ${prefix}migumin
-    ⌯     ${prefix}wallpaper
-    ⌯     ${prefix}animequote
-   
- 
-    〢━━━ ♨️ *Informative* ♨️ ━━━〢
-    
-  
-    ⌯     ${prefix}quote
-    ⌯     ${prefix}weather
-    ⌯     ${prefix}covid
-    ⌯     ${prefix}earthquake
-    ⌯     ${prefix}wiki
-    ⌯     ${prefix}stalknumber
-  
-
-    〢━━━ 🪁 *Essentials* 🪁 ━━━〢
-   
-    
-    ⌯     ${prefix}qr
-    ⌯     ${prefix}say
-    ⌯     ${prefix}fliptext
-    ⌯     ${prefix}toletter
-    ⌯     ${prefix}translate, 
-    
-   
-    〢━━━ 🎗 *Others* 🎗 ━━━〢
- 
-
-    ⌯     ${prefix}stickermeme
-    ⌯     ${prefix}quotes
-    ⌯     ${prefix}report
-    ⌯     ${prefix}afk
-    ⌯     ${prefix}darkjoke
-    
-
-    〢━━━ ⚠️ *NSFW* ⚠️ ━━━〢
-   
-   
-    ⌯    🍁 Type "*${prefix}nsfw*" then enable 
-    ⌯       NSFW (Admin only!)
-    ⌯    
-    ⌯    🍁 Then type "*${prefix}nsfwmenu*" for
-    ⌯       all NSFW commands.
-    ⌯    
-    ⌯    『  *${global.BotName}*  』
-    ⌯       Developed By: *Kai*
-    ⌯    
-    ⌯    🍁 To use any of these
-    ⌯       commands type.
-    ⌯    
-    ⌯    "*${prefix}<Command name>*".
-    ⌯    
-    ⌯    🍁 To get Support Group link
-    ⌯     type "*${prefix}support*".
-    ⌯    
-    ⌯    
-    ⌯    🍁 Type "*${prefix}help*" to get
-    ⌯       full command list.
-    ┬│▸
-    ╰────────────···▸`
+   ┏━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}repo
+   ┃►    ${prefix}script
+   ┃►    ${prefix}speak
+   ┃►    ${prefix}support
+   ┃►    ${prefix}stalk
+   ┃►    ${prefix}DDev-BOT
+   ┃►    ${prefix}delete
+   ┃
+   ┣━━━ 👨‍💼 *𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙻𝚈* 👩‍💼 ━━━━━━➢
+   ┃
+   ┃►    ${prefix}join
+   ┃►    ${prefix}self
+   ┃►    ${prefix}public
+   ┃►    ${prefix}restart
+   ┃►    ${prefix}sleep
+   ┃►    ${prefix}setbotpp
+   ┃►    ${prefix}post
+   ┃►    ${prefix}listonline
+   ┃►    ${prefix}listgc
+   ┃►    ${prefix}listpc
+   ┃►    ${prefix}getcase
+   ┃►    ${prefix}bangroup
+   ┃►    ${prefix}broadcast
+   ┃►    ${prefix}bye
+   ┃►    ${prefix}block
+   ┃►    ${prefix}unblock
+   ┃►    ${prefix}ban add
+   ┃►    ${prefix}ban del
+   ┃
+   ┣━━━ ⬆️ *𝙶𝚁𝙾𝚄𝙿 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙸𝙾𝙽* ⬆️ ━➢
+   ┃
+   ┃►    ${prefix}add
+   ┃►    ${prefix}invite
+   ┃►    ${prefix}remove
+   ┃►    ${prefix}promote
+   ┃►    ${prefix}demote
+   ┃►    ${prefix}grouplink
+   ┃►    ${prefix}groupsetting
+   ┃►    ${prefix}setname
+   ┃►    ${prefix}setgcpp
+   ┃►    ${prefix}setdesc
+   ┃►    ${prefix}revoke
+   ┃►    ${prefix}tagall
+   ┃►    ${prefix}hidetag
+   ┃►    ${prefix}nsfw
+   ┃►    ${prefix}nsnfwmenu
+   ┃
+   ┣━━━❗ *𝙰𝙽𝚃𝙸 𝙻𝙸𝙽𝙺* ❗ ━━━━━━➢
+   ┃    
+   ┃►    ${prefix}antilinkgc
+   ┃►    ${prefix}antilinktt
+   ┃►    ${prefix}antilinkytch
+   ┃►    ${prefix}antilinkytch
+   ┃►    ${prefix}antilinkig
+   ┃►    ${prefix}antilinkfb
+   ┃►    ${prefix}antilinktwit
+   ┃►    ${prefix}antiwame
+   ┃►    ${prefix}antilinkall
+   ┃
+   ┣━━━ 🔍 *𝚂𝙴𝙰𝚁𝙲𝙷* 🔎 ━━━━━━━━➢
+   ┃   
+   ┃►    ${prefix}play
+   ┃►    ${prefix}song
+   ┃►    ${prefix}video
+   ┃►    ${prefix}ytmp3
+   ┃►    ${prefix}ytmp4 
+   ┃►    ${prefix}yts
+   ┃►    ${prefix}lyrics
+   ┃►    ${prefix}movie
+   ┃►    ${prefix}google
+   ┃►    ${prefix}gimage
+   ┃►    ${prefix}pinterest
+   ┃►    ${prefix}wallpaper
+   ┃►    ${prefix}image
+   ┃►    ${prefix}searchgc
+   ┃►    ${prefix}wikimedia
+   ┃  
+   ┣━━━ 📈 *𝙴𝙲𝙾𝙽𝙾𝙼𝚈* 📈 ━━━━━━━➢
+   ┃
+   ┃►    ${prefix}daily 
+   ┃►    ${prefix}wallet
+   ┃►    ${prefix}bank
+   ┃►    ${prefix}bankupgrade
+   ┃►    ${prefix}deposit
+   ┃►    ${prefix}withdraw 
+   ┃►    ${prefix}rob / attack
+   ┃►    ${prefix}transfer / give
+   ┃►    ${prefix}wealth / ritual
+   ┃
+   ┣━━━ 🎮 *𝙶𝙰𝙼𝙴𝚂* 🎮 ━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}ttt / tictactoe
+   ┃►    ${prefix}truth
+   ┃►    ${prefix}dare
+   ┃►    ${prefix}spin / slot
+   ┃►    ${prefix}gamble / lottery
+   ┃
+   ┣━━━ 🛠️ *𝙲𝙾𝙽𝚅𝙴𝚁𝚃𝙴𝚁* 🛠️ ━━━━━➢
+   ┃
+   ┃►    ${prefix}sticker
+   ┃►    ${prefix}toimg
+   ┃►    ${prefix}tovideo
+   ┃►    ${prefix}togif
+   ┃►    ${prefix}tourl
+   ┃►    ${prefix}tomp3
+   ┃►    ${prefix}toaudio
+   ┃►    ${prefix}steal
+   ┃►    ${prefix}stickermeme
+   ┃►    ${prefix}emojimix
+   ┃
+   ┣━━━ 🎤 *𝚂𝙾𝚄𝙽𝙳 𝙴𝙳𝙸𝚃𝙾𝚁* 🎤 ━━━➢
+   ┃
+   ┃►    ${prefix}ringtone
+   ┃►    ${prefix}bass
+   ┃►    ${prefix}tempo
+   ┃►    ${prefix}blown
+   ┃►    ${prefix}robot
+   ┃►    ${prefix}slow
+   ┃►    ${prefix}squirrel
+   ┃►    ${prefix}deep
+   ┃►    ${prefix}earrape
+   ┃►    ${prefix}fast
+   ┃►    ${prefix}fat
+   ┃►    ${prefix}nightcore
+   ┃►    ${prefix}reverse
+   ┃
+   ┣━━━ 🎭 *𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂* 🎭 ━━━━━━➢
+   ┃
+   ┃►    ${prefix}cuddle
+   ┃►    ${prefix}hug
+   ┃►    ${prefix}kiss
+   ┃►    ${prefix}bonk
+   ┃►    ${prefix}cry
+   ┃►    ${prefix}bully
+   ┃►    ${prefix}slap
+   ┃►    ${prefix}kill
+   ┃►    ${prefix}happy
+   ┃►    ${prefix}lick
+   ┃►    ${prefix}pat
+   ┃►    ${prefix}smug
+   ┃►    ${prefix}nom
+   ┃►    ${prefix}glomp
+   ┃►    ${prefix}bite
+   ┃►    ${prefix}yeet
+   ┃►    ${prefix}blush
+   ┃►    ${prefix}smile
+   ┃►    ${prefix}wave
+   ┃►    ${prefix}highfive
+   ┃►    ${prefix}handhold
+   ┃►    ${prefix}poke
+   ┃►    ${prefix}wink
+   ┃►    ${prefix}dance
+   ┃►    ${prefix}cringe
+   ┃
+   ┣━━━ 📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁* 📥 ━━━━━➢
+   ┃  
+   ┃►    ${prefix}video
+   ┃►    ${prefix}mediafire
+   ┃►    ${prefix}instagram
+   ┃►    ${prefix}igtv
+   ┃►    ${prefix}facebook
+   ┃►    ${prefix}fbmp3
+   ┃►    ${prefix}twitter
+   ┃►    ${prefix}twittermp3
+   ┃►    ${prefix}tiktok
+   ┃►    ${prefix}tiktokaudio
+   ┃►    ${prefix}happymod
+   ┃►    ${prefix}tiktoknowm
+   ┃   
+   ┣━━━ 🎐 *𝙵𝚄𝙽* 🎐 ━━━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}reaction
+   ┃►    ${prefix}cutecheck
+   ┃►    ${prefix}couple
+   ┃►    ${prefix}soulmate
+   ┃►    ${prefix}handsomecheck
+   ┃►    ${prefix}beautifulcheck
+   ┃►    ${prefix}awesomecheck
+   ┃►    ${prefix}greatcheck
+   ┃►    ${prefix}gaycheck
+   ┃►    ${prefix}uglycheck
+   ┃►    ${prefix}charactercheck
+   ┃►    ${prefix}lesbiancheck
+   ┃►    ${prefix}hornychec
+   ┃►    ${prefix}prettycheck
+   ┃►    ${prefix}lovelycheck
+   ┃
+   ┣━━━ 🈴 *𝚆𝙴𝙴𝙱* 🈴 ━━━━━━━━━━➢
+   ┃    
+   ┃►    ${prefix}anime
+   ┃►    ${prefix}animestory
+   ┃►    ${prefix}awoo
+   ┃►    ${prefix}manga
+   ┃►    ${prefix}animewall
+   ┃►    ${prefix}animewallpaper2
+   ┃►    ${prefix}crosplay
+   ┃►    ${prefix}animenom
+   ┃►    ${prefix}feed
+   ┃►    ${prefix}foxgirl
+   ┃►    ${prefix}waifu
+   ┃►    ${prefix}waifu2
+   ┃►    ${prefix}waifu3
+   ┃►    ${prefix}loli
+   ┃►    ${prefix}coffee
+   ┃►    ${prefix}tickle
+   ┃►    ${prefix}meow
+   ┃►    ${prefix}neko
+   ┃►    ${prefix}neko2
+   ┃►    ${prefix}migumin
+   ┃►    ${prefix}wallpaper
+   ┃►    ${prefix}animequote
+   ┃
+   ┣━━━ ♨️ *𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝚅𝙴* ♨️ ━━━━➢
+   ┃  
+   ┃►    ${prefix}quote
+   ┃►    ${prefix}weather
+   ┃►    ${prefix}covid
+   ┃►    ${prefix}earthquake
+   ┃►    ${prefix}wiki
+   ┃►    ${prefix}stalknumber
+   ┃
+   ┣━━━ ♻️ *𝙴𝚂𝚂𝙴𝙽𝚃𝙸𝙰𝙻𝚂* ♻️ ━━━━━➢
+   ┃    
+   ┃►    ${prefix}qr
+   ┃►    ${prefix}say
+   ┃►    ${prefix}fliptext
+   ┃►    ${prefix}toletter
+   ┃►    ${prefix}translate, 
+   ┃   
+   ┣━━━ 🎗 *𝙾𝚃𝙷𝙴𝚁𝚂* 🎗 ━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}stickermeme
+   ┃►    ${prefix}quotes
+   ┃►    ${prefix}report
+   ┃►    ${prefix}afk
+   ┃►    ${prefix}darkjoke
+   ┃
+   ┣━━━ 💀 *𝙽𝚂𝙵𝚆* 💀️ ━━━━━━━━━━➢
+   ┃   
+   ┃   🍁 Type "*${prefix}nsfw*" then enable 
+   ┃      NSFW (Admin only!)
+   ┃  
+   ┃  🍁 Then type "*${prefix}nsfwmenu*" for
+   ┃     all NSFW commands.
+   ┃   
+   ┃   『  *${global.BotName}*  』
+   ┃     Developed By: *DARK DEVIL*
+   ┃  
+   ┃   🍁 To use any of these
+   ┃      commands type.
+   ┃   
+   ┃   "*${prefix}<Command name>*".
+   ┃   
+   ┃   🍁 To get Support Group link
+   ┃    type "*${prefix}support*".
+   ┃  
+   ┃   
+   ┃ 🍁 Type "*${prefix}help*" to get
+   ┃      full command list.
+   ┃
+   ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
+         ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ`
             let buttonMessage = {
-                        video:fs.readFileSync('./system/A17_3.mp4'),gifPlayback:true,
+                        video:fs.readFileSync('./system/DDev-BOT_3.mp4'),gifPlayback:true,
                         caption: helpmenu,
                         
                         headerType: 4
                         
                     }
-                A17.sendMessage(m.chat, buttonMessage,{ quoted:m })
+                DDev-BOT.sendMessage(m.chat, buttonMessage,{ quoted:m })
                     }
     break;
      
@@ -6720,7 +5372,7 @@ Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that 
         if(isCmd){
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-        A17.sendMessage(from, { react: { text: "✨" , key: m.key }})
+        DDev-BOT.sendMessage(from, { react: { text: "✨" , key: m.key }})
             
      reply(`Do you need any help ${pushname} ? Type *${prefix}help* to get my full command list.`)
         }
@@ -6733,21 +5385,17 @@ Hemlo, I am "A17" a WhatsApp bot create and recode by Kai to do everything that 
       if (isBan) return reply(mess.banned)	 			
       if (isBanChat) return reply(mess.bangc)
       if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+DDev-BOT.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   
   reply(`Running repl....Please wait until repl.it responds...`)						
-  var replqr =  await getBuffer(`https://a17-qr-scanner.broken0007.repl.co/`)
-                     /*        var qrbutton = [
-          {buttonId: `${prefix}qr`, buttonText: {displayText: `Tap to Re-run Repl`}, type: 1}
-          ] */
+  var replqr =  await getBuffer(`https://DDev-BOT-qr-scanner.broken0007.repl.co/`)
+                     
         let bmffg = {
          image: replqr,
          caption:  `Scan the qr within 10-15 seconds...`,
-    /*    footer: `${global.BotName}`,
-        buttons: qrbutton,
-        headerType: 4 */
+    
         }     
-              await A17.sendMessage(m.chat, bmffg,{ quoted:m }).catch(err => {
+              await DDev-BOT.sendMessage(m.chat, bmffg,{ quoted:m }).catch(err => {
                       return('Error!')
                   })
   break;
@@ -6757,51 +5405,15 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
       case 'weather':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-        A17.sendMessage(from, { react: { text: "✨", key: m.key }}) 
+        DDev-BOT.sendMessage(from, { react: { text: "✨", key: m.key }}) 
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
-        A17.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
+        const weathertext = `           🌤 *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 𝚁𝙴𝙿𝙾𝚁𝚃* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        DDev-BOT.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break;
 
-
-        // case 'weather':{
-        //   if (!text) return reply('Give me Location...')
-        //               let wdata = await axios.get(
-        //                   `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
-        //               );
-        //               let textw = ""
-        //               textw += `*🗺️Weather of  ${text}*\n\n`
-        //               textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
-        //               textw += `*Description:-* ${wdata.data.weather[0].description}\n`
-        //               textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
-        //               textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
-        //               textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
-        //               textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
-        //               textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
-        //               textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
-        //               textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
-        //               textw += `*Country:-* ${wdata.data.sys.country}\n`
-          
-        //             A17.sendMessage(
-        //                   m.chat, {
-        //                       text: textw,
-        //                   }, {
-        //                       quoted: m,
-        //                   }
-        //              )
-        //              }
-        //              break;
-
-
-
-// //  "parse-ms": "^1.1.0",
-
-
-
-      ///////////////////////////////////////////////////
       ///funmenu
 
       case 'stupidcheck': case 'uncleancheck':
@@ -6812,8 +5424,8 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
       case 'waifucheck':
         cantik = body.slice(1)
         const okebnh1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
-        const A17kak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
-        A17.sendMessage(m.chat, { text: A17kak }, { quoted: m })
+        const DDev-BOTkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
+        DDev-BOT.sendMessage(m.chat, { text: DDev-BOTkak }, { quoted: m })
         break;
 
 
@@ -6828,8 +5440,8 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
       if(isCmd){
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
-          A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`Hey *${pushname}* senpai! this command are not programmed! Type *${prefix}help* to get my full command list!`)
+          DDev-BOT.sendMessage(from, { react: { text: "❌", key: m.key }}) 
+          reply (`𝙷𝚎𝚢 *${pushname}* 𝚃𝚑𝚒𝚜 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙰𝚛𝚎 𝙽𝚘𝚝 𝙿𝚛𝚘𝚐𝚛𝚊𝚖𝚖𝚎𝚍! 𝚃𝚢𝚙𝚎 *${prefix}help* 𝚃𝚘 𝙶𝚎𝚝 𝙼𝚢 𝙰𝚕𝚕 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝙻𝚒𝚜𝚝!`)
   
       }	 			
   
@@ -6847,7 +5459,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   try {
   reply(util.format(eval(`(async () => { ${budy.slice(3)} })()`)))
   } catch (e) {
-  A17.sendMessage(from, {image:ErrorPic, caption:String(e)}, {quoted:m})
+  DDev-BOT.sendMessage(from, {image:ErrorPic, caption:String(e)}, {quoted:m})
   }
   }
   if (budy.startsWith('>')) {
@@ -6857,7 +5469,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
   await reply(evaled)
   } catch (err) {
-  await A17.sendMessage(from, {image:ErrorPic, caption:String(err)}, {quoted:m})
+  await DDev-BOT.sendMessage(from, {image:ErrorPic, caption:String(err)}, {quoted:m})
   }
   }
   
@@ -6865,7 +5477,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   if (budy.startsWith('$')) {
   if (!isCreator) return replay(mess.botowner)
   exec(budy.slice(2), (err, stdout) => {
-  if(err) return A17.sendMessage(from, {image:ErrorPic, caption:String(err)}, {quoted:m})
+  if(err) return DDev-BOT.sendMessage(from, {image:ErrorPic, caption:String(err)}, {quoted:m})
   if (stdout) return replayH(stdout)
   })
   }
@@ -6876,11 +5488,11 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
     if (m.isBaileys) return
     let msgs = global.db.database
     if (!(budy.toLowerCase() in msgs)) return
-    A17.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+    DDev-BOT.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
     }
     }
     }catch (err) {
-    A17.sendMessage(`${ownertag}@s.whatsapp.net`, util.format(err), {quoted:m})
+    DDev-BOT.sendMessage(`${ownertag}@s.whatsapp.net`, util.format(err), {quoted:m})
     console.log(err)
     }
     }
