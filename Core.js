@@ -397,9 +397,6 @@ function updateStatus() {
   const uptimeInSeconds = Math.floor(process.uptime());
   const uptimeFormatted = formatTime(uptimeInSeconds);
 
-  // const status = `
-  // ㅤㅤ〄ㅤㅤ〘 DDEV Personal Edition 〙ㅤㅤ〄ㅤㅤㅤㅤ
-  // ㅤㅤㅤ〘ㅤ Auto Uptime: ${uptimeFormatted}ㅤ〙`;
 
   function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20DDEV\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
 
@@ -568,15 +565,15 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
     if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
-    let { data } = await axios.get('https://api.github.com/repos/Kai0071/A17');
-    teks = `*DDEV Script*\n\n*Total Stars*: ${data.stargazers_count}⭐\n*Total Forks*: ${data.forks_count} forks\n*GitHub*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
+    let { data } = await axios.get('https://api.github.com/repos/DARK-DEVIL-BOTZ/DDev-BOT');
+    teks = `*📃𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*🏷️𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜`
   
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"Powered by DARK DEVIL",
+    title:"𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
@@ -597,7 +594,7 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
       if (isBanChat) return reply(mess.bangc);
 
       A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ *My developer's group:* ⚙ http://gg.gg/12ewfs`)
+    reply(`⚙ *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂 𝙶𝚁𝙾𝚄𝙿* ⚙ : https://chat.whatsapp.com/EWyF109uZpsDTI9GQz2HpVl`)
     }
     break;
     
@@ -607,7 +604,7 @@ case 'repo': case 'botrepo': {
   if (isBanChat) return reply(mess.bangc);
   
   A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ My Source Code is </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
+    reply(`📂 𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
     }
     break;
 
@@ -735,7 +732,7 @@ case 'repo': case 'botrepo': {
         oldd = performance.now()
         respon = `
 Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-» DDEV's Server Info 
+» 🔮 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
@@ -1938,7 +1935,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = ` 「  DDEV's pm user list  」\n\nTotal ${anu.length} users are using DDEV in personal chat.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
 teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
@@ -1953,7 +1950,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = ` 「  DDEV's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂.`
 for (let i of anu) {
 let metadata = await A17.groupMetadata(i)
 if (metadata.owner === "undefined") {
@@ -3281,7 +3278,7 @@ reply(mess.waiting)
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
        let anu = await maker.textpro(link, q)
-          A17.sendMessage(m.chat, { image: { url: anu }, caption: `Made by DDEV Bot By DARK DEVIL...  🪄` }, { quoted: m })
+          A17.sendMessage(m.chat, { image: { url: anu }, caption: `🔮𝙼𝙰𝙳𝙴 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻...` }, { quoted: m })
        }
 
 break;
@@ -3680,11 +3677,12 @@ if (isBanChat) return reply(mess.bangc)
            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`Invalid link!`)
        let bocil = require('@bochilteam/scraper')  
            bocil.facebookdlv2(`${text}`).then(async (data) => {                   
-               let txt = `「 _Facebook Downloader_ 」\n\n`
-               txt += `*Title :* ${data.title}\n`
-               txt += `*Quality :* ${data.result[0].quality}\n`
-               txt += `*Description:* ${data.description}\n`
-               txt += `*URL :* ${text}\n\n`
+               let txt = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥\n\n`
+               txt += `🎯 *𝚃𝙸𝚃𝙻𝙴 :* ${data.title}\n`
+               txt += `⚡ *Quality𝚀𝚄𝙰𝙻𝙸𝚃𝚈 :* ${data.result[0].quality}\n`
+               txt += `🗒️ *𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 :* ${data.description}\n`
+               txt += `🖇️ *𝚄𝚁𝙻 :* ${text}\n\n`
+               txt += `   © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ`
            buf = await getBuffer(data.thumbnail)    
            A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
            for (let i of data.result) {     
@@ -3718,10 +3716,14 @@ if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
 try {
 let resd = await aiovideodl(args[0])
-teks = `「 _Facebook Downloader_ 」
-Type : video/${resd.medias[0].extension}
-Quality : ${resd.medias[0].quality}
-Size : ${resd.medias[0].formattedSize}
+teks = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥
+
+🎰 *𝚃𝚈𝙿𝙴* : video/${resd.medias[0].extension}
+⚡ *𝚀𝚄𝙰𝙻𝙸𝚃𝚈* : ${resd.medias[0].quality}
+🧮 *𝚂𝙸𝚉𝙴*: ${resd.medias[0].formattedSize}
+
+       © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ
+
 _Click the button below to download_`
 let buttons = [
 {buttonId: `${prefix}fbdl ${resd.medias[1].url}`, buttonText: {displayText: 'QualityHD'}, type: 1}
@@ -3775,8 +3777,8 @@ console.log(musim_rambutan)
 const A17tiktokop = musim_rambutan.result.watermark
 texttk = `_Please choose the button below_`
 let buttons = [
-{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: 'Watermark Free'}, type: 1},
-{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: 'Audio '}, type: 1}
+{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: '💧𝚆𝙰𝚃𝙴𝚁𝙼𝙰𝚁𝙺 𝙵𝚁𝙴𝙴💧'}, type: 1},
+{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: ' 🎧𝙰𝚄𝙳𝙸𝙾🎧'}, type: 1}
 ]
 let buttonMessage = {
 video: {url:A17tiktokop},
@@ -3802,7 +3804,7 @@ reply(mess.error)
 } )
 console.log(musim_rambutan)
 const A17tiktoknowm = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "Here it is..." }, { quoted: m })
+A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "👉𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂..." }, { quoted: m })
 }
 break;
 
@@ -3868,16 +3870,17 @@ case 'music': {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
       caption: `\n🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
-  ⏳ *Duration :* ${anu.timestamp}
+  ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
-  📈 *Viewers :* ${anu.views}
+  📈 *𝚅𝙸𝙴𝚆𝙴𝚁𝚂 :* ${anu.views}
 
-  📺 *Channel :* ${anu.author.name}
+  📺 *𝙲𝙷𝙰𝙽𝙽𝙴𝙻 :* ${anu.author.name}
 
-  📤 *Video Uploaded:* ${anu.ago}
+  📤 *𝚅𝙸𝙳𝙴𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 :* ${anu.ago}
 
-  🔗 *Url :* ${anu.url}\n`,
+  🔗 *𝚄𝚁𝙻 :* ${anu.url}\n`,
 
+       © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ
     },
     { quoted: m }
   );
@@ -3905,7 +3908,7 @@ const YT=require('./lib/ytdl-core')
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+' By *DDEV MD*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'  ✨*𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 
 break;
@@ -3932,7 +3935,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *DDEV MD*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'  📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 break;
 
@@ -5055,7 +5058,7 @@ break;
     await sleep(1500)
     let btn = [{
     quickReplyButton: {
-    displayText: '💡 Menu 💡',
+    displayText: '💡 MENU 💡',
     id: '-menu'
     }  
     }, {
@@ -5082,21 +5085,21 @@ break;
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
-    const helpmenu = `😇𝘏𝘌𝘓𝘓𝘖 *${pushname}* ${nowtime} ,
+    const helpmenu = `   😇 𝘏𝘌𝘓𝘓𝘖  *${pushname}*  ${nowtime} ,
 
     👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
     
-   ╔════ 🏜️ 𝚃𝙾𝙳𝙰𝚈 🏖 ️════════════➤
+   ╔══════ 🏜️ *𝚃𝙾𝙳𝙰𝚈* 🏖 ️══════════➤
    ║
-   ║  📅*𝙳𝙰𝚃𝙴* : ${kaidate}
-   ║  ⏳*𝚃𝙸𝙼𝙴* : ${kaitime}
+   ║  *📅𝙳𝙰𝚃𝙴* : ${kaidate}
+   ║  *⏳𝚃𝙸𝙼𝙴* : ${kaitime}
    ║ 
-   ╟━━━━ 🤖 𝙱𝙾𝚃 𝙸𝙽𝙵𝙾 🤖 ━━━━━━━━━━➤
+   ╟━━━━ 🤖 *𝙱𝙾𝚃 𝙸𝙽𝙵𝙾* 🤖 ━━━━━━━━━━➤
    ║
-   ║  🤖*𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* ${pushname} 
-   ║  👨‍💼*𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* ${global.OwnerName} 
-   ║  ⏳*𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
-   ║  🖥️*𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
+   ║  *🤖𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* ${pushname} 
+   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* ${global.OwnerName} 
+   ║  *⏳𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
+   ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
    ╚══════════════════════════➤
 
    ┏━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━━➢
@@ -5106,7 +5109,7 @@ break;
    ┃►    ${prefix}speak
    ┃►    ${prefix}support
    ┃►    ${prefix}stalk
-   ┃►    ${prefix}DDev-BOT
+   ┃►    ${prefix}ddev
    ┃►    ${prefix}delete
    ┃
    ┣━━━ 👨‍💼 *𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙻𝚈* 👩‍💼 ━━━━━━➢
@@ -5328,7 +5331,7 @@ break;
    ┃►    ${prefix}say
    ┃►    ${prefix}fliptext
    ┃►    ${prefix}toletter
-   ┃►    ${prefix}translate, 
+   ┃►    ${prefix}translate
    ┃   
    ┣━━━ 🎗 *𝙾𝚃𝙷𝙴𝚁𝚂* 🎗 ━━━━━━━━➢
    ┃
@@ -5340,28 +5343,28 @@ break;
    ┃
    ┣━━━ 💀 *𝙽𝚂𝙵𝚆* 💀️ ━━━━━━━━━━➢
    ┃   
-   ┃ 🍁𝚃𝚈𝙿𝙴 "*${prefix}nsfw*" 𝚃𝙷𝙴𝙽 𝙴𝙽𝙰𝙱𝙻𝙴
-   ┃    𝙽𝚂𝙵𝚆 (𝙰𝙳𝙼𝙸𝙽 𝙾𝙽𝙻𝚈!)
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}nsfw* " 𝚃𝙷𝙴𝙽
+   ┃    𝙴𝙽𝙰𝙱𝙻𝙴 𝙽𝚂𝙵𝚆 (𝙰𝙳𝙼𝙸𝙽 𝙾𝙽𝙻𝚈!).
    ┃  
-   ┃ 🍁𝚃𝙷𝙴𝙽 𝚃𝚈𝙿𝙴 "*${prefix}nsfwmenu*"
-   ┃    𝙵𝙾𝚁 𝙰𝙻𝙻 𝙽𝚂𝙵𝚆 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂
+   ┃ 🍁𝚃𝙷𝙴𝙽 𝚃𝚈𝙿𝙴 " *${prefix}nsfwmenu* "
+   ┃    𝙵𝙾𝚁 𝙰𝙻𝙻 𝙽𝚂𝙵𝚆 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
    ┃   
    ┃  『  *${global.BotName}*  』
    ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈: *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*
    ┃  
    ┃ 🍁𝚃𝙾 𝚄𝚂𝙴 𝙰𝙽𝚈 𝙾𝙵 𝚃𝙷𝙴𝚂𝙴
-   ┃    𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚃𝚈𝙿𝙴
+   ┃    𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚃𝚈𝙿𝙴.
    ┃   
-   ┃   "*${prefix}<𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙰𝙼𝙴>*".
+   ┃   " *${prefix}<𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙰𝙼𝙴>* "
    ┃   
    ┃ 🍁𝚃𝙾 𝙶𝙴𝚃 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺
-   ┃    𝚃𝚈𝙿𝙴"*${prefix}support*".
+   ┃    𝚃𝚈𝙿𝙴 " *${prefix}support* ".
    ┃    
-   ┃ 🍁𝚃𝚈𝙿𝙴 "*${prefix}help*" 𝚃𝙾 𝙶𝙴𝚃
-   ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}help* " 𝚃𝙾 𝙶𝙴𝚃
+   ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃.
    ┃
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
-        ©ᴘᴏᴡᴇʀᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ`
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
             let buttonMessage = {
                         video:fs.readFileSync('./system/A17_3.mp4'),gifPlayback:true,
                         caption: helpmenu,
@@ -5415,7 +5418,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        const weathertext = `           🌤 *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 𝚁𝙴𝙿𝙾𝚁𝚃* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
         A17.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break;
