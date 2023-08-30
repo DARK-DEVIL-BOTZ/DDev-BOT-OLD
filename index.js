@@ -48,7 +48,7 @@ const store = makeInMemoryStore({
 async function startA17() {
   console.log(
     color(
-      figlet.textSync("A17 Bot MD", {
+      figlet.textSync("DDev Bot MD", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
@@ -59,14 +59,14 @@ async function startA17() {
       "green"
     )
   );
-  console.log(color('\nHello, I am Kai, the main Developer of this bot.\n\nThanks for using: A17 Bot.', 'aqua'))
-  console.log(color('\nYou can follow me on GitHub: Kai0071', 'aqua'))
+  console.log(color('\nHello, I am DARK DEVIL, the main Developer of this bot.\n\nThanks for using: DDev Bot.', 'aqua'))
+  console.log(color('\nYou can follow me on GitHub: DARK-DEVIL-BOTZ', 'aqua'))
 
   const { state, saveCreds } = await useMultiFileAuthState("./DDev-BOT");
   const A17 = A17Connect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["A17 Bot", "Safari", "3.O"],
+    browser: ["DDev Bot", "Safari", "3.O"],
     auth: state,
   });
 
