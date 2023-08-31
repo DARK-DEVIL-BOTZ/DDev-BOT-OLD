@@ -3866,17 +3866,19 @@ case 'music': {
     from,
     {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n*Downloading:* *${anu.title}*
+      caption: `\n🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
-  ⏳ *Duration :* ${anu.timestamp}
+  ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
-  📈 *Viewers :* ${anu.views}
+  📈 *𝚅𝙸𝙴𝚆𝙴𝚁𝚂 :* ${anu.views}
 
-  🎐 *Channel :* ${anu.author.name}
+  📺 *𝙲𝙷𝙰𝙽𝙽𝙴𝙻 :* ${anu.author.name}
 
-  🏮 *Video Uploaded:* ${anu.ago}
+  📤 *𝚅𝙸𝙳𝙴𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 :* ${anu.ago}
 
-  🔗 *Url :* ${anu.url}\n`,
+  🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
+
+       © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ`,
 
     },
     { quoted: m }
