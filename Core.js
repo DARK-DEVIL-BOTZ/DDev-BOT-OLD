@@ -4028,7 +4028,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take 𝙳𝙳𝙴𝚅|By: 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻`)
+if (!args.join(" ")) return reply(`Like use -take DDEV|By: DARK DEVIL`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -5341,7 +5341,7 @@ break;
    ┃ 🍁𝚃𝙾 𝙶𝙴𝚃 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺
    ┃    𝚃𝚈𝙿𝙴 " *${prefix}support* ".
    ┃    
-   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}ddev* " 𝚃𝙾 𝙶𝙴𝚃
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}help* " 𝚃𝙾 𝙶𝙴𝚃
    ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃.
    ┃
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
