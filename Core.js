@@ -484,7 +484,7 @@ if (smallinput.includes('hello')) {
 
 
 if (smallinput=='darkdevil') {
-    reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄 😉.`)
+    reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄. 😉`)
 }
 
 if (smallinput=='malindu') {
@@ -502,16 +502,16 @@ if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝව�
 }
 
 
-if (smallinput=='DDEV') {
+if (smallinput=='ddev') {
     reply ('𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴 👻')
 }
 
 if (smallinput=='gf') {
-  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 💓')
+  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙼𝙰𝙽𝙸𝙺𝙰𝙷💓')
 }
 
 if (smallinput=='bf') {
-  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 💓')
+  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙱𝙰𝙱𝙴💓')
 }
 
 if (smallinput=='ping') {
@@ -519,19 +519,19 @@ if (smallinput=='ping') {
 }
 
 
-if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
+if (smallinput.includes('good morning') || smallinput.includes('gm')) {
   reply (`𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ☺️. 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈 😇.`);
 }
 
-if (smallinput.includes('good afternoon') || smallinput.includes('konnichiwa')) {
+if (smallinput.includes('good afternoon') || smallinput.includes('ga')) {
   reply (`𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ✨𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 😇🤞🏻.`);
 }
 
-if (smallinput.includes('good night')) {
+if (smallinput.includes('good night') || smallinput.includes('gn')) {
   reply (`𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname} 😇. 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂 👻.`);
 }
 
-if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinput.includes('thank')) {
+if (smallinput.includes('thank you')|| smallinput.includes('thanks') || smallinput.includes('thank')) {
   reply (`𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname} 😇. 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻 🤖`);
 }
 
@@ -553,14 +553,14 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
     A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
     let { data } = await axios.get('https://api.github.com/repos/DARK-DEVIL-BOTZ/DDev-BOT');
-    teks = `*📃𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*🏷️𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜`
+    teks = `*📃𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃📃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*🏷️𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜`
   
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*",
+    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
@@ -589,7 +589,7 @@ case 'repo': case 'botrepo': {
   if (isBanChat) return reply(mess.bangc);
   
   A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`📂 𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
+    reply(`📂 *𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴* </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
     }
     break;
 
@@ -1157,7 +1157,7 @@ break;
     if (!AntiNsfw) return reply(mess.nonsfw)
     A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
-        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .gasm\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n .trap\n .blowjobgif\n .spank\n .hneko\n .hwaifu\n .gasm`)
+        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n`)
     break;
 
 
@@ -3651,7 +3651,7 @@ break;
 
 
 ///
-case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
+case 'fb': case 'facebook': case 'fbmp4': {     	    
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
         if (!text) return reply(`Please provide the link!\n\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
@@ -3691,7 +3691,7 @@ A17.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' 
       break;
 
 
-case 'facebookxx': case 'fbdlxxx': case 'fbmp4xxx': case 'fbxxx': {
+case 'fbdl': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
@@ -4028,7 +4028,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take DDEV|By: DARK DEVIL`)
+if (!args.join(" ")) return reply(`Like use -take 𝙳𝙳𝙴𝚅|By: 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -4107,7 +4107,7 @@ case 'soulmate':  {
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
-  let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+  let message = `👫 𝙱𝙴 𝙼𝙴 𝚂𝙾𝚄𝙻𝙼𝙰𝚃𝙴...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
   A17.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
@@ -5083,7 +5083,7 @@ break;
    ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
    ╚══════════════════════════➤
 
-   ┏━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━━➢
+   ┏━━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━➢
    ┃
    ┃►    ${prefix}repo
    ┃►    ${prefix}script
@@ -5341,7 +5341,7 @@ break;
    ┃ 🍁𝚃𝙾 𝙶𝙴𝚃 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺
    ┃    𝚃𝚈𝙿𝙴 " *${prefix}support* ".
    ┃    
-   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}help* " 𝚃𝙾 𝙶𝙴𝚃
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}ddev* " 𝚃𝙾 𝙶𝙴𝚃
    ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃.
    ┃
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
