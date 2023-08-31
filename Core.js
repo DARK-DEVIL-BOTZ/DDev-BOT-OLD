@@ -15,12 +15,15 @@ const { addBalance } = require("./lib/limit.js");
 const { smsg, formatp, tanggal, GIFBufferToVideoBuffer, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, fetchBuffer } = require('./lib/myfunc')
 const _ = require("lodash");
 const yargs = require("yargs/yargs");
-const kaitime = moment.tz('Asia/Kolkata').format('HH:mm:ss');
-const kaidate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY');
-const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss');
+const kaitime = moment.tz('Asia/Colombo').format('HH:mm:ss');
+const kaidate = moment.tz('Asia/Colombo').format('DD/MM/YYYY');
+const time2 = moment().tz('Asia/Colombo').format('HH:mm:ss');
 const speed = require('performance-now');
 const eco = require('discord-mongoose-economy');
 const thiccysapi = require('textmaker-thiccy');
+// const ffmpeg = require('fluent-ffmpeg');
+// const ffmpegPath = require('ffmpeg-static').path;
+// ffmpeg.setFfmpegPath(ffmpegPath);
 const maker = require('mumaker');
 const Jimp = require('jimp'); // for full dp etc.
 const modapk = require("tod-api");
@@ -30,7 +33,7 @@ const ty = eco.connect('mongodb+srv://Arch:1t6l2G0r6nagLlOb@cluster0.gedh4.mongo
 const { isLimit, limitAdd, getLimit, giveLimit, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./lib/limit.js');
 const githubstalk = require('./lib/githubstalk');
 
-const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"];
+const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"]; // List of emojis for Space CMDs.
 
 const gis = require("g-i-s");
 const { MessageType } = require('baileysjs');
@@ -76,6 +79,7 @@ const {
    Couples,
    Darkjokes
  } = require("dhn-api");
+//"parse-ms": "^1.1.0",
 
 
 
@@ -208,8 +212,8 @@ let videox = JSON.parse(fs.readFileSync('./src/video.json'))
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 let _sewa = require("./lib/sewa");
 const sewa = JSON.parse(fs.readFileSync('./database/sewa.json'))
-const time = moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')
-const ucap = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
+const time = moment.tz('Asia/Colombo').format('DD/MM HH:mm:ss')
+const ucap = moment(Date.now()).tz('Asia/Colombo').locale('id').format('a')
 var buln = ['/01/', '/02/', '/03/', '/04/', '/05/', '/06/', '/07/', '/08/', '/09/', '/10/', '/11/', '/12/'];
 var myHari = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var tgel = new Date();
@@ -363,6 +367,9 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     }
 
 
+    
+    //Dm and Groups Autoreply/Bot chat
+
 
 
 
@@ -391,7 +398,7 @@ function updateStatus() {
   const uptimeFormatted = formatTime(uptimeInSeconds);
 
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20DDEV\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
+  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ🔮ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤㅤ🔮ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
 
   A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
 
@@ -479,60 +486,66 @@ const pickRandom = (arr) => {
 	
 let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
-  reply (`𝙷𝙴𝙻𝙻𝙾👋 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+  reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
 } 
 
+//if (smallinput.includes('hi')) {
 
-if (smallinput=='darkdevil') {
-    reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄. 😉`)
-}
+//   reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
 
-if (smallinput=='malindu') {
-    reply (`𝚆𝙷𝙰𝚃𝚂 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃? 😏`)
+// } 
+
+if (smallinput=='kai') {
+    reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
 }
 
 
 if (smallinput=='runtime') {
-  reply (`𝙷𝙴𝚈🖐️ ${pushname} 𝙼𝚈 *𝚁𝚄𝙽 𝚃𝙸𝙼𝙴* 𝙸𝚂 ${runtime(process.uptime())}\n\n🕒*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴* : ${kaitime}\n\n📅*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴* : ${kaidate}`)
+  reply (`𝙷𝙴𝚃 ${pushname} 𝙼𝚈 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 𝙸𝚂 ${runtime(process.uptime())}\n\n𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴: ${kaitime}\n\n𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴: ${kaidate}`)
 }
 
 
-if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝවන්') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-  reply (`𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽🙏 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+
+if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
+  reply (`Konichiwa ${pushname}, I am ${BotName}. How can i help you?`);
 }
 
 
-if (smallinput=='ddev') {
-    reply ('𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴 👻')
+if (smallinput=='a17') {
+    reply ('😇 *𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴* ')
 }
 
-if (smallinput=='gf') {
-  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙼𝙰𝙽𝙸𝙺𝙰𝙷💓')
-}
-
-if (smallinput=='bf') {
-  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙱𝙰𝙱𝙴💓')
+if (smallinput=='sasha') {
+  reply ('👻 *𝙾𝙽𝙻𝚈 𝚈𝙾𝚄...*')
 }
 
 if (smallinput=='ping') {
-    reply (`𝙷𝙴𝚈 ${pushname} 𝙿𝙾𝙽𝙶 ${latensie.toFixed(4)} 𝚖𝚜`)
+    reply (`Hey ${pushname} Pong ${latensie.toFixed(4)} ms`)
 }
 
 
-if (smallinput.includes('good morning') || smallinput.includes('gm')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ☺️. 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈 😇.`);
+if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
+  reply (`Good morning to you too ${pushname} ☺️. Have a great day 😇.`);
 }
 
-if (smallinput.includes('good afternoon') || smallinput.includes('ga')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ✨𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 😇🤞🏻.`);
+if (smallinput.includes('good afternoon') || smallinput.includes('konnichiwa')) {
+
+  reply (`Good afthernoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`);
+
 }
 
-if (smallinput.includes('good night') || smallinput.includes('gn')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname} 😇. 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂 👻.`);
+
+//if (smallinput.includes('good afthernoon')) {
+ // reply (`Huh ${pushname} 😇. Wishing you an enjoyable afternoon too.`);
+//   }
+
+
+if (smallinput.includes('good night')) {
+  reply (`Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`);
 }
 
-if (smallinput.includes('thank you')|| smallinput.includes('thanks') || smallinput.includes('thank')) {
-  reply (`𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname} 😇. 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻 🤖`);
+if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinput.includes('thank')) {
+  reply (`Mention not ${pushname} 😇. I am a bot afterall.`);
 }
 
 
@@ -552,18 +565,20 @@ if (smallinput.includes('thank you')|| smallinput.includes('thanks') || smallinp
     if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
-    let { data } = await axios.get('https://api.github.com/repos/DARK-DEVIL-BOTZ/DDev-BOT');
-    teks = `*📃𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃📃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*🏷️𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜`
+    let { data } = await axios.get('https://api.github.com/repos/Kai0071/A17');
+    teks =  `*✒️𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃📃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*⚡𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n𝙳𝙾𝙽𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙵𝙾𝙻𝙻𝙾𝚆 𝙼𝙴 𝙾𝙽 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝙽𝙳 𝙶𝙸𝚅𝙴 𝙰 ⭐ 𝚃𝙾 𝙼𝚈 𝙿𝚁𝙾𝙹𝙴𝙲𝚃𝚂.`
   
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻",
+    title:"𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
+    //mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
+    //sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
     mediaUrl: 'github.com/DARK-DEVIL-BOTZ/DDev-BOT',
     sourceUrl: "github.com/DARK-DEVIL-BOTZ/DDev-BOT"
     }}
@@ -579,7 +594,7 @@ if (smallinput.includes('thank you')|| smallinput.includes('thanks') || smallinp
       if (isBanChat) return reply(mess.bangc);
 
       A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂 𝙶𝚁𝙾𝚄𝙿* ⚙ : https://chat.whatsapp.com/EWyF109uZpsDTI9GQz2HpVl`)
+    reply(`👨‍💻 *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁'𝚂 𝙶𝚁𝙾𝚄𝙿 :* https://chat.whatsapp.com/EWyF109uZpsDTI9GQz2HpVl`)
     }
     break;
     
@@ -589,7 +604,7 @@ case 'repo': case 'botrepo': {
   if (isBanChat) return reply(mess.bangc);
   
   A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`📂 *𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴* </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
+    reply(`🗒️ *𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴* </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
     }
     break;
 
@@ -630,6 +645,10 @@ case 'repo': case 'botrepo': {
       await A17.sendMessage(from, { react: { text: "✅", key: m.key } });
      await A17.sendMessage(from, { text: 'Restarting Success!' });
      
+     // Delay the shutdown by 5 seconds using sleep function
+      //await sleep(5000);
+    
+      // Use PM2 to restart the script
       pm2.restart('index', (err) => {
         if (err) {
           A17.sendMessage(from, { react: { text: "❌", key: m.key } });
@@ -713,7 +732,7 @@ case 'repo': case 'botrepo': {
         oldd = performance.now()
         respon = `
 Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-» 🔮 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
+🖥️ *𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾*
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
@@ -1157,7 +1176,7 @@ break;
     if (!AntiNsfw) return reply(mess.nonsfw)
     A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
-        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n`)
+        reply(` *━━〈 ⚠️ NSFW Menu ⚠️  〉━━*\n\n gifs, hentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
     break;
 
 
@@ -1166,7 +1185,7 @@ case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBanChat) return reply(mess.bangc)
         A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
-            reply(` *━━〈  ⚡ 𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂 ⚡  〉━━*\n\n .bonk\n .cry\n .bully\n .cuddle\n .hug\n .kiss\n .lick\n .pat\n .smug\n .yeet\n .blush\n .smile\n .wave\n .highfive\n .handhold\n .nom\n .glomp\n .bite\n .slap\n .kill\n .happy\n .wink\n .poke\n .dance\n .cringe`)
+            reply(` *━━〈  ⚡ Reactions ⚡  〉━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
         break;
 
 
@@ -1192,7 +1211,7 @@ case 'limituser': case 'userlimit': case 'limit':
               .then(data => {console.log(data)
               let krl = `*Search Term:* ${q}\n\n`
                     for (let i of data) {
-                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*📽️𝙼𝙾𝚅𝙸𝙴 𝙽𝙰𝙼𝙴:* ${i.judul}\n *🧩𝚀𝚄𝙰𝙻𝙸𝚃𝚈:* ${i.quality}\n *🎯𝚃𝚈𝙿𝙴 : ${i.type}*\n *📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 𝙾𝙽 :* ${i.upload}\n *🖇️𝚂𝙾𝚄𝚁𝙲𝙴 𝚄𝚁𝙻 :* ${i.link}\n\n\n`)
+                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
                           }
                          A17.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
           });
@@ -1893,19 +1912,19 @@ case 'ghstalk': case 'githubstalk': case'github': {
 
   gitdata = await githubstalk.githubstalk(`${q}`)
   A17.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
-  `*ㅤㅤㅤ|ㅤㅤㅤGithub Info ㅤㅤㅤ|\*
+  `*ㅤㅤ 🎓ㅤㅤ𝙶𝙸𝚃𝙷𝚄𝙱 𝙸𝙽𝙵𝙾ㅤㅤ🎓\*
 
-  🚩 Id : ${gitdata.id}
-  🔖 Nickname : ${gitdata.nickname}
-  🔖 Username : ${gitdata.username}
-  ✨ Bio : ${gitdata.bio}
-  🏢 Company : ${gitdata.company}
-  📍 Location : ${gitdata.location}
-  📧 Email : ${gitdata.email}
-  🔓 Public Repo : ${gitdata.public_repo}
-  🔐 Public Gists : ${gitdata.public_gists}
-  💕 Followers : ${gitdata.followers}
-  👉 Following : ${gitdata.following}` }, { quoted: m } )
+  🚩 *Id* : ${gitdata.id}
+  🔖 *Nickname* : ${gitdata.nickname}
+  🔖 *Username* : ${gitdata.username}
+  ✨ *Bio* : ${gitdata.bio}
+  🏢 *Company* : ${gitdata.company}
+  📍 *Location* : ${gitdata.location}
+  📧 *Email* : ${gitdata.email}
+  🔓 *Public Repo* : ${gitdata.public_repo}
+  🔐 *Public Gists* : ${gitdata.public_gists}
+  💕 *Followers* : ${gitdata.followers}
+  👉 *Following* : ${gitdata.following}` }, { quoted: m } )
   }
   break;
 
@@ -1916,9 +1935,9 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
-teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
+teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Colombo").format("DD/MM/YYYY HH:mm:ss")}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -1931,7 +1950,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿.`
 for (let i of anu) {
 let metadata = await A17.groupMetadata(i)
 if (metadata.owner === "undefined") {
@@ -1939,7 +1958,7 @@ loldd = false
 } else {
 loldd = metadata.owner
 }
-teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
+teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Colombo').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -2715,7 +2734,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   if (anu1 == '401' || anu1.status.length == 0) {
   nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
   } else {
-  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Colombo').format('HH:mm:ss DD/MM/YYYY')}\n\n`
   }
   } catch {
   nowhatsapp += `${number0}${i}${number1}\n`
@@ -3259,7 +3278,7 @@ reply(mess.waiting)
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
        let anu = await maker.textpro(link, q)
-          A17.sendMessage(m.chat, { image: { url: anu }, caption: `🔮𝙼𝙰𝙳𝙴 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻...` }, { quoted: m })
+          A17.sendMessage(m.chat, { image: { url: anu }, caption: `👨‍💻 *‍𝙳𝙳𝙴𝚅 𝙱𝙾𝚈 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻....* ` }, { quoted: m })
        }
 
 break;
@@ -3347,7 +3366,7 @@ case 'apod': {
 
   const apiKey = 'ugce43VIO63s8gQhcQ7Ts2DHQo1Srcchdh9mgI2S'; // Replace with your actual NASA API key // You can use it.
   const moment = require('moment'); // Import moment library here
-  const timeZone = 'Asia/Kolkata'; // Set desired timezone.
+  const timeZone = 'Asia/Colombo'; // Set desired timezone.
 
   const currentDate = moment().tz(timeZone).format('YYYY-MM-DD'); // Initialize currentDate here
 
@@ -3401,7 +3420,7 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
   if (isBanChat) return reply(mess.bangc)
   A17.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
-  if (!args[0]) return reply("Please give me a text so that i can speak it!")
+  if (!args[0]) return reply("𝙿𝙻𝙴𝙰𝚂𝙴 𝙶𝙸𝚅𝙴 𝙼𝙴 𝙰 𝚃𝙴𝚇𝚃 𝚂𝙾 𝚃𝙷𝙰𝚃 𝙸 𝙲𝙰𝙽 𝚂𝙿𝙴𝙰𝙺 𝙸𝚃!")
     
     let texttosay = text
       ? text
@@ -3651,19 +3670,18 @@ break;
 
 
 ///
-case 'fb': case 'facebook': case 'fbmp4': {     	    
+case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
         if (!text) return reply(`Please provide the link!\n\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`Invalid link!`)
        let bocil = require('@bochilteam/scraper')  
            bocil.facebookdlv2(`${text}`).then(async (data) => {                   
-               let txt = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥\n\n`
-               txt += `🎯 *𝚃𝙸𝚃𝙻𝙴 :* ${data.title}\n`
-               txt += `⚡ *Quality𝚀𝚄𝙰𝙻𝙸𝚃𝚈 :* ${data.result[0].quality}\n`
-               txt += `🗒️ *𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 :* ${data.description}\n`
-               txt += `🖇️ *𝚄𝚁𝙻 :* ${text}\n\n`
-               txt += `    *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
+               let txt = `「 _Facebook Downloader_ 」\n\n`
+               txt += `*Title :* ${data.title}\n`
+               txt += `*Quality :* ${data.result[0].quality}\n`
+               txt += `*Description:* ${data.description}\n`
+               txt += `*URL :* ${text}\n\n`
            buf = await getBuffer(data.thumbnail)    
            A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
            for (let i of data.result) {     
@@ -3691,20 +3709,16 @@ A17.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' 
       break;
 
 
-case 'fbdl': {
+case 'facebookxx': case 'fbdlxxx': case 'fbmp4xxx': case 'fbxxx': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
 try {
 let resd = await aiovideodl(args[0])
-teks = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥
-
-🎰 *𝚃𝚈𝙿𝙴* : video/${resd.medias[0].extension}
-⚡ *𝚀𝚄𝙰𝙻𝙸𝚃𝚈* : ${resd.medias[0].quality}
-🧮 *𝚂𝙸𝚉𝙴*: ${resd.medias[0].formattedSize}
-
-    *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*
-
+teks = `「 _Facebook Downloader_ 」
+Type : video/${resd.medias[0].extension}
+Quality : ${resd.medias[0].quality}
+Size : ${resd.medias[0].formattedSize}
 _Click the button below to download_`
 let buttons = [
 {buttonId: `${prefix}fbdl ${resd.medias[1].url}`, buttonText: {displayText: 'QualityHD'}, type: 1}
@@ -3758,8 +3772,8 @@ console.log(musim_rambutan)
 const A17tiktokop = musim_rambutan.result.watermark
 texttk = `_Please choose the button below_`
 let buttons = [
-{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: '💧𝚆𝙰𝚃𝙴𝚁𝙼𝙰𝚁𝙺 𝙵𝚁𝙴𝙴💧'}, type: 1},
-{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: ' 🎧𝙰𝚄𝙳𝙸𝙾🎧'}, type: 1}
+{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: 'Watermark Free'}, type: 1},
+{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: 'Audio '}, type: 1}
 ]
 let buttonMessage = {
 video: {url:A17tiktokop},
@@ -3785,7 +3799,7 @@ reply(mess.error)
 } )
 console.log(musim_rambutan)
 const A17tiktoknowm = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "👉𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂..." }, { quoted: m })
+A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "Here it is..." }, { quoted: m })
 }
 break;
 
@@ -3861,7 +3875,8 @@ case 'music': {
 
   🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
 
-       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`,
+       © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ`,
+
     },
     { quoted: m }
   );
@@ -3883,13 +3898,13 @@ break;
  case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
+A17.sendMessage(from, { react: { text: "🍃" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   let yts = require("youtube-yts")
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'  ✨*𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'   👻 *𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 
 break;
@@ -3916,7 +3931,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'  📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'   📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 break;
 
@@ -4028,7 +4043,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take DDEV|By: DARK DEVIL`)
+if (!args.join(" ")) return reply(`Like use -take A17|By: Kai`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -4107,7 +4122,7 @@ case 'soulmate':  {
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
-  let message = `👫 𝙱𝙴 𝙼𝙴 𝚂𝙾𝚄𝙻𝙼𝙰𝚃𝙴...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+  let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
   A17.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
@@ -4367,7 +4382,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 
 
 
-case 'nsfwDDEV':
+case 'nsfw':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
 reply(mess.wait)
@@ -5039,7 +5054,7 @@ break;
     await sleep(1500)
     let btn = [{
     quickReplyButton: {
-    displayText: '💡 MENU 💡',
+    displayText: '💡 Menu 💡',
     id: '-menu'
     }  
     }, {
@@ -5062,7 +5077,7 @@ break;
 
 
 
-    case 'ddev': case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
+    case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
@@ -5083,7 +5098,7 @@ break;
    ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
    ╚══════════════════════════➤
 
-   ┏━━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━➢
+   ┏━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━━➢
    ┃
    ┃►    ${prefix}repo
    ┃►    ${prefix}script
@@ -5375,7 +5390,7 @@ break;
       if (isBan) return reply(mess.banned)	 			
       if (isBanChat) return reply(mess.bangc)
       if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
+A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
   
   reply(`Running repl....Please wait until repl.it responds...`)						
   var replqr =  await getBuffer(`https://a17-qr-scanner.broken0007.repl.co/`)
@@ -5431,7 +5446,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
           A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}ddev* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
+          reply (`Hey *${pushname}* senpai! this command are not programmed! Type *${prefix}help* to get my full command list!`)
   
       }	 			
   
