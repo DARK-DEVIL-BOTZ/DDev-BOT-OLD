@@ -21,9 +21,6 @@ const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss');
 const speed = require('performance-now');
 const eco = require('discord-mongoose-economy');
 const thiccysapi = require('textmaker-thiccy');
-// const ffmpeg = require('fluent-ffmpeg');
-// const ffmpegPath = require('ffmpeg-static').path;
-// ffmpeg.setFfmpegPath(ffmpegPath);
 const maker = require('mumaker');
 const Jimp = require('jimp'); // for full dp etc.
 const modapk = require("tod-api");
@@ -33,7 +30,7 @@ const ty = eco.connect('mongodb+srv://Arch:1t6l2G0r6nagLlOb@cluster0.gedh4.mongo
 const { isLimit, limitAdd, getLimit, giveLimit, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./lib/limit.js');
 const githubstalk = require('./lib/githubstalk');
 
-const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"]; // List of emojis for Space CMDs.
+const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"];
 
 const gis = require("g-i-s");
 const { MessageType } = require('baileysjs');
@@ -79,7 +76,6 @@ const {
    Couples,
    Darkjokes
  } = require("dhn-api");
-//"parse-ms": "^1.1.0",
 
 
 
@@ -367,9 +363,6 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     }
 
 
-    
-    //Dm and Groups Autoreply/Bot chat
-
 
 
 
@@ -486,66 +479,60 @@ const pickRandom = (arr) => {
 	
 let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
-  reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
+  reply (`𝙷𝙴𝙻𝙻𝙾👋 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 } 
 
-//if (smallinput.includes('hi')) {
 
-//   reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
+if (smallinput=='darkdevil') {
+    reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄 😉.`)
+}
 
-// } 
-
-if (smallinput=='kai') {
-    reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
+if (smallinput=='malindu') {
+    reply (`𝚆𝙷𝙰𝚃𝚂 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃? 😏`)
 }
 
 
 if (smallinput=='runtime') {
-  reply (`Hey ${pushname} my runtime is ${runtime(process.uptime())}\n\nCurrent Time: ${kaitime}\n\nCurrent Date: ${kaidate}`)
+  reply (`𝙷𝙴𝚈🖐️ ${pushname} 𝙼𝚈 *𝚁𝚄𝙽 𝚃𝙸𝙼𝙴* 𝙸𝚂 ${runtime(process.uptime())}\n\n🕒*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴* : ${kaitime}\n\n📅*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴* : ${kaidate}`)
 }
 
 
-
-if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-  reply (`Konichiwa ${pushname}, I am ${BotName}. How can i help you?`);
+if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝවන්') || smallinput.includes('konichiba') || smallinput.includes('salute')){
+  reply (`𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽🙏 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 }
 
 
-if (smallinput=='a17') {
-    reply ('Yes I am Alive 🫂')
+if (smallinput=='DDEV') {
+    reply ('𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴 👻')
 }
 
-if (smallinput=='sasha') {
-  reply ('Only you...🫶🏻')
+if (smallinput=='gf') {
+  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 💓')
+}
+
+if (smallinput=='bf') {
+  reply ('𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 💓')
 }
 
 if (smallinput=='ping') {
-    reply (`Hey ${pushname} Pong ${latensie.toFixed(4)} ms`)
+    reply (`𝙷𝙴𝚈 ${pushname} 𝙿𝙾𝙽𝙶 ${latensie.toFixed(4)} 𝚖𝚜`)
 }
 
 
 if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
-  reply (`Good morning to you too ${pushname} ☺️. Have a great day 😇.`);
+  reply (`𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ☺️. 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈 😇.`);
 }
 
 if (smallinput.includes('good afternoon') || smallinput.includes('konnichiwa')) {
-
-  reply (`Good afthernoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`);
-
+  reply (`𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ✨𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 😇🤞🏻.`);
 }
 
-
-//if (smallinput.includes('good afthernoon')) {
- // reply (`Huh ${pushname} 😇. Wishing you an enjoyable afternoon too.`);
-//   }
-
-
 if (smallinput.includes('good night')) {
-  reply (`Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`);
+  reply (`𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname} 😇. 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂 👻.`);
 }
 
 if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinput.includes('thank')) {
-  reply (`Mention not ${pushname} 😇. I am a bot afterall.`);
+  reply (`𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname} 😇. 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻 🤖`);
 }
 
 
@@ -573,12 +560,10 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*",
+    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
-    //mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
-    //sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
     mediaUrl: 'github.com/DARK-DEVIL-BOTZ/DDev-BOT',
     sourceUrl: "github.com/DARK-DEVIL-BOTZ/DDev-BOT"
     }}
@@ -645,10 +630,6 @@ case 'repo': case 'botrepo': {
       await A17.sendMessage(from, { react: { text: "✅", key: m.key } });
      await A17.sendMessage(from, { text: 'Restarting Success!' });
      
-     // Delay the shutdown by 5 seconds using sleep function
-      //await sleep(5000);
-    
-      // Use PM2 to restart the script
       pm2.restart('index', (err) => {
         if (err) {
           A17.sendMessage(from, { react: { text: "❌", key: m.key } });
@@ -1176,7 +1157,7 @@ break;
     if (!AntiNsfw) return reply(mess.nonsfw)
     A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
-        reply(` *━━〈 ⚠️ NSFW Menu ⚠️  〉━━*\n\n gifs, hentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
+        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .gasm\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n .trap\n .blowjobgif\n .spank\n .hneko\n .hwaifu\n .gasm`)
     break;
 
 
@@ -1185,7 +1166,7 @@ case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBanChat) return reply(mess.bangc)
         A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
-            reply(` *━━〈  ⚡ Reactions ⚡  〉━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
+            reply(` *━━〈  ⚡ 𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂 ⚡  〉━━*\n\n .bonk\n .cry\n .bully\n .cuddle\n .hug\n .kiss\n .lick\n .pat\n .smug\n .yeet\n .blush\n .smile\n .wave\n .highfive\n .handhold\n .nom\n .glomp\n .bite\n .slap\n .kill\n .happy\n .wink\n .poke\n .dance\n .cringe`)
         break;
 
 
@@ -1211,7 +1192,7 @@ case 'limituser': case 'userlimit': case 'limit':
               .then(data => {console.log(data)
               let krl = `*Search Term:* ${q}\n\n`
                     for (let i of data) {
-                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
+                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*📽️𝙼𝙾𝚅𝙸𝙴 𝙽𝙰𝙼𝙴:* ${i.judul}\n *🧩𝚀𝚄𝙰𝙻𝙸𝚃𝚈:* ${i.quality}\n *🎯𝚃𝚈𝙿𝙴 : ${i.type}*\n *📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 𝙾𝙽 :* ${i.upload}\n *🖇️𝚂𝙾𝚄𝚁𝙲𝙴 𝚄𝚁𝙻 :* ${i.link}\n\n\n`)
                           }
                          A17.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
           });
@@ -3851,7 +3832,7 @@ case 'song':
 case 'music': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🍁", key: m.key }});
+  A17.sendMessage(from, { react: { text: "🎧", key: m.key }});
 
   const YT = require('./lib/ytdl-core');
   const yts = require('youtube-yts');
@@ -3902,7 +3883,7 @@ break;
  case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍃" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   let yts = require("youtube-yts")
   let search = await yts(text)
@@ -3932,7 +3913,7 @@ break;
 case 'ytvd2': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
 A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'  📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
@@ -3944,7 +3925,7 @@ case 'lyrics': {
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📃" , key: m.key }})
 if (!text) return reply(`Comand usage: ${prefix}lyrics Thunder`)
 reply(mess.waiting)	
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
@@ -5394,7 +5375,7 @@ break;
       if (isBan) return reply(mess.banned)	 			
       if (isBanChat) return reply(mess.bangc)
       if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
   
   reply(`Running repl....Please wait until repl.it responds...`)						
   var replqr =  await getBuffer(`https://a17-qr-scanner.broken0007.repl.co/`)
@@ -5450,7 +5431,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
           A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`Hey *${pushname}* senpai! this command are not programmed! Type *${prefix}help* to get my full command list!`)
+          reply (`𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}ddev* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
   
       }	 			
   
