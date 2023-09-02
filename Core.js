@@ -485,45 +485,63 @@ Typed *surrender* to surrender and admited defeat`
 const pickRandom = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)]
   }
-  
-let smallinput = budy.toLowerCase()
 
+	
+let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
   reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
 } 
 
-if (smallinput=='darkdevil') {
+//if (smallinput.includes('hi')) {
+
+//   reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
+
+// } 
+
+if (smallinput=='kai') {
     reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
 }
+
 
 if (smallinput=='runtime') {
   reply (`Hey ${pushname} my runtime is ${runtime(process.uptime())}\n\nCurrent Time: ${kaitime}\n\nCurrent Date: ${kaidate}`)
 }
 
+
+
 if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
   reply (`Konichiwa ${pushname}, I am ${BotName}. How can i help you?`);
 }
 
+
 if (smallinput=='a17') {
-    reply ('Yes I am Alive ')
+    reply ('Yes I am Alive 🫂')
 }
 
 if (smallinput=='sasha') {
-  reply ('Only you...🏻')
+  reply ('Only you...🫶🏻')
 }
 
 if (smallinput=='ping') {
     reply (`Hey ${pushname} Pong ${latensie.toFixed(4)} ms`)
 }
 
+
 if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
   reply (`Good morning to you too ${pushname} ☺️. Have a great day 😇.`);
 }
 
 if (smallinput.includes('good afternoon') || smallinput.includes('konnichiwa')) {
+
   reply (`Good afthernoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`);
 
 }
+
+
+//if (smallinput.includes('good afthernoon')) {
+ // reply (`Huh ${pushname} 😇. Wishing you an enjoyable afternoon too.`);
+//   }
+
 
 if (smallinput.includes('good night')) {
   reply (`Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`);
