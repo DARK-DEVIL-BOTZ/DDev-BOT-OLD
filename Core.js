@@ -486,62 +486,67 @@ const pickRandom = (arr) => {
 	
 let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
-  reply (`𝙷𝙴𝙻𝙻𝙾👋 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+  reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
 } 
 
+//if (smallinput.includes('hi')) {
 
-if (smallinput=='darkdevil') {
-    reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄. 😉`)
-}
+//   reply (`Hello ${pushname}, I am ${BotName}. How can i help you?`);
 
-if (smallinput=='malindu') {
-    reply (`𝚆𝙷𝙰𝚃𝚂 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃? 😏`)
+// } 
+
+if (smallinput=='kai') {
+    reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
 }
 
 
 if (smallinput=='runtime') {
-  reply (`𝙷𝙴𝚈🖐️ ${pushname} 𝙼𝚈 *𝚁𝚄𝙽 𝚃𝙸𝙼𝙴* 𝙸𝚂 ${runtime(process.uptime())}\n\n🕒*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴* : ${kaitime}\n\n📅*𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴* : ${kaidate}`)
+  reply (`Hey ${pushname} my runtime is ${runtime(process.uptime())}\n\nCurrent Time: ${kaitime}\n\nCurrent Date: ${kaidate}`)
 }
 
 
-if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝවන්') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-  reply (`𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽🙏 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+
+if( smallinput.includes('konichiwa') || smallinput.includes('konochiwa') || smallinput.includes('konichiba') || smallinput.includes('salute')){
+  reply (`Konichiwa ${pushname}, I am ${BotName}. How can i help you?`);
 }
 
 
-if (smallinput=='ddev') {
-    reply (`𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴 👻`)
+if (smallinput=='a17') {
+    reply ('Yes I am Alive 🫂')
 }
 
-if (smallinput=='gf') {
-  reply (`𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙼𝙰𝙽𝙸𝙺𝙰𝙷 💓`)
-}
-
-if (smallinput=='bf') {
-  reply (`𝙾𝙽𝙻𝚈 𝚈𝙾𝚄 𝙱𝙰𝙱𝙴 💓`)
+if (smallinput=='sasha') {
+  reply ('Only you...🫶🏻')
 }
 
 if (smallinput=='ping') {
-    reply (`𝙷𝙴𝚈 ${pushname} 𝙿𝙾𝙽𝙶 ${latensie.toFixed(4)} 𝚖𝚜`)
+    reply (`Hey ${pushname} Pong ${latensie.toFixed(4)} ms`)
 }
 
 
-if (smallinput.includes('good morning') || smallinput.includes('gm')) {
-  reply (`🌅 𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname}. ☺️ 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈. 😇`);
+if (smallinput.includes('good morning') || smallinput.includes('ohayo')) {
+  reply (`Good morning to you too ${pushname} ☺️. Have a great day 😇.`);
 }
 
-if (smallinput.includes('good afternoon') || smallinput.includes('ga')) {
-  reply (`🌇 𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname}. ✨ 𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽. 😇🤞🏻`);
+if (smallinput.includes('good afternoon') || smallinput.includes('konnichiwa')) {
+
+  reply (`Good afthernoon to you too ${pushname} ✨. Wishing you an enjoyable afternoon too 😇🤞🏻.`);
+
 }
 
-if (smallinput.includes('good night') || smallinput.includes('gn')) {
-  reply (`🌌 𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname}. 😇 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂. 👻`);
+
+//if (smallinput.includes('good afthernoon')) {
+ // reply (`Huh ${pushname} 😇. Wishing you an enjoyable afternoon too.`);
+//   }
+
+
+if (smallinput.includes('good night')) {
+  reply (`Good night to you too ${pushname} 😇. Sleep well and sweet dreams.`);
 }
 
-if (smallinput.includes('thank you')|| smallinput.includes('thanks') || smallinput.includes('thank')) {
-  reply (`𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname}. 😇 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻. 🤖`);
+if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinput.includes('thank')) {
+  reply (`Mention not ${pushname} 😇. I am a bot afterall.`);
 }
-
 
 
 //\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\
