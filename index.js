@@ -48,7 +48,7 @@ const store = makeInMemoryStore({
 async function startA17() {
   console.log(
     color(
-      figlet.textSync("DDev Bot MD", {
+      figlet.textSync("A17 Bot MD", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
@@ -59,14 +59,14 @@ async function startA17() {
       "green"
     )
   );
-  console.log(color('\nHello, I am DARK DEVIL, the main Developer of this bot.\n\nThanks for using: DDev Bot.', 'aqua'))
-  console.log(color('\nYou can follow me on GitHub: DARK-DEVIL-BOTZ', 'aqua'))
+  console.log(color('\nHello, I am Kai, the main Developer of this bot.\n\nThanks for using: A17 Bot.', 'aqua'))
+  console.log(color('\nYou can follow me on GitHub: Kai0071', 'aqua'))
 
-  const { state, saveCreds } = await useMultiFileAuthState("./DDev-BOT");
+  const { state, saveCreds } = await useMultiFileAuthState("./A17-SESSION");
   const A17 = A17Connect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["DDev Bot", "Safari", "3.O"],
+    browser: ["A17 Bot", "Safari", "3.O"],
     auth: state,
   });
 
@@ -92,6 +92,24 @@ async function startA17() {
   });
 
 
+  /* 
+ A17.ev.on('groups.update', async pea => {
+     
+        try {     
+        ppgc = await A17.profilePictureUrl(pea[0].id, 'image')
+        } catch {
+        ppgc = 'https://wallpapercave.com/wp/wp10524580.jpg'
+        }
+        let wm_fatih = { url : ppgc }
+        if (pea[0].announce == true) {
+        A17.send5ButImg(pea[0].id, `Grop has been *Closed!* Only *Admins* can send Messages!`, `${BotName}`, wm_fatih, [])
+        } else if(pea[0].announce == false) {
+        A17.send5ButImg(pea[0].id, `Grop has been *Opened!* Now *Everyone* can send Messages!`, `${BotName}`, wm_fatih, [])
+        } else {
+        A17.send5ButImg(pea[0].id, `Group Subject has been updated to *${pea[0].subject}*`, `${BotName}`, wm_fatih, [])
+      }
+     })
+ */
 
      A17.ev.on('groups.update', async pea => {
       //console.log(pea)
@@ -130,6 +148,78 @@ async function startA17() {
   
 
     //Group event on off
+    
+  /* 
+  
+    A17.ev.on('group-participants.update', async (anu) => {
+      console.log(anu)
+  
+      try {
+        let metadata = await A17.groupMetadata(anu.id)
+        let participants = anu.participants
+        for (let num of participants) {
+  
+          try {
+            ppuser = await A17.profilePictureUrl(num, 'image')
+          } catch {
+            ppuser = 'https://images6.alphacoders.com/690/690121.jpg'
+          }
+  
+          try {
+            ppgroup = await A17.profilePictureUrl(anu.id, 'image')
+          } catch {
+            ppgroup = 'https://telegra.ph/file/4cc2712eee93c105f6739.jpg'
+          }
+  
+          let targetname = await A17.getName(num)
+          grpmembernum = metadata.participants.length
+  
+  
+          if (anu.action == 'add') {
+            let WAuserName = num
+            A17text = `
+  Hello @${WAuserName.split("@")[0]},
+  
+  I am *A17 Bot*, Welcome to ${metadata.subject}.
+  
+  *Group Description:*
+  ${metadata.desc}
+  `
+  
+            let buttonMessage = {
+              image: await getBuffer(ppgroup),
+              mentions: [num],
+              caption: A17text,
+              footer: `${global.BotName}`,
+              headerType: 4,
+            }
+            A17.sendMessage(anu.id, buttonMessage)
+          } else if (anu.action == 'remove') {
+            let WAuserName = num
+            A17text = `
+  Okay Bye 👋, @${WAuserName.split("@")[0]},
+  
+  I hope you will come back soon, but You will be missed!
+  `
+  
+            let buttonMessage = {
+              image: await getBuffer(ppuser),
+              mentions: [num],
+              caption: A17text,
+              footer: `${global.BotName}`,
+              headerType: 4,
+  
+            }
+            A17.sendMessage(anu.id, buttonMessage)
+          }
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    });
+  
+*/
+
 
   A17.decodeJid = (jid) => {
     if (!jid) return jid;
@@ -275,6 +365,16 @@ async function startA17() {
 
   A17.ev.on("creds.update", saveCreds);
 
+  /** Send Button 5 Images
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} footer
+   * @param {*} image
+   * @param [*] button
+   * @param {*} options
+   * @returns
+   */
   A17.send5ButImg = async (
     jid,
     text = "",
@@ -305,7 +405,15 @@ async function startA17() {
     A17.relayMessage(jid, template.message, { messageId: template.key.id });
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} buttons
+   * @param {*} caption
+   * @param {*} footer
+   * @param {*} quoted
+   * @param {*} options
+   */
   A17.sendButtonText = (
     jid,
     buttons = [],
@@ -324,10 +432,26 @@ async function startA17() {
     A17.sendMessage(jid, buttonMessage, { quoted, ...options });
   };
 
-    A17.sendText = (jid, text, quoted = "", options) =>
+  /**
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
+  A17.sendText = (jid, text, quoted = "", options) =>
     A17.sendMessage(jid, { text: text, ...options }, { quoted });
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} caption
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
   A17.sendImage = async (jid, path, caption = "", quoted = "", options) => {
     let buffer = Buffer.isBuffer(path)
       ? path
@@ -345,7 +469,15 @@ async function startA17() {
     );
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} caption
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
   A17.sendVideo = async (
     jid,
     path,
@@ -370,7 +502,15 @@ async function startA17() {
     );
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} mime
+   * @param {*} options
+   * @returns
+   */
   A17.sendAudio = async (jid, path, quoted = "", ptt = false, options) => {
     let buffer = Buffer.isBuffer(path)
       ? path
@@ -388,7 +528,14 @@ async function startA17() {
     );
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} text
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
   A17.sendTextWithMentions = async (jid, text, quoted, options = {}) =>
     A17.sendMessage(
       jid,
@@ -404,7 +551,14 @@ async function startA17() {
       { quoted }
     );
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
   A17.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
     let buff = Buffer.isBuffer(path)
       ? path
@@ -430,7 +584,14 @@ async function startA17() {
     return buffer;
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} path
+   * @param {*} quoted
+   * @param {*} options
+   * @returns
+   */
   A17.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
     let buff = Buffer.isBuffer(path)
       ? path
@@ -498,7 +659,13 @@ async function startA17() {
     );
     return fs.promises.unlink(pathFile);
   };
-  
+  /**
+   *
+   * @param {*} message
+   * @param {*} filename
+   * @param {*} attachExtension
+   * @returns
+   */
   A17.downloadAndSaveMediaMessage = async (
     message,
     filename,
@@ -535,7 +702,14 @@ async function startA17() {
     return buffer;
   };
 
-  
+  /**
+   *
+   * @param {*} jid
+   * @param {*} message
+   * @param {*} forceForward
+   * @param {*} options
+   * @returns
+   */
   A17.copyNForward = async (
     jid,
     message,
@@ -652,7 +826,11 @@ async function startA17() {
     return proto.WebMessageInfo.fromObject(copy);
   };
 
-  
+  /**
+   *
+   * @param {*} path
+   * @returns
+   */
   A17.getFile = async (PATH, save) => {
     let res;
     let data = Buffer.isBuffer(PATH)
