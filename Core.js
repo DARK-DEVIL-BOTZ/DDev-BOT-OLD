@@ -21,9 +21,6 @@ const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss');
 const speed = require('performance-now');
 const eco = require('discord-mongoose-economy');
 const thiccysapi = require('textmaker-thiccy');
-// const ffmpeg = require('fluent-ffmpeg');
-// const ffmpegPath = require('ffmpeg-static').path;
-// ffmpeg.setFfmpegPath(ffmpegPath);
 const maker = require('mumaker');
 const Jimp = require('jimp'); // for full dp etc.
 const modapk = require("tod-api");
@@ -33,7 +30,7 @@ const ty = eco.connect('mongodb+srv://Arch:1t6l2G0r6nagLlOb@cluster0.gedh4.mongo
 const { isLimit, limitAdd, getLimit, giveLimit, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./lib/limit.js');
 const githubstalk = require('./lib/githubstalk');
 
-const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"]; // List of emojis for Space CMDs.
+const spaceemojis = ["🌌", "🌠", "🚀", "🪐", "🌟"];
 
 const gis = require("g-i-s");
 const { MessageType } = require('baileysjs');
@@ -79,7 +76,6 @@ const {
    Couples,
    Darkjokes
  } = require("dhn-api");
-//"parse-ms": "^1.1.0",
 
 
 
@@ -367,9 +363,6 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     }
 
 
-    
-    //Dm and Groups Autoreply/Bot chat
-
 
 
 
@@ -397,11 +390,8 @@ function updateStatus() {
   const uptimeInSeconds = Math.floor(process.uptime());
   const uptimeFormatted = formatTime(uptimeInSeconds);
 
-  // const status = `
-  // ㅤㅤ〄ㅤㅤ〘 A17 Personal Edition 〙ㅤㅤ〄ㅤㅤㅤㅤ
-  // ㅤㅤㅤ〘ㅤ Auto Uptime: ${uptimeFormatted}ㅤ〙`;
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20A17\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
+  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ〄ㅤㅤ〘\x20DDEV\x20Personal\x20Edition\x20〙ㅤㅤ〄ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20Auto\x20Uptime:\x20'+uptimeFormatted+'ㅤ〙';
 
   A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
 
@@ -498,7 +488,7 @@ if (smallinput.includes('hello')) {
 
 // } 
 
-if (smallinput=='darkdevil') {
+if (smallinput=='kai') {
     reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
 }
 
@@ -553,6 +543,7 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
 
 
 
+
 //\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\
 
 
@@ -568,22 +559,20 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
     if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
-    let { data } = await axios.get('https://api.github.com/repos/Kai0071/A17');
-    teks = `*A17 Script*\n\n*Total Stars*: ${data.stargazers_count}⭐\n*Total Forks*: ${data.forks_count} forks\n*GitHub*: https://github.com/Kai0071/A17\n\nDont forget to follow me on *GitHub* and give a ⭐️ to my projects. `
+    let { data } = await axios.get('https://api.github.com/repos/DARK-DEVIL-BOTZ/DDev-BOT');
+    teks = `*📃𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃📃*\n\n*✨𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count}⭐\n*🏷️𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜`
   
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"Powered by Kai",
+    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
-    //mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
-    //sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
-    mediaUrl: 'github.com/Kai0071/A17',
-    sourceUrl: "github.com/Kai0071/A17"
+    mediaUrl: 'github.com/DARK-DEVIL-BOTZ/DDev-BOT',
+    sourceUrl: "github.com/DARK-DEVIL-BOTZ/DDev-BOT"
     }}
 
     }
@@ -597,7 +586,7 @@ if (smallinput.includes('arigato')|| smallinput.includes('arigatou') || smallinp
       if (isBanChat) return reply(mess.bangc);
 
       A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ *My developer's group:* ⚙ http://gg.gg/12ewfs`)
+    reply(`⚙ *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂 𝙶𝚁𝙾𝚄𝙿* ⚙ : https://chat.whatsapp.com/EWyF109uZpsDTI9GQz2HpVl`)
     }
     break;
     
@@ -607,7 +596,7 @@ case 'repo': case 'botrepo': {
   if (isBanChat) return reply(mess.bangc);
   
   A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`⚙ My Source Code is </> - https://github.com/Kai0071/A17`)
+    reply(`📂 *𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴* </> - https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
     }
     break;
 
@@ -648,10 +637,6 @@ case 'repo': case 'botrepo': {
       await A17.sendMessage(from, { react: { text: "✅", key: m.key } });
      await A17.sendMessage(from, { text: 'Restarting Success!' });
      
-     // Delay the shutdown by 5 seconds using sleep function
-      //await sleep(5000);
-    
-      // Use PM2 to restart the script
       pm2.restart('index', (err) => {
         if (err) {
           A17.sendMessage(from, { react: { text: "❌", key: m.key } });
@@ -735,7 +720,7 @@ case 'repo': case 'botrepo': {
         oldd = performance.now()
         respon = `
 Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-» A17's Server Info 
+» 🔮 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
@@ -1179,7 +1164,7 @@ break;
     if (!AntiNsfw) return reply(mess.nonsfw)
     A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
-        reply(` *━━〈 ⚠️ NSFW Menu ⚠️  〉━━*\n\n gifs, hentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
+        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n`)
     break;
 
 
@@ -1188,7 +1173,7 @@ case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBanChat) return reply(mess.bangc)
         A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
-            reply(` *━━〈  ⚡ Reactions ⚡  〉━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
+            reply(` *━━〈  ⚡ 𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂 ⚡  〉━━*\n\n .bonk\n .cry\n .bully\n .cuddle\n .hug\n .kiss\n .lick\n .pat\n .smug\n .yeet\n .blush\n .smile\n .wave\n .highfive\n .handhold\n .nom\n .glomp\n .bite\n .slap\n .kill\n .happy\n .wink\n .poke\n .dance\n .cringe`)
         break;
 
 
@@ -1214,7 +1199,7 @@ case 'limituser': case 'userlimit': case 'limit':
               .then(data => {console.log(data)
               let krl = `*Search Term:* ${q}\n\n`
                     for (let i of data) {
-                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
+                          krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*📽️𝙼𝙾𝚅𝙸𝙴 𝙽𝙰𝙼𝙴:* ${i.judul}\n *🧩𝚀𝚄𝙰𝙻𝙸𝚃𝚈:* ${i.quality}\n *🎯𝚃𝚈𝙿𝙴 : ${i.type}*\n *📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 𝙾𝙽 :* ${i.upload}\n *🖇️𝚂𝙾𝚄𝚁𝙲𝙴 𝚄𝚁𝙻 :* ${i.link}\n\n\n`)
                           }
                          A17.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
           });
@@ -1911,7 +1896,7 @@ break;
 case 'ghstalk': case 'githubstalk': case'github': {
   A17.sendMessage(from, { react: { text: "🔍" , key: m.key }})
 
-  if (!q) return replay(`Give me a user name like *${prefix}github Kai0071*`)
+  if (!q) return replay(`Give me a user name like *${prefix}github DARK-DEVIL-BOTZ*`)
 
   gitdata = await githubstalk.githubstalk(`${q}`)
   A17.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
@@ -1938,7 +1923,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = ` 「  A17's pm user list  」\n\nTotal ${anu.length} users are using A17 in personal chat.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
 teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
@@ -1953,7 +1938,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = ` 「  A17's group user list  」\n\nTotal ${anu.length} users are using bot in Groups.`
+let teks = ` 「  𝙳𝙳𝙴𝚅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃  」\n\n𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂.`
 for (let i of anu) {
 let metadata = await A17.groupMetadata(i)
 if (metadata.owner === "undefined") {
@@ -3281,7 +3266,7 @@ reply(mess.waiting)
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
        let anu = await maker.textpro(link, q)
-          A17.sendMessage(m.chat, { image: { url: anu }, caption: `Made by A17 Bot By Kai...  🪄` }, { quoted: m })
+          A17.sendMessage(m.chat, { image: { url: anu }, caption: `🔮𝙼𝙰𝙳𝙴 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻...` }, { quoted: m })
        }
 
 break;
@@ -3673,18 +3658,19 @@ break;
 
 
 ///
-case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
+case 'fb': case 'facebook': case 'fbmp4': {     	    
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
         if (!text) return reply(`Please provide the link!\n\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`Invalid link!`)
        let bocil = require('@bochilteam/scraper')  
            bocil.facebookdlv2(`${text}`).then(async (data) => {                   
-               let txt = `「 _Facebook Downloader_ 」\n\n`
-               txt += `*Title :* ${data.title}\n`
-               txt += `*Quality :* ${data.result[0].quality}\n`
-               txt += `*Description:* ${data.description}\n`
-               txt += `*URL :* ${text}\n\n`
+               let txt = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥\n\n`
+               txt += `🎯 *𝚃𝙸𝚃𝙻𝙴 :* ${data.title}\n`
+               txt += `⚡ *Quality𝚀𝚄𝙰𝙻𝙸𝚃𝚈 :* ${data.result[0].quality}\n`
+               txt += `🗒️ *𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 :* ${data.description}\n`
+               txt += `🖇️ *𝚄𝚁𝙻 :* ${text}\n\n`
+               txt += `    *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
            buf = await getBuffer(data.thumbnail)    
            A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
            for (let i of data.result) {     
@@ -3712,16 +3698,20 @@ A17.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' 
       break;
 
 
-case 'facebookxx': case 'fbdlxxx': case 'fbmp4xxx': case 'fbxxx': {
+case 'fbdl': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
 try {
 let resd = await aiovideodl(args[0])
-teks = `「 _Facebook Downloader_ 」
-Type : video/${resd.medias[0].extension}
-Quality : ${resd.medias[0].quality}
-Size : ${resd.medias[0].formattedSize}
+teks = `📥 *𝘍𝘈𝘊𝘌𝘉𝘖𝘖𝘒 𝘋𝘖𝘞𝘕𝘓𝘖𝘈𝘋𝘌𝘙* 📥
+
+🎰 *𝚃𝚈𝙿𝙴* : video/${resd.medias[0].extension}
+⚡ *𝚀𝚄𝙰𝙻𝙸𝚃𝚈* : ${resd.medias[0].quality}
+🧮 *𝚂𝙸𝚉𝙴*: ${resd.medias[0].formattedSize}
+
+    *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*
+
 _Click the button below to download_`
 let buttons = [
 {buttonId: `${prefix}fbdl ${resd.medias[1].url}`, buttonText: {displayText: 'QualityHD'}, type: 1}
@@ -3775,8 +3765,8 @@ console.log(musim_rambutan)
 const A17tiktokop = musim_rambutan.result.watermark
 texttk = `_Please choose the button below_`
 let buttons = [
-{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: 'Watermark Free'}, type: 1},
-{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: 'Audio '}, type: 1}
+{buttonId: `${prefix}ttnowm ${q}`, buttonText: {displayText: '💧𝚆𝙰𝚃𝙴𝚁𝙼𝙰𝚁𝙺 𝙵𝚁𝙴𝙴💧'}, type: 1},
+{buttonId: `${prefix}ttaud ${q}`, buttonText: {displayText: ' 🎧𝙰𝚄𝙳𝙸𝙾🎧'}, type: 1}
 ]
 let buttonMessage = {
 video: {url:A17tiktokop},
@@ -3802,7 +3792,7 @@ reply(mess.error)
 } )
 console.log(musim_rambutan)
 const A17tiktoknowm = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "Here it is..." }, { quoted: m })
+A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "👉𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂..." }, { quoted: m })
 }
 break;
 
@@ -3849,7 +3839,7 @@ case 'song':
 case 'music': {
   if (isBan) return reply(mess.banned);
   if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🍁", key: m.key }});
+  A17.sendMessage(from, { react: { text: "🎧", key: m.key }});
 
   const YT = require('./lib/ytdl-core');
   const yts = require('youtube-yts');
@@ -3866,18 +3856,19 @@ case 'music': {
     from,
     {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n*Downloading:* *${anu.title}*
+      caption: `\n🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
-  ⏳ *Duration :* ${anu.timestamp}
+  ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
-  📈 *Viewers :* ${anu.views}
+  📈 *𝚅𝙸𝙴𝚆𝙴𝚁𝚂 :* ${anu.views}
 
-  🎐 *Channel :* ${anu.author.name}
+  📺 *𝙲𝙷𝙰𝙽𝙽𝙴𝙻 :* ${anu.author.name}
 
-  🏮 *Video Uploaded:* ${anu.ago}
+  📤 *𝚅𝙸𝙳𝙴𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 :* ${anu.ago}
 
-  🔗 *Url :* ${anu.url}\n`,
+  🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
 
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`,
     },
     { quoted: m }
   );
@@ -3899,13 +3890,13 @@ break;
  case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍃" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   let yts = require("youtube-yts")
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+' By *A17 MD*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'  ✨*𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 
 break;
@@ -3929,10 +3920,10 @@ break;
 case 'ytvd2': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'Downloaded by *A17 MD*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'  📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 break;
 
@@ -3941,7 +3932,7 @@ case 'lyrics': {
   if (isBan) return reply(mess.banned)	 			
   if (isBanChat) return reply(mess.bangc)
   if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📃" , key: m.key }})
 if (!text) return reply(`Comand usage: ${prefix}lyrics Thunder`)
 reply(mess.waiting)	
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
@@ -4044,7 +4035,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take A17|By: Kai`)
+if (!args.join(" ")) return reply(`Like use -take 𝙳𝙳𝙴𝚅|By: 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -4123,7 +4114,7 @@ case 'soulmate':  {
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
-  let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+  let message = `👫 𝙱𝙴 𝙼𝙴 𝚂𝙾𝚄𝙻𝙼𝙰𝚃𝙴...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
   A17.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
@@ -4133,7 +4124,7 @@ case 'handsomecheck':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
-      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
+      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @DARK DEVIL`)
         const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const teng = gan[Math.floor(Math.random() * gan.length)]
 A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
@@ -4145,7 +4136,7 @@ case 'beautifulcheck':
   if (isBanChat) return reply(mess.bangc)
   A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
   
-      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
+      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @DARK DEVIL`)
         const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const tik = can[Math.floor(Math.random() * can.length)]
 A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
@@ -4166,7 +4157,7 @@ case 'greatcheck':
                       if (isBanChat) return reply(mess.bangc)
   A17.sendMessage(from, { react: { text: "😺" , key: m.key }})
   
-      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
+      if (!text) return replay(`Tag Someone, Example : ${prefix + command} @DARK DEVIL`)
         const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
         const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 A17.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
@@ -4178,7 +4169,7 @@ case 'charactercheck':
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🤧" , key: m.key }})
 
-        if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Kai`)
+        if (!text) return replay(`Tag Someone, Example : ${prefix + command} @DARK DEVIL`)
         const A17tttt =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
         const taky = A17tttt[Math.floor(Math.random() * A17tttt.length)]
         A17.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
@@ -4262,7 +4253,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
        "shout you bastard in front of your mom/papa",
        "change the name to i am idiot for 24 hours",
        "slap urself firmly and send the sound of slap through voice note😂",
-       "say i love the bot owner Kai through voice note",
+       "say i love the bot owner DARK DEVIL through voice note",
        "send your gf/bf pic here",
        "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
        "break;up with your best friend for 5hrs without telling him/her that its a dare",
@@ -4356,7 +4347,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
                "Mention the incident that makes you hurt that you still remember",
                "what achievements have you got this year?",
                "what was your worst habit at school?",
-               "do you love the bot creator Kai?",
+               "do you love the bot creator DARK DEVIL?",
                "have you ever thought of taking revenge from ur teacher?",
                "do you like current prime minister of ur country",
                "you non veg or veg",
@@ -4383,7 +4374,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 
 
 
-case 'nsfwA17':
+case 'nsfwDDEV':
   if (isBan) return reply(mess.banned)
   if (isBanChat) return reply(mess.bangc)
 reply(mess.wait)
@@ -5055,7 +5046,7 @@ break;
     await sleep(1500)
     let btn = [{
     quickReplyButton: {
-    displayText: '💡 Menu 💡',
+    displayText: '💡 MENU 💡',
     id: '-menu'
     }  
     }, {
@@ -5078,324 +5069,290 @@ break;
 
 
 
-    case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
+    case 'ddev': case 'help': case 'h': case 'menu': case 'allmenu': case 'listmenu':{
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
-    const helpmenu = `Hemlo *${pushname}* Dear...!! ${nowtime} ,
+    const helpmenu = `   😇 𝘏𝘌𝘓𝘓𝘖  *${pushname}*  ${nowtime} ,
+
+    👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
     
-Hello, *I am DDev BOT* A WhatsApp bot Created By DARK DEVIL To Do Everything That Is Possible On WhatsApp Based On WhatsApp Multi Device(MD) Support.
-  
+   ╔══════ 🏜️ *𝚃𝙾𝙳𝙰𝚈* 🏖 ️══════════➤
+   ║
+   ║  *📅𝙳𝙰𝚃𝙴* : ${kaidate}
+   ║  *⏳𝚃𝙸𝙼𝙴* : ${kaitime}
+   ║ 
+   ╟━━━━ 🤖 *𝙱𝙾𝚃 𝙸𝙽𝙵𝙾* 🤖 ━━━━━━━━━━➤
+   ║
+   ║  *🤖𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* 𝙳𝙳𝙴𝚅
+   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* ${global.OwnerName} 
+   ║  *⏳𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
+   ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
+   ╚══════════════════════════➤
 
-    ⌯    *Time* : ${kaitime}
-    ⌯    *Date* : ${kaidate}
-
-
-    〢━━━ 〄 Bot Info 〄 ━━━〢
-
-
-    ⌯    *Bot usr name :* ${pushname} 
-    ⌯    *Owner name :* ${global.OwnerName} 
-    ⌯    *Bot runtime :* ${runtime(process.uptime())} 
-    ⌯    *Platform :* Linux
-
-
-    〢━━━ 〄 Core 〄 ━━━〢
-
-
-    ⌯     ${prefix}repo
-    ⌯     ${prefix}script
-    ⌯     ${prefix}speak
-    ⌯     ${prefix}support
-    ⌯     ${prefix}stalk
-    ⌯     ${prefix}A17
-    ⌯     ${prefix}delete
-  
-
-    〢━━━ ⌬ Owner Only ⌬ ━━━〢
-
-
-    ⌯     ${prefix}join
-    ⌯     ${prefix}self
-    ⌯     ${prefix}public
-    ⌯     ${prefix}restart
-    ⌯     ${prefix}sleep
-    ⌯     ${prefix}setbotpp
-    ⌯     ${prefix}post
-    ⌯     ${prefix}listonline
-    ⌯     ${prefix}listgc
-    ⌯     ${prefix}listpc
-    ⌯     ${prefix}getcase
-    ⌯     ${prefix}bangroup
-    ⌯     ${prefix}broadcast
-    ⌯     ${prefix}bye
-    ⌯     ${prefix}block
-    ⌯     ${prefix}unblock
-    ⌯     ${prefix}ban add
-    ⌯     ${prefix}ban del
-
-   
-    〢━━━ ❅ Group Moderation ❅ ━━━〢
-
-
-    ⌯     ${prefix}add
-    ⌯     ${prefix}invite
-    ⌯     ${prefix}remove
-    ⌯     ${prefix}promote
-    ⌯     ${prefix}demote
-    ⌯     ${prefix}grouplink
-    ⌯     ${prefix}groupsetting
-    ⌯     ${prefix}setname
-    ⌯     ${prefix}setgcpp
-    ⌯     ${prefix}setdesc
-    ⌯     ${prefix}revoke
-    ⌯     ${prefix}tagall
-    ⌯     ${prefix}hidetag
-    ⌯     ${prefix}nsfw
-    ⌯     ${prefix}nsnfwmenu
-  
-
-    〢━━━❗ *Anti Link ❗* ━━━〢
-
-    
-    ⌯     ${prefix}antilinkgc
-    ⌯     ${prefix}antilinktt
-    ⌯     ${prefix}antilinkytch
-    ⌯     ${prefix}antilinkytch
-    ⌯     ${prefix}antilinkig
-    ⌯     ${prefix}antilinkfb
-    ⌯     ${prefix}antilinktwit
-    ⌯     ${prefix}antiwame
-    ⌯     ${prefix}antilinkall
-    
-
-    〢━━━ 🔍 *Search* 🔎 ━━━〢
-    
-   
-    ⌯     ${prefix}play
-    ⌯     ${prefix}song
-    ⌯     ${prefix}video
-    ⌯     ${prefix}ytmp3
-    ⌯     ${prefix}ytmp4 
-    ⌯     ${prefix}yts
-    ⌯     ${prefix}lyrics
-    ⌯     ${prefix}movie
-    ⌯     ${prefix}google
-    ⌯     ${prefix}gimage
-    ⌯     ${prefix}pinterest
-    ⌯     ${prefix}wallpaper
-    ⌯     ${prefix}image
-    ⌯     ${prefix}searchgc
-    ⌯     ${prefix}wikimedia
- 
-  
-    〢━━━ 📈 *Economy* 📈 ━━━〢
-  
-
-    ⌯     ${prefix}daily 
-    ⌯     ${prefix}wallet
-    ⌯     ${prefix}bank
-    ⌯     ${prefix}bankupgrade
-    ⌯     ${prefix}deposit
-    ⌯     ${prefix}withdraw 
-    ⌯     ${prefix}rob / attack
-    ⌯     ${prefix}transfer / give
-    ⌯     ${prefix}wealth / ritual
-  
-
-    〢━━━ 🎮 *Games* 🎮 ━━━〢
-
-
-    ⌯     ${prefix}ttt / tictactoe
-    ⌯     ${prefix}truth
-    ⌯     ${prefix}dare
-    ⌯     ${prefix}spin / slot
-    ⌯     ${prefix}gamble / lottery
-   
-
-    〢━━━ 🛠️ *Convert* 🛠️ ━━━〢
-   
-
-    ⌯     ${prefix}sticker
-    ⌯     ${prefix}toimg
-    ⌯     ${prefix}tovideo
-    ⌯     ${prefix}togif
-    ⌯     ${prefix}tourl
-    ⌯     ${prefix}tomp3
-    ⌯     ${prefix}toaudio
-    ⌯     ${prefix}steal
-    ⌯     ${prefix}stickermeme
-    ⌯     ${prefix}emojimix
-
-
-    〢━━━ ◈ Sound Edit ◈ ━━━〢
-
-
-    ⌯     ${prefix}ringtone
-    ⌯     ${prefix}bass
-    ⌯     ${prefix}tempo
-    ⌯     ${prefix}blown
-    ⌯     ${prefix}robot
-    ⌯     ${prefix}slow
-    ⌯     ${prefix}squirrel
-    ⌯     ${prefix}deep
-    ⌯     ${prefix}earrape
-    ⌯     ${prefix}fast
-    ⌯     ${prefix}fat
-    ⌯     ${prefix}nightcore
-    ⌯     ${prefix}reverse
- 
-
-    〢━━━ 📍 *Reactions* 📍 ━━━〢
-   
-
-    ⌯     ${prefix}cuddle
-    ⌯     ${prefix}hug
-    ⌯     ${prefix}kiss
-    ⌯     ${prefix}bonk
-    ⌯     ${prefix}cry
-    ⌯     ${prefix}bully
-    ⌯     ${prefix}slap
-    ⌯     ${prefix}kill
-    ⌯     ${prefix}happy
-    ⌯     ${prefix}lick
-    ⌯     ${prefix}pat
-    ⌯     ${prefix}smug
-    ⌯     ${prefix}nom
-    ⌯     ${prefix}glomp
-    ⌯     ${prefix}bite
-    ⌯     ${prefix}yeet
-    ⌯     ${prefix}blush
-    ⌯     ${prefix}smile
-    ⌯     ${prefix}wave
-    ⌯     ${prefix}highfive
-    ⌯     ${prefix}handhold
-    ⌯     ${prefix}poke
-    ⌯     ${prefix}wink
-    ⌯     ${prefix}dance
-    ⌯     ${prefix}cringe
-
-
-    〢━━━ 🌌 *Downloader* 🌌 ━━━〢
-   
-  
-    ⌯     ${prefix}ytvideo
-    ⌯     ${prefix}mediafire
-    ⌯     ${prefix}instagram
-    ⌯     ${prefix}igtv
-    ⌯     ${prefix}facebook
-    ⌯     ${prefix}fbmp3
-    ⌯     ${prefix}twitter
-    ⌯     ${prefix}twittermp3
-    ⌯     ${prefix}tiktok
-    ⌯     ${prefix}tiktokaudio
-    ⌯     ${prefix}happymod
-    ⌯     ${prefix}tiktoknowm
-  
-   
-    〢━━━ 🎐 *Fun* 🎐 ━━━〢
-    
-
-    ⌯     ${prefix}reaction
-    ⌯     ${prefix}cutecheck
-    ⌯     ${prefix}couple
-    ⌯     ${prefix}soulmate
-    ⌯     ${prefix}handsomecheck
-    ⌯     ${prefix}beautifulcheck
-    ⌯     ${prefix}awesomecheck
-    ⌯     ${prefix}greatcheck
-    ⌯     ${prefix}gaycheck
-    ⌯     ${prefix}uglycheck
-    ⌯     ${prefix}charactercheck
-    ⌯     ${prefix}lesbiancheck
-    ⌯     ${prefix}hornychec
-    ⌯     ${prefix}prettycheck
-    ⌯     ${prefix}lovelycheck
-
-
-    〢━━━ 🈴 *Weeb* 🈴 ━━━〢
-  
-    
-    ⌯     ${prefix}anime
-    ⌯     ${prefix}animestory
-    ⌯     ${prefix}awoo
-    ⌯     ${prefix}manga
-    ⌯     ${prefix}animewall
-    ⌯     ${prefix}animewallpaper2
-    ⌯     ${prefix}crosplay
-    ⌯     ${prefix}animenom
-    ⌯     ${prefix}feed
-    ⌯     ${prefix}foxgirl
-    ⌯     ${prefix}waifu
-    ⌯     ${prefix}waifu2
-    ⌯     ${prefix}waifu3
-    ⌯     ${prefix}loli
-    ⌯     ${prefix}coffee
-    ⌯     ${prefix}tickle
-    ⌯     ${prefix}meow
-    ⌯     ${prefix}neko
-    ⌯     ${prefix}neko2
-    ⌯     ${prefix}migumin
-    ⌯     ${prefix}wallpaper
-    ⌯     ${prefix}animequote
-   
- 
-    〢━━━ ♨️ *Informative* ♨️ ━━━〢
-    
-  
-    ⌯     ${prefix}quote
-    ⌯     ${prefix}weather
-    ⌯     ${prefix}covid
-    ⌯     ${prefix}earthquake
-    ⌯     ${prefix}wiki
-    ⌯     ${prefix}stalknumber
-  
-
-    〢━━━ 🪁 *Essentials* 🪁 ━━━〢
-   
-    
-    ⌯     ${prefix}qr
-    ⌯     ${prefix}say
-    ⌯     ${prefix}fliptext
-    ⌯     ${prefix}toletter
-    ⌯     ${prefix}translate, 
-    
-   
-    〢━━━ 🎗 *Others* 🎗 ━━━〢
- 
-
-    ⌯     ${prefix}stickermeme
-    ⌯     ${prefix}quotes
-    ⌯     ${prefix}report
-    ⌯     ${prefix}afk
-    ⌯     ${prefix}darkjoke
-    
-
-    〢━━━ ⚠️ *NSFW* ⚠️ ━━━〢
-   
-   
-    ⌯    🍁 Type "*${prefix}nsfw*" then enable 
-    ⌯       NSFW (Admin only!)
-    ⌯    
-    ⌯    🍁 Then type "*${prefix}nsfwmenu*" for
-    ⌯       all NSFW commands.
-    ⌯    
-    ⌯    『  *${global.BotName}*  』
-    ⌯       Developed By: *DARK DEVIL
-    ⌯    
-    ⌯    🍁 To use any of these
-    ⌯       commands type.
-    ⌯    
-    ⌯    "*${prefix}<Command name>*".
-    ⌯    
-    ⌯    🍁 To get Support Group link
-    ⌯     type "*${prefix}support*".
-    ⌯    
-    ⌯    
-    ⌯    🍁 Type "*${prefix}help*" to get
-    ⌯       full command list.
-    ┬│▸
-    ╰────────────···▸`
+   ┏━━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}repo
+   ┃►    ${prefix}script
+   ┃►    ${prefix}speak
+   ┃►    ${prefix}support
+   ┃►    ${prefix}stalk
+   ┃►    ${prefix}ddev
+   ┃►    ${prefix}delete
+   ┃
+   ┣━━━ 👨‍💼 *𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙻𝚈* 👩‍💼 ━━━━━━➢
+   ┃
+   ┃►    ${prefix}join
+   ┃►    ${prefix}self
+   ┃►    ${prefix}public
+   ┃►    ${prefix}restart
+   ┃►    ${prefix}sleep
+   ┃►    ${prefix}setbotpp
+   ┃►    ${prefix}post
+   ┃►    ${prefix}listonline
+   ┃►    ${prefix}listgc
+   ┃►    ${prefix}listpc
+   ┃►    ${prefix}getcase
+   ┃►    ${prefix}bangroup
+   ┃►    ${prefix}broadcast
+   ┃►    ${prefix}bye
+   ┃►    ${prefix}block
+   ┃►    ${prefix}unblock
+   ┃►    ${prefix}ban add
+   ┃►    ${prefix}ban del
+   ┃
+   ┣━━━ ⬆️ *𝙶𝚁𝙾𝚄𝙿 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙸𝙾𝙽* ⬆️ ━➢
+   ┃
+   ┃►    ${prefix}add
+   ┃►    ${prefix}invite
+   ┃►    ${prefix}remove
+   ┃►    ${prefix}promote
+   ┃►    ${prefix}demote
+   ┃►    ${prefix}grouplink
+   ┃►    ${prefix}groupsetting
+   ┃►    ${prefix}setname
+   ┃►    ${prefix}setgcpp
+   ┃►    ${prefix}setdesc
+   ┃►    ${prefix}revoke
+   ┃►    ${prefix}tagall
+   ┃►    ${prefix}hidetag
+   ┃►    ${prefix}nsfw
+   ┃►    ${prefix}nsnfwmenu
+   ┃
+   ┣━━━❗ *𝙰𝙽𝚃𝙸 𝙻𝙸𝙽𝙺* ❗ ━━━━━━➢
+   ┃    
+   ┃►    ${prefix}antilinkgc
+   ┃►    ${prefix}antilinktt
+   ┃►    ${prefix}antilinkytch
+   ┃►    ${prefix}antilinkytch
+   ┃►    ${prefix}antilinkig
+   ┃►    ${prefix}antilinkfb
+   ┃►    ${prefix}antilinktwit
+   ┃►    ${prefix}antiwame
+   ┃►    ${prefix}antilinkall
+   ┃
+   ┣━━━ 🔍 *𝚂𝙴𝙰𝚁𝙲𝙷* 🔎 ━━━━━━━━➢
+   ┃   
+   ┃►    ${prefix}play
+   ┃►    ${prefix}song
+   ┃►    ${prefix}video
+   ┃►    ${prefix}ytmp3
+   ┃►    ${prefix}ytmp4 
+   ┃►    ${prefix}yts
+   ┃►    ${prefix}lyrics
+   ┃►    ${prefix}movie
+   ┃►    ${prefix}google
+   ┃►    ${prefix}gimage
+   ┃►    ${prefix}pinterest
+   ┃►    ${prefix}wallpaper
+   ┃►    ${prefix}image
+   ┃►    ${prefix}searchgc
+   ┃►    ${prefix}wikimedia
+   ┃  
+   ┣━━━ 📈 *𝙴𝙲𝙾𝙽𝙾𝙼𝚈* 📈 ━━━━━━━➢
+   ┃
+   ┃►    ${prefix}daily 
+   ┃►    ${prefix}wallet
+   ┃►    ${prefix}bank
+   ┃►    ${prefix}bankupgrade
+   ┃►    ${prefix}deposit
+   ┃►    ${prefix}withdraw 
+   ┃►    ${prefix}rob / attack
+   ┃►    ${prefix}transfer / give
+   ┃►    ${prefix}wealth / ritual
+   ┃
+   ┣━━━ 🎮 *𝙶𝙰𝙼𝙴𝚂* 🎮 ━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}ttt / tictactoe
+   ┃►    ${prefix}truth
+   ┃►    ${prefix}dare
+   ┃►    ${prefix}spin / slot
+   ┃►    ${prefix}gamble / lottery
+   ┃
+   ┣━━━ 🛠️ *𝙲𝙾𝙽𝚅𝙴𝚁𝚃𝙴𝚁* 🛠️ ━━━━━➢
+   ┃
+   ┃►    ${prefix}sticker
+   ┃►    ${prefix}toimg
+   ┃►    ${prefix}tovideo
+   ┃►    ${prefix}togif
+   ┃►    ${prefix}tourl
+   ┃►    ${prefix}tomp3
+   ┃►    ${prefix}toaudio
+   ┃►    ${prefix}steal
+   ┃►    ${prefix}stickermeme
+   ┃►    ${prefix}emojimix
+   ┃
+   ┣━━━ 🎤 *𝚂𝙾𝚄𝙽𝙳 𝙴𝙳𝙸𝚃𝙾𝚁* 🎤 ━━━➢
+   ┃
+   ┃►    ${prefix}ringtone
+   ┃►    ${prefix}bass
+   ┃►    ${prefix}tempo
+   ┃►    ${prefix}blown
+   ┃►    ${prefix}robot
+   ┃►    ${prefix}slow
+   ┃►    ${prefix}squirrel
+   ┃►    ${prefix}deep
+   ┃►    ${prefix}earrape
+   ┃►    ${prefix}fast
+   ┃►    ${prefix}fat
+   ┃►    ${prefix}nightcore
+   ┃►    ${prefix}reverse
+   ┃
+   ┣━━━ 🎭 *𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂* 🎭 ━━━━━━➢
+   ┃
+   ┃►    ${prefix}cuddle
+   ┃►    ${prefix}hug
+   ┃►    ${prefix}kiss
+   ┃►    ${prefix}bonk
+   ┃►    ${prefix}cry
+   ┃►    ${prefix}bully
+   ┃►    ${prefix}slap
+   ┃►    ${prefix}kill
+   ┃►    ${prefix}happy
+   ┃►    ${prefix}lick
+   ┃►    ${prefix}pat
+   ┃►    ${prefix}smug
+   ┃►    ${prefix}nom
+   ┃►    ${prefix}glomp
+   ┃►    ${prefix}bite
+   ┃►    ${prefix}yeet
+   ┃►    ${prefix}blush
+   ┃►    ${prefix}smile
+   ┃►    ${prefix}wave
+   ┃►    ${prefix}highfive
+   ┃►    ${prefix}handhold
+   ┃►    ${prefix}poke
+   ┃►    ${prefix}wink
+   ┃►    ${prefix}dance
+   ┃►    ${prefix}cringe
+   ┃
+   ┣━━━ 📥 *𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁* 📥 ━━━━━➢
+   ┃  
+   ┃►    ${prefix}video
+   ┃►    ${prefix}mediafire
+   ┃►    ${prefix}instagram
+   ┃►    ${prefix}igtv
+   ┃►    ${prefix}facebook
+   ┃►    ${prefix}fbmp3
+   ┃►    ${prefix}twitter
+   ┃►    ${prefix}twittermp3
+   ┃►    ${prefix}tiktok
+   ┃►    ${prefix}tiktokaudio
+   ┃►    ${prefix}happymod
+   ┃►    ${prefix}tiktoknowm
+   ┃   
+   ┣━━━ 🎐 *𝙵𝚄𝙽* 🎐 ━━━━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}reaction
+   ┃►    ${prefix}cutecheck
+   ┃►    ${prefix}couple
+   ┃►    ${prefix}soulmate
+   ┃►    ${prefix}handsomecheck
+   ┃►    ${prefix}beautifulcheck
+   ┃►    ${prefix}awesomecheck
+   ┃►    ${prefix}greatcheck
+   ┃►    ${prefix}gaycheck
+   ┃►    ${prefix}uglycheck
+   ┃►    ${prefix}charactercheck
+   ┃►    ${prefix}lesbiancheck
+   ┃►    ${prefix}hornychec
+   ┃►    ${prefix}prettycheck
+   ┃►    ${prefix}lovelycheck
+   ┃
+   ┣━━━ 🈴 *𝚆𝙴𝙴𝙱* 🈴 ━━━━━━━━━━➢
+   ┃    
+   ┃►    ${prefix}anime
+   ┃►    ${prefix}animestory
+   ┃►    ${prefix}awoo
+   ┃►    ${prefix}manga
+   ┃►    ${prefix}animewall
+   ┃►    ${prefix}animewallpaper2
+   ┃►    ${prefix}crosplay
+   ┃►    ${prefix}animenom
+   ┃►    ${prefix}feed
+   ┃►    ${prefix}foxgirl
+   ┃►    ${prefix}waifu
+   ┃►    ${prefix}waifu2
+   ┃►    ${prefix}waifu3
+   ┃►    ${prefix}loli
+   ┃►    ${prefix}coffee
+   ┃►    ${prefix}tickle
+   ┃►    ${prefix}meow
+   ┃►    ${prefix}neko
+   ┃►    ${prefix}neko2
+   ┃►    ${prefix}migumin
+   ┃►    ${prefix}wallpaper
+   ┃►    ${prefix}animequote
+   ┃
+   ┣━━━ ♨️ *𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝚅𝙴* ♨️ ━━━━➢
+   ┃  
+   ┃►    ${prefix}quote
+   ┃►    ${prefix}weather
+   ┃►    ${prefix}covid
+   ┃►    ${prefix}earthquake
+   ┃►    ${prefix}wiki
+   ┃►    ${prefix}stalknumber
+   ┃
+   ┣━━━ ♻️ *𝙴𝚂𝚂𝙴𝙽𝚃𝙸𝙰𝙻𝚂* ♻️ ━━━━━➢
+   ┃    
+   ┃►    ${prefix}qr
+   ┃►    ${prefix}say
+   ┃►    ${prefix}fliptext
+   ┃►    ${prefix}toletter
+   ┃►    ${prefix}translate
+   ┃   
+   ┣━━━ 🎗 *𝙾𝚃𝙷𝙴𝚁𝚂* 🎗 ━━━━━━━━➢
+   ┃
+   ┃►    ${prefix}stickermeme
+   ┃►    ${prefix}quotes
+   ┃►    ${prefix}report
+   ┃►    ${prefix}afk
+   ┃►    ${prefix}darkjoke
+   ┃
+   ┣━━━ 💀 *𝙽𝚂𝙵𝚆* 💀️ ━━━━━━━━━━➢
+   ┃   
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}nsfw* " 𝚃𝙷𝙴𝙽
+   ┃    𝙴𝙽𝙰𝙱𝙻𝙴 𝙽𝚂𝙵𝚆 (𝙰𝙳𝙼𝙸𝙽 𝙾𝙽𝙻𝚈!).
+   ┃  
+   ┃ 🍁𝚃𝙷𝙴𝙽 𝚃𝚈𝙿𝙴 " *${prefix}nsfwmenu* "
+   ┃    𝙵𝙾𝚁 𝙰𝙻𝙻 𝙽𝚂𝙵𝚆 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
+   ┃   
+   ┃  『  *${global.BotName}*  』
+   ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈: *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*
+   ┃  
+   ┃ 🍁𝚃𝙾 𝚄𝚂𝙴 𝙰𝙽𝚈 𝙾𝙵 𝚃𝙷𝙴𝚂𝙴
+   ┃    𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚃𝚈𝙿𝙴.
+   ┃   
+   ┃   " *${prefix}<𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙽𝙰𝙼𝙴>* "
+   ┃   
+   ┃ 🍁𝚃𝙾 𝙶𝙴𝚃 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺
+   ┃    𝚃𝚈𝙿𝙴 " *${prefix}support* ".
+   ┃    
+   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}ddev* " 𝚃𝙾 𝙶𝙴𝚃
+   ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃.
+   ┃
+   ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
             let buttonMessage = {
                         video:fs.readFileSync('./system/A17_3.mp4'),gifPlayback:true,
                         caption: helpmenu,
@@ -5425,7 +5382,7 @@ Hello, *I am DDev BOT* A WhatsApp bot Created By DARK DEVIL To Do Everything Tha
       if (isBan) return reply(mess.banned)	 			
       if (isBanChat) return reply(mess.bangc)
       if (!m.isGroup) return replay(mess.grouponly)
-A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
+A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
   
   reply(`Running repl....Please wait until repl.it responds...`)						
   var replqr =  await getBuffer(`https://a17-qr-scanner.broken0007.repl.co/`)
@@ -5449,7 +5406,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        const weathertext = `           🌤 *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 𝚁𝙴𝙿𝙾𝚁𝚃* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
         A17.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break;
@@ -5481,7 +5438,7 @@ A17.sendMessage(from, { react: { text: "🍁" , key: m.key }})
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
           A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`Hey *${pushname}* senpai! this command are not programmed! Type *${prefix}help* to get my full command list!`)
+          reply (`𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}ddev* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
   
       }	 			
   
