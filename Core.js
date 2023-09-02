@@ -498,7 +498,7 @@ if (smallinput.includes('hello')) {
 
 // } 
 
-if (smallinput=='darkdevil') {
+if (smallinput=='kai') {
     reply (`My Boss is lost in another Multiverse, and I lost the connection with him...`)
 }
 
