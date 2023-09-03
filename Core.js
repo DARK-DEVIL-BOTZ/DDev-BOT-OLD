@@ -15,9 +15,9 @@ const { addBalance } = require("./lib/limit.js");
 const { smsg, formatp, tanggal, GIFBufferToVideoBuffer, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, fetchBuffer } = require('./lib/myfunc')
 const _ = require("lodash");
 const yargs = require("yargs/yargs");
-const kaitime = moment.tz('Asia/Kolkata').format('HH:mm:ss');
-const kaidate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY');
-const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss');
+const kaitime = moment.tz('Asia/Colombo').format('HH:mm:ss');
+const kaidate = moment.tz('Asia/Colombo').format('DD/MM/YYYY');
+const time2 = moment().tz('Asia/Colombo').format('HH:mm:ss');
 const speed = require('performance-now');
 const eco = require('discord-mongoose-economy');
 const thiccysapi = require('textmaker-thiccy');
@@ -212,8 +212,8 @@ let videox = JSON.parse(fs.readFileSync('./src/video.json'))
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 let _sewa = require("./lib/sewa");
 const sewa = JSON.parse(fs.readFileSync('./database/sewa.json'))
-const time = moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')
-const ucap = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
+const time = moment.tz('Asia/Colombo').format('DD/MM HH:mm:ss')
+const ucap = moment(Date.now()).tz('Asia/Colombo').locale('id').format('a')
 var buln = ['/01/', '/02/', '/03/', '/04/', '/05/', '/06/', '/07/', '/08/', '/09/', '/10/', '/11/', '/12/'];
 var myHari = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var tgel = new Date();
@@ -1179,7 +1179,7 @@ break;
     if (!AntiNsfw) return reply(mess.nonsfw)
     A17.sendMessage(from, { react: { text: "⚠️" , key: m.key }})
 
-        reply(` *━━〈 ⚠️ NSFW Menu ⚠️  〉━━*\n\n gifs, hentaivideo, blowjobgif, hneko, masturbation, thighs, pussy, panties, orgy, ahegao, ass, bdsm, blowjob, cuckold, ero, gasm, cum, femdom, foot, gangbang, glasses, jahy, trap, blowjobgif, spank, hneko, hwaifu, gasm`)
+        reply(` *━━〈  ⚠️ 𝙽𝚂𝙵𝚆 𝙼𝙴𝙽𝚄 ⚠️  〉━━*\n\n .gifs\n .hentaivideo\n .blowjobgif\n .hneko\n .masturbation\n .thighs\n .pussy\n .panties\n .orgy\n .ahegao\n .ass\n .bdsm\n .blowjob\n .cuckold\n .ero\n .cum\n .femdom\n .foot\n .gangbang\n .glasses\n .jahy\n`)
     break;
 
 
@@ -1188,8 +1188,8 @@ case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBanChat) return reply(mess.bangc)
         A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
-            reply(` *━━〈  ⚡ Reactions ⚡  〉━━*\n\nbonk, cry, bully, cuddle, hug, kiss, lick, pat, smug, yeet, blush, smile, wave, highfive, handhold, nom, glomp, bite, slap, kill, happy, wink, poke, dance, cringe`)
-        break;
+         reply(` *━━〈  ⚡ 𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂 ⚡  〉━━*\n\n .bonk\n .cry\n .bully\n .cuddle\n .hug\n .kiss\n .lick\n .pat\n .smug\n .yeet\n .blush\n .smile\n .wave\n .highfive\n .handhold\n .nom\n .glomp\n .bite\n .slap\n .kill\n .happy\n .wink\n .poke\n .dance\n .cringe`)
+     break;
 
 
 case 'limituser': case 'userlimit': case 'limit':
@@ -1940,7 +1940,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
 let teks = ` 「🤖 𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
-teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
+teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Colombo").format("DD/MM/YYYY HH:mm:ss")}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -1961,7 +1961,7 @@ loldd = false
 } else {
 loldd = metadata.owner
 }
-teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
+teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Colombo').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -2737,7 +2737,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   if (anu1 == '401' || anu1.status.length == 0) {
   nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
   } else {
-  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Colombo').format('HH:mm:ss DD/MM/YYYY')}\n\n`
   }
   } catch {
   nowhatsapp += `${number0}${i}${number1}\n`
@@ -3369,7 +3369,7 @@ case 'apod': {
 
   const apiKey = 'ugce43VIO63s8gQhcQ7Ts2DHQo1Srcchdh9mgI2S'; // Replace with your actual NASA API key // You can use it.
   const moment = require('moment'); // Import moment library here
-  const timeZone = 'Asia/Kolkata'; // Set desired timezone.
+  const timeZone = 'Asia/Colombo'; // Set desired timezone.
 
   const currentDate = moment().tz(timeZone).format('YYYY-MM-DD'); // Initialize currentDate here
 
@@ -5421,7 +5421,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        const weathertext = `           🌤 *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 𝚁𝙴𝙿𝙾𝚁𝚃* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
         A17.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break;
