@@ -3347,7 +3347,7 @@ case 'googleimage': {
     images = n[Math.floor(Math.random() * n.length)].url;
     let buttonMessage = {
       image: { url: images },
-      caption: `「 _Google Image Search_ 」\n\n_Search Term_ : ${text}\n_Media Url_ : ${images}`,
+      caption: `「 🔎 𝘎𝘖𝘖𝘎𝘓𝘌 𝘐𝘔𝘈𝘎𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 🔍 」\n\n☀ 𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼 : ${text}\n_Media Url_ : ${images}`,
       footer: `${global.BotName}`,
       headerType: 4,
     };
@@ -3406,11 +3406,11 @@ A17.sendMessage(from, { react: { text: "✨" , key: m.key }})
 if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} anything...`)
 let google = require('google-it')
 google({'query': args.join(" ")}).then(res => {
-let teks = `「 *Google Search Engine* 」\n\n*Search term:* ${text}\n\n\n`
+let teks = `「 🔎 *𝘎𝘖𝘖𝘎𝘓𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🔍 」\n\n*𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼 :* ${text}\n\n\n`
 for (let g of res) {
-teks += `*Title* : ${g.title}\n\n`
-teks += `*Description* : ${g.snippet}\n\n`
-teks += `*Link* : ${g.link}\n\n\n        -----------------------------------------------------------------------------\n\n`
+teks += `*🎯 𝚃𝙸𝚃𝙻𝙴* : ${g.title}\n\n`
+teks += `*🗒️ 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽* : ${g.snippet}\n\n`
+teks += `*🖇️ 𝙻𝙸𝙽𝙺* : ${g.link}\n\n\n        -----------------------------------------------------------------------------\n\n`
 } 
 reply(teks)
 })
@@ -3588,13 +3588,13 @@ if (isBanChat) return reply(mess.bangc)
           if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(`*Invalid link!*`)
           xfarrapi.Twitter(`${text}`).then(async (data) => {                    
               let txt = `「 _Twitter Downloader_ 」\n\n`
-              txt += `*Title :* ${data.title}\n`
-              txt += `*Quality :* ${data.medias[1].quality}\n`
-              txt += `*Type :* ${data.medias[1].extension}\n`
-              txt += `*Size :* ${data.medias[1].formattedSize}\n`
-              txt += `*Duration :* ${data.medias.length}\n`
-              txt += `*URL :* ${data.url}\n\n`
-              txt += `*${BotName}*`
+              txt += `*🎯 𝚃𝙸𝚃𝙻𝙴 :* ${data.title}\n`
+              txt += `*⚡ 𝚀𝚄𝙰𝙻𝙸𝚃𝚈 :* ${data.medias[1].quality}\n`
+              txt += `*🎲 𝚃𝚈𝙿𝙴 :* ${data.medias[1].extension}\n`
+              txt += `*🧮 𝚂𝙸𝚉𝙴 :* ${data.medias[1].formattedSize}\n`
+              txt += `*🕯️ 𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${data.medias.length}\n`
+              txt += `*🖇️ 𝚄𝚁𝙻 :* ${data.url}\n\n`
+              txt += `   *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
           buf = await getBuffer(data.thumbnail)    
           A17.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
           for (let i of data.medias) {
