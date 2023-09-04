@@ -401,7 +401,7 @@ function updateStatus() {
   // ㅤㅤ〄ㅤㅤ〘 A17 Personal Edition 〙ㅤㅤ〄ㅤㅤㅤㅤ
   // ㅤㅤㅤ〘ㅤ Auto Uptime: ${uptimeFormatted}ㅤ〙`;
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ👨‍💻ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤㅤ👩‍💻ㅤㅤㅤㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
+  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ👨‍💻ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤㅤ👩‍💻ㅤㅤㅤㅤ\x0a\x20\x20\x20\x20ㅤㅤㅤ〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
 
   A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
 
@@ -488,7 +488,7 @@ const pickRandom = (arr) => {
 	
 let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
-  reply (`𝙷𝙴𝙻𝙻𝙾 👋 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+  reply (`👋 𝙷𝙴𝙻𝙻𝙾 ${pushname}, 𝙸 𝙰𝙼 𝙳𝙳𝙴𝚅. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 } 
 
 if (smallinput=='darkdevil') {
@@ -500,11 +500,11 @@ if (smallinput=='malindu') {
 }
 
 if (smallinput=='runtime') {
-  reply (`𝙷𝙴𝚈 🖐️ ${pushname} 𝙼𝚈 *𝚁𝚄𝙽 𝚃𝙸𝙼𝙴* 𝙸𝚂 ${runtime(process.uptime())}\n\n🕒 *𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴* : ${kaitime}\n\n📅 *𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴* : ${kaidate}`)
+  reply (`🤩 𝙷𝙴𝚈️ ${pushname} 𝙼𝚈 *𝚁𝚄𝙽 𝚃𝙸𝙼𝙴* 𝙸𝚂 ${runtime(process.uptime())}\n\n🕒 *𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝚃𝙸𝙼𝙴* : ${kaitime}\n\n📅 *𝙲𝚄𝚁𝚁𝙴𝙽𝚃 𝙳𝙰𝚃𝙴* : ${kaidate}`)
 }
 
 if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝවන්') || smallinput.includes('konichiba') || smallinput.includes('salute')){
-  reply (`𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽 🙏 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+  reply (`🙏 𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 }
 
 if (smallinput=='ddev') {
@@ -520,23 +520,23 @@ if (smallinput=='bf') {
 }
 
 if (smallinput=='ping') {
-    reply (`𝙷𝙴𝚈 ${pushname} 𝙿𝙾𝙽𝙶 ${latensie.toFixed(4)} 𝚖𝚜`)
+    reply (`👋 𝙷𝙴𝚈 ${pushname} 𝙿𝙾𝙽𝙶 ${latensie.toFixed(4)} 𝚖𝚜`)
 }
 
 if (smallinput.includes('good morning') || smallinput.includes('gm')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ☺️ 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈. 😇`);
+  reply (`🌅 𝙶𝙾𝙾𝙳 𝙼𝙾𝚁𝙽𝙸𝙽𝙶 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ☺️ 𝙷𝙰𝚅𝙴 𝙰 𝙶𝚁𝙴𝙰𝚃 𝙳𝙰𝚈. 😇`);
 }
 
 if (smallinput.includes('good afternoon') || smallinput.includes('ga')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ✨ 𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽. 😇🤞🏻`);
+  reply (`🌇 𝙶𝙾𝙾𝙳 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽 𝚃𝙾 𝚈𝙾𝚄 ${pushname} ✨ 𝚆𝙸𝚂𝙷𝙸𝙽𝙶  𝚈𝙾𝚄 𝙰𝙽 𝙴𝙽𝙹𝙾𝚈𝙰𝙱𝙻𝙴 𝙰𝙵𝚃𝙴𝚁𝙽𝙾𝙾𝙽. 😇🤞🏻`);
 }
 
 if (smallinput.includes('good night') || smallinput.includes('gn')) {
-  reply (`𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname} 😇 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂. 👻`);
+  reply (`🌌 𝙶𝙾𝙾𝙳 𝙽𝙸𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 ${pushname} 😇 𝚂𝙻𝙴𝙴𝙿 𝚆𝙴𝙻𝙻 𝙰𝙽𝙳 𝚂𝚆𝙴𝙴𝚃 𝙳𝚁𝙴𝙰𝙼𝚂. 👻`);
 }
 
 if (smallinput.includes('thank you') || smallinput.includes('thanks') || smallinput.includes('thank')) {
-  reply (`𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname} 😇 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻. 🤖`);
+  reply (`👏 𝙼𝙴𝙽𝚃𝙸𝙾𝙽 𝙽𝙾𝚃 ${pushname} 😇 𝙸 𝙰𝙼 𝙰 𝙱𝙾𝚃 𝙰𝙵𝚃𝙴𝚁𝙰𝙻𝙻. 🤖`);
 }
 
 
@@ -691,49 +691,50 @@ case 'repo': case 'botrepo': {
 
         //Hosted platfrom info
 		   case 'statusbot': case 'server':{
-        const used = process.memoryUsage()
-        const cpus = os.cpus().map(cpu => {
-            cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
-      return cpu
-        })
-        const cpu = cpus.reduce((last, cpu, _, { length }) => {
-            last.total += cpu.total
-            last.speed += cpu.speed / length
-            last.times.user += cpu.times.user
-            last.times.nice += cpu.times.nice
-            last.times.sys += cpu.times.sys
-            last.times.idle += cpu.times.idle
-            last.times.irq += cpu.times.irq
-            return last
-        }, {
-            speed: 0,
-            total: 0,
-            times: {
-          user: 0,
-          nice: 0,
-          sys: 0,
-          idle: 0,
-          irq: 0
+    const used = process.memoryUsage()
+    const cpus = os.cpus().map(cpu => {
+        cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+        return cpu
+    })
+    const cpu = cpus.reduce((last, cpu, _, { length }) => {
+        last.total += cpu.total
+        last.speed += cpu.speed / length
+        last.times.user += cpu.times.user
+        last.times.nice += cpu.times.nice
+        last.times.sys += cpu.times.sys
+        last.times.idle += cpu.times.idle
+        last.times.irq += cpu.times.irq
+        return last
+    }, {
+        speed: 0,
+        total: 0,
+        times: {
+            user: 0,
+            nice: 0,
+            sys: 0,
+            idle: 0,
+            irq: 0
         }
-        })
-        let timestamp = speed()
-        let latensi = speed() - timestamp
-        neww = performance.now()
-        oldd = performance.now()
-        respon = `
-Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-» 🤖 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
-RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
-_NodeJS Memory Usaage_
-${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
-${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-        `.trim()
-        m.reply(respon)
-    }
-    break;
+    })
+    let timestamp = speed()
+    let latensi = speed() - timestamp
+    neww = performance.now()
+    oldd = performance.now()
+    respon = `
+    Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+    » 🤖 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
+    RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+    _NodeJS Memory Usaage_
+    ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
+    ${cpus[0] ? `_Total CPU Usage_
+    ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+    _CPU Core(s) Usage (${cpus.length} Core CPU)_
+    ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
+    `.trim()
+    m.reply(respon)
+}
+break;
+
 
 
     case 'ban': {
