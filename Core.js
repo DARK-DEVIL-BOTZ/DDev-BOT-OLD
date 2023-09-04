@@ -15,9 +15,9 @@ const { addBalance } = require("./lib/limit.js");
 const { smsg, formatp, tanggal, GIFBufferToVideoBuffer, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, fetchBuffer } = require('./lib/myfunc')
 const _ = require("lodash");
 const yargs = require("yargs/yargs");
-const kaitime = moment.tz('Asia/Colombo').format('HH:mm:ss');
-const kaidate = moment.tz('Asia/Colombo').format('DD/MM/YYYY');
-const time2 = moment().tz('Asia/Colombo').format('HH:mm:ss');
+const kaitime = moment.tz('Asia/Kolkata').format('HH:mm:ss');
+const kaidate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY');
+const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss');
 const speed = require('performance-now');
 const eco = require('discord-mongoose-economy');
 const thiccysapi = require('textmaker-thiccy');
@@ -212,8 +212,8 @@ let videox = JSON.parse(fs.readFileSync('./src/video.json'))
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 let _sewa = require("./lib/sewa");
 const sewa = JSON.parse(fs.readFileSync('./database/sewa.json'))
-const time = moment.tz('Asia/Colombo').format('DD/MM HH:mm:ss')
-const ucap = moment(Date.now()).tz('Asia/Colombo').locale('id').format('a')
+const time = moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')
+const ucap = moment(Date.now()).tz('Asia/Kolkata').locale('id').format('a')
 var buln = ['/01/', '/02/', '/03/', '/04/', '/05/', '/06/', '/07/', '/08/', '/09/', '/10/', '/11/', '/12/'];
 var myHari = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var tgel = new Date();
@@ -401,7 +401,7 @@ function updateStatus() {
   // ㅤㅤ〄ㅤㅤ〘 A17 Personal Edition 〙ㅤㅤ〄ㅤㅤㅤㅤ
   // ㅤㅤㅤ〘ㅤ Auto Uptime: ${uptimeFormatted}ㅤ〙`;
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ 👻ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤ ㅤ👻ㅤㅤ ㅤ\x0a\x20\x20ㅤㅤㅤ〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
+  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ 👻ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤ ㅤ👻ㅤㅤ ㅤ\x0a\x20\x20ㅤㅤㅤ    〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
 
   A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
 
@@ -1279,7 +1279,7 @@ break;
           if (isBanChat) return reply(mess.bangc)
                      let cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`)
                      reply(mess.waiting)
-                    A17.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m })
+                    A17.sendMessage(m.chat, { image: { url: cok }, caption: '☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...' }, { quoted: m })
                     break;
           
           
@@ -1871,7 +1871,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 if (!args.join(" ")) return reply('Where is the emoji?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await A17.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Here it is...`}, {quoted:m})
+let mese = await A17.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`}, {quoted:m})
 await A17.sendMessage(from, {text:"reply -s to this image to make sticker"}, {quoted:mese})
 })
 }
@@ -1940,7 +1940,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
 let teks = ` 「🤖 𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
-teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Colombo").format("DD/MM/YYYY HH:mm:ss")}`
+teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -1961,7 +1961,7 @@ loldd = false
 } else {
 loldd = metadata.owner
 }
-teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Colombo').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
+teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
 }
 A17.sendTextWithMentions(m.chat, teks, m)
 }
@@ -2737,7 +2737,7 @@ A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
   if (anu1 == '401' || anu1.status.length == 0) {
   nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
   } else {
-  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Colombo').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+  nomerny += `🪄 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n🔸 *Updated On :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
   }
   } catch {
   nowhatsapp += `${number0}${i}${number1}\n`
@@ -3095,7 +3095,7 @@ reply(mess.waiting)
 let { webp2mp4File } = require('./lib/uploader')
 let media = await A17.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await A17.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Here it is...' } }, { quoted: m })
+await A17.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: '☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...' } }, { quoted: m })
 await fs.unlinkSync(media)
 }
 break;
@@ -3369,7 +3369,7 @@ case 'apod': {
 
   const apiKey = 'ugce43VIO63s8gQhcQ7Ts2DHQo1Srcchdh9mgI2S'; // Replace with your actual NASA API key // You can use it.
   const moment = require('moment'); // Import moment library here
-  const timeZone = 'Asia/Colombo'; // Set desired timezone.
+  const timeZone = 'Asia/Kolkata'; // Set desired timezone.
 
   const currentDate = moment().tz(timeZone).format('YYYY-MM-DD'); // Initialize currentDate here
 
@@ -3521,9 +3521,9 @@ case 'ig': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 if (args[0] === "mp4") {
-A17.sendMessage(from, {video:{url:args[1]}, caption:'Here it is...', mimetype:'video/mp4'}, {quoted:m})
+A17.sendMessage(from, {video:{url:args[1]}, caption:'☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...', mimetype:'video/mp4'}, {quoted:m})
 } else if (args[0] === "jpg") {
-A17.sendMessage(from, {image:{url:args[1]}, caption:'Here it is...'}, {quoted:m})
+A17.sendMessage(from, {image:{url:args[1]}, caption:'☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...'}, {quoted:m})
 } else {
 reply("Error! ")
 }
@@ -3657,11 +3657,11 @@ case 'twddlxx': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 let buttons = [
-{buttonId: `${prefix}menu`, buttonText: {displayText: '✨Menu✨'}, type: 1}
+{buttonId: `${prefix}menu`, buttonText: {displayText: '✨'}, type: 1}
 ]
 let buttonMessage = {
 video: {url:args[0]},
-caption: "Here it is...",
+caption: "☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...",
 footer: `${pushname}`,
 buttons: buttons,
 headerType: 4,
@@ -3750,7 +3750,7 @@ case 'fbddlxx': {
 if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 let buttons = [
-{buttonId: `${prefix}menu`, buttonText: {displayText: '✨Menu✨'}, type: 1}
+{buttonId: `${prefix}menu`, buttonText: {displayText: '✨𝙼𝙴𝙽𝚄✨'}, type: 1}
 ]
 let buttonMessage = {
 video: {url:args[0]},
@@ -3806,7 +3806,7 @@ reply(mess.error)
 } )
 console.log(musim_rambutan)
 const A17tiktoknowm = musim_rambutan.result.nowatermark
-A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "Here it is..." }, { quoted: m })
+A17.sendMessage(from, { video: { url: A17tiktoknowm }, caption: "☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂..." }, { quoted: m })
 }
 break;
 
@@ -3870,7 +3870,7 @@ case 'music': {
     from,
     {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
+      caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
   ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
@@ -3905,7 +3905,7 @@ break;
  case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
-A17.sendMessage(from, { react: { text: "🍃" , key: m.key }})
+A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   let yts = require("youtube-yts")
   let search = await yts(text)
@@ -4129,7 +4129,7 @@ case 'soulmate':  {
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
-  let message = `👫 Be me Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+  let message = `👫 𝙱𝙴 𝙼𝙴 𝚂𝙾𝚄𝙻𝙼𝙰𝚃𝙴...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
   A17.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
@@ -4198,12 +4198,12 @@ case 'dare':
 A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
 
                  const dare =[
-       "eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
-       "spill people who make you pause",
-       "call crush/pickle now and send ss",
-       "drop only emote every time you type on gc/pc for 1 day.",
-       "say Welcome to Who Wants To Be a Millionaire! to all the groups you have",
-       "call ex saying miss",
+       "Eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
+       "Spill people who make you pause",
+       "Call crush/pickle now and send ss",
+       "Drop only emote every time you type on gc/pc for 1 day.",
+       "Say Welcome to Who Wants To Be a Millionaire! to all the groups you have",
+       "Call ex saying miss",
        "sing the chorus of the last song you played",
        "vn your ex/crush/girlfriend, says hi (name), wants to call, just a moment. I miss🥺👉🏼👈🏼",
        "Bang on the table (which is at home) until you get scolded for being noisy",
@@ -4282,7 +4282,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
    ]
                  const A17dareww = dare[Math.floor(Math.random() * dare.length)]
                  buffer = await getBuffer(`https://images4.alphacoders.com/101/1016619.jpg`)
-                 A17.sendMessage(from, { image: buffer, caption: '*You have chosen Dare...*\n\n'+ A17dareww }, {quoted:m})
+                 A17.sendMessage(from, { image: buffer, caption: '*🤭 𝚈𝙾𝚄 𝙷𝙰𝚅𝙴 𝙲𝙷𝙾𝚂𝙴𝙽 𝙳𝙰𝚁𝙴...*\n\n'+ A17dareww }, {quoted:m})
                  break;
                      
 
@@ -4384,7 +4384,7 @@ A17.sendMessage(from, { react: { text: "🌝" , key: m.key }})
            ]
                          const A17truthww = truth[Math.floor(Math.random() * truth.length)]
                          buffer = await getBuffer(`https://images2.alphacoders.com/650/650812.jpg`)
-                         A17.sendMessage(from, { image: buffer, caption: '*You have chosen Truth...*\n'+ A17truthww }, {quoted:m})
+                         A17.sendMessage(from, { image: buffer, caption: '*🤐 𝚈𝙾𝚄 𝙷𝙰𝚅𝙴 𝙲𝙷𝙾𝚂𝙴𝙽 𝚃𝚁𝚄𝚃𝙷...*\n'+ A17truthww }, {quoted:m})
                          break;
 
 
@@ -4424,7 +4424,7 @@ waifudd = await axios.get(`https://nekos.life/api/v2/img/smug`)
                   
     let button1ssMessages = {
      image: {url:waifudd.data.url},
-     caption:  `Here it is...`,
+     caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
     }     
           await A17.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
@@ -4461,7 +4461,7 @@ reply(mess.waiting)
   waifudd = await axios.get(`https://waifu.pics/api/sfw/nom`)
 let xx1button3Messages = {
  image: {url:waifudd.data.url},
- caption:  `Here it is...`,
+ caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
 
 }      
           await A17.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
@@ -4479,7 +4479,7 @@ waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
                  
     let button112ssMessages = {
      image: {url:waifudd.data.url},
-     caption:  `Here it is...`,
+     caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
     }     
           await A17.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                   return('Error!')
@@ -4520,7 +4520,7 @@ reply(mess.waiting)
       ]
     let buttonssMessage = {
      image: {url:waifud.data.url},
-     caption:  `Here it is...`,
+     caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
     footer: `${global.BotName}`,
     buttons: wbutsss,
     headerType: 4
@@ -4544,7 +4544,7 @@ waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
       ]
     let buttonssMessages = {
      image: {url:waifudd.data.url},
-     caption:  `Here it is...`,
+     caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
     footer: `${global.BotName}`,
     buttons: wbuttsss,
     headerType: 4
@@ -4807,7 +4807,7 @@ reply(mess.waiting)
 ud = await axios.get('https://waifu.pics/api/sfw/megumin')
     let buttonzMessage = {
     image: {url:ud.data.url},
-     caption:  `Here it is...`,
+     caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
                      }
 await A17.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
    return('Error!')
@@ -4825,7 +4825,7 @@ case 'awoo':
 waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
 let button1Messages = {
  image: {url:waifudd.data.url},
- caption:  `Here it is...`,
+ caption:  `☕ 𝙷𝙴𝚁𝙴 𝙸𝚃 𝙸𝚂...`,
 
 }       
           await A17.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
@@ -5417,7 +5417,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
       case 'weather':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
-        A17.sendMessage(from, { react: { text: "✨", key: m.key }}) 
+        A17.sendMessage(from, { react: { text: "☔", key: m.key }}) 
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
