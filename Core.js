@@ -5404,7 +5404,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
         if (!args[0]) return reply("Enter your location to search weather.")
         myweather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args.join(" ")}&units=metric&appid=e409825a497a0c894d2dd975542234b0&language=tr`)
 
-        const weathertext = `           🌤 *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 𝚁𝙴𝙿𝙾𝚁𝚃* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
+        const weathertext = `           🌤 *𝘞𝘌𝘈𝘛𝘏𝘌𝘙 𝘙𝘌𝘗𝘖𝘙𝘛* 🌤  \n\n🔎 *𝚂𝙴𝙰𝚁𝙲𝙷 𝙻𝙾𝙲𝙰𝚃𝙸𝙾𝙽 :* ${myweather.data.name}\n*🚩 𝙲𝙾𝚄𝙽𝚃𝚁𝚈 :* ${myweather.data.sys.country}\n⛱️ *𝚆𝙴𝙰𝚃𝙷𝙴𝚁 :* ${myweather.data.weather[0].description}\n🌡️ *𝚃𝙴𝙼𝙿𝙴𝚁𝙰𝚃𝚄𝚁𝙴 :* ${myweather.data.main.temp}°C\n❄️ *𝙼𝙸𝙽𝙸𝙼𝚄𝙼 𝚃𝙴𝙼𝙿𝙴𝚁𝙰𝚃𝚄𝚁𝙴 :* ${myweather.data.main.temp_min}°C\n🔥 *𝙼𝙰𝚇𝙸𝙼𝚄𝙼 𝚃𝙴𝙼𝙿𝙴𝚁𝙰𝚃𝚄𝚁𝙴 :* ${myweather.data.main.temp_max}°𝙲\n💦 *𝙷𝚄𝙼𝙸𝙳𝙸𝚃𝚈 :* ${myweather.data.main.humidity}%\n🌬️ *𝚆𝙸𝙽𝙳 :* ${myweather.data.wind.speed} 𝙺𝚖/𝚑\n\n   *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
         A17.sendMessage(from, { video: { url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4' }, gifPlayback: true, caption: weathertext }, { quoted: m })
 
         break;
@@ -5436,7 +5436,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
           A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`Hey *${pushname}* senpai! this command are not programmed! Type *${prefix}help* to get my full command list!`)
+          reply (`🙉 𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}ddev* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
   
       }	 			
   

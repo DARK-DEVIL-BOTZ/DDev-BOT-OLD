@@ -105,16 +105,16 @@ async function startA17() {
       if (pea[0].announce == true) {
         //A17.send5ButImg(pea[0].id, `Grop has been *Closed!* Only *Admins* can send Messages!`, `A17 Bot`, wm_fatih, [])
   
-        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Closed!* Only *Admins* can send Messages!' })
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: '🚫 𝙶𝚁𝙾𝚄𝙿 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙲𝙻𝙾𝚂𝙴𝙳! 𝙾𝙽𝙻𝚈 *𝙰𝙳𝙼𝙸𝙽𝚂* 𝙲𝙰𝙽 𝚂𝙴𝙽𝙳 𝙼𝙴𝚂𝚂𝙰𝙶𝙴𝚂!' })
       } else if (pea[0].announce == false) {
         // A17.send5ButImg(pea[0].id, `Grop has been *Opened!* Now *Everyone* can send Messages!`, `A17 Bot`, wm_fatih, [])
-        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Grop has been *Opened!* Now *Everyone* can send Messages!' })
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: '⭕ 𝙶𝚁𝙾𝚄𝙿 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙾𝙿𝙴𝙽𝙴𝙳! 𝙽𝙾𝚆 *𝙴𝚅𝙴𝚁𝚈𝙾𝙽𝙴* 𝙲𝙰𝙽 𝚂𝙴𝙽𝙳 𝙼𝙴𝚂𝚂𝙰𝙶𝙴𝚂!' })
       } else if (pea[0].restrict == true) {
         //A17.send5ButImg(pea[0].id, `Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !`, `A17 Bot`, wm_fatih, [])
-        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Restricted*, Now only *Admins* can edit Group Info !' })
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: '⚠️ 𝙶𝚁𝙾𝚄𝙿 𝙸𝙽𝙵𝙾 𝙼𝙾𝙳𝙸𝙵𝙸𝙲𝙰𝚃𝙸𝙾𝙽 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 *𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃𝙴𝙳*, 𝙽𝙾𝚆 𝙾𝙽𝙻𝚈 *𝙰𝙳𝙼𝙸𝙽𝚂* 𝙲𝙰𝙽 𝙴𝙳𝙸𝚃 𝙶𝚁𝙾𝚄𝙿 𝙸𝙽𝙵𝙾!' })
       } else if (pea[0].restrict == false) {
         //A17.send5ButImg(pea[0].id, `Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !`, `A17 Bot`, wm_fatih, [])
-        A17.sendMessage(m.chat, { image: wm_fatih, caption: 'Group Info modification has been *Un-Restricted*, Now only *Everyone* can edit Group Info !' })
+        A17.sendMessage(m.chat, { image: wm_fatih, caption: '☑️ 𝙶𝚁𝙾𝚄𝙿 𝙸𝙽𝙵𝙾 𝙼𝙾𝙳𝙸𝙵𝙸𝙲𝙰𝚃𝙸𝙾𝙽 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 *𝚄𝙽-𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃𝙴𝙳*, 𝙽𝙾𝚆 *𝙴𝚅𝙴𝚁𝚈𝙾𝙽𝙴* 𝙲𝙰𝙽 𝙴𝙳𝙸𝚃 𝙶𝚁𝙾𝚄𝙿 𝙸𝙽𝙵𝙾!' })
       } else {
         //A17.send5ButImg(pea[0].id, `Group Subject has been uhanged To:\n\n*${pea[0].subject}*`, `A17 Bot`, wm_fatih, [])
         A17textddfq = `Group Subject has been updated To:\n\n*${pea[0].subject}*`
