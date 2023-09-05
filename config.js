@@ -15,9 +15,9 @@ global.autoRecord = false; //auto recording (true to on, false to off)
 
 
 //
-global.Owner = ["94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
-global.OwnerNumber = ["94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
-global.ownertag = ["94762817504"];
+global.Owner = ["94703892615","94767880946"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
+global.OwnerNumber = ["94703892615","94767880946"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
+global.ownertag = ["94703892615"];
 global.OwnerName = "DARKDEVIL";
 global.BotName = "DDev";
 global.packname = "A17 Bot";  //Do not change.
@@ -37,10 +37,10 @@ global.openAiAPI = "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";
 //
 global.location = "Kaluthara City, Sri Lanka";
 global.reactmoji = "❤️";
-global.themeemoji = "💖";
+global.themeemoji = "🤖";
 global.vidmenu = { url: 'https://media.tenor.com/Jdu0Ov8X2sIAAAAC/A17-Bot.mp4' };
 global.websitex = "https://github.com/malindunimsara";
-global.lolhuman = "KaysaS";
+global.lolhuman = "DARK DEVIL";
 
 
 //
