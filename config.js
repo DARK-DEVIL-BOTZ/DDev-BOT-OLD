@@ -4,9 +4,9 @@ const chalk = require("chalk");
 
 //
 global.available = true;
-global.autoReadGc = true;
+global.autoReadGc = false;
 global.autoReadAll = true;
-global.antitags = false;
+global.antitags = true;
 
 
 //auto functioner
@@ -15,15 +15,15 @@ global.autoRecord = true; //auto recording (true to on, false to off)
 
 
 //
-global.Owner = ["94762817504","94703892615"];   //If you want singal number so global.Owner = ['94703892615'] Change into your number
-global.OwnerNumber = ["94762817504","94703892615"];   //If you want singal number so global.Owner = ['94703892615'] Change into your number
+global.Owner = ["94703892615","94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
+global.OwnerNumber = ["94703892615","94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
 global.ownertag = ["94703892615"];
 global.OwnerName = "𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻";
-global.BotName = "𝙳𝙳𝙴𝚅 𝙱𝙾𝚃";
+global.BotName = "𝙳𝙳𝙴𝚅";
 global.packname = "A17 Bot";  //Do not change.
 global.author = "By: Kai";   //Do not change.
 global.BotSourceCode = "https://github.com/Kai0071/A17";  //Do not change.
-global.SupportGroupLink = "https://chat.whatsapp.com/H3h5SJCnnCl39bXOKq7t6el"; 
+global.SupportGroupLink = "https://chat.whatsapp.com/GhRGdwfaMVDCoeAdzILfl"; 
 
 
 //global.sessionName = "session";
@@ -35,12 +35,12 @@ global.openAiAPI = "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";
 
 
 //
-global.location = "Kaluthara City, Sri Lanka;
+global.location = "Kaluthara City, Sri Lanka";
 global.reactmoji = "❤️";
-global.themeemoji = "👻";
+global.themeemoji = "💖";
 global.vidmenu = { url: 'https://media.tenor.com/Jdu0Ov8X2sIAAAAC/A17-Bot.mp4' };
-global.websitex = "https://github.com/DARK-DEVIL-BOTZ";
-global.lolhuman = "Mahinda";
+global.websitex = "https://github.com/Kai0071";
+global.lolhuman = "KaysaS";
 
 
 //
