@@ -5,21 +5,21 @@ const chalk = require("chalk");
 //
 global.available = true;
 global.autoReadGc = false;
-global.autoReadAll = true;
+global.autoReadAll = false;
 global.antitags = true;
 
 
 //auto functioner
-global.autoTyping = true; //auto tying in gc (true to on, false to off)
-global.autoRecord = true; //auto recording (true to on, false to off)
+global.autoTyping = false; //auto tying in gc (true to on, false to off)
+global.autoRecord = false; //auto recording (true to on, false to off)
 
 
 //
-global.Owner = ["94703892615","94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
-global.OwnerNumber = ["94703892615","94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
-global.ownertag = ["94703892615"];
-global.OwnerName = "𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻";
-global.BotName = "𝙳𝙳𝙴𝚅";
+global.Owner = ["94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
+global.OwnerNumber = ["94762817504"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
+global.ownertag = ["94762817504"];
+global.OwnerName = "DARKDEVIL";
+global.BotName = "DDev";
 global.packname = "A17 Bot";  //Do not change.
 global.author = "By: Kai";   //Do not change.
 global.BotSourceCode = "https://github.com/Kai0071/A17";  //Do not change.
@@ -35,7 +35,7 @@ global.openAiAPI = "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";
 
 
 //
-global.location = "Kaluthara City, Sri Lanka";
+global.location = "Tata City, India";
 global.reactmoji = "❤️";
 global.themeemoji = "💖";
 global.vidmenu = { url: 'https://media.tenor.com/Jdu0Ov8X2sIAAAAC/A17-Bot.mp4' };
