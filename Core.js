@@ -2646,7 +2646,7 @@ let teks = `*「 Tag Admins 」*
 
 *Message : ${text}*\n\n`
 for (let mem of groupAdmins) {
-teks += `🍁 @${mem.split('@')[0]}\n`
+teks += `🎗️ @${mem.split('@')[0]}\n`
 }
 A17.sendMessage(m.chat, { text: teks, mentions: groupAdmins}, { quoted: m })
 }
@@ -3938,12 +3938,12 @@ reply(mess.waiting)
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
 const result = await lyricsv2(text).catch(async _ => await lyrics(text))
 reply(`
-*Title :* ${result.title}
-*Author :* ${result.author}
-*Url :* ${result.link}
+🎯 *𝚃𝙸𝚃𝙻𝙴 :* ${result.title}
+🧑‍🎤 *𝙰𝚄𝚃𝙷𝙾𝚁 :* ${result.author}
+🖇️ *𝚄𝚁𝙻 :* ${result.link}
 
-*Lyrics :* ${result.lyrics}
-
+🃏 *𝙻𝚈𝚁𝙸𝙲𝚂 :* ${result.lyrics}\n\n
+     © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ
 `.trim())
 }
 break;
@@ -5336,7 +5336,7 @@ break;
    ┃    𝙵𝙾𝚁 𝙰𝙻𝙻 𝙽𝚂𝙵𝚆 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
    ┃   
    ┃  『  *${global.BotName}*  』
-   ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈: *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*
+   ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*
    ┃  
    ┃ 🍁𝚃𝙾 𝚄𝚂𝙴 𝙰𝙽𝚈 𝙾𝙵 𝚃𝙷𝙴𝚂𝙴
    ┃    𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚃𝚈𝙿𝙴.
