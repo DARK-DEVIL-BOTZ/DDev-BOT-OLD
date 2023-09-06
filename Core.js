@@ -3822,7 +3822,7 @@ case 'yts': case 'ytsearch': {
  if (!args.join(" ")) return replay(`Example : .yts Heat waves`)
  let yts = require("youtube-yts")
  let search = await yts(args.join(" "))
- let teks = '```「 🧲 *𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🧲 」```\n\n ✨ *𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼* : '+text+'\n\n'
+ let teks = '🧲 *𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🧲\n\n ✨ *𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼* : '+text+'\n\n'
  let no = 1
  for (let i of search.all) {
  teks += ` 🚩 𝚁𝙴𝚂𝚄𝙻𝚃 𝙽𝙾 : ${no++}\n\n🔥𝚃𝙸𝚃𝙻𝙴 : ${i.title}\n\n🎰𝚅𝙸𝙴𝚆𝚂 : ${i.views}\n\n⏳𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 : ${i.timestamp}\n\n📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 : ${i.ago}\n\n🙎‍♂𝙰𝚄𝚃𝙷𝙾𝚁: ${i.author.name}\n\n🖇️𝚄𝚁𝙻 : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
@@ -3887,7 +3887,7 @@ case 'music': {
 break;
 
       
- case 'ytvd': case 'ytvideo': case 'ytmp4': {
+ case 'video':  case 'ytvd': case 'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
