@@ -3887,7 +3887,7 @@ case 'music': {
 break;
 
       
- case 'video':  case 'ytvd': case 'ytvideo': case 'ytmp4': {
+ case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
