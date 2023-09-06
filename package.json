@@ -1,7 +1,7 @@
 {
-    "name": "a17",
+    "name": "DDEV",
     "version": "1.0.0",
-    "description": "A17 is a WhatsApp multiDevice Bot based on Miku and Baileys written in Javascript.",
+    "description": "DDEV is a WhatsApp multiDevice Bot based on Miku and Baileys written in Javascript.",
     "main": "index.js",
     "directories": {
         "lib": "lib"
@@ -12,17 +12,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Kao0071/A17.git"
+        "url": "git+https://github.com/DARK-DEVIL-BOTZ/DDev-BOT.git"
     },
     "keywords": [
         "md-bot"
     ],
-    "author": "Kai",
+    "author": "DarkDevil",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Kao0071/A17/issues"
+        "url": "https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/issues"
     },
-    "homepage": "https://github.com/Kao0071/A17#readme",
+    "homepage": "https://github.com/DARK-DEVIL-BOTZ/DDev-BOT#readme",
     "devDependencies": {
         "@adiwajshing/keyed-db": "^0.2.4",
         "@hapi/boom": "^10.0.1",
@@ -79,7 +79,7 @@
         "marker": "^0.1.2",
         "mathjs": "^9.4.4",
         "minecraft-query": "^1.0.13",
-        "moment-timezone": "^0.5.34",
+        "moment-timezone": "^0.5.43",
         "mongoose": "^6.2.1",
         "mumaker": "^1.0.0",
         "node-cron": "^3.0.0",

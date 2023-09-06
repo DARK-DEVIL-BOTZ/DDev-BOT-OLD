@@ -3819,13 +3819,13 @@ case 'yts': case 'ytsearch': {
  if (isBanChat) return reply(mess.bangc)
  A17.sendMessage(from, { react: { text: "📍" , key: m.key }}) 
 
- if (!args.join(" ")) return replay(`Example : -yts Heat waves`)
+ if (!args.join(" ")) return replay(`Example : .yts Heat waves`)
  let yts = require("youtube-yts")
  let search = await yts(args.join(" "))
- let teks = '```「 *🧲 𝚈𝙾𝚄𝚃𝚄𝙱𝙴 𝚂𝙴𝙰𝚁𝙲𝙷 𝙴𝙽𝙶𝙸𝙽𝙴 🧲* 」```\n\n ✨𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼 : '+text+'\n\n'
+ let teks = '```「 🧲 *𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🧲 」```\n\n ✨ *𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼* : '+text+'\n\n'
  let no = 1
  for (let i of search.all) {
- teks += `Result No : ${no++}\n\nTitle : ${i.title}\n\nViews : ${i.views}\n\nDuration : ${i.timestamp}\n\nUploaded : ${i.ago}\n\nAuthor : ${i.author.name}\n\nUrl : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
+ teks += ` 🚩 𝚁𝙴𝚂𝚄𝙻𝚃 𝙽𝙾 : ${no++}\n\n🔥𝚃𝙸𝚃𝙻𝙴 : ${i.title}\n\n🎰𝚅𝙸𝙴𝚆𝚂 : ${i.views}\n\n⏳𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 : ${i.timestamp}\n\n📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 : ${i.ago}\n\n🙎‍♂𝙰𝚄𝚃𝙷𝙾𝚁: ${i.author.name}\n\n🖇️𝚄𝚁𝙻 : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
  }
  A17.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
  }
@@ -3887,7 +3887,7 @@ case 'music': {
 break;
 
       
- case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
+ case 'ytvd': case 'ytvideo': case 'ytmp4': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
@@ -3896,7 +3896,7 @@ const YT=require('./lib/ytdl-core')
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+' 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'\n\n  🔎 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 
 break;
@@ -3923,7 +3923,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n\n📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n\n 📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 break;
 
@@ -3943,7 +3943,7 @@ reply(`
 🖇️ *𝚄𝚁𝙻 :* ${result.link}
 
 🃏 *𝙻𝚈𝚁𝙸𝙲𝚂 :* ${result.lyrics}\n\n
-     © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*
 `.trim())
 }
 break;
@@ -4035,7 +4035,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use -take A17|By: Kai`)
+if (!args.join(" ")) return reply(`Like use .take DDEV|By: DARKDEVIL`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -5083,7 +5083,7 @@ break;
    ╟━━━━ 🤖 *𝙱𝙾𝚃 𝙸𝙽𝙵𝙾* 🤖 ━━━━━━━━━━➤
    ║
    ║  *🤖𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* 𝙳𝙳𝙴𝚅
-   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* ${global.OwnerName} 
+   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻
    ║  *⏳𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
    ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
    ╚══════════════════════════➤
@@ -5352,7 +5352,7 @@ break;
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
        *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
             let buttonMessage = {
-                        video:fs.readFileSync('./system/A17_3.mp4'),gifPlayback:true,
+                        video:fs.readFileSync('./system/DDEV_BOT.mp4'),gifPlayback:true,
                         caption: helpmenu,
                         
                         headerType: 4

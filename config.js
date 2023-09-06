@@ -18,7 +18,7 @@ global.autoRecord = false; //auto recording (true to on, false to off)
 global.Owner = ["94703892615","94767880946"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
 global.OwnerNumber = ["94703892615"];   //If you want singal number so global.Owner = ['916297175943'] Change into your number
 global.ownertag = ["94703892615"];
-global.OwnerName = "DARKDEVIL";
+global.OwnerName = "DARK DEVIL";
 global.BotName = "DDev";
 global.packname = "A17 Bot";  //Do not change.
 global.author = "By: Kai";   //Do not change.
