@@ -20,7 +20,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy your application's package.json and lock files
-COPY package.json package-lock.json ./
+COPY package.json .
 
 # Install or update dependencies
 RUN npm install
@@ -33,6 +33,12 @@ RUN npm uninstall ytdl-core
 
 # Install the latest version of ytdl-core
 RUN npm install ytdl-core@latest
+
+# Remove the outdated youtubedl-core module if it exists
+RUN npm uninstall youtubedl-core
+
+# Install the latest version of ytdl-core
+RUN npm install youtubedl-core@latest
 
 # Switch to the non-root user for running the application
 USER http
