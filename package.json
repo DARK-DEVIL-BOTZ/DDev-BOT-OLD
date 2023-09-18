@@ -38,6 +38,9 @@
         "@shineiichijo/mal-news-scraper": "^0.0.2",
         "@shineiichijo/marika": "^2.0.6",
         "@shineiichijo/nhentai-pdf": "^1.0.5",
+        "youtube-yts": "^2.0.0",
+        "youtubedl-core": "^4.11.7",
+        "ytdl-core": "^4.11.5",
         "anime-wallpaper": "^1.1.1",
         "awesome-phonenumber": "^2.70.0",
         "axios": "^0.24.0",
@@ -109,9 +112,6 @@
         "vicuna-ts": "^1.2.2",
         "wa-sticker-formatter": "^4.4.4",
         "xfarr-api": "^1.0.3",
-        "yargs": "^17.7.2",
-        "youtube-yts": "^2.0.0",
-        "youtubedl-core": "^4.11.5",
-        "ytdl-core": "^4.11.5"
+        "yargs": "^17.7.2"
     }
 }
