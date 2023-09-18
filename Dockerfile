@@ -10,12 +10,11 @@ RUN apt-get update && \
 
 COPY package.json .
 
-COPY package-lock.json .
+COPY package-lock.josn .
 
 RUN npm install
 
 COPY . .
-
 
 CMD ["node", "."]
 
