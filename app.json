@@ -1,0 +1,19 @@
+{
+    "name": "DDEV-BOT",
+    "description": "A whatsApp bot based on Baileysjs linrary (Ts+Js) with Multi Device support",
+    "repository": "https://github.com/DARK-DEVIL-BOTZ/DDev-BOT",
+    "logo": "https://graph.org/file/af821f60bab1d24474b2c.jpg",
+    "keywords": ["DDEV-BOT", "nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ],
+     "formation": {
+          "worker": {
+              "quantity": 1,
+              "size": "eco"
+          }
+      }
+  }
+  
