@@ -1158,7 +1158,7 @@ break;
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    case 'nsfwmenu':
+     case 'nsfwmenu':
     if (isBan) return reply(mess.banned)	 			
     if (isBanChat) return reply(mess.bangc)
     if (!AntiNsfw) return reply(mess.nonsfw)
@@ -1168,13 +1168,23 @@ break;
     break;
 
 
-case 'reaction': case 'react': case 'reactions': case 'r':
+     case 'reaction': case 'react': case 'reactions': case 'r':
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
         A17.sendMessage(from, { react: { text: "❤️" , key: m.key }})
 
          reply(` *━━〈  ⚡ 𝚁𝙴𝙰𝙲𝚃𝙸𝙾𝙽𝚂 ⚡  〉━━*\n\n .bonk\n .cry\n .bully\n .cuddle\n .hug\n .kiss\n .lick\n .pat\n .smug\n .yeet\n .blush\n .smile\n .wave\n .highfive\n .handhold\n .nom\n .glomp\n .bite\n .slap\n .kill\n .happy\n .wink\n .poke\n .dance\n .cringe`)
      break;
+     
+     
+     case 'gvoice':
+    if (isBan) return reply(mess.banned)	 			
+    if (isBanChat) return reply(mess.bangc)
+    A17.sendMessage(from, { react: { text: "💋" , key: m.key }})
+
+        reply(` *━━〈  🥵 𝙶𝙸𝚁𝙻 𝚅𝙾𝙸𝙲𝙴 𝙼𝙴𝙽𝚄 🥶  〉━━*\n\n Hello\n Helo\n Hey\n Hi\n Hy\n Hm\n Hmm\n Gm\n Good morning\n Gn\n Good night\n Gn pana\n I love you\n Love you\n Adarei\n Ha\n Ha ha\n Pana\n Manika\n Baba\n Umma\n Ummma\n Hako\n Ummah\n Ahh\n Darkdevil\n Malindu\n Ddev\n Akke\n Nangi\n Bitch\n Fuck\n Marilada\n Na\n Ai\n Natapan\n Mk\n Ponnaya\n Love\n Wesi\n Vesi\n Why\n Why bn\n Raththaran\n Wow\n Ko\n Ammo\n Hukapan\n Bye\n Wasthuva\n Nane\n Epa wela\n Gahanava\n Kellekda\n Kohomada\n Bot\n Kariya\n Huththa\n Huththi\n Ktt gannako\n Katata gannako\n Vesi\n Balli\n Pakaya\n Bf\n Gf\n ❤️\n 🙂\n 😂\n`)
+    break;    
+     
 
 
 case 'limituser': case 'userlimit': case 'limit':
@@ -3391,7 +3401,7 @@ A17.sendMessage(from, { react: { text: "✨" , key: m.key }})
 if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} anything...`)
 let google = require('google-it')
 google({'query': args.join(" ")}).then(res => {
-let teks = `「 🔎 *𝘎𝘖𝘖𝘎𝘓𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🔍 」\n\n*𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼 :* ${text}\n\n\n`
+let teks = `   「 🔎 *𝘎𝘖𝘖𝘎𝘓𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🔍 」\n\n*✨ 𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼 :* ${text} ✨\n\n\n`
 for (let g of res) {
 teks += `*🎯 𝚃𝙸𝚃𝙻𝙴* : ${g.title}\n\n`
 teks += `*🗒️ 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽* : ${g.snippet}\n\n`
@@ -3822,10 +3832,10 @@ case 'yts': case 'ytsearch': {
  if (!args.join(" ")) return replay(`Example : .yts Heat waves`)
  let yts = require("youtube-yts")
  let search = await yts(args.join(" "))
- let teks = '🧲 *𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🧲\n\n ✨ *𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼* : '+text+'\n\n'
+ let teks = '    🧲 *𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘚𝘌𝘈𝘙𝘊𝘏 𝘌𝘕𝘎𝘐𝘕𝘌* 🧲\n\n ✨ *𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙴𝚁𝙼* : '+text+' ✨\n\n'
  let no = 1
  for (let i of search.all) {
- teks += ` 🚩 𝚁𝙴𝚂𝚄𝙻𝚃 𝙽𝙾 : ${no++}\n\n🔥𝚃𝙸𝚃𝙻𝙴 : ${i.title}\n\n🎰𝚅𝙸𝙴𝚆𝚂 : ${i.views}\n\n⏳𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 : ${i.timestamp}\n\n📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 : ${i.ago}\n\n🙎‍♂𝙰𝚄𝚃𝙷𝙾𝚁: ${i.author.name}\n\n🖇️𝚄𝚁𝙻 : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
+ teks += ` 🚩 𝚁𝙴𝚂𝚄𝙻𝚃 𝙽𝙾 : ${no++}\n\n🔥𝚃𝙸𝚃𝙻𝙴 : ${i.title}\n\n🎰𝚅𝙸𝙴𝚆𝚂 : ${i.views}\n\n⏳𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 : ${i.timestamp}\n\n📤𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 : ${i.ago}\n\n🧑‍🎤𝙰𝚄𝚃𝙷𝙾𝚁: ${i.author.name}\n\n🖇️𝚄𝚁𝙻 : ${i.url}\n\n\n-----------------------------------------------------------------------------\n\n\n`
  }
  A17.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
  }
@@ -3887,7 +3897,7 @@ case 'music': {
 break;
 
       
- case 'ytvd': case 'video': case'ytvideo': case 'ytmp4': {
+ case 'ytvd': case 'video': case'ytvideo': {
   if (isBan) return reply(mess.banned)	 			
 if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
@@ -3912,7 +3922,7 @@ case 'ytmp3': {
   const YT=require('./lib/ytdl-core')
   const ytmp3play2 = await YT.mp3(text)
   
-await A17.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'A17_YTmp3_Downloader.mp3',mimetype: 'audio/mpeg',}, {quoted:m})
+await A17.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'📥 𝙳𝙳𝙴𝚅 𝚈𝚃𝚄𝚁𝙻 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁',mimetype: 'audio/mpeg',}, {quoted:m})
 }
 break;
 
@@ -3923,7 +3933,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n\n 📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n 📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
 }
 break;
 
@@ -5326,6 +5336,7 @@ break;
    ┃►    ${prefix}report
    ┃►    ${prefix}afk
    ┃►    ${prefix}darkjoke
+   ┃►    ${prefix}gvoice
    ┃
    ┣━━━ 💀 *𝙽𝚂𝙵𝚆* 💀️ ━━━━━━━━━━➢
    ┃   

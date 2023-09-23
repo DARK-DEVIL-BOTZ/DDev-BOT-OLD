@@ -1,5 +1,7 @@
 FROM node:lts-buster
 
+WORKDIR /app
+
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
@@ -10,12 +12,12 @@ RUN apt-get update && \
 
 COPY package.json .
 
-COPY package-lock.josn .
-
 RUN npm install
+
+RUN npm install pm2 -g && pm2 install ffmpeg
 
 COPY . .
 
-CMD ["node", "."]
+RUN chmod +x ddev-bot.sh
 
-CMD ["node", "."]
+CMD ["./ddev-bot.sh"]
