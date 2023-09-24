@@ -2,7 +2,7 @@
 </h2>
    
 
-<h2 align="center">  <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/fork"><img src="https://img.shields.io/badge/FORK A17 MD-h?color=white&style=for-the-badge&logo=stackshare" />
+<h2 align="center">  <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/fork"><img src="https://img.shields.io/badge/FORK DDEV BOT-h?color=white&style=for-the-badge&logo=stackshare" />
 </a>
 </h2>
  
