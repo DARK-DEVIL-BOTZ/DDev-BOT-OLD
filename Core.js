@@ -3843,29 +3843,23 @@ case 'yts': case 'ytsearch': {
  break; 
 
  
-case 'play':
-case 'song':
-case 'music': {
-  if (isBan) return reply(mess.banned);
-  if (isBanChat) return reply(mess.bangc);
-  A17.sendMessage(from, { react: { text: "🎧", key: m.key }});
+case 'play': case 'song': case 'ytplay': {
+    if (!text) return reply(`Example : ${prefix + command} Stay`)
+    let yts = require("yt-search")
+    let search = await yts(text)
+    let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 
-  const YT = require('./lib/ytdl-core');
-  const yts = require('youtube-yts');
-  const ffmpeg = require('fluent-ffmpeg');
-  
-  let search = await yts(text);
-  let anu = search.videos[0];
-  const ytmp3play = await YT.mp3(anu.url);
+    // Ask the user about the type (audio or video) with buttons
+    let typeButtons = [
+        { buttonId: `ytmp3 ${anu.url}`, buttonText: { displayText: '🎶 Audio 🎶' }, type: 1 },
+        { buttonId: `ytmp4 ${anu.url}`, buttonText: { displayText: '📽️ Video 📽️' }, type: 1 },
+        { buttonId: `ytmp3doc ${anu.url}`, buttonText: { displayText: '📜 Audio Document 📜' }, type: 1 },
+        { buttonId: `ytmp4doc ${anu.url}`, buttonText: { displayText: '📜 Video Document 📜' }, type: 1 }
+    ]
 
-  // Fetch the thumbnail URL from the 'anu' object
-  let thumbnailUrl = anu.thumbnail;
-
-  await A17.sendMessage(
-    from,
-    {
-      image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
+    let typeMessage = {
+        image: { url: anu.thumbnail },
+        caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
   ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
@@ -3878,23 +3872,75 @@ case 'music': {
   🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
 
        *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`,
+        footer: A17.user.name,
+        buttons: typeButtons,
+        headerType: 4
+    }
 
-    },
-    { quoted: m }
-  );
+    // Send the type message and await the user's response
+    let typeResponse = await A17.sendMessage(m.chat, typeMessage, { quoted: m })
 
-  // Send the audio file with the proper 'type' property set to 'audio'
-  await A17.sendMessage(from, { 
-    audio: fs.readFileSync(ytmp3play.path),
-    filename: anu.title + '.mp3',
-    mimetype: 'audio/mpeg',
-    quoted: m,
-  });
+    // React to user message with downloading emoji
+    await A17.react(m.chat, '⬇️')
 
-  // Rest of the code remains unchanged.
-  // ...
+    // Listen for the user's response
+    let responseListener = A17.onButtonEvent(m.chat, async (button) => {
+        const [action, url] = button.buttonId.split(' ')
+
+        if (action === 'ytmp3' || action === 'ytmp3doc') {
+            // Handle audio or audio document download
+            // Implement the audio download logic here
+
+            // React to user message with audio emoji
+            await A17.react(m.chat, '🎧')
+        } else if (action === 'ytmp4' || action === 'ytmp4doc') {
+            // Ask the user about video quality with buttons
+            let qualityButtons = [
+                { buttonId: `ytmp4 ${url} 144p`, buttonText: { displayText: '1️⃣ 144p' }, type: 1 },
+                { buttonId: `ytmp4 ${url} 360p`, buttonText: { displayText: '2️⃣ 360p' }, type: 1 },
+                { buttonId: `ytmp4 ${url} 480p`, buttonText: { displayText: '3️⃣ 480p' }, type: 1 },
+                { buttonId: `ytmp4 ${url} 720p`, buttonText: { displayText: '4️⃣ 720p' }, type: 1 },
+                { buttonId: `ytmp4 ${url} 1080p`, buttonText: { displayText: '5️⃣ 1080p' }, type: 1 }
+                // Add more quality options as needed
+            ]
+
+            let qualityMessage = {
+                text: 'Select video quality:',
+                buttons: qualityButtons,
+                footer: A17.user.name
+            }
+
+            // Send the quality message and await the user's response
+            let qualityResponse = await A17.sendMessage(m.chat, qualityMessage, { quoted: m })
+
+            // React to user message with video emoji
+            await A17.react(m.chat, '🎥')
+
+            // Listen for the user's quality selection
+            let qualityListener = A17.onButtonEvent(m.chat, async (qualityButton) => {
+                const [qualityAction, qualityUrl, quality] = qualityButton.buttonId.split(' ')
+
+                // Handle video or video document download based on quality
+                // Implement the video download logic here
+
+                // React to user message with uploading emoji
+                await A17.react(m.chat, '⬆️')
+
+                // Remove the quality listener after handling the download
+                A17.removeButtonListener(qualityListener)
+            })
+        }
+
+        // Remove the type listener after handling the response
+        A17.removeButtonListener(responseListener)
+    })
+
+    // Remove the listeners after 5 minutes (adjust the time as needed)
+    setTimeout(() => {
+        A17.removeButtonListener(responseListener)
+    }, 5 * 60 * 1000) // 5 minutes
 }
-break;
+
       
  case 'ytvd': case 'video': case'ytvideo': {
   if (isBan) return reply(mess.banned)	 			
