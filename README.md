@@ -36,7 +36,7 @@
 
 </br>     
 
-<h2 align="center"> Add This 2 Builbpacks On Heroku
+<h2 align="center"> Add This 2 BuildPacks On Heroku
 </h2>
 
 ```
