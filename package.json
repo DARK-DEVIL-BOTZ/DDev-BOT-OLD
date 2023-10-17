@@ -1,5 +1,5 @@
 {
-    "name": "DDEV",
+    "name": "DDEV-BOT",
     "version": "1.0.0",
     "description": "DDEV is a WhatsApp multiDevice Bot based on Miku and Baileys written in Javascript.",
     "main": "index.js",
@@ -17,7 +17,7 @@
     "keywords": [
         "md-bot"
     ],
-    "author": "DarkDevil",
+    "author": "malindunimsara",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/issues"
