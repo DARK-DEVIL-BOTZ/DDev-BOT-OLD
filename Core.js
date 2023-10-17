@@ -1,6 +1,15 @@
 process.on("uncaughtException", console.error);
 require("./config");
 
+var pkg = require('./package.json');
+
+if (pkg['author'] !== 'malindunimsara' || pkg['name'] !== 'DDEV-BOT') {
+  console.log('💀𝙳𝙳𝙴𝚅 𝚄𝙽𝙰𝚄𝚃𝙷𝙾𝚁𝙸𝚉𝙴𝙳 𝙰𝙲𝙲𝙴𝚂𝚂 𝙾𝚁 𝙼𝙾𝙳𝙸𝙵𝙸𝙲𝙰𝚃𝙸𝙾𝙽 𝙳𝙴𝚃𝙴𝙲𝚃𝙴𝙳. 𝚃𝙷𝙸𝚂 𝙰𝙲𝚃𝙸𝙾𝙽 𝙸𝚂 𝙽𝙾𝚃 𝙰𝙻𝙻𝙾𝚆𝙴𝙳. 𝙶𝙾 𝙰𝙷𝙴𝙰𝙳 𝙼𝙾𝚃𝙷𝙴𝚁 𝙵𝚄𝙲𝙺𝙴𝚁🖕');
+  process.exit(1); // Optionally, you can exit the script to prevent further execution.
+}
+
+// Your code continues here if authorized.
+
 const fs = require('fs');
 const pm2 = require('pm2');
 const util = require("util");
