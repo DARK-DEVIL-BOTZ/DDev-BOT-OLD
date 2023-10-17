@@ -66,7 +66,7 @@ async function startA17() {
   const A17 = A17Connect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["DDEV BOT", "Safari", "1.O"],
+    browser: ["DDEV QR", "Safari", "1.O"],
     auth: state,
   });
 
