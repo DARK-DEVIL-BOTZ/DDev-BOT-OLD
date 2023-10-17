@@ -398,7 +398,7 @@ function updateStatus() {
   const uptimeFormatted = formatTime(uptimeInSeconds);
 
 
-  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ👨‍💻ㅤㅤ〘\x20𝙳𝙳𝙴𝚅\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤㅤ👩‍💻ㅤㅤㅤㅤ\x0a\x20\x20\x20\x20ㅤㅤㅤ            〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
+  function _0x582b(_0xabb6f8,_0x12cdd8){const _0x58e890=_0x58e8();return _0x582b=function(_0x582b90,_0x4387b3){_0x582b90=_0x582b90-0x189;let _0x932613=_0x58e890[_0x582b90];return _0x932613;},_0x582b(_0xabb6f8,_0x12cdd8);}function _0x58e8(){const _0x109554=['12896370RDSmnX','3BgvPel','189HbmdoW','18854HvEPNh','11TZHUID','9125326EcyeIg','464328lPaAMf','3400722cbWEOK','2263175KIczdo','12TaHNqM','2521564eqJRHK'];_0x58e8=function(){return _0x109554;};return _0x58e8();}(function(_0x429d7b,_0x532ab5){const _0x527567=_0x582b,_0x130eb4=_0x429d7b();while(!![]){try{const _0x75c57a=-parseInt(_0x527567(0x18b))/0x1+-parseInt(_0x527567(0x192))/0x2*(-parseInt(_0x527567(0x189))/0x3)+parseInt(_0x527567(0x191))/0x4*(-parseInt(_0x527567(0x190))/0x5)+-parseInt(_0x527567(0x18f))/0x6+parseInt(_0x527567(0x18d))/0x7+parseInt(_0x527567(0x18e))/0x8*(-parseInt(_0x527567(0x18a))/0x9)+parseInt(_0x527567(0x193))/0xa*(parseInt(_0x527567(0x18c))/0xb);if(_0x75c57a===_0x532ab5)break;else _0x130eb4['push'](_0x130eb4['shift']());}catch(_0x19ea04){_0x130eb4['push'](_0x130eb4['shift']());}}}(_0x58e8,0xa8dae));const status='\x0a\x20\x20ㅤㅤ👨‍💻ㅤㅤ〘\x20𝛪𝛸𝛥𝛥𝑅\x20𝐵𝛩𝑇\x20𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻\x20𝙴𝙳𝙸𝚃𝙸𝙾𝙽\x20〙ㅤㅤ👩‍💻ㅤㅤㅤㅤ\x0a\x20\x20\x20\x20ㅤㅤㅤ            〘ㅤ\x20𝙰𝚄𝚃𝙾\x20𝚄𝙿𝚃𝙸𝙼𝙴:\x20'+uptimeFormatted+'ㅤ〙';
 
   A17.setStatus(status); // Set the status using A17.setStatus or your equivalent method
 
@@ -485,14 +485,14 @@ const pickRandom = (arr) => {
 	
 let smallinput = budy.toLowerCase()
 if (smallinput.includes('hello')) {
-  reply (`👋 𝙷𝙴𝙻𝙻𝙾 ${pushname}, 𝙸 𝙰𝙼 𝙳𝙳𝙴𝚅. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
+  reply (`👋 𝙷𝙴𝙻𝙻𝙾 ${pushname}, 𝙸 𝙰𝙼 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 } 
 
 if (smallinput=='darkdevil') {
     reply (`𝙼𝚈 𝙱𝙾𝚂𝚂 𝙸𝚂 𝙻𝙾𝚂𝚃 𝙸𝙽 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙼𝚄𝙻𝚃𝙸𝚅𝙴𝚁𝚂𝙴, 𝙰𝙽𝙳 𝙸 𝙻𝙾𝚂𝚃 𝚃𝙷𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽 𝚆𝙸𝚃𝙷 𝙷𝙸𝙼. 𝙱𝚄𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙲𝙰𝙻𝙻 𝙼𝙰𝙻𝙸𝙽𝙳𝚄. 😉`)
 }
 
-if (smallinput=='malindu') {
+if (smallinput=='ixAAr') {
     reply (`𝚆𝙷𝙰𝚃𝚂 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃? 😏`)
 }
 
@@ -504,7 +504,7 @@ if( smallinput.includes('ayubowan') || smallinput.includes('ආයුබෝව�
   reply (`🙏 𝙰𝚈𝚄𝙱𝙾𝚆𝙰𝙽 ${pushname}, 𝙸 𝙰𝙼 ${BotName}. 𝙷𝙾𝚆 𝙲𝙰𝙽 𝙸 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾𝙳𝙰𝚈?`);
 }
 
-if (smallinput=='ddev') {
+if (smallinput=='alive') {
     reply ('𝚈𝙴𝚂 𝙸 𝙰𝙼 𝙰𝙻𝙸𝚅𝙴 👻')
 }
 
@@ -553,14 +553,14 @@ if (smallinput.includes('thank you') || smallinput.includes('thanks') || smallin
     A17.sendMessage(from, { react: { text: "❤" , key: m.key }})
     
     let { data } = await axios.get('https://api.github.com/repos/DARK-DEVIL-BOTZ/DDev-BOT');
-    teks = `*✒️ _𝙳𝙳𝙴𝚅 𝚂𝙲𝚁𝙸𝙿𝚃_ 📃*\n\n*🌟 𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count} ✨\n*🍴 𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓 𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊 𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜 `
+    teks = `*✒️ _𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇 𝚂𝙲𝚁𝙸𝙿𝚃_ 📃*\n\n*🌟 𝚃𝙾𝚃𝙰𝙻 𝚂𝚃𝙰𝚁𝚂*: ${data.stargazers_count} ✨\n*🍴 𝚃𝙾𝚃𝙰𝙻 𝙵𝙾𝚁𝙺𝚂*: ${data.forks_count} 𝙵𝙾𝚁𝙺𝚂\n*🎓 𝙶𝙸𝚃𝙷𝚄𝙱*: https://github.com/DARK-DEVIL-BOTZ/DDev-BOT\n\n😊 𝙳𝚘𝚗𝚝 𝙵𝚘𝚛𝚐𝚎𝚝 𝚃𝚘 𝙵𝚘𝚕𝚕𝚘𝚠 𝙼𝚎 𝙾𝚗 *𝙶𝙸𝚃𝙷𝚄𝙱* 𝙰𝚗𝚍 𝙶𝚒𝚟𝚎 𝙰 ⭐ 𝚃𝚘 𝙼𝚢 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜 `
   
     let buttonMessage = {
     image: Thumb,
     jpegThumbnail: BotLogo ,
     caption: teks,
     contextInfo:{externalAdReply:{
-    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻",
+    title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 Dᴇᴠ ɪxAAʀ",
     body: " ", 
     thumbnail: fs.readFileSync("Assets/pic2.jpg"),
     mediaType:1,
@@ -719,7 +719,7 @@ case 'repo': case 'botrepo': {
     oldd = performance.now()
     respon = `
     Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-    » 🤖 𝙳𝙳𝙴𝚅'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
+    » 🤖 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇'𝚂 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾
     RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
     _NodeJS Memory Usaage_
     ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
@@ -1934,7 +1934,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
-let teks = ` 「🤖 𝙳𝙳𝙴𝚅'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙳𝙳𝙴𝚅 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
+let teks = ` 「🤖 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇'𝚂 𝙿𝙼 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇 𝙸𝙽 𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃.`
 for (let i of anu) {
 teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
@@ -1949,7 +1949,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = ` 「🤖 𝙳𝙳𝙴𝚅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂`
+let teks = ` 「🤖 𝛪𝛸𝛥𝛥𝑅'𝚂 𝙶𝚁𝙾𝚄𝙿 𝚄𝚂𝙴𝚁 𝙻𝙸𝚂𝚃 🤖」\n\n☕ 𝚃𝙾𝚃𝙰𝙻 ${anu.length} 𝚄𝚂𝙴𝚁𝚂 𝙰𝚁𝙴 𝚄𝚂𝙸𝙽𝙶 𝙱𝙾𝚃 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂`
 for (let i of anu) {
 let metadata = await A17.groupMetadata(i)
 if (metadata.owner === "undefined") {
@@ -3277,7 +3277,7 @@ reply(mess.waiting)
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
        let anu = await maker.textpro(link, q)
-          A17.sendMessage(m.chat, { image: { url: anu }, caption: `👨‍💻 𝙳𝙳𝙴𝚅 𝙱𝙾𝚃 𝙱𝚈 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻 👩‍💻` }, { quoted: m })
+          A17.sendMessage(m.chat, { image: { url: anu }, caption: `👨‍💻 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇 𝙱𝚈 Dᴇᴠ ɪxAAʀ 👩‍💻` }, { quoted: m })
        }
 
 break;
@@ -3928,7 +3928,7 @@ const YT=require('./lib/ytdl-core')
   let search = await yts(text)
   let anu = search.videos[0]
   const ytmp4play = await YT.mp4(anu.url)
-A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'\n\n  🔎 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play.videoUrl}, mimetype:"video/mp4", caption:anu.title+'\n\n  🔎 𝙱𝚈 *𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇*',}, {quoted:m})
 }
 
 break;
@@ -3944,7 +3944,7 @@ case 'ytmp3': {
   const YT=require('./lib/ytdl-core')
   const ytmp3play2 = await YT.mp3(text)
   
-await A17.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'📥 𝙳𝙳𝙴𝚅 𝚈𝚃𝚄𝚁𝙻 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁',mimetype: 'audio/mpeg',}, {quoted:m})
+await A17.sendMessage(from, {document: fs.readFileSync(ytmp3play2.path),fileName:'📥 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇 𝚈𝚃𝚄𝚁𝙻 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁',mimetype: 'audio/mpeg',}, {quoted:m})
 }
 break;
 
@@ -3955,7 +3955,7 @@ if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "📽️" , key: m.key }})
 const YT=require('./lib/ytdl-core')
   const ytmp4play2 = await YT.mp4(text)
-A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n 📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝙳𝙳𝙴𝚅 𝙱𝙾𝚃*',}, {quoted:m})
+A17.sendMessage(from, {video:{url:ytmp4play2.videoUrl}, mimetype:"video/mp4", caption:'\n 📥 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝚈 *𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇*',}, {quoted:m})
 }
 break;
 
@@ -4067,7 +4067,7 @@ case 'swm': case 'take': case 'stickerwm': case 'steal':{
   if (isBanChat) return reply(mess.bangc)
 A17.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 
-if (!args.join(" ")) return reply(`Like use .take DDEV|By: DARKDEVIL`)
+if (!args.join(" ")) return reply(`Like use .take ?𝛸𝛥𝛥𝑅 𝐵𝑈𝐺 𝐵𝛩𝑇 𝛲𝛩𝑊𝑅𝛯𝐷 𝐵𝑌 Dᴇᴠ ɪxAAʀ`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
@@ -5099,13 +5099,13 @@ break;
 
 
 
-    case 'help': case 'ddev': case 'menu': case 'allmenu': case 'listmenu':{
+    case 'help': case 'menu': case 'allmenu': case 'listmenu':{
         if (isBan) return reply(mess.banned)	 			
         if (isBanChat) return reply(mess.bangc)
     A17.sendMessage(from, { react: { text: "✨" , key: m.key }})      
     const helpmenu = `   😇 𝘏𝘌𝘓𝘓𝘖  *${pushname}*  ${nowtime} ,
 
-    👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
+    👋 𝘐 𝘈𝘔 *𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *Dᴇᴠ ɪxAAʀ* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
     
    ╔══════ 🏜️ *𝚃𝙾𝙳𝙰𝚈* 🏖 ️══════════➤
    ║
@@ -5114,10 +5114,10 @@ break;
    ║ 
    ╟━━━━ 🤖 *𝙱𝙾𝚃 𝙸𝙽𝙵𝙾* 🤖 ━━━━━━━━━━➤
    ║
-   ║  *🤖𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* 𝙳𝙳𝙴𝚅
-   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* 𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻
+   ║  *🤖𝙱𝙾𝚃 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :* 𝛪𝛸𝛥𝛥𝑅 𝐵𝛩𝑇
+   ║  *👨‍💼𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :* Dᴇᴠ ɪxAAʀ
    ║  *⏳𝙱𝙾𝚃 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 :* ${runtime(process.uptime())} 
-   ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* 𝙰𝚆𝚂 𝚅𝙿𝚂
+   ║  *🖥️𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 :* Codespace
    ╚══════════════════════════➤
 
    ┏━━━ 📀 *𝙲𝙾𝚁𝙴* 📀 ━━━━━━━━━━━➢
@@ -5127,7 +5127,6 @@ break;
    ┃►    ${prefix}speak
    ┃►    ${prefix}support
    ┃►    ${prefix}stalk
-   ┃►    ${prefix}ddev
    ┃►    ${prefix}delete
    ┃
    ┣━━━ 👨‍💼 *𝙾𝚆𝙽𝙴𝚁 𝙾𝙽𝙻𝚈* 👩‍💼 ━━━━━━➢
@@ -5369,7 +5368,7 @@ break;
    ┃    𝙵𝙾𝚁 𝙰𝙻𝙻 𝙽𝚂𝙵𝚆 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
    ┃   
    ┃  『  *${global.BotName}*  』
-   ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈 *𝙳𝙰𝚁𝙺 𝙳𝙴𝚅𝙸𝙻*
+   ┃     𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝙳 𝙱𝚈 *Dᴇᴠ ɪxAAʀ*
    ┃  
    ┃ 🍁𝚃𝙾 𝚄𝚂𝙴 𝙰𝙽𝚈 𝙾𝙵 𝚃𝙷𝙴𝚂𝙴
    ┃    𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚃𝚈𝙿𝙴.
@@ -5378,9 +5377,7 @@ break;
    ┃   
    ┃ 🍁𝚃𝙾 𝙶𝙴𝚃 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺
    ┃    𝚃𝚈𝙿𝙴 " *${prefix}support* ".
-   ┃    
-   ┃ 🍁𝚃𝚈𝙿𝙴 " *${prefix}ddev* " 𝚃𝙾 𝙶𝙴𝚃
-   ┃    𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃.
+   ┃
    ┃
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
        *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
@@ -5469,7 +5466,7 @@ A17.sendMessage(from, { react: { text: "♻️" , key: m.key }})
           if (isBan) return reply(mess.banned)	 			
           if (isBanChat) return reply(mess.bangc)
           A17.sendMessage(from, { react: { text: "❌", key: m.key }}) 
-          reply (`🙉 𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}ddev* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
+          reply (`🙉 𝙷𝙴𝚈 *${pushname}* 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙰𝚁𝙴 𝙽𝙾𝚃 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝙳! 𝚃𝚈𝙿𝙴 *${prefix}help* 𝚃𝙾 𝙶𝙴𝚃 𝙼𝚈 𝙵𝚄𝙻𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙻𝙸𝚂𝚃!`)
   
       }	 			
   
