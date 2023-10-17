@@ -1,7 +1,7 @@
 {
     "name": "DDEV-BOT",
     "version": "1.0.0",
-    "description": "DDEV is a WhatsApp multiDevice Bot based on Miku and Baileys written in Javascript.",
+    "description": "DDev is a WhatsApp multiDevice Bot based on Miku and Baileys written in Javascript.",
     "main": "index.js",
     "directories": {
         "lib": "lib"
