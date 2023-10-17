@@ -562,7 +562,7 @@ if (smallinput.includes('thank you') || smallinput.includes('thanks') || smallin
     contextInfo:{externalAdReply:{
     title:"© 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 Dᴇᴠ ɪxAAʀ",
     body: " ", 
-    thumbnail: fs.readFileSync("Assets/pic2.jpg"),
+    thumbnail: fs.readFileSync("Assets/bot.jpg"),
     mediaType:1,
     //mediaUrl: 'https://wallpapercave.com/wp/wp10524580.jpg',
     //sourceUrl: "https://wallpapercave.com/wp/wp10524580.jpg"
@@ -581,7 +581,7 @@ if (smallinput.includes('thank you') || smallinput.includes('thanks') || smallin
       if (isBanChat) return reply(mess.bangc);
 
       A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`   👨‍💻 *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁'𝚂 𝙶𝚁𝙾𝚄𝙿* 👩‍💻\n\n ☕ https://chat.whatsapp.com/H3h5SJCnnCl39bXOKq7t6el`)
+    reply(`   👨‍💻 *𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁'𝚂 𝙶𝚁𝙾𝚄𝙿* 👩‍💻\n\n ☕ Not Available 💀`)
     }
     break;
     
@@ -591,7 +591,7 @@ case 'repo': case 'botrepo': {
   if (isBanChat) return reply(mess.bangc);
   
   A17.sendMessage(from, { react: { text: "💫" , key: m.key }})
-    reply(`🎀 *𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 </>* 📃\n\n ☕ https://github.com/DARK-DEVIL-BOTZ/DDev-BOT`)
+    reply(`This Repo Not Public MF💀`)
     }
     break;
 
@@ -5380,9 +5380,9 @@ break;
    ┃
    ┃
    ┗━━━━━━━━━━━━━━━━━━━━━━━━➢
-       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ Dᴇᴠ ɪxAAʀ*`
             let buttonMessage = {
-                        video:fs.readFileSync('./system/DDEV_BOT.mp4'),gifPlayback:true,
+                        video:fs.readFileSync('./system/ezgif-5-31af743f15.mp4'),gifPlayback:true,
                         caption: helpmenu,
                         
                         headerType: 4
