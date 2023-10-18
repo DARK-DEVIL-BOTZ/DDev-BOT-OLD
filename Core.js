@@ -1,3 +1,5 @@
+/*© MODIFIED BY DARK DEVIL*/
+
 process.on("uncaughtException", console.error);
 require("./config");
 
