@@ -1,4 +1,41 @@
-<h2 align="center"> 🔰 Tap Here To Fork 🔰 
+<p align="center">
+   <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
+    <img src="https://graph.org/file/86a4ac302b0d571057a40.jpg" width="290">
+     
+
+      
+</p>
+<h1 align="center">🤖 DDEV BOT 🤖</h1>
+<p align="center"> 
+  👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
+
+   <p align="center"> 
+  <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/stargazers">
+    <img src="https://img.shields.io/github/stars/Kai0071/A17?style=social">
+    
+   <p align="center">
+  <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/fork">
+    <img src="https://img.shields.io/github/forks/Kai0071/A17?label=Fork&style=social">
+    
+<p align="center">
+  <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
+    <img src="https://api.visitorbadge.io/api/visitors?path=Kai0071%2FA17&label=Repo%20Visitors&labelColor=%23697689&countColor=%23ba68c8&style=plastic&labelStyle=upper">
+ 
+  <p align="CENTER">
+  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/Maintain-Yes-cyan.svg?style=for-the-badge&logo=xcode" /></a>
+</p>
+    
+
+     
+  
+<p align="CENTER">
+  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/next%20Update-Undefined!-green.svg?style=for-the-badge&logo=xcode" /></a>
+</p>
+     
+<br>
+<br>
+
+<h2 align="center"> 🍴 TAP HERE TO FORK 🍴 
 </h2>
    
 
@@ -10,16 +47,13 @@
 <br>
      <br>
      
-
-     
-<h2 align="center"> 🍁  Run Repl for Multi Session QR  🍁
-</h2>
+<h2 align="center"> 🔥 RUN REPL FOR GET MULTI SESSION QR 🔥 </h2>
 <h2 align="center">  <a href="https://replit.com/@DARK-DEVIL-BOTZ/DDEV-SESSION?v=1"><img src="https://repl.it/badge/github/quiec/whatsasena" />
 </a>
 </h2>
 
 ## 
-- After you getting the `creds.json. ` then upload the `creds.json` in the `DDev-BOT` folder. then you can deploy on your favourite platform.
+- After you getting the `creds.json ` then upload the `creds.json` in the `DDev-BOT` folder. then you can deploy on your favourite platform.
 
 
 
@@ -28,7 +62,7 @@
 
 <p align="center" >
     <a href="https://heroku.com/deploy?template=https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
-    <img title="A17 on Heroku" src="https://www.herokucdn.com/deploy/button.png" width="189px" alt="Deploy on Heroku" >
+    <img title="DDEV ON HEROKU" src="https://www.herokucdn.com/deploy/button.png" width="189px" alt="Deploy on Heroku" >
     </a>
 </p>
      
@@ -109,7 +143,7 @@ npm i -g forever && forever index.js && forever save && forever logs
 
 
 </br> <br>
-<h2 align="center"> 🛡️ Windows Cmd & Vs 🛡️
+<h2 align="center"> 🛡️ WINDOWS AND VS CODE CMDS 🛡️
 </h2>
 
 * [`Download ffmpeg`](https://ffmpeg.org/download.html#build-windows) and set path
