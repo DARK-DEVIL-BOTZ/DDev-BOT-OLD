@@ -7,29 +7,29 @@
 </p>
 <h1 align="center">🤖 DDEV BOT 🤖</h1>
 <p align="center"> 
-  👋 𝘐 𝘈𝘔 *𝘋𝘋𝘌𝘝 𝘉𝘖𝘛*. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 *𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓* 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
+  👋 𝘐 𝘈𝘔 𝘋𝘋𝘌𝘝 𝘉𝘖𝘛. 𝘈 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘖𝘛 𝘊𝘙𝘌𝘈𝘛𝘌𝘋 𝘉𝘠 𝘋𝘈𝘙𝘒 𝘋𝘌𝘝𝘐𝘓 𝘉𝘖𝘛𝘡 𝘛𝘖 𝘋𝘖 𝘌𝘝𝘌𝘙𝘠𝘛𝘏𝘐𝘕𝘎 𝘛𝘏𝘈𝘛 𝘐𝘚 𝘗𝘖𝘚𝘚𝘐𝘉𝘓𝘌 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘉𝘈𝘚𝘌𝘋 𝘖𝘕 𝘞𝘏𝘈𝘛𝘚𝘈𝘗𝘗 𝘔𝘜𝘓𝘛𝘐 𝘋𝘌𝘝𝘐𝘊𝘌(𝘔𝘋) 𝘚𝘜𝘗𝘗𝘖𝘙𝘛.✌️
 
    <p align="center"> 
   <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/stargazers">
-    <img src="https://img.shields.io/github/stars/Kai0071/A17?style=social">
+    <img src="https://img.shields.io/github/stars/DARK-DEVIL-BOTZ/DDev-BOT?style=social">
     
    <p align="center">
   <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT/fork">
-    <img src="https://img.shields.io/github/forks/Kai0071/A17?label=Fork&style=social">
+    <img src="https://img.shields.io/github/forks/DARK-DEVIL-BOTZ/DDev-BOT?label=Fork&style=social">
     
 <p align="center">
   <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
-    <img src="https://api.visitorbadge.io/api/visitors?path=Kai0071%2FA17&label=Repo%20Visitors&labelColor=%23697689&countColor=%23ba68c8&style=plastic&labelStyle=upper">
+    <img src="https://api.visitorbadge.io/api/visitors?path=DARK-DEVIL-BOTZ%2FDDev-BOT&label=Repo%20Visitors&labelColor=%23697689&countColor=%23ba68c8&style=plastic&labelStyle=upper">
  
   <p align="CENTER">
-  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/Maintain-Yes-cyan.svg?style=for-the-badge&logo=xcode" /></a>
+  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/Maintain-NO!-cyan.svg?style=for-the-badge&logo=xcode" /></a>
 </p>
     
 
      
   
 <p align="CENTER">
-  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/next%20Update-Undefined!-green.svg?style=for-the-badge&logo=xcode" /></a>
+  <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/next%20Update-NOT_YET!-green.svg?style=for-the-badge&logo=xcode" /></a>
 </p>
      
 <br>
