@@ -9,7 +9,8 @@
     "bot",
     "WhatsApp bot",
     "WhatsApp automation",
-    "multi-device"
+    "multi-device",
+    "DarkDevil"
   ],
   "buildpacks": [
     {
