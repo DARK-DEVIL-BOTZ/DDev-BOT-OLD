@@ -1,6 +1,6 @@
 <p align="center">
    <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
-    <img src="https://graph.org/file/86a4ac302b0d571057a40.jpg" width="500">
+    <img src="https://graph.org/file/86a4ac302b0d571057a40.jpg" width="800">
      
 
       
