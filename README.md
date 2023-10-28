@@ -25,6 +25,17 @@
   <a href="https://github.com/DARK-DEVIL-BOTZ"><img title="Support" src="https://img.shields.io/badge/Maintain-NO!-cyan.svg?style=for-the-badge&logo=xcode" /></a>
 </p>
     
+<div align="center" style="background-color: #333; border-radius: 5px; padding: 20px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
+
+    <img src="song_image_url.png" alt="Song Image" width="120" style="border-radius: 50%;">
+
+    <button id="play-button" class="audio-button play" style="width: 80px; height: 80px; background-color: #f03d44; border: none; border-radius: 50%; cursor: pointer; transition: background-color 0.3s;"></button>
+
+    <div id="song-name" class="song-name" style="color: #fff; font-size: 18px; margin: 10px;">Memory Reboot</div>
+
+    <audio id="audio" src="YOUR_SONG_URL.mp3"></audio>
+
+</div>
 
      
   
