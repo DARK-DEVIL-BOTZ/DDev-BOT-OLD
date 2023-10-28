@@ -70,13 +70,21 @@
 <h2 align="center"> Add This 2 BuildPacks On Heroku If Heroku Show Some Error In Deploy.
 </h2>
 
+```
+https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
+``` 
+```
+https://github.com/clhuang/heroku-buildpack-webp-binaries.git
+```
+     
+
 <br>
 </br>
 
 
   <h2 align="center"> 🕑 DEPLOY ON CODESPACE 🕑
 </h2>
-<h2 align="center">  <a href="https://github.com/codespaces/new"><img title="A17 on Gitub Codespace" src="https://img.shields.io/badge/DEPLOY CODESPACE-h?color=black&style=for-the-badge&logo=visualstudiocode" />
+<h2 align="center">  <a href="https://github.com/codespaces/new"><img title="DDEV on Gitub Codespace" src="https://img.shields.io/badge/DEPLOY CODESPACE-h?color=black&style=for-the-badge&logo=visualstudiocode" />
 </a>
 </h2>
      
@@ -86,7 +94,7 @@
 
   <h2 align="center"> 😣 DEPLOY ON MOGENIUS 😒
 </h2>
-<h2 align="center">  <a href="https://studio.mogenius.com/studio/cloud-space/cloud-space-overview"><img title="A17 on Mogenius" src="https://img.shields.io/badge/DEPLOY MOGENIUS-h?color=blue&style=for-the-badge&logo=genius"></a>
+<h2 align="center">  <a href="https://studio.mogenius.com/studio/cloud-space/cloud-space-overview"><img title="DDEV on Mogenius" src="https://img.shields.io/badge/DEPLOY MOGENIUS-h?color=blue&style=for-the-badge&logo=genius"></a>
 </a>
 </h2>
      
@@ -97,7 +105,7 @@
 
 <h2 align="center"> 💰 DEPLOY ON RAILWAY 💰
 </h2>
-<h2 align="center">  <a href="https://railway.app/new"><img title="A17 on Railway"src="https://railway.app/button.svg" />
+<h2 align="center">  <a href="https://railway.app/new"><img title="DDEV on Railway"src="https://railway.app/button.svg" />
 </a>
 </h2>
 
@@ -105,15 +113,6 @@
 
    <br>
    </br>
-
-
-```
-https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
-``` 
-```
-https://github.com/clhuang/heroku-buildpack-webp-binaries.git
-```
-     
      
 <br>
 <br>
