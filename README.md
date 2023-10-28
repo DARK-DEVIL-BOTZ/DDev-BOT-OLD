@@ -1,6 +1,6 @@
 <p align="center">
    <a href="https://github.com/DARK-DEVIL-BOTZ/DDev-BOT">
-    <img src="https://graph.org/file/86a4ac302b0d571057a40.jpg" width="290">
+    <img src="https://graph.org/file/86a4ac302b0d571057a40.jpg" width="500">
      
 
       
@@ -57,7 +57,7 @@
 
 
 
-<h2 align="center"> ❤  Deploy On Heroku  ❤
+<h2 align="center"> 💲 DEPLOY ON HEROKU 💲
 </h2>
 
 <p align="center" >
@@ -70,7 +70,7 @@
 
 </br>     
 
-<h2 align="center"> Add This 2 BuildPacks On Heroku
+<h2 align="center"> Add This 2 BuildPacks On Heroku If Heroku Show Some Error In Deploy.
 </h2>
 
 ```
@@ -162,4 +162,8 @@ npm i -g forever && forever index.js && forever save && forever logs
 ```
 ```
 > npm start
+```
+- Command For 24/7
+```js
+npm i -g forever && forever index.js && forever save && forever logs
 ```
