@@ -1,16 +1,5 @@
-/*© MODIFIED BY DARK DEVIL*/
-
 process.on("uncaughtException", console.error);
 require("./config");
-
-var pkg = require('./package.json');
-
-if (pkg['author'] !== 'malindunimsara' || pkg['name'] !== 'DDEV-BOT' pkg['license'] !== 'MIT') {
-  console.log('💀𝙳𝙳𝙴𝚅 𝚄𝙽𝙰𝚄𝚃𝙷𝙾𝚁𝙸𝚉𝙴𝙳 𝙰𝙲𝙲𝙴𝚂𝚂 𝙾𝚁 𝙼𝙾𝙳𝙸𝙵𝙸𝙲𝙰𝚃𝙸𝙾𝙽 𝙳𝙴𝚃𝙴𝙲𝚃𝙴𝙳. 𝚃𝙷𝙸𝚂 𝙰𝙲𝚃𝙸𝙾𝙽 𝙸𝚂 𝙽𝙾𝚃 𝙰𝙻𝙻𝙾𝚆𝙴𝙳.\n\n🖕𝙶𝙾 𝙰𝙷𝙴𝙰𝙳 𝙼𝙾𝚃𝙷𝙴𝚁 𝙵𝚄𝙲𝙺𝙴𝚁🖕');
-  process.exit(1); // Optionally, you can exit the script to prevent further execution.
-}
-
-// Your code continues here if authorized.
 
 const fs = require('fs');
 const pm2 = require('pm2');
@@ -3853,7 +3842,7 @@ case 'yts': case 'ytsearch': {
  }
  break; 
 
- 
+
 case 'play':
 case 'song':
 case 'music': {
@@ -3864,7 +3853,7 @@ case 'music': {
   const YT = require('./lib/ytdl-core');
   const yts = require('youtube-yts');
   const ffmpeg = require('fluent-ffmpeg');
-
+  
   let search = await yts(text);
   let anu = search.videos[0];
   const ytmp3play = await YT.mp3(anu.url);
@@ -3876,7 +3865,7 @@ case 'music': {
     from,
     {
       image: { url: thumbnailUrl }, // Include the thumbnail image in the response
-      caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}
+      caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
             
   ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
 
@@ -3889,46 +3878,94 @@ case 'music': {
   🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
 
        *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`,
-      buttons: [
-        { buttonId: 'download_audio', buttonText: 'Download Audio', type: 1 },
-        { buttonId: 'download_document', buttonText: 'Download Document', type: 1 },
-        { buttonId: 'download_voice', buttonText: 'Download Voice', type: 1 },
-      ],
+
     },
     { quoted: m }
   );
 
-  // Handle button clicks
-  A17.onMessageButtons(from, (button) => {
-    if (button.buttonId === 'download_audio') {
-      // Send the audio file with the proper 'type' property set to 'audio'
-      A17.sendMessage(from, {
+  // Send the audio file with the proper 'type' property set to 'audio'
+  await A17.sendMessage(from, { 
+    audio: fs.readFileSync(ytmp3play.path),
+    filename: anu.title + '.mp3',
+    mimetype: 'audio/mpeg',
+    quoted: m,
+  });
+
+  // Rest of the code remains unchanged.
+  // ...
+}
+break;
+
+      
+case 'test': {
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  A17.sendMessage(from, { react: { text: "🎧", key: m.key }});
+
+  const YT = require('./lib/ytdl-core');
+  const yts = require('youtube-yts');
+  const ffmpeg = require('fluent-ffmpeg');
+  
+  let search = await yts(text);
+  let anu = search.videos[0];
+  const ytmp3play = await YT.mp3(anu.url);
+
+  // Fetch the thumbnail URL from the 'anu' object
+  let thumbnailUrl = anu.thumbnail;
+
+  await A17.sendMessage(
+    from,
+    {
+      image: { url: thumbnailUrl }, // Include the thumbnail image in the response
+      caption: `\n  🎨 *𝚂𝙾𝙽𝙶 𝚃𝙸𝚃𝙻𝙴 :* *${anu.title}*
+            
+  ⏳ *𝙳𝚄𝚁𝙰𝚃𝙸𝙾𝙽 :* ${anu.timestamp}
+
+  📈 *𝚅𝙸𝙴𝚆𝙴𝚁𝚂 :* ${anu.views}
+
+  📺 *𝙲𝙷𝙰𝙽𝙽𝙴𝙻 :* ${anu.author.name}
+
+  📤 *𝚅𝙸𝙳𝙴𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳 :* ${anu.ago}
+
+  🔗 *𝚄𝚁𝙻 :* ${anu.url}\n
+
+       *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴅᴇᴠ ʙᴏᴛ*`,
+
+    },
+    { quoted: m }
+  );
+
+  // Ask the user what format they want (1 for audio, 2 for document)
+  await A17.sendMessage(from, 'Choose the format:\n1) Audio (MP3)\n2) Document (MP3)');
+  
+  A17.once('message', async (message) => {
+    if (message.body === '1') {
+      // User requested audio format
+      await A17.sendMessage(from, { 
         audio: fs.readFileSync(ytmp3play.path),
         filename: anu.title + '.mp3',
         mimetype: 'audio/mpeg',
         quoted: m,
       });
-    } else if (button.buttonId === 'download_document') {
-      // Send the audio as a document file
-      A17.sendMessage(from, {
+    } else if (message.body === '2') {
+      // User requested document format
+      await A17.sendMessage(from, { 
         document: fs.readFileSync(ytmp3play.path),
         filename: anu.title + '.mp3',
         mimetype: 'audio/mpeg',
         quoted: m,
       });
-    } else if (button.buttonId === 'download_voice') {
-      // Send the audio as a voice note
-      A17.sendMessage(from, {
-        audio: fs.readFileSync(ytmp3play.path),
-        ptt: true, // Set ptt to true to send it as a voice note
-        quoted: m,
-      });
+    } else {
+      await A17.sendMessage(from, 'Invalid choice. Please choose 1 or 2.');
     }
   });
+
+  // Rest of the code remains unchanged.
+  // ...
 }
-break;
-
-
+break      
+      
+      
       
  case 'ytvd': case 'video': case'ytvideo': {
   if (isBan) return reply(mess.banned)	 			
